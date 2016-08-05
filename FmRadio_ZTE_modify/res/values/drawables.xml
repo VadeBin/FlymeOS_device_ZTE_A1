@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="drawable" name="notification_bg_low_normal_mifavor">#ff2f2f2f</item>
+    <item type="drawable" name="notification_bg_normal_mifavor">#ff2f2f2f</item>
+    <item type="drawable" name="notification_bg_normal_pressed_mifavor">#ff68ab0a</item>
+    <item type="drawable" name="waveform_selected">#ff33dcf4</item>
+    <item type="drawable" name="waveform_unselected">#ff145862</item>
+    <item type="drawable" name="waveform_unselected_bkgnd_overlay">#4a0084e0</item>
+    <item type="drawable" name="selection_border">#ff0084e0</item>
+    <item type="drawable" name="playback_indicator">#ffffff66</item>
+    <item type="drawable" name="grid_line">#00000000</item>
+    <item type="drawable" name="timecode">#ddffffdd</item>
+    <item type="drawable" name="timecode_shadow">#aa000000</item>
+    <item type="drawable" name="type_bkgnd_alarm">#88880000</item>
+    <item type="drawable" name="type_bkgnd_ringtone">#88008888</item>
+    <item type="drawable" name="type_bkgnd_notification">#88666600</item>
+    <item type="drawable" name="type_bkgnd_music">#88000000</item>
+    <item type="drawable" name="type_bkgnd_unsupported">#88cccccc</item>
+</resources>

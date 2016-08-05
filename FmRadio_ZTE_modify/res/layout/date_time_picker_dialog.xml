@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <DatePicker android:layout_gravity="center_horizontal" android:id="@id/datePicker" android:layout_width="wrap_content" android:layout_height="wrap_content" android:spinnersShown="true" android:calendarViewShown="false" />
+    <TextView android:gravity="center" android:id="@id/weekText" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <View android:layout_width="fill_parent" android:layout_height="10.0dip" />
+    <Button android:gravity="center" android:id="@id/modifyTime" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>

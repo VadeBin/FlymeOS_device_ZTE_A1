@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_actionbar_add" android:enabled="true" android:id="@id/fm_add_channel" android:title="@string/fm_all_list_add" android:showAsAction="always" style="@android:style/Widget.Holo.ActionButton.Overflow" />
+    <item android:icon="@drawable/ic_actionbar_refresh" android:enabled="true" android:id="@id/fm_scan" android:title="@string/fm_all_list_scan" android:showAsAction="always" style="@android:style/Widget.Holo.ActionButton.Overflow" />
+</menu>

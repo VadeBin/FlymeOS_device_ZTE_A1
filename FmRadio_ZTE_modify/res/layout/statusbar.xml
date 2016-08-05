@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/icon" android:layout_width="48.0dip" android:layout_height="48.0dip" android:layout_marginLeft="12.0dip" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+    <TextView android:textSize="18.0sp" android:textColor="#ff333333" android:id="@id/frequency" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_toRightOf="@id/icon" android:layout_centerVertical="true" />
+    <ImageView android:id="@id/ic_indicate_fav" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/ic_notification_favorite_off" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    <ImageView android:id="@id/ic_indicate_next" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginRight="24.0dip" android:src="@drawable/ic_notification_next" android:layout_toLeftOf="@id/ic_indicate_fav" android:layout_centerVertical="true" />
+    <ImageView android:id="@id/ic_indicate_stop" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginRight="24.0dip" android:src="@drawable/ic_notification_switch" android:layout_toLeftOf="@id/ic_indicate_next" android:layout_centerVertical="true" />
+    <ImageView android:id="@id/ic_indicate_prev" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginRight="24.0dip" android:src="@drawable/ic_notification_last" android:layout_toLeftOf="@id/ic_indicate_stop" android:layout_centerVertical="true" />
+</RelativeLayout>
