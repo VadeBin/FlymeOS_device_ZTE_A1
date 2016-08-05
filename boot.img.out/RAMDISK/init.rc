@@ -672,3 +672,19 @@ on property:persist.sys.gesture.enable=1
     
 on property:persist.sys.gesture.enable=0
     write /sys/class/tsp_fw/touchscreen/gesture_enable 0 
+
+service smbd /system/bin/smbd -D
+    user root
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
+
+service nmbd /system/bin/nmbd -D
+    user root
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
+
+service flymed /system/bin/flymed
+    class main
+    socket flymed stream 0660 root system

@@ -168,7 +168,7 @@ fingerprints                             u:object_r:fingerprints_service:s0
 
 # Add policy rule for GOODIX fingerprint begin
 hello.fp                       u:object_r:fingerprintserver_service:s0
-fm_fingerprint_service     u:object_r:system_server_service:s0=======
+fm_fingerprint_service     u:object_r:system_server_service:s0
 move_window                               u:object_r:system_server_service:s0
 samba_server                              u:object_r:system_server_service:s0
 samba_client                              u:object_r:system_server_service:s0
