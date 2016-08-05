@@ -32,9 +32,10 @@
     const/high16 v3, 0x20000
 
     # invokes: Lcom/android/server/am/BaseErrorDialog$Inject;->getThemeResID(Landroid/content/Context;)I
-    invoke-static {p1}, Lcom/android/server/am/BaseErrorDialog$Inject;->access$000(Landroid/content/Context;)I
+    #invoke-static {p1}, Lcom/android/server/am/BaseErrorDialog$Inject;->access$000(Landroid/content/Context;)I
 
-    move-result v1
+    #move-result v1
+    sget v1, Lcom/flyme/internal/R$style;->Theme_Flyme_Light_Dialog_Alert:I
 
     invoke-direct {p0, p1, v1}, Landroid/app/AlertDialog;-><init>(Landroid/content/Context;I)V
 

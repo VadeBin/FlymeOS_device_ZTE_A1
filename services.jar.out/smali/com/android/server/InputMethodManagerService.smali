@@ -3828,6 +3828,8 @@
     .prologue
     invoke-virtual {p0}, Lcom/android/server/InputMethodManagerService;->hideInputMethodMenu()V
 
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/InputMethodManagerService;->flymeHideCurrentInputLocked()V
+
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.settings.INPUT_METHOD_SETTINGS"
@@ -4309,6 +4311,10 @@
     invoke-direct {v0, v9, v1}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
 
     .local v25, "settingsContext":Landroid/content/Context;
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/InputMethodManagerService;->getFlymeLightContext()Landroid/content/Context;
+
+    move-result-object v25
+
     new-instance v28, Landroid/app/AlertDialog$Builder;
 
     move-object/from16 v0, v28
@@ -4326,7 +4332,7 @@
     .line 2953
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v24
+    move-object/from16 v1, v25
 
     invoke-direct {v0, v1}, Lcom/android/server/InputMethodManagerService;->getFlymeLightAlertDialogBuilder(Landroid/content/Context;)V
 
@@ -5724,6 +5730,14 @@
     invoke-static/range {v17 .. v18}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2841
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/InputMethodManagerService;->mSettings:Lcom/android/internal/inputmethod/InputMethodUtils$InputMethodSettings;
+
+    move-object/from16 v17, v0
+
+    invoke-virtual/range {v17 .. v17}, Lcom/android/internal/inputmethod/InputMethodUtils$InputMethodSettings;->resetSettings()V
+
     invoke-direct/range {p0 .. p0}, Lcom/android/server/InputMethodManagerService;->chooseNewDefaultIMELocked()Z
 
     move-result v17
@@ -10682,7 +10696,7 @@
 
     iget-object v12, v0, Lcom/android/server/InputMethodManagerService;->mNotificationManager:Landroid/app/NotificationManager;
 
-    if-eqz v12, :cond_5
+    if-eqz v12, :cond_flyme_0
 
     move-object/from16 v0, p0
 
@@ -10692,7 +10706,7 @@
 
     move-result v12
 
-    if-nez v12, :cond_5
+    if-nez v12, :cond_flyme_0
 
     .line 1665
     sget-boolean v12, Lcom/android/server/InputMethodManagerService;->DEBUG:Z

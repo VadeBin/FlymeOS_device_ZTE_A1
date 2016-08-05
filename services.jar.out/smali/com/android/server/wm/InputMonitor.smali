@@ -9,6 +9,12 @@
 # static fields
 .field private static final MILLI_TO_NANO:J = 0xf4240L
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/android/server/wm/InputMonitor$FlymeInjector;
+    }
+.end annotation
 
 # instance fields
 .field private mHDMI:Lcom/mediatek/hdmi/IMtkHdmiManager;
@@ -1960,6 +1966,8 @@
     invoke-virtual {p0, v3}, Lcom/android/server/wm/InputMonitor;->updateInputWindowsLw(Z)V
 
     :cond_3
+    invoke-static/range {p0 .. p1}, Lcom/android/server/wm/InputMonitor$FlymeInjector;->setInputFocusLw(Lcom/android/server/wm/InputMonitor;Lcom/android/server/wm/WindowState;)V
+
     return-void
 .end method
 
