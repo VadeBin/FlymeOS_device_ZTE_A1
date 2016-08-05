@@ -6458,7 +6458,7 @@
 
     move-result v2
 
-    invoke-virtual {v0, v1, v2, p1}, Landroid/app/AppOpsManager;->noteOp(IILjava/lang/String;)I
+    invoke-virtual {v0, v1, v2, p1}, Landroid/app/AppOpsManager;->hook_noteOp(IILjava/lang/String;)I
 
     move-result v0
 
@@ -7168,7 +7168,7 @@
 
     move-object/from16 v0, p1
 
-    invoke-virtual {v2, v3, v4, v0}, Landroid/app/AppOpsManager;->noteOp(IILjava/lang/String;)I
+    invoke-virtual {v2, v3, v4, v0}, Landroid/app/AppOpsManager;->hook_noteOp(IILjava/lang/String;)I
 
     move-result v2
 
@@ -8629,7 +8629,7 @@
 
     move-result v2
 
-    invoke-virtual {v0, v1, v2, p1}, Landroid/app/AppOpsManager;->noteOp(IILjava/lang/String;)I
+    invoke-virtual {v0, v1, v2, p1}, Landroid/app/AppOpsManager;->hook_noteOp(IILjava/lang/String;)I
 
     move-result v0
 
