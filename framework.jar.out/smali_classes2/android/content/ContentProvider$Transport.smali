@@ -235,6 +235,18 @@
 
     .line 497
     :cond_0
+    invoke-direct/range {p0 .. p1}, Landroid/content/ContentProvider$Transport;->hook_enforceWritePermission(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_flyme_0
+
+    const/4 v0, 0x0
+
+    return v0
+
+    :cond_flyme_0
+
     iget v0, p0, Landroid/content/ContentProvider$Transport;->mWriteOp:I
 
     const/4 v1, -0x1

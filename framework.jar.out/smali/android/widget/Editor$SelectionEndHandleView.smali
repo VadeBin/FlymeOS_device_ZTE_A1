@@ -120,25 +120,43 @@
 .end method
 
 .method public updatePosition(FF)V
-    .locals 5
+    .locals 4
     .param p1, "x"    # F
     .param p2, "y"    # F
 
     .prologue
-    .line 3845
-    iget-object v3, p0, Landroid/widget/Editor$SelectionEndHandleView;->this$0:Landroid/widget/Editor;
+    .line 3732
+    iget-object v2, p0, Landroid/widget/Editor$SelectionEndHandleView;->this$0:Landroid/widget/Editor;
 
     # getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
-    invoke-static {v3}, Landroid/widget/Editor;->access$700(Landroid/widget/Editor;)Landroid/widget/TextView;
+    invoke-static {v2}, Landroid/widget/Editor;->access$700(Landroid/widget/Editor;)Landroid/widget/TextView;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v3, p1, p2}, Landroid/widget/TextView;->getOffsetForPosition(FF)I
+    invoke-virtual {v2, p1, p2}, Landroid/widget/TextView;->getOffsetForPosition(FF)I
 
     move-result v0
 
-    .line 3846
+    .line 3735
     .local v0, "offset":I
+    iget-object v2, p0, Landroid/widget/Editor$SelectionEndHandleView;->this$0:Landroid/widget/Editor;
+
+    # getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
+    invoke-static {v2}, Landroid/widget/Editor;->access$700(Landroid/widget/Editor;)Landroid/widget/TextView;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/widget/TextView;->getSelectionStart()I
+
+    move-result v1
+
+    .line 3736
+    .local v1, "selectionStart":I
+    if-gt v0, v1, :cond_0
+
+    .line 3737
+    add-int/lit8 v2, v1, 0x1
+
     iget-object v3, p0, Landroid/widget/Editor$SelectionEndHandleView;->this$0:Landroid/widget/Editor;
 
     # getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
@@ -152,88 +170,24 @@
 
     invoke-interface {v3}, Ljava/lang/CharSequence;->length()I
 
-    move-result v2
-
-    .line 3849
-    .local v2, "textLength":I
-    iget-object v3, p0, Landroid/widget/Editor$SelectionEndHandleView;->this$0:Landroid/widget/Editor;
-
-    # getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
-    invoke-static {v3}, Landroid/widget/Editor;->access$700(Landroid/widget/Editor;)Landroid/widget/TextView;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/widget/TextView;->getSelectionStart()I
-
-    move-result v1
-
-    .line 3850
-    .local v1, "selectionStart":I
-    if-gt v0, v1, :cond_0
-
-    .line 3852
-    iget-object v3, p0, Landroid/widget/Editor$SelectionEndHandleView;->this$0:Landroid/widget/Editor;
-
-    # getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
-    invoke-static {v3}, Landroid/widget/Editor;->access$700(Landroid/widget/Editor;)Landroid/widget/TextView;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v3
-
-    invoke-interface {v3, v1, v2}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
-
-    move-result-object v3
-
-    invoke-static {v3}, Landroid/text/TextUtils;->hasReplacement(Ljava/lang/CharSequence;)Z
-
     move-result v3
 
-    if-eqz v3, :cond_1
+    invoke-static {v2, v3}, Ljava/lang/Math;->min(II)I
 
-    .line 3853
-    iget-object v3, p0, Landroid/widget/Editor$SelectionEndHandleView;->this$0:Landroid/widget/Editor;
+    move-result v0
 
-    # getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
-    invoke-static {v3}, Landroid/widget/Editor;->access$700(Landroid/widget/Editor;)Landroid/widget/TextView;
+    invoke-direct/range {p0 .. p0}, Landroid/widget/Editor$SelectionEndHandleView;->flymeGetSelectionEnd()I
 
-    move-result-object v3
+    move-result v0
 
-    invoke-virtual {v3}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v3
-
-    invoke-interface {v3, v1, v2}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
-
-    move-result-object v3
-
-    invoke-static {v3}, Landroid/text/TextUtils;->getNextTransition(Ljava/lang/CharSequence;)I
-
-    move-result v3
-
-    add-int v0, v1, v3
-
-    .line 3858
+    .line 3740
     :cond_0
-    :goto_0
-    invoke-static {v0, v2}, Ljava/lang/Math;->min(II)I
+    const/4 v2, 0x0
 
-    move-result v3
+    invoke-virtual {p0, v0, v2}, Landroid/widget/Editor$SelectionEndHandleView;->positionAtCursorOffset(IZ)V
 
-    const/4 v4, 0x0
-
-    invoke-virtual {p0, v3, v4}, Landroid/widget/Editor$SelectionEndHandleView;->positionAtCursorOffset(IZ)V
-
-    .line 3859
+    .line 3741
     return-void
-
-    .line 3855
-    :cond_1
-    add-int/lit8 v0, v1, 0x1
-
-    goto :goto_0
 .end method
 
 .method public updateSelection(I)V

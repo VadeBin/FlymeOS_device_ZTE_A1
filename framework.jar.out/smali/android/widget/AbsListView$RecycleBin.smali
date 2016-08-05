@@ -808,6 +808,8 @@
 
     .line 7060
     :cond_2
+    invoke-direct/range {p0 .. p1}, Landroid/widget/AbsListView$RecycleBin;->flymeProcessScrapView(Landroid/view/View;)V
+
     invoke-virtual {p0, v3}, Landroid/widget/AbsListView$RecycleBin;->shouldRecycleViewType(I)Z
 
     move-result v4

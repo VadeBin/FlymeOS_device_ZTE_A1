@@ -23,6 +23,8 @@
 
 .field mColor:I
 
+.field mFlymeShowBottomDivider:Z
+
 .field private mDialog:Landroid/app/Dialog;
 
 .field private mListView:Landroid/widget/ListView;
@@ -50,6 +52,8 @@
     invoke-direct {v0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Landroid/preference/PreferenceScreen;->mBackground:Landroid/widget/LinearLayout;
+
+    invoke-static/range {p0 .. p0}, Landroid/preference/PreferenceScreen$FlymeInjector;->initFlymeExtraFields(Landroid/preference/PreferenceScreen;)V
 
     return-void
 .end method

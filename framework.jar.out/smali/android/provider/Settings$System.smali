@@ -15,6 +15,7 @@
 
 
 # static fields
+.field public static final BUTTON_BACKLIGHT:Ljava/lang/String; = "button_backlight"
 .field public static final ACCELEROMETER_ROTATION:Ljava/lang/String; = "accelerometer_rotation"
 
 .field public static final ACCELEROMETER_ROTATION_RESTORE:Ljava/lang/String; = "accelerometer_rotation_restore"

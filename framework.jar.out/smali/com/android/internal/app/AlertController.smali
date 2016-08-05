@@ -231,6 +231,8 @@
 
     invoke-direct {p0}, Lcom/android/internal/app/AlertController;->setBottomOnZteTheme()V
 
+    invoke-static/range {p0 .. p3}, Lcom/android/internal/app/AlertController$FlymeInjector;->initFlymeExtFields(Lcom/android/internal/app/AlertController;Landroid/content/Context;Landroid/content/DialogInterface;Landroid/view/Window;)V
+
     return-void
 .end method
 

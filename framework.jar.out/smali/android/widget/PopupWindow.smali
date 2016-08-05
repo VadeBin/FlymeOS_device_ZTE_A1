@@ -970,7 +970,7 @@
 .end method
 
 .method private findDropDownPosition(Landroid/view/View;Landroid/view/WindowManager$LayoutParams;III)Z
-    .locals 23
+    .locals 27
     .param p1, "anchor"    # Landroid/view/View;
     .param p2, "p"    # Landroid/view/WindowManager$LayoutParams;
     .param p3, "xoff"    # I
@@ -1459,21 +1459,21 @@
     .line 1304
     :cond_5
     :goto_1
-    move-object/from16 v14, p0
+    move-object/from16 v20, p0
 
-    move-object/from16 v15, p1
+    move-object/from16 v21, p1
 
-    move-object/from16 v16, p2
+    move-object/from16 v22, p2
 
-    move/from16 v17, p3
+    move/from16 v23, p3
 
-    move/from16 v18, p4
+    move/from16 v24, p4
 
-    move-object/from16 v19, v3
+    move-object/from16 v25, v6
 
-    move/from16 v20, v6
+    move/from16 v26, v11
 
-    invoke-direct/range {v14 .. v20}, Landroid/widget/PopupWindow;->meansureFlymePopupPosition(Landroid/view/View;Landroid/view/WindowManager$LayoutParams;IILandroid/graphics/Rect;Z)Landroid/view/WindowManager$LayoutParams;
+    invoke-direct/range {v20 .. v26}, Landroid/widget/PopupWindow;->meansureFlymePopupPosition(Landroid/view/View;Landroid/view/WindowManager$LayoutParams;IILandroid/graphics/Rect;Z)Landroid/view/WindowManager$LayoutParams;
 
     move-result-object p2
 
@@ -3019,6 +3019,10 @@
     .line 1421
     .end local v6    # "res":Landroid/content/res/Resources;
     :cond_1
+    invoke-virtual {p0, v1}, Landroid/widget/PopupWindow;->computePopwindowPositionForMz(I)I
+
+    move-result v1
+
     const/4 v8, 0x1
 
     aget v8, v0, v8
