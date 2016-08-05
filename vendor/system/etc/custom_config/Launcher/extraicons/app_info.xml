@@ -1,0 +1,2983 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<apkInfos>
+    
+    <apkInfo
+        id="com.zte.smartpower_com.zte.smartpower.SmartPowerActivity"
+        name="com.zte.smartpower.SmartPowerActivity"
+        filename="icon/com_zte_smartpower_com_zte_smartpower_SmartPowerActivity.png"
+        isMultiLauncher="1"
+        label="SmartPower"
+        labelCn="省电管家"
+        package="com.zte.smartpower" />
+	<apkInfo
+        id="cn.wps.moffice_eng_cn.wps.moffice.documentmanager.PreStartActivity"
+        name="cn.wps.moffice.documentmanager.PreStartActivity"
+        filename="icon/cn_wps_moffice_eng_cn_wps_moffice_documentmanager_PreStartActivity.png"
+        isMultiLauncher="1"
+        label="WPS Office"
+        labelCn="WPS Office"
+        package="cn.wps.moffice_eng" />
+	<apkInfo
+        id="com.zte.uninstallapp_com.zte.uninstallapp.UnInstallApp"
+        name="com.zte.uninstallapp.UnInstallApp"
+        filename="icon/com_zte_uninstallapp_com_zte_uninstallapp_UnInstallApp.png"
+        isMultiLauncher="1"
+        label="Uninstall App"
+        labelCn="一键卸载"
+        package="com.zte.uninstallapp" />
+	<apkInfo
+        id="com.android.utk_com.android.utk.UtkLauncherActivity"
+        name="com.android.utk.UtkLauncherActivity"
+        filename="icon/com_android_utk_com_android_utk_UtkLauncherActivity.png"
+        isMultiLauncher="1"
+        label="UIM Card"
+        labelCn="UIM卡应用"
+        package="com.android.utk" />
+	<apkInfo
+        id="com.mediatek.fmradio_com.mediatek.fmradio.FmRadioActivity"
+        name="com.mediatek.fmradio.FmRadioActivity"
+        filename="icon/com_mediatek_fmradio_com_mediatek_fmradio_FmRadioActivity.png"
+        isMultiLauncher="1"
+        label="FM Radio"
+        labelCn="收音机"
+        package="com.mediatek.fmradio" />
+	<apkInfo
+        id="com.soco.veggiesseason_rouIN_com.soco.gxb.Main"
+        name="com.soco.gxb.Main"
+        filename="icon/com_soco_veggies2rich_yusuIN_com_soco_veggies2rich_yusuIN_Main.png"
+        isMultiLauncher="1"
+        label="veggies rich"
+        labelCn="燃烧的蔬菜"
+        package="com.soco.veggiesseason_rouIN" />
+	<apkInfo
+        id="com.zte.mirrorcamera_com.zte.mirrorcamera.MirrorCameraActivity"
+        name="com.zte.mirrorcamera.MirrorCameraActivity"
+        filename="icon/com_zte_mirrorcamera_com_zte_mirrorcamera_MirrorCameraActivity.png"
+        isMultiLauncher="1"
+        label="Mirror"
+        labelCn="化妆镜"
+        package="com.zte.mirrorcamera" />
+		
+	<apkInfo
+        id="cn.cj.pe_com.mail139.about.LaunchActivity"
+        name="com.mail139.about.LaunchActivity"
+        filename="icon/cn_cj_pe_com_mail139_about_LaunchActivity.png"
+        isMultiLauncher="1"
+        label="139邮箱"
+        labelCn="139邮箱"
+        package="cn.cj.pe" />
+
+    <apkInfo
+        id="com.corp21cn.mail189_com.corp21cn.mailapp.activity.ClientIntroducePage"
+        name="com.corp21cn.mailapp.activity.ClientIntroducePage"
+        filename="icon/com_corp21cn_mail189_com_corp21cn_mailapp_activity_ClientIntroducePage.png"
+        isMultiLauncher="1"
+        label="189邮箱"
+        labelCn="189邮箱"
+        package="com.corp21cn.mail189" />
+
+    <apkInfo
+        id="com.tencent.androidqqmail_com.tencent.qqmail.LaucherActivity"
+        name="com.tencent.qqmail.LaucherActivity"
+        filename="icon/com_tencent_androidqqmail_com_tencent_qqmail_LaucherActivity.png"
+        isMultiLauncher="1"
+        label="QQ邮箱"
+        labelCn="QQ邮箱"
+        package="com.tencent.androidqqmail" />
+
+    <apkInfo
+        id="com.intsig.BizCardReader_com.intsig.camcard.BcrFirstLaunchGuide"
+        name="com.intsig.camcard.BcrFirstLaunchGuide"
+        filename="icon/com_intsig_BizCardReader_com_intsig_camcard_BcrFirstLaunchGuide.png"
+        isMultiLauncher="1"
+        label="CamCard"
+        labelCn="名片全能王"
+        package="com.intsig.BizCardReader" />
+
+    <apkInfo
+        id="com.youdao.note_com.youdao.note.activity2.SplashActivity"
+        name="com.youdao.note.activity2.SplashActivity"
+        filename="icon/com_youdao_note_com_youdao_note_activity2_SplashActivity.png"
+        isMultiLauncher="1"
+        label="有道云笔记"
+        labelCn="有道云笔记"
+        package="com.youdao.note" />
+
+    <apkInfo
+        id="com.baidu.baidutranslate_com.baidu.baidutranslate.activity.SplashActivity"
+        name="com.baidu.baidutranslate.activity.SplashActivity"
+        filename="icon/com_baidu_baidutranslate_com_baidu_baidutranslate_activity_SplashActivity.png"
+        isMultiLauncher="1"
+        label="百度翻译"
+        labelCn="百度翻译"
+        package="com.baidu.baidutranslate" />
+
+    <apkInfo
+        id="com.youdao.dict_com.youdao.dict.activity.DictSplashActivity"
+        name="com.youdao.dict.activity.DictSplashActivity"
+        filename="icon/com_youdao_dict_com_youdao_dict_activity_DictSplashActivity.png"
+        isMultiLauncher="1"
+        label="网易有道词典"
+        labelCn="网易有道词典"
+        package="com.youdao.dict" />
+
+    <apkInfo
+        id="com.netease.mobimail_com.netease.mobimail.activity.LaunchActivity"
+        name="com.netease.mobimail.activity.LaunchActivity"
+        filename="icon/com_netease_mobimail_com_netease_mobimail_activity_LaunchActivity.png"
+        isMultiLauncher="1"
+        label="网易邮箱"
+        labelCn="网易邮箱"
+        package="com.netease.mobimail" />
+
+    <apkInfo
+        id="com.kingsoft_com.kingsoft.StartActivity"
+        name="com.kingsoft.StartActivity"
+        filename="icon/com_kingsoft_com_kingsoft_StartActivity.png"
+        isMultiLauncher="1"
+        label="金山词霸"
+        labelCn="金山词霸"
+        package="com.kingsoft" />
+
+    <apkInfo
+        id="com.lbe.security_com.lbe.security.ui.SplashActivity"
+        name="com.lbe.security.ui.SplashActivity"
+        filename="icon/com_lbe_security_com_lbe_security_ui_SplashActivity.png"
+        isMultiLauncher="1"
+        label="LBE安全大师"
+        labelCn="LBE安全大师"
+        package="com.lbe.security" />
+
+    <apkInfo
+        id="com.tencent.token_com.tencent.token.ui.LogoActivity"
+        name="com.tencent.token.ui.LogoActivity"
+        filename="icon/com_tencent_token_com_tencent_token_ui_LogoActivity.png"
+        isMultiLauncher="1"
+        label="QQ安全中心"
+        labelCn="QQ安全中心"
+        package="com.tencent.token" />
+
+    <apkInfo
+        id="com.lenovo.safecenter_com.lenovo.safecenter.MainTab.SplashActivity"
+        name="com.lenovo.safecenter.MainTab.SplashActivity"
+        filename="icon/com_lenovo_safecenter_com_lenovo_safecenter_MainTab_SplashActivity.png"
+        isMultiLauncher="1"
+        label="乐安全"
+        labelCn="乐安全"
+        package="com.lenovo.safecenter" />
+
+    <apkInfo
+        id="cn.com.chinatelecom.account_cn.com.chinatelecom.account.ui.SplashActivity"
+        name="cn.com.chinatelecom.account.ui.SplashActivity"
+        filename="icon/cn_com_chinatelecom_account_cn_com_chinatelecom_account_ui_SplashActivity.png"
+        isMultiLauncher="1"
+        label="天翼用户中心"
+        labelCn="天翼用户中心"
+        package="cn.com.chinatelecom.account" />
+
+    <apkInfo
+        id="com.anguanjia.safe_com.anguanjia.safe.main.rebuild.MainActivity"
+        name="com.anguanjia.safe.main.rebuild.MainActivity"
+        filename="icon/com_anguanjia_safe_com_anguanjia_safe_main_rebuild_MainActivity.png"
+        isMultiLauncher="1"
+        label="安全管家"
+        labelCn="安全管家"
+        package="com.anguanjia.safe" />
+
+    <apkInfo
+        id="com.tencent.qqpimsecure_com.tencent.server.fore.QuickLoadActivity"
+        name="com.tencent.server.fore.QuickLoadActivity"
+        filename="icon/com_tencent_qqpimsecure_com_tencent_server_fore_QuickLoadActivity.png"
+        isMultiLauncher="1"
+        label="手机管家"
+        labelCn="手机管家"
+        package="com.tencent.qqpimsecure" />
+
+    <apkInfo
+        id="com.mobileann.MobileAnn_mobileann.safeguard.speedup.MSSplashPic"
+        name="mobileann.safeguard.speedup.MSSplashPic"
+        filename="icon/com_mobileann_MobileAnn_mobileann_safeguard_speedup_MSSplashPic.png"
+        isMultiLauncher="1"
+        label="摩安卫士"
+        labelCn="摩安卫士"
+        package="com.mobileann.MobileAnn" />
+
+    <apkInfo
+        id="cn.opda.a.phonoalbumshoushou_cn.com.opda.android.mainui.MainActivity"
+        name="cn.com.opda.android.mainui.MainActivity"
+        filename="icon/cn_opda_a_phonoalbumshoushou_cn_com_opda_android_mainui_MainActivity.png"
+        isMultiLauncher="1"
+        label="百度手机卫士"
+        labelCn="百度手机卫士"
+        package="cn.opda.a.phonoalbumshoushou" />
+
+    <apkInfo
+        id="com.netease.mkey_com.netease.mkey.ui.SplashActivity"
+        name="com.netease.mkey.ui.SplashActivity"
+        filename="icon/com_netease_mkey_com_netease_mkey_ui_SplashActivity.png"
+        isMultiLauncher="1"
+        label="网易将军令"
+        labelCn="网易将军令"
+        package="com.netease.mkey" />
+
+    <apkInfo
+        id="com.ijinshan.mguard_com.keniu.security.main.SplashActivity"
+        name="com.keniu.security.main.SplashActivity"
+        filename="icon/com_ijinshan_mguard_com_keniu_security_main_SplashActivity.png"
+        isMultiLauncher="1"
+        label="金山手机卫士"
+        labelCn="金山手机卫士"
+        package="com.ijinshan.mguard" />
+
+    <apkInfo
+        id="com.ijinshan.duba_com.ijinshan.duba.main.SplashActivity"
+        name="com.ijinshan.duba.main.SplashActivity"
+        filename="icon/com_ijinshan_duba_com_ijinshan_duba_main_SplashActivity.png"
+        isMultiLauncher="1"
+        label="金山手机毒霸"
+        labelCn="金山手机毒霸"
+        package="com.ijinshan.duba" />
+
+    <apkInfo
+        id="com.autonavi.cmccmap_com.autonavi.minimap.Splashy"
+        name="com.autonavi.minimap.Splashy"
+        filename="icon/com_autonavi_cmccmap_com_autonavi_minimap_Splashy.png"
+        isMultiLauncher="1"
+        label="和地图"
+        labelCn="和地图"
+        package="com.autonavi.cmccmap" />
+
+    <apkInfo
+        id="com.mapbar.android.mapbarmap_com.mapbar.android.mapbarmap.MapViewActivity"
+        name="com.mapbar.android.mapbarmap.MapViewActivity"
+        filename="icon/com_mapbar_android_mapbarmap_com_mapbar_android_mapbarmap_MapViewActivity.png"
+        isMultiLauncher="1"
+        label=" 图吧导航"
+        labelCn=" 图吧导航"
+        package="com.mapbar.android.mapbarmap" />
+
+    <apkInfo
+        id="cn.com.tiros.android.navidog_cn.com.tiros.android.navidog.map.MapActivity"
+        name="cn.com.tiros.android.navidog.map.MapActivity"
+        filename="icon/cn_com_tiros_android_navidog_cn_com_tiros_android_navidog_map_MapActivity.png"
+        isMultiLauncher="1"
+        label="导航犬"
+        labelCn="导航犬"
+        package="cn.com.tiros.android.navidog" />
+
+    <apkInfo
+        id="com.sogou.map.android.maps_com.sogou.map.android.maps.SplashActivity"
+        name="com.sogou.map.android.maps.SplashActivity"
+        filename="icon/com_sogou_map_android_maps_com_sogou_map_android_maps_SplashActivity.png"
+        isMultiLauncher="1"
+        label="搜狗地图"
+        labelCn="搜狗地图"
+        package="com.sogou.map.android.maps" />
+
+    <apkInfo
+        id="com.baidu.BaiduMap_com.baidu.baidumaps.WelcomeScreen"
+        name="com.baidu.baidumaps.WelcomeScreen"
+        filename="icon/com_baidu_BaiduMap_com_baidu_baidumaps_WelcomeScreen.png"
+        isMultiLauncher="0"
+        label="百度地图"
+        labelCn="百度地图"
+        package="com.baidu.BaiduMap" />
+
+    <apkInfo
+        id="com.baidu.navi_com.baidu.navi.NaviActivity"
+        name="com.baidu.navi.NaviActivity"
+        filename="icon/com_baidu_navi_com_baidu_navi_NaviActivity.png"
+        isMultiLauncher="1"
+        label="百度导航"
+        labelCn="百度导航"
+        package="com.baidu.navi" />
+
+    <apkInfo
+        id="com.tencent.map_com.tencent.map.WelcomeActivity"
+        name="com.tencent.map.WelcomeActivity"
+        filename="icon/com_tencent_map_com_tencent_map_WelcomeActivity.png"
+        isMultiLauncher="1"
+        label="腾讯地图"
+        labelCn="腾讯地图"
+        package="com.tencent.map" />
+
+    <apkInfo
+        id="com.autonavi.minimap_com.autonavi.map.activity.SplashActivity"
+        name="com.autonavi.map.activity.SplashActivity"
+        filename="icon/com_autonavi_minimap_com_autonavi_map_activity_SplashActivity.png"
+        isMultiLauncher="1"
+        label=" 高德地图 "
+        labelCn=" 高德地图 "
+        package="com.autonavi.minimap" />
+
+    <apkInfo
+        id="com.jingdong.app.mall_com.jingdong.app.mall.MainActivity"
+        name="com.jingdong.app.mall.MainActivity"
+        filename="icon/com_jingdong_app_mall_com_jingdong_app_mall_MainActivity.png"
+        isMultiLauncher="1"
+        label="京东"
+        labelCn="京东"
+        package="com.jingdong.app.mall" />
+
+    <apkInfo
+        id="com.xiudang.jiukuaiyou.ui_com.juanpi.ui.JPWelcomeActivity"
+        name="com.juanpi.ui.JPWelcomeActivity"
+        filename="icon/com_xiudang_jiukuaiyou_ui_com_juanpi_ui_JPWelcomeActivity.png"
+        isMultiLauncher="1"
+        label="卷皮"
+        labelCn="卷皮"
+        package="com.xiudang.jiukuaiyou.ui" />
+
+    <apkInfo
+        id="com.achievo.vipshop_com.achievo.vipshop.activity.LodingActivity"
+        name="com.achievo.vipshop.activity.LodingActivity"
+        filename="icon/com_achievo_vipshop_com_achievo_vipshop_activity_LodingActivity.png"
+        isMultiLauncher="1"
+        label="唯品会"
+        labelCn="唯品会"
+        package="com.achievo.vipshop" />
+
+    <apkInfo
+        id="com.xiaomi.shop_com.xiaomi.shop2.activity.MainTabActivity"
+        name="com.xiaomi.shop2.activity.MainTabActivity"
+        filename="icon/com_xiaomi_shop_com_xiaomi_shop2_activity_MainTabActivity.png"
+        isMultiLauncher="1"
+        label="小米商城"
+        labelCn="小米商城"
+        package="com.xiaomi.shop" />
+
+    <apkInfo
+        id="com.koudai.weishop_com.koudai.weishop.activity.SplashScreenActivity"
+        name="com.koudai.weishop.activity.SplashScreenActivity"
+        filename="icon/com_koudai_weishop_com_koudai_weishop_activity_SplashScreenActivity.png"
+        isMultiLauncher="1"
+        label="微店"
+        labelCn="微店"
+        package="com.koudai.weishop" />
+
+    <apkInfo
+        id="com.taobao.taobao_com.taobao.tao.welcome.Welcome"
+        name="com.taobao.tao.welcome.Welcome"
+        filename="icon/com_taobao_taobao_com_taobao_tao_welcome_Welcome.png"
+        isMultiLauncher="1"
+        label="手机淘宝"
+        labelCn="手机淘宝"
+        package="com.taobao.taobao" />
+
+    <apkInfo
+        id="com.tuan800.tao800_com.tuan800.tao800.activities.SplashActivity"
+        name="com.tuan800.tao800.activities.SplashActivity"
+        filename="icon/com_tuan800_tao800_com_tuan800_tao800_activities_SplashActivity.png"
+        isMultiLauncher="1"
+        label="折800"
+        labelCn="折800"
+        package="com.tuan800.tao800" />
+
+    <apkInfo
+        id="com.eg.android.AlipayGphone_com.eg.android.AlipayGphone.AlipayLogin"
+        name="com.eg.android.AlipayGphone.AlipayLogin"
+        filename="icon/com_eg_android_AlipayGphone_com_eg_android_AlipayGphone_AlipayLogin.png"
+        isMultiLauncher="1"
+        label="支付宝"
+        labelCn="支付宝"
+        package="com.eg.android.AlipayGphone" />
+
+    <apkInfo
+        id="com.culiu.qqpurchase_com.culiu.purchase.welcome.WelcomeActivity"
+        name="com.culiu.purchase.welcome.WelcomeActivity"
+        filename="icon/com_culiu_qqpurchase_com_culiu_purchase_welcome_WelcomeActivity.png"
+        isMultiLauncher="1"
+        label="楚楚街-9块9包邮购"
+        labelCn="楚楚街-9块9包邮购"
+        package="com.culiu.qqpurchase" />
+
+    <apkInfo
+        id="cn.j.guang_cn.j.guang.ui.activity.StartActivity"
+        name="cn.j.guang.ui.activity.StartActivity"
+        filename="icon/cn_j_guang_cn_j_guang_ui_activity_StartActivity.png"
+        isMultiLauncher="1"
+        label="每日新款"
+        labelCn="每日新款"
+        package="cn.j.guang" />
+
+    <apkInfo
+        id="com.nuomi_com.baidu.bainuo.splash.SplashActivity"
+        name="com.baidu.bainuo.splash.SplashActivity"
+        filename="icon/com_nuomi_com_baidu_bainuo_splash_SplashActivity.png"
+        isMultiLauncher="1"
+        label="百度糯米"
+        labelCn="百度糯米"
+        package="com.nuomi" />
+
+    <apkInfo
+        id="com.meilishuo_com.meilishuo.app.activity.WelcomeActivity"
+        name="com.meilishuo.app.activity.WelcomeActivity"
+        filename="icon/com_meilishuo_com_meilishuo_app_activity_WelcomeActivity.png"
+        isMultiLauncher="1"
+        label="美丽说"
+        labelCn="美丽说"
+        package="com.meilishuo" />
+
+    <apkInfo
+        id="com.chinatelecom.bestpayclient_com.chinatelecom.bestpayclient.BufferActivity"
+        name="com.chinatelecom.bestpayclient.BufferActivity"
+        filename="icon/com_chinatelecom_bestpayclient_com_chinatelecom_bestpayclient_BufferActivity.png"
+        isMultiLauncher="1"
+        label="翼支付"
+        labelCn="翼支付"
+        package="com.chinatelecom.bestpayclient" />
+
+    <apkInfo
+        id="com.jm.android.jumei_com.jm.android.jumei.JuMeiProject"
+        name="com.jm.android.jumei.JuMeiProject"
+        filename="icon/com_jm_android_jumei_com_jm_android_jumei_JuMeiProject.png"
+        isMultiLauncher="1"
+        label="聚美优品-极速免税店"
+        labelCn="聚美优品-极速免税店"
+        package="com.jm.android.jumei" />
+
+    <apkInfo
+        id="com.mogujie_com.mogujie.index.MGInitAct"
+        name="com.mogujie.index.MGInitAct"
+        filename="icon/com_mogujie_com_mogujie_index_MGInitAct.png"
+        isMultiLauncher="1"
+        label="蘑菇街"
+        labelCn="蘑菇街"
+        package="com.mogujie" />
+
+    <apkInfo
+        id="com.tripadvisor.tripadvisor.daodao_com.tripadvisor.tripadvisor.daodao.TripAdvisorDaoDaoActivity"
+        name="com.tripadvisor.tripadvisor.daodao.TripAdvisorDaoDaoActivity"
+        filename="icon/com_tripadvisor_tripadvisor_daodao_com_tripadvisor_tripadvisor_daodao_TripAdvisorDaoDaoActivity.png"
+        isMultiLauncher="1"
+        label="TripAdvisor"
+        labelCn="TripAdvisor"
+        package="com.tripadvisor.tripadvisor.daodao" />
+
+    <apkInfo
+        id="com.tongcheng.android_com.tongcheng.android.LoadingActivity"
+        name="com.tongcheng.android.LoadingActivity"
+        filename="icon/com_tongcheng_android_com_tongcheng_android_LoadingActivity.png"
+        isMultiLauncher="1"
+        label="同程旅游"
+        labelCn="同程旅游"
+        package="com.tongcheng.android" />
+
+    <apkInfo
+        id="ctrip.android.view_ctrip.android.view.home.CtripSplashActivity"
+        name="ctrip.android.view.home.CtripSplashActivity"
+        filename="icon/ctrip_android_view_ctrip_android_view_home_CtripSplashActivity.png"
+        isMultiLauncher="1"
+        label="携程旅行"
+        labelCn="携程旅行"
+        package="ctrip.android.view" />
+
+    <apkInfo
+        id="com.mfw.roadbook_com.mfw.roadbook.main.StartActivity"
+        name="com.mfw.roadbook.main.StartActivity"
+        filename="icon/com_mfw_roadbook_com_mfw_roadbook_main_StartActivity.png"
+        isMultiLauncher="1"
+        label="旅游攻略"
+        labelCn="旅游攻略"
+        package="com.mfw.roadbook" />
+
+    <apkInfo
+        id="com.yipiao_com.yipiao.activity.LaunchActivity"
+        name="com.yipiao.activity.LaunchActivity"
+        filename="icon/com_yipiao_com_yipiao_activity_LaunchActivity.png"
+        isMultiLauncher="1"
+        label="智行火车票"
+        labelCn="智行火车票"
+        package="com.yipiao" />
+
+    <apkInfo
+        id="com.youpu.travel_com.youpu.travel.SplashActivity"
+        name="com.youpu.travel.SplashActivity"
+        filename="icon/com_youpu_travel_com_youpu_travel_SplashActivity.png"
+        isMultiLauncher="1"
+        label="游谱旅行"
+        labelCn="游谱旅行"
+        package="com.youpu.travel" />
+
+    <apkInfo
+        id="cn.ffcs.wisdom.city_cn.ffcs.wisdom.city.WelcomeActivity"
+        name="cn.ffcs.wisdom.city.WelcomeActivity"
+        filename="icon/cn_ffcs_wisdom_city_cn_ffcs_wisdom_city_WelcomeActivity.png"
+        isMultiLauncher="1"
+        label="爱城市"
+        labelCn="爱城市"
+        package="cn.ffcs.wisdom.city" />
+
+    <apkInfo
+        id="com.baidu.travel_com.baidu.travel.ui.SplashActivity"
+        name="com.baidu.travel.ui.SplashActivity"
+        filename="icon/com_baidu_travel_com_baidu_travel_ui_SplashActivity.png"
+        isMultiLauncher="1"
+        label="百度旅游"
+        labelCn="百度旅游"
+        package="com.baidu.travel" />
+
+    <apkInfo
+        id="com.flightmanager.view_com.flightmanager.view.Loading"
+        name="com.flightmanager.view.Loading"
+        filename="icon/com_flightmanager_view_com_flightmanager_view_Loading.png"
+        isMultiLauncher="1"
+        label="航班管家"
+        labelCn="航班管家"
+        package="com.flightmanager.view" />
+
+    <apkInfo
+        id="com.dp.android.elong_com.elong.activity.others.AppGuidActivity"
+        name="com.elong.activity.others.AppGuidActivity"
+        filename="icon/com_dp_android_elong_com_elong_activity_others_AppGuidActivity.png"
+        isMultiLauncher="1"
+        label="艺龙旅行"
+        labelCn="艺龙旅行"
+        package="com.dp.android.elong" />
+
+    <apkInfo
+        id="com.tuniu.app.ui_com.tuniu.app.ui.homepage.LaunchActivity"
+        name="com.tuniu.app.ui.homepage.LaunchActivity"
+        filename="icon/com_tuniu_app_ui_com_tuniu_app_ui_homepage_LaunchActivity.png"
+        isMultiLauncher="1"
+        label="途牛旅游"
+        labelCn="途牛旅游"
+        package="com.tuniu.app.ui" />
+
+    <apkInfo
+        id="com.tieyou.train.ark_com.tieyou.train.ark.activity.LaunchActivity"
+        name="com.tieyou.train.ark.activity.LaunchActivity"
+        filename="icon/com_tieyou_train_ark_com_tieyou_train_ark_activity_LaunchActivity.png"
+        isMultiLauncher="1"
+        label="铁友火车票-12306抢票"
+        labelCn="铁友火车票-12306抢票"
+        package="com.tieyou.train.ark" />
+
+    <apkInfo
+        id="com.gtgj.view_com.gtgj.view.LaunchActivity"
+        name="com.gtgj.view.LaunchActivity"
+        filename="icon/com_gtgj_view_com_gtgj_view_LaunchActivity.png"
+        isMultiLauncher="1"
+        label="高铁管家"
+        labelCn="高铁管家"
+        package="com.gtgj.view" />
+
+    <apkInfo
+        id="com.tencent.mobileqq_com.tencent.mobileqq.activity.SplashActivity"
+        name="com.tencent.mobileqq.activity.SplashActivity"
+        filename="icon/com_tencent_mobileqq_com_tencent_mobileqq_activity_SplashActivity.png"
+        isMultiLauncher="1"
+        label="QQ"
+        labelCn="QQ"
+        package="com.tencent.mobileqq" />
+
+    <apkInfo
+        id="com.duowan.mobile_com.yy.mobile.ui.splash.SplashActivity"
+        name="com.yy.mobile.ui.splash.SplashActivity"
+        filename="icon/com_duowan_mobile_com_yy_mobile_ui_splash_SplashActivity.png"
+        isMultiLauncher="1"
+        label="YY"
+        labelCn="YY"
+        package="com.duowan.mobile" />
+
+    <apkInfo
+        id="com.renren.mobile.android_com.renren.mobile.android.ui.WelcomeScreen"
+        name="com.renren.mobile.android.ui.WelcomeScreen"
+        filename="icon/com_renren_mobile_android_com_renren_mobile_android_ui_WelcomeScreen.png"
+        isMultiLauncher="1"
+        label="人人-潮流贴纸天天上新"
+        labelCn="人人-潮流贴纸天天上新"
+        package="com.renren.mobile.android" />
+
+    <apkInfo
+        id="com.tencent.weishi_com.tencent.weishi.launch.SplashActivity"
+        name="com.tencent.weishi.launch.SplashActivity"
+        filename="icon/com_tencent_weishi_com_tencent_weishi_launch_SplashActivity.png"
+        isMultiLauncher="1"
+        label="微视"
+        labelCn="微视"
+        package="com.tencent.weishi" />
+
+    <apkInfo
+        id="com.baidu.tieba_com.baidu.tieba.LogoActivity"
+        name="com.baidu.tieba.LogoActivity"
+        filename="icon/com_baidu_tieba_com_baidu_tieba_LogoActivity.png"
+        isMultiLauncher="1"
+        label="百度贴吧"
+        labelCn="百度贴吧"
+        package="com.baidu.tieba" />
+
+    <apkInfo
+        id="com.tencent.WBlog_com.tencent.WBlog.activity.WBlogFirstRun"
+        name="com.tencent.WBlog.activity.WBlogFirstRun"
+        filename="icon/com_tencent_WBlog_com_tencent_WBlog_activity_WBlogFirstRun.png"
+        isMultiLauncher="1"
+        label="腾讯微博"
+        labelCn="腾讯微博"
+        package="com.tencent.WBlog" />
+
+    <apkInfo
+        id="com.immomo.momo_com.immomo.momo.android.activity.WelcomeActivity"
+        name="com.immomo.momo.android.activity.WelcomeActivity"
+        filename="icon/com_immomo_momo_com_immomo_momo_android_activity_WelcomeActivity.png"
+        isMultiLauncher="1"
+        label="陌陌"
+        labelCn="陌陌"
+        package="com.immomo.momo" />
+
+    <apkInfo
+        id="com.when.coco_com.when.coco.Login"
+        name="com.when.coco.Login"
+        filename="icon/com_when_coco_com_when_coco_Login.png"
+        isMultiLauncher="1"
+        label="365日历-万年历"
+        labelCn="365日历-万年历"
+        package="com.when.coco" />
+
+    <apkInfo
+        id="com.wuba_com.wuba.activity.launch.LaunchActivity"
+        name="com.wuba.activity.launch.LaunchActivity"
+        filename="icon/com_wuba_com_wuba_activity_launch_LaunchActivity.png"
+        isMultiLauncher="1"
+        label="58同城"
+        labelCn="58同城"
+        package="com.wuba" />
+
+    <apkInfo
+        id="com.baidu.hao123_com.baidu.browser.framework.BdBrowserActivity"
+        name="com.baidu.browser.framework.BdBrowserActivity"
+        filename="icon/com_baidu_hao123_com_baidu_browser_framework_BdBrowserActivity.png"
+        isMultiLauncher="1"
+        label="上网导航"
+        labelCn="上网导航"
+        package="com.baidu.hao123" />
+
+    <apkInfo
+        id="cn.etouch.ecalendar_cn.etouch.ecalendar.ECalendar"
+        name="cn.etouch.ecalendar.ECalendar"
+        filename="icon/cn_etouch_ecalendar_cn_etouch_ecalendar_ECalendar.png"
+        isMultiLauncher="1"
+        label="中华万年历日历"
+        labelCn="中华万年历日历"
+        package="cn.etouch.ecalendar" />
+
+    <apkInfo
+        id="cn.mucang.xiaomi.android.wz_cn.mucang.xiaomi.android.wz.activity.StartActivity"
+        name="cn.mucang.xiaomi.android.wz.activity.StartActivity"
+        filename="icon/cn_mucang_xiaomi_android_wz_cn_mucang_xiaomi_android_wz_activity_StartActivity.png"
+        isMultiLauncher="1"
+        label="全国违章查询"
+        labelCn="全国违章查询"
+        package="cn.mucang.xiaomi.android.wz" />
+
+    <apkInfo
+        id="com.moji.mjweather_com.moji.mjweather.CSplashScreen"
+        name="com.moji.mjweather.CSplashScreen"
+        filename="icon/com_moji_mjweather_com_moji_mjweather_CSplashScreen.png"
+        isMultiLauncher="1"
+        label="墨迹天气"
+        labelCn="墨迹天气"
+        package="com.moji.mjweather" />
+
+    <apkInfo
+        id="sina.mobile.tianqitong_com.sina.tianqitong.ui.main.Splash"
+        name="com.sina.tianqitong.ui.main.Splash"
+        filename="icon/sina_mobile_tianqitong_com_sina_tianqitong_ui_main_Splash.png"
+        isMultiLauncher="1"
+        label="天气通"
+        labelCn="天气通"
+        package="sina.mobile.tianqitong" />
+
+    <apkInfo
+        id="com.cubic.choosecar_com.cubic.choosecar.ui.SplashActivity"
+        name="com.cubic.choosecar.ui.SplashActivity"
+        filename="icon/com_cubic_choosecar_com_cubic_choosecar_ui_SplashActivity.png"
+        isMultiLauncher="1"
+        label="汽车报价"
+        labelCn="汽车报价"
+        package="com.cubic.choosecar" />
+
+    <apkInfo
+        id="cn.eclicks.wzsearch_cn.eclicks.wzsearch.ui.StartPageActivity"
+        name="cn.eclicks.wzsearch.ui.StartPageActivity"
+        filename="icon/cn_eclicks_wzsearch_cn_eclicks_wzsearch_ui_StartPageActivity.png"
+        isMultiLauncher="1"
+        label="车轮查违章"
+        labelCn="车轮查违章"
+        package="cn.eclicks.wzsearch" />
+
+    <apkInfo
+        id="com.pplive.androidphone_com.pplive.androidphone.ui.FirstActivity"
+        name="com.pplive.androidphone.ui.FirstActivity"
+        filename="icon/com_pplive_androidphone_com_pplive_androidphone_ui_FirstActivity.png"
+        isMultiLauncher="1"
+        label="PPTV聚力"
+        labelCn="PPTV聚力"
+        package="com.pplive.androidphone" />
+
+    <apkInfo
+        id="com.letv.android.client_com.letv.android.client.activity.WelcomActivity"
+        name="com.letv.android.client.activity.WelcomActivity"
+        filename="icon/com_letv_android_client_com_letv_android_client_activity_WelcomActivity.png"
+        isMultiLauncher="1"
+        label="乐视视频"
+        labelCn="乐视视频"
+        package="com.letv.android.client" />
+
+    <apkInfo
+        id="com.youku.phone_com.youku.phone.ActivityWelcome"
+        name="com.youku.phone.ActivityWelcome"
+        filename="icon/com_youku_phone_com_youku_phone_ActivityWelcome.png"
+        isMultiLauncher="1"
+        label="优酷"
+        labelCn="优酷"
+        package="com.youku.phone" />
+
+    <apkInfo
+        id="com.tudou.android_com.tudou.ui.activity.WelcomeActivity"
+        name="com.tudou.ui.activity.WelcomeActivity"
+        filename="icon/com_tudou_android_com_tudou_ui_activity_WelcomeActivity.png"
+        isMultiLauncher="1"
+        label="土豆视频"
+        labelCn="土豆视频"
+        package="com.tudou.android" />
+
+    <apkInfo
+        id="com.sohu.sohuvideo_com.sohu.sohuvideo.FirstNavigationActivityGroup"
+        name="com.sohu.sohuvideo.FirstNavigationActivityGroup"
+        filename="icon/com_sohu_sohuvideo_com_sohu_sohuvideo_FirstNavigationActivityGroup.png"
+        isMultiLauncher="1"
+        label="搜狐视频"
+        labelCn="搜狐视频"
+        package="com.sohu.sohuvideo" />
+
+    <apkInfo
+        id="com.storm.smart_com.storm.smart.LogoActivity"
+        name="com.storm.smart.LogoActivity"
+        filename="icon/com_storm_smart_com_storm_smart_LogoActivity.png"
+        isMultiLauncher="1"
+        label="暴风影音"
+        labelCn="暴风影音"
+        package="com.storm.smart" />
+
+    <apkInfo
+        id="tv.pps.mobile_tv.pps.mobile.WelcomeActivity"
+        name="tv.pps.mobile.WelcomeActivity"
+        filename="icon/tv_pps_mobile_tv_pps_mobile_WelcomeActivity.png"
+        isMultiLauncher="1"
+        label="爱奇艺PPS"
+        labelCn="爱奇艺PPS"
+        package="tv.pps.mobile" />
+
+    <apkInfo
+        id="com.qiyi.video_com.qiyi.video.WelcomeActivity"
+        name="com.qiyi.video.WelcomeActivity"
+        filename="icon/com_qiyi_video_com_qiyi_video_WelcomeActivity.png"
+        isMultiLauncher="1"
+        label="爱奇艺视频"
+        labelCn="爱奇艺视频"
+        package="com.qiyi.video" />
+
+    <apkInfo
+        id="com.baidu.video_com.baidu.video.ui.WelcomActivity"
+        name="com.baidu.video.ui.WelcomActivity"
+        filename="icon/com_baidu_video_com_baidu_video_ui_WelcomActivity.png"
+        isMultiLauncher="1"
+        label="百度视频"
+        labelCn="百度视频"
+        package="com.baidu.video" />
+
+    <apkInfo
+        id="com.tencent.qqlive_com.tencent.qqlive.ona.activity.WelcomeActivity"
+        name="com.tencent.qqlive.ona.activity.WelcomeActivity"
+        filename="icon/com_tencent_qqlive_com_tencent_qqlive_ona_activity_WelcomeActivity.png"
+        isMultiLauncher="1"
+        label="腾讯视频"
+        labelCn="腾讯视频"
+        package="com.tencent.qqlive" />
+
+    <apkInfo
+        id="com.hunantv.imgo.activity_com.hunantv.imgo.activity.MainActivity"
+        name="com.hunantv.imgo.activity.MainActivity"
+        filename="icon/com_hunantv_imgo_activity_com_hunantv_imgo_activity_MainActivity.png"
+        isMultiLauncher="1"
+        label="芒果TV"
+        labelCn="芒果TV"
+        package="com.hunantv.imgo.activity" />
+
+    <apkInfo
+        id="air.fyzb3_com.fyzb.activity.FyzbWelcomActivity"
+        name="com.fyzb.activity.FyzbWelcomActivity"
+        filename="icon/air_fyzb3_com_fyzb_activity_FyzbWelcomActivity.png"
+        isMultiLauncher="1"
+        label="风云直播"
+        labelCn="风云直播"
+        package="air.fyzb3" />
+
+    <apkInfo
+        id="com.myzaker.ZAKER_Phone_com.myzaker.ZAKER_Phone.view.LogoActivity"
+        name="com.myzaker.ZAKER_Phone.view.LogoActivity"
+        filename="icon/com_myzaker_ZAKER_Phone_com_myzaker_ZAKER_Phone_view_LogoActivity.png"
+        isMultiLauncher="1"
+        label="ZAKER"
+        labelCn="ZAKER"
+        package="com.myzaker.ZAKER_Phone" />
+
+    <apkInfo
+        id="com.hipu.yidian_com.hipu.yidian.ui.guide.UserGuideActivity"
+        name="com.hipu.yidian.ui.guide.UserGuideActivity"
+        filename="icon/com_hipu_yidian_com_hipu_yidian_ui_guide_UserGuideActivity.png"
+        isMultiLauncher="1"
+        label="一点资讯"
+        labelCn="一点资讯"
+        package="com.hipu.yidian" />
+
+    <apkInfo
+        id="com.ss.android.article.news_com.ss.android.article.news.activity.SplashActivity"
+        name="com.ss.android.article.news.activity.SplashActivity"
+        filename="icon/com_ss_android_article_news_com_ss_android_article_news_activity_SplashActivity.png"
+        isMultiLauncher="1"
+        label="今日头条"
+        labelCn="今日头条"
+        package="com.ss.android.article.news" />
+
+    <apkInfo
+        id="com.ifeng.news2_com.ifeng.news2.activity.SplashActivity"
+        name="com.ifeng.news2.activity.SplashActivity"
+        filename="icon/com_ifeng_news2_com_ifeng_news2_activity_SplashActivity.png"
+        isMultiLauncher="1"
+        label="凤凰新闻"
+        labelCn="凤凰新闻"
+        package="com.ifeng.news2" />
+
+    <apkInfo
+        id="com.sohu.newsclient_com.sohu.newsclient.app.SplashActivity"
+        name="com.sohu.newsclient.app.SplashActivity"
+        filename="icon/com_sohu_newsclient_com_sohu_newsclient_app_SplashActivity.png"
+        isMultiLauncher="1"
+        label="搜狐新闻"
+        labelCn="搜狐新闻"
+        package="com.sohu.newsclient" />
+
+    <apkInfo
+        id="com.sina.news_com.sina.news.ui.PowerOnScreen"
+        name="com.sina.news.ui.PowerOnScreen"
+        filename="icon/com_sina_news_com_sina_news_ui_PowerOnScreen.png"
+        isMultiLauncher="1"
+        label="新浪新闻"
+        labelCn="新浪新闻"
+        package="com.sina.news" />
+
+    <apkInfo
+        id="viva.reader_viva.reader.activity.GuidanceExActivity"
+        name="viva.reader.activity.GuidanceExActivity"
+        filename="icon/viva_reader_viva_reader_activity_GuidanceExActivity.png"
+        isMultiLauncher="1"
+        label="畅读"
+        labelCn="畅读"
+        package="viva.reader" />
+
+    <apkInfo
+        id="com.baidu.news_com.baidu.news.ui.IndexActivity"
+        name="com.baidu.news.ui.IndexActivity"
+        filename="icon/com_baidu_news_com_baidu_news_ui_IndexActivity.png"
+        isMultiLauncher="1"
+        label="百度新闻"
+        labelCn="百度新闻"
+        package="com.baidu.news" />
+
+    <apkInfo
+        id="com.tencent.news_com.tencent.news.activity.SplashActivity"
+        name="com.tencent.news.activity.SplashActivity"
+        filename="icon/com_tencent_news_com_tencent_news_activity_SplashActivity.png"
+        isMultiLauncher="1"
+        label="腾讯新闻"
+        labelCn="腾讯新闻"
+        package="com.tencent.news" />
+
+    <apkInfo
+        id="cmccwm.mobilemusic_cmccwm.mobilemusic.ui.activity.PreSplashActivityMigu"
+        name="cmccwm.mobilemusic.ui.activity.PreSplashActivityMigu"
+        filename="icon/cmccwm_mobilemusic_cmccwm_mobilemusic_ui_activity_PreSplashActivityMigu.png"
+        isMultiLauncher="1"
+        label="咪咕音乐"
+        labelCn="咪咕音乐"
+        package="cmccwm.mobilemusic" />
+
+    <apkInfo
+        id="com.changba_com.changba.activity.Welcome"
+        name="com.changba.activity.Welcome"
+        filename="icon/com_changba_com_changba_activity_Welcome.png"
+        isMultiLauncher="1"
+        label="唱吧"
+        labelCn="唱吧"
+        package="com.changba" />
+
+    <apkInfo
+        id="com.ximalaya.ting.android_com.ximalaya.ting.android.activity.login.WelcomeActivity"
+        name="com.ximalaya.ting.android.activity.login.WelcomeActivity"
+        filename="icon/com_ximalaya_ting_android_com_ximalaya_ting_android_activity_login_WelcomeActivity.png"
+        isMultiLauncher="1"
+        label="喜马拉雅FM"
+        labelCn="喜马拉雅FM"
+        package="com.ximalaya.ting.android" />
+
+    <apkInfo
+        id="com.duomi.android_com.duomi.android.DMLauncher"
+        name="com.duomi.android.DMLauncher"
+        filename="icon/com_duomi_android_com_duomi_android_DMLauncher.png"
+        isMultiLauncher="1"
+        label="多米音乐"
+        labelCn="多米音乐"
+        package="com.duomi.android" />
+
+    <apkInfo
+        id="com.sds.android.ttpod_com.sds.android.ttpod.EntryActivity"
+        name="com.sds.android.ttpod.EntryActivity"
+        filename="icon/com_sds_android_ttpod_com_sds_android_ttpod_EntryActivity.png"
+        isMultiLauncher="1"
+        label="TTPod"
+        labelCn="天天动听"
+        package="com.sds.android.ttpod" />
+
+    <apkInfo
+        id="com.ting.mp3.android_com.baidu.music.ui.splash.SplashActivity"
+        name="com.baidu.music.ui.splash.SplashActivity"
+        filename="icon/com_ting_mp3_android_com_baidu_music_ui_splash_SplashActivity.png"
+        isMultiLauncher="1"
+        label="百度音乐"
+        labelCn="百度音乐"
+        package="com.ting.mp3.android" />
+
+    <apkInfo
+        id="com.netease.cloudmusic_com.netease.cloudmusic.activity.LoadingActivity"
+        name="com.netease.cloudmusic.activity.LoadingActivity"
+        filename="icon/com_netease_cloudmusic_com_netease_cloudmusic_activity_LoadingActivity.png"
+        isMultiLauncher="1"
+        label="网易云音乐"
+        labelCn="网易云音乐"
+        package="com.netease.cloudmusic" />
+
+    <apkInfo
+        id="fm.xiami.main_fm.xiami.main.SplashActivity"
+        name="fm.xiami.main.SplashActivity"
+        filename="icon/fm_xiami_main_fm_xiami_main_SplashActivity.png"
+        isMultiLauncher="1"
+        label="虾米音乐"
+        labelCn="虾米音乐"
+        package="fm.xiami.main" />
+
+    <apkInfo
+        id="fm.qingting.qtradio_fm.qingting.qtradio.QTRadioActivity"
+        name="fm.qingting.qtradio.QTRadioActivity"
+        filename="icon/fm_qingting_qtradio_fm_qingting_qtradio_QTRadioActivity.png"
+        isMultiLauncher="1"
+        label="蜻蜓FM"
+        labelCn="蜻蜓FM"
+        package="fm.qingting.qtradio" />
+
+    <apkInfo
+        id="cn.kuwo.player_cn.kuwo.player.activities.EntryActivity"
+        name="cn.kuwo.player.activities.EntryActivity"
+        filename="icon/cn_kuwo_player_cn_kuwo_player_activities_EntryActivity.png"
+        isMultiLauncher="1"
+        label="酷我音乐"
+        labelCn="酷我音乐"
+        package="cn.kuwo.player" />
+
+    <apkInfo
+        id="com.kugou.android_com.kugou.android.app.splash.SplashActivity"
+        name="com.kugou.android.app.splash.SplashActivity"
+        filename="icon/com_kugou_android_com_kugou_android_app_splash_SplashActivity.png"
+        isMultiLauncher="1"
+        label="酷狗音乐"
+        labelCn="酷狗音乐"
+        package="com.kugou.android" />
+
+    <apkInfo
+        id="com.iflytek.ringdiyclient_com.iflytek.ui.SplashActivity"
+        name="com.iflytek.ui.SplashActivity"
+        filename="icon/com_iflytek_ringdiyclient_com_iflytek_ui_SplashActivity.png"
+        isMultiLauncher="1"
+        label="酷音铃声"
+        labelCn="酷音铃声"
+        package="com.iflytek.ringdiyclient" />
+
+    <apkInfo
+        id="com.shoujiduoduo.ringtone_com.shoujiduoduo.ringtone.activity.WelcomeActivity"
+        name="com.shoujiduoduo.ringtone.activity.WelcomeActivity"
+        filename="icon/com_shoujiduoduo_ringtone_com_shoujiduoduo_ringtone_activity_WelcomeActivity.png"
+        isMultiLauncher="1"
+        label="铃声多多"
+        labelCn="铃声多多"
+        package="com.shoujiduoduo.ringtone" />
+
+    <apkInfo
+        id="flipboard.cn_null"
+        filename="icon/flipboard_cn.png"
+        isMultiLauncher="0"
+        label="Flipboard"
+        labelCn="Flipboard"
+        package="flipboard.cn" />
+
+    <apkInfo
+        id="com.shuqi.controller_com.shuqi.controller.Loading"
+        name="com.shuqi.controller.Loading"
+        filename="icon/com_shuqi_controller_com_shuqi_controller_Loading.png"
+        isMultiLauncher="1"
+        label="书旗小说"
+        labelCn="书旗小说"
+        package="com.shuqi.controller" />
+
+    <apkInfo
+        id="com.duokan.reader_com.duokan.reader.DkReaderActivity"
+        name="com.duokan.reader.DkReaderActivity"
+        filename="icon/com_duokan_reader_com_duokan_reader_DkReaderActivity.png"
+        isMultiLauncher="1"
+        label="多看阅读"
+        labelCn="多看阅读"
+        package="com.duokan.reader" />
+
+    <apkInfo
+        id="com.lectek.android.sfreader_com.lectek.android.sfreader.ui.SplashActivity"
+        name="com.lectek.android.sfreader.ui.SplashActivity"
+        filename="icon/com_lectek_android_sfreader_com_lectek_android_sfreader_ui_SplashActivity.png"
+        isMultiLauncher="1"
+        label="天翼阅读"
+        labelCn="天翼阅读"
+        package="com.lectek.android.sfreader" />
+
+    <apkInfo
+        id="com.xs.cn_com.xs.cn.activitys.LoadingActivity"
+        name="com.xs.cn.activitys.LoadingActivity"
+        filename="icon/com_xs_cn_com_xs_cn_activitys_LoadingActivity.png"
+        isMultiLauncher="1"
+        label="小说阅读网"
+        labelCn="小说阅读网"
+        package="com.xs.cn" />
+
+    <apkInfo
+        id="bubei.tingshu_bubei.tingshu.ui.LOGOActivity"
+        name="bubei.tingshu.ui.LOGOActivity"
+        filename="icon/bubei_tingshu_bubei_tingshu_ui_LOGOActivity.png"
+        isMultiLauncher="1"
+        label=" 懒人听书 "
+        labelCn=" 懒人听书 "
+        package="bubei.tingshu" />
+
+    <apkInfo
+        id="com.android.comicsisland.activity_com.android.comicsisland.activity.MainActivity"
+        name="com.android.comicsisland.activity.MainActivity"
+        filename="icon/com_android_comicsisland_activity_com_android_comicsisland_activity_MainActivity.png"
+        isMultiLauncher="1"
+        label="漫画岛"
+        labelCn="漫画岛"
+        package="com.android.comicsisland.activity" />
+
+    <apkInfo
+        id="com.iyd.reader.ReadingJoy_com.sensky.sunshinereader.logo.logo"
+        name="com.sensky.sunshinereader.logo.logo"
+        filename="icon/com_iyd_reader_ReadingJoy_com_sensky_sunshinereader_logo_logo.png"
+        isMultiLauncher="1"
+        label="爱阅读"
+        labelCn="爱阅读"
+        package="com.iyd.reader.ReadingJoy" />
+
+    <apkInfo
+        id="com.qidian.QDReader_com.qidian.QDReader.SplashActivity"
+        name="com.qidian.QDReader.SplashActivity"
+        filename="icon/com_qidian_QDReader_com_qidian_QDReader_SplashActivity.png"
+        isMultiLauncher="1"
+        label="起点读书"
+        labelCn="起点读书"
+        package="com.qidian.QDReader" />
+
+    <apkInfo
+        id="com.ushaqi.zhuishushenqi_com.ushaqi.zhuishushenqi.ui.SplashActivity"
+        name="com.ushaqi.zhuishushenqi.ui.SplashActivity"
+        filename="icon/com_ushaqi_zhuishushenqi_com_ushaqi_zhuishushenqi_ui_SplashActivity.png"
+        isMultiLauncher="1"
+        label=" 追书神器 "
+        labelCn=" 追书神器 "
+        package="com.ushaqi.zhuishushenqi" />
+
+    <apkInfo
+        id="cn.com.kuting.activity_cn.com.kuting.activity.WelcomeActivity"
+        name="cn.com.kuting.activity.WelcomeActivity"
+        filename="icon/cn_com_kuting_activity_cn_com_kuting_activity_WelcomeActivity.png"
+        isMultiLauncher="1"
+        label="酷听听书"
+        labelCn="酷听听书"
+        package="cn.com.kuting.activity" />
+
+    <apkInfo
+        id="com.manboker.headportrait_com.manboker.headportrait.activities.FirstActivity"
+        name="com.manboker.headportrait.activities.FirstActivity"
+        filename="icon/com_manboker_headportrait_com_manboker_headportrait_activities_FirstActivity.png"
+        isMultiLauncher="1"
+        label="MomentCam"
+        labelCn="MomentCam"
+        package="com.manboker.headportrait" />
+
+    <apkInfo
+        id="com.tencent.ttpic_com.tencent.ttpic.module.MainActivity"
+        name="com.tencent.ttpic.module.MainActivity"
+        filename="icon/com_tencent_ttpic_com_tencent_ttpic_module_MainActivity.png"
+        isMultiLauncher="1"
+        label="Pitu"
+        labelCn="Pitu"
+        package="com.tencent.ttpic" />
+
+    <apkInfo
+        id="com.tencent.zebra_com.android.camera.CameraActivity"
+        name="com.android.camera.CameraActivity"
+        filename="icon/com_tencent_zebra_com_android_camera_CameraActivity.png"
+        isMultiLauncher="1"
+        label="水印相机"
+        labelCn="水印相机"
+        package="com.tencent.zebra" />
+
+    <apkInfo
+        id="cn.jingling.motu.photowonder_cn.jingling.motu.photowonder.SplashActivity"
+        name="cn.jingling.motu.photowonder.SplashActivity"
+        filename="icon/cn_jingling_motu_photowonder_cn_jingling_motu_photowonder_SplashActivity.png"
+        isMultiLauncher="1"
+        label="百度魔图"
+        labelCn="百度魔图"
+        package="cn.jingling.motu.photowonder" />
+
+    <apkInfo
+        id="vStudio.Android.Camera360_vStudio.Android.Camera360.activity.CameraActivity"
+        name="vStudio.Android.Camera360.activity.CameraActivity"
+        filename="icon/vStudio_Android_Camera360_vStudio_Android_Camera360_activity_CameraActivity.png"
+        isMultiLauncher="1"
+        label="Camera360"
+        labelCn="相機360"
+        package="vStudio.Android.Camera360" />
+
+    <apkInfo
+        id="my.beautyCamera_my.beautyCamera.PocoCamera"
+        name="my.beautyCamera.PocoCamera"
+        filename="icon/my_beautyCamera_my_beautyCamera_PocoCamera.png"
+        isMultiLauncher="1"
+        label="美人相机"
+        labelCn="美人相机"
+        package="my.beautyCamera" />
+
+    <apkInfo
+        id="com.mt.mtxx.mtxx_com.mt.mtxx.mtxx.TopViewActivity"
+        name="com.mt.mtxx.mtxx.TopViewActivity"
+        filename="icon/com_mt_mtxx_mtxx_com_mt_mtxx_mtxx_TopViewActivity.png"
+        isMultiLauncher="1"
+        label="MeituPic"
+        labelCn="美图秀秀"
+        package="com.mt.mtxx.mtxx" />
+
+    <apkInfo
+        id="com.meitu.meiyancamera_com.meitu.meiyancamera.MyxjActivity"
+        name="com.meitu.meiyancamera.MyxjActivity"
+        filename="icon/com_meitu_meiyancamera_com_meitu_meiyancamera_MyxjActivity.png"
+        isMultiLauncher="1"
+        label="BeautyCam"
+        labelCn="美颜相机"
+        package="com.meitu.meiyancamera" />
+
+    <apkInfo
+        id="cmb.pb_cmb.pb.ui.PBInitActivity"
+        name="cmb.pb.ui.PBInitActivity"
+        filename="icon/cmb_pb_cmb_pb_ui_PBInitActivity.png"
+        isMultiLauncher="1"
+        label="CMB"
+        labelCn="CMB"
+        package="cmb.pb" />
+
+    <apkInfo
+        id="com.tenpay.android_com.tenpay.android.StartActivity"
+        name="com.tenpay.android.StartActivity"
+        filename="icon/com_tenpay_android_com_tenpay_android_StartActivity.png"
+        isMultiLauncher="1"
+        label="Tenpay"
+        labelCn="Tenpay"
+        package="com.tenpay.android" />
+
+    <apkInfo
+        id="com.chinamworld.main_com.ccb.mbs.main.StartActivity"
+        name="com.ccb.mbs.main.StartActivity"
+        filename="icon/com_chinamworld_main_com_ccb_mbs_main_StartActivity.png"
+        isMultiLauncher="1"
+        label="中国建设银行"
+        labelCn="中国建设银行"
+        package="com.chinamworld.main" />
+
+    <apkInfo
+        id="com.chinamworld.bocmbci_com.chinamworld.bocmbci.biz.GuidePageActivity"
+        name="com.chinamworld.bocmbci.biz.GuidePageActivity"
+        filename="icon/com_chinamworld_bocmbci_com_chinamworld_bocmbci_biz_GuidePageActivity.png"
+        isMultiLauncher="1"
+        label="中国银行"
+        labelCn="中国银行"
+        package="com.chinamworld.bocmbci" />
+
+    <apkInfo
+        id="com.bankcomm_com.bankcomm.ui.SplashScreenActivity"
+        name="com.bankcomm.ui.SplashScreenActivity"
+        filename="icon/com_bankcomm_com_bankcomm_ui_SplashScreenActivity.png"
+        isMultiLauncher="1"
+        label="交通银行"
+        labelCn="交通银行"
+        package="com.bankcomm" />
+
+    <apkInfo
+        id="com.imfclub.stock_com.imfclub.stock.activity.SplashActivity"
+        name="com.imfclub.stock.activity.SplashActivity"
+        filename="icon/com_imfclub_stock_com_imfclub_stock_activity_SplashActivity.png"
+        isMultiLauncher="1"
+        label="公牛炒股"
+        labelCn="公牛炒股"
+        package="com.imfclub.stock" />
+
+    <apkInfo
+        id="com.hexin.plat.android_com.hexin.plat.android.AndroidLogoActivity"
+        name="com.hexin.plat.android.AndroidLogoActivity"
+        filename="icon/com_hexin_plat_android_com_hexin_plat_android_AndroidLogoActivity.png"
+        isMultiLauncher="1"
+        label="同花顺"
+        labelCn="同花顺"
+        package="com.hexin.plat.android" />
+
+    <apkInfo
+        id="com.android.dazhihui_com.android.dazhihui.dzh.dzh"
+        name="com.android.dazhihui.dzh.dzh"
+        filename="icon/com_android_dazhihui_com_android_dazhihui_dzh_dzh.png"
+        isMultiLauncher="1"
+        label="大智慧"
+        labelCn="大智慧"
+        package="com.android.dazhihui" />
+
+    <apkInfo
+        id="com.icbc_com.icbc.activity.init.LoadingActivity"
+        name="com.icbc.activity.init.LoadingActivity"
+        filename="icon/com_icbc_com_icbc_activity_init_LoadingActivity.png"
+        isMultiLauncher="1"
+        label="工行手机银行"
+        labelCn="工行手机银行"
+        package="com.icbc" />
+
+    <apkInfo
+        id="com.pingan.pabank.activity_com.paic.pabank.activity.LoadingActivity"
+        name="com.paic.pabank.activity.LoadingActivity"
+        filename="icon/com_pingan_pabank_activity_com_paic_pabank_activity_LoadingActivity.png"
+        isMultiLauncher="1"
+        label="平安口袋银行"
+        labelCn="平安口袋银行"
+        package="com.pingan.pabank.activity" />
+
+    <apkInfo
+        id="com.cmbchina.ccd.pluto.cmbActivity_com.cmbchina.ccd.pluto.cmbActivity.SplashActivity"
+        name="com.cmbchina.ccd.pluto.cmbActivity.SplashActivity"
+        filename="icon/com_cmbchina_ccd_pluto_cmbActivity_com_cmbchina_ccd_pluto_cmbActivity_SplashActivity.png"
+        isMultiLauncher="1"
+        label="掌上生活"
+        labelCn="掌上生活"
+        package="com.cmbchina.ccd.pluto.cmbActivity" />
+
+    <apkInfo
+        id="com.niuguwang.stock_com.niuguwang.stock.Splash"
+        name="com.niuguwang.stock.Splash"
+        filename="icon/com_niuguwang_stock_com_niuguwang_stock_Splash.png"
+        isMultiLauncher="1"
+        label="牛股王股票"
+        labelCn="牛股王股票"
+        package="com.niuguwang.stock" />
+
+    <apkInfo
+        id="com.chinatelecom.bestpayclient_com.chinatelecom.bestpayclient.BufferActivity"
+        name="com.chinatelecom.bestpayclient.BufferActivity"
+        filename="icon/com_chinatelecom_bestpayclient_com_chinatelecom_bestpayclient_BufferActivity.png"
+        isMultiLauncher="1"
+        label="翼支付"
+        labelCn="翼支付"
+        package="com.chinatelecom.bestpayclient" />
+
+    <apkInfo
+        id="com.mymoney_com.mymoney.ui.splash.SplashScreenActivity"
+        name="com.mymoney.ui.splash.SplashScreenActivity"
+        filename="icon/com_mymoney_com_mymoney_ui_splash_SplashScreenActivity.png"
+        isMultiLauncher="1"
+        label="随手记"
+        labelCn="随手记"
+        package="com.mymoney" />
+
+    <apkInfo
+        id="com.browser2345_com.browser2345.StartBrowserActivity"
+        name="com.browser2345.StartBrowserActivity"
+        filename="icon/com_browser2345_com_browser2345_StartBrowserActivity.png"
+        isMultiLauncher="1"
+        label="2345浏览器"
+        labelCn="2345浏览器"
+        package="com.browser2345" />
+
+    <apkInfo
+        id="com.android.chrome_null"
+        filename="icon/com_android_chrome.png"
+        isMultiLauncher="0"
+        label="Chrome"
+        labelCn="Chrome"
+        package="com.android.chrome" />
+
+    <apkInfo
+        id="com.tencent.mtt_com.tencent.mtt.SplashActivity"
+        name="com.tencent.mtt.SplashActivity"
+        filename="icon/com_tencent_mtt_com_tencent_mtt_SplashActivity.png"
+        isMultiLauncher="1"
+        label="QQ浏览器"
+        labelCn="QQ浏览器"
+        package="com.tencent.mtt" />
+
+    <apkInfo
+        id="com.tencent.qqpinyin_com.tencent.qqpinyin.activity.GuideDialogActivity"
+        name="com.tencent.qqpinyin.activity.GuideDialogActivity"
+        filename="icon/com_tencent_qqpinyin_com_tencent_qqpinyin_activity_GuideDialogActivity.png"
+        isMultiLauncher="1"
+        label="QQ输入法"
+        labelCn="QQ输入法"
+        package="com.tencent.qqpinyin" />
+
+    <apkInfo
+        id="com.lenovo.anyshare_com.lenovo.anyshare.ApMainActivity"
+        name="com.lenovo.anyshare.ApMainActivity"
+        filename="icon/com_lenovo_anyshare_com_lenovo_anyshare_ApMainActivity.png"
+        isMultiLauncher="1"
+        label="SHAREit"
+        labelCn="SHAREit"
+        package="com.lenovo.anyshare" />
+
+    <apkInfo
+        id="com.UCMobile_com.UCMobile.main.UCMobile"
+        name="com.UCMobile.main.UCMobile"
+        filename="icon/com_UCMobile_com_UCMobile_main_UCMobile.png"
+        isMultiLauncher="1"
+        label="UC浏览器"
+        labelCn="UC浏览器"
+        package="com.UCMobile" />
+
+    <apkInfo
+        id="com.snda.wifilocating_com.snda.wifilocating.ui.activity.WelcomeActivity"
+        name="com.snda.wifilocating.ui.activity.WelcomeActivity"
+        filename="icon/com_snda_wifilocating_com_snda_wifilocating_ui_activity_WelcomeActivity.png"
+        isMultiLauncher="1"
+        label="WiFi Master Key"
+        labelCn="WiFi万能钥匙"
+        package="com.snda.wifilocating" />
+
+    <apkInfo
+        id="com.syezon.wifi_com.syezon.wifi.LogoActivity"
+        name="com.syezon.wifi.LogoActivity"
+        filename="icon/com_syezon_wifi_com_syezon_wifi_LogoActivity.png"
+        isMultiLauncher="1"
+        label="WiFi信号增强器"
+        labelCn="WiFi信号增强器"
+        package="com.syezon.wifi" />
+
+    <apkInfo
+        id="com.dewmobile.kuaiya_com.dewmobile.kuaiya.activity.DmStartupActivity"
+        name="com.dewmobile.kuaiya.activity.DmStartupActivity"
+        filename="icon/com_dewmobile_kuaiya_com_dewmobile_kuaiya_activity_DmStartupActivity.png"
+        isMultiLauncher="1"
+        label="Zapya"
+        labelCn="快牙"
+        package="com.dewmobile.kuaiya" />
+
+    <apkInfo
+        id="com.baidu.searchbox_com.baidu.searchbox.SplashActivity"
+        name="com.baidu.searchbox.SplashActivity"
+        filename="icon/com_baidu_searchbox_com_baidu_searchbox_SplashActivity.png"
+        isMultiLauncher="1"
+        label="手机百度"
+        labelCn="手机百度"
+        package="com.baidu.searchbox" />
+
+    <apkInfo
+        id="com.sohu.inputmethod.sogou_com.sohu.inputmethod.sogou.SogouIMELauncher"
+        name="com.sohu.inputmethod.sogou.SogouIMELauncher"
+        filename="icon/com_sohu_inputmethod_sogou_com_sohu_inputmethod_sogou_SogouIMELauncher.png"
+        isMultiLauncher="1"
+        label="搜狗输入法"
+        labelCn="搜狗输入法"
+        package="com.sohu.inputmethod.sogou" />
+
+    <apkInfo
+        id="com.ijinshan.browser_fast_com.ijinshan.browser.screen.SplashActivity"
+        name="com.ijinshan.browser.screen.SplashActivity"
+        filename="icon/com_ijinshan_browser_fast_com_ijinshan_browser_screen_SplashActivity.png"
+        isMultiLauncher="1"
+        label="猎豹浏览器"
+        labelCn="猎豹浏览器"
+        package="com.ijinshan.browser_fast" />
+
+    <apkInfo
+        id="com.baidu.netdisk_com.baidu.netdisk.ui.Navigate"
+        name="com.baidu.netdisk.ui.Navigate"
+        filename="icon/com_baidu_netdisk_com_baidu_netdisk_ui_Navigate.png"
+        isMultiLauncher="1"
+        label="百度云"
+        labelCn="百度云"
+        package="com.baidu.netdisk" />
+
+    <apkInfo
+        id="com.baidu.browser.apps_com.baidu.browser.framework.BdBrowserActivity"
+        name="com.baidu.browser.framework.BdBrowserActivity"
+        filename="icon/com_baidu_browser_apps_com_baidu_browser_framework_BdBrowserActivity.png"
+        isMultiLauncher="1"
+        label="百度浏览器"
+        labelCn="百度浏览器"
+        package="com.baidu.browser.apps" />
+
+    <apkInfo
+        id="com.baidu.input_com.baidu.input.ImeAppMainActivity"
+        name="com.baidu.input.ImeAppMainActivity"
+        filename="icon/com_baidu_input_com_baidu_input_ImeAppMainActivity.png"
+        isMultiLauncher="1"
+        label="百度输入法"
+        labelCn="百度输入法"
+        package="com.baidu.input" />
+
+    <apkInfo
+        id="com.iflytek.inputmethod_com.iflytek.inputmethod.LauncherActivity"
+        name="com.iflytek.inputmethod.LauncherActivity"
+        filename="icon/com_iflytek_inputmethod_com_iflytek_inputmethod_LauncherActivity.png"
+        isMultiLauncher="1"
+        label="讯飞输入法"
+        labelCn="讯飞输入法"
+        package="com.iflytek.inputmethod" />
+
+    <apkInfo
+        id="com.xunlei.downloadprovider_com.xunlei.downloadprovider.loading.LoadingActivity"
+        name="com.xunlei.downloadprovider.loading.LoadingActivity"
+        filename="icon/com_xunlei_downloadprovider_com_xunlei_downloadprovider_loading_LoadingActivity.png"
+        isMultiLauncher="1"
+        label="迅雷"
+        labelCn="迅雷"
+        package="com.xunlei.downloadprovider" />
+
+    <apkInfo
+        id="com.yiwang_com.yiwang.LoadingActivity"
+        name="com.yiwang.LoadingActivity"
+        filename="icon/com_yiwang_com_yiwang_LoadingActivity.png"
+        isMultiLauncher="1"
+        label="1号药店"
+        labelCn="1号药店"
+        package="com.yiwang" />
+
+    <apkInfo
+        id="com.mandian.android.dongdong_cc.pacer.androidapp.ui.splash.SplashActivity"
+        name="cc.pacer.androidapp.ui.splash.SplashActivity"
+        filename="icon/com_mandian_android_dongdong_cc_pacer_androidapp_ui_splash_SplashActivity.png"
+        isMultiLauncher="1"
+        label="Pacer"
+        labelCn="Pacer"
+        package="com.mandian.android.dongdong" />
+
+    <apkInfo
+        id="cn.ledongli.ldl_cn.ledongli.ldl.activity.SplashScreenActivity"
+        name="cn.ledongli.ldl.activity.SplashScreenActivity"
+        filename="icon/cn_ledongli_ldl_cn_ledongli_ldl_activity_SplashScreenActivity.png"
+        isMultiLauncher="1"
+        label="乐动力"
+        labelCn="乐动力"
+        package="cn.ledongli.ldl" />
+
+    <apkInfo
+        id="com.dw.btime_com.dw.btime.Launcher"
+        name="com.dw.btime.Launcher"
+        filename="icon/com_dw_btime_com_dw_btime_Launcher.png"
+        isMultiLauncher="1"
+        label="亲宝宝"
+        labelCn="亲宝宝"
+        package="com.dw.btime" />
+
+    <apkInfo
+        id="com.yoloho.dayima_com.yoloho.dayima.activity.core.Launcher"
+        name="com.yoloho.dayima.activity.core.Launcher"
+        filename="icon/com_yoloho_dayima_com_yoloho_dayima_activity_core_Launcher.png"
+        isMultiLauncher="1"
+        label="大姨吗"
+        labelCn="大姨吗"
+        package="com.yoloho.dayima" />
+
+    <apkInfo
+        id="cn.mama.activity_cn.mama.activity.IsFirstUsed"
+        name="cn.mama.activity.IsFirstUsed"
+        filename="icon/cn_mama_activity_cn_mama_activity_IsFirstUsed.png"
+        isMultiLauncher="1"
+        label="妈妈圈-怀孕育儿亲子辣妈孕期"
+        labelCn="妈妈圈-怀孕育儿亲子辣妈孕期"
+        package="cn.mama.activity" />
+
+    <apkInfo
+        id="com.yaya.mmbang_com.yaya.mmbang.activity.SplashActivity"
+        name="com.yaya.mmbang.activity.SplashActivity"
+        filename="icon/com_yaya_mmbang_com_yaya_mmbang_activity_SplashActivity.png"
+        isMultiLauncher="1"
+        label="妈妈帮"
+        labelCn="妈妈帮"
+        package="com.yaya.mmbang" />
+
+    <apkInfo
+        id="com.baidu.mbaby_com.baidu.mbaby.activity.init.InitActivity"
+        name="com.baidu.mbaby.activity.init.InitActivity"
+        filename="icon/com_baidu_mbaby_com_baidu_mbaby_activity_init_InitActivity.png"
+        isMultiLauncher="1"
+        label="宝宝知道"
+        labelCn="宝宝知道"
+        package="com.baidu.mbaby" />
+
+    <apkInfo
+        id="cn.mama.pregnant_cn.mama.pregnant.activity.SplashActivity"
+        name="cn.mama.pregnant.activity.SplashActivity"
+        filename="icon/cn_mama_pregnant_cn_mama_pregnant_activity_SplashActivity.png"
+        isMultiLauncher="1"
+        label="怀孕管家-备孕孕妇孕期经期助手"
+        labelCn="怀孕管家-备孕孕妇孕期经期助手"
+        package="cn.mama.pregnant" />
+
+    <apkInfo
+        id="com.yuedong.sport_com.yuedong.sport.main.WelcomeActivity_"
+        name="com.yuedong.sport.main.WelcomeActivity_"
+        filename="icon/com_yuedong_sport_com_yuedong_sport_main_WelcomeActivity_.png"
+        isMultiLauncher="1"
+        label="悦动圈跑步"
+        labelCn="悦动圈跑步"
+        package="com.yuedong.sport" />
+
+    <apkInfo
+        id="me.chunyu.ChunyuDoctor_me.chunyu.ChunyuDoctor.Activities.WelcomeActivity"
+        name="me.chunyu.ChunyuDoctor.Activities.WelcomeActivity"
+        filename="icon/me_chunyu_ChunyuDoctor_me_chunyu_ChunyuDoctor_Activities_WelcomeActivity.png"
+        isMultiLauncher="1"
+        label="春雨医生"
+        labelCn="春雨医生"
+        package="me.chunyu.ChunyuDoctor" />
+
+    <apkInfo
+        id="dianyun.baobaowd_dianyun.baobaowd.activity.JudgeActivity"
+        name="dianyun.baobaowd.activity.JudgeActivity"
+        filename="icon/dianyun_baobaowd_dianyun_baobaowd_activity_JudgeActivity.png"
+        isMultiLauncher="1"
+        label="柚柚育儿怀孕母婴"
+        labelCn="柚柚育儿怀孕母婴"
+        package="dianyun.baobaowd" />
+
+    <apkInfo
+        id="com.hotbody.fitzero_com.hotbody.fitzero.ui.activity.SplashActivity"
+        name="com.hotbody.fitzero.ui.activity.SplashActivity"
+        filename="icon/com_hotbody_fitzero_com_hotbody_fitzero_ui_activity_SplashActivity.png"
+        isMultiLauncher="1"
+        label="火辣健身"
+        labelCn="火辣健身"
+        package="com.hotbody.fitzero" />
+
+    <apkInfo
+        id="com.yidian.sugar_com.yidian.sugar.ui.guide.UserGuideActivity"
+        name="com.yidian.sugar.ui.guide.UserGuideActivity"
+        filename="icon/com_yidian_sugar_com_yidian_sugar_ui_guide_UserGuideActivity.png"
+        isMultiLauncher="1"
+        label="糖尿病防治"
+        labelCn="糖尿病防治"
+        package="com.yidian.sugar" />
+
+    <apkInfo
+        id="com.lingan.seeyou_com.lingan.seeyou.ui.activity.main.WelcomeActivity"
+        name="com.lingan.seeyou.ui.activity.main.WelcomeActivity"
+        filename="icon/com_lingan_seeyou_com_lingan_seeyou_ui_activity_main_WelcomeActivity.png"
+        isMultiLauncher="1"
+        label="美柚"
+        labelCn="美柚"
+        package="com.lingan.seeyou" />
+
+    <apkInfo
+        id="com.lingan.yunqi_com.lingan.yunqi.ui.activity.main.WelcomeActivity"
+        name="com.lingan.yunqi.ui.activity.main.WelcomeActivity"
+        filename="icon/com_lingan_yunqi_com_lingan_yunqi_ui_activity_main_WelcomeActivity.png"
+        isMultiLauncher="1"
+        label="美柚孕期"
+        labelCn="美柚孕期"
+        package="com.lingan.yunqi" />
+
+    <apkInfo
+        id="com.sythealth.fitness_com.sythealth.fitness.main.StartUpActivity"
+        name="com.sythealth.fitness.main.StartUpActivity"
+        filename="icon/com_sythealth_fitness_com_sythealth_fitness_main_StartUpActivity.png"
+        isMultiLauncher="1"
+        label="超级减肥王"
+        labelCn="超级减肥王"
+        package="com.sythealth.fitness" />
+
+    <apkInfo
+        id="com.sec.chaton_com.sec.chaton.HomeActivity"
+        name="com.sec.chaton.HomeActivity"
+        filename="icon/com_sec_chaton_com_sec_chaton_HomeActivity.png"
+        isMultiLauncher="1"
+        label="ChatON"
+        labelCn="ChatON"
+        package="com.sec.chaton" />
+
+    <apkInfo
+        id="com.tencent.qqpim_com.tencent.qqpim.ui.QQPimAndroid"
+        name="com.tencent.qqpim.ui.QQPimAndroid"
+        filename="icon/com_tencent_qqpim_com_tencent_qqpim_ui_QQPimAndroid.png"
+        isMultiLauncher="1"
+        label="QQ同步助手"
+        labelCn="QQ同步助手"
+        package="com.tencent.qqpim" />
+
+    <apkInfo
+        id="com.tencent.qqphonebook_com.tencent.qqphonebook.ui.PhoneBookActivity"
+        name="com.tencent.qqphonebook.ui.PhoneBookActivity"
+        filename="icon/com_tencent_qqphonebook_com_tencent_qqphonebook_ui_PhoneBookActivity.png"
+        isMultiLauncher="1"
+        label="QQ通讯录"
+        labelCn="QQ通讯录"
+        package="com.tencent.qqphonebook" />
+
+    <apkInfo
+        id="com.whatsapp_com.whatsapp.Main"
+        name="com.whatsapp.Main"
+        filename="icon/com_whatsapp_com_whatsapp_Main.png"
+        isMultiLauncher="1"
+        label="WhatsApp"
+        labelCn="WhatsApp"
+        package="com.whatsapp" />
+
+    <apkInfo
+        id="com.snda.youni_com.snda.youni.YouNi"
+        name="com.snda.youni.YouNi"
+        filename="icon/com_snda_youni_com_snda_youni_YouNi.png"
+        isMultiLauncher="1"
+        label="  Youni有你"
+        labelCn="Youni有你"
+        package="com.snda.youni" />
+
+    <apkInfo
+        id="com.unicom.yiqiwo_com.unicom.yiqiwo.controller.start.StartActivity"
+        name="com.unicom.yiqiwo.controller.start.StartActivity"
+        filename="icon/com_unicom_yiqiwo_com_unicom_yiqiwo_controller_start_StartActivity.png"
+        isMultiLauncher="1"
+        label="17wo"
+        labelCn="一起沃"
+        package="com.unicom.yiqiwo" />
+
+    <apkInfo
+        id="com.chinatelecom.pim_com.chinatelecom.pim.PimLauncherActivity"
+        name="com.chinatelecom.pim.PimLauncherActivity"
+        filename="icon/com_chinatelecom_pim_com_chinatelecom_pim_PimLauncherActivity.png"
+        isMultiLauncher="1"
+        label="号簿助手"
+        labelCn="号簿助手"
+        package="com.chinatelecom.pim" />
+
+    <apkInfo
+        id="com.huawei.pisa.activity_com.chinamobile.contacts.im.Main"
+        name="com.chinamobile.contacts.im.Main"
+        filename="icon/com_huawei_pisa_activity_com_chinamobile_contacts_im_Main.png"
+        isMultiLauncher="1"
+        label="和通讯录Lite"
+        labelCn="和通讯录Lite"
+        package="com.huawei.pisa.activity" />
+
+    <apkInfo
+        id="com.yy.yymeet_com.yy.iheima.startup.SplashActivity"
+        name="com.yy.iheima.startup.SplashActivity"
+        filename="icon/com_yy_yymeet_com_yy_iheima_startup_SplashActivity.png"
+        isMultiLauncher="1"
+        label="微会"
+        labelCn="微会"
+        package="com.yy.yymeet" />
+
+    <apkInfo
+        id="com.weihua.superphone_com.weihua.superphone.common.app.FakeLaunchActivity"
+        name="com.weihua.superphone.common.app.FakeLaunchActivity"
+        filename="icon/com_weihua_superphone_com_weihua_superphone_common_app_FakeLaunchActivity.png"
+        isMultiLauncher="1"
+        label="微话"
+        labelCn="微话"
+        package="com.weihua.superphone" />
+
+    <apkInfo
+        id="com.greenpoint.android.mc10086.activity_com.leadeon.cmcc.base.StartPageActivity"
+        name="com.leadeon.cmcc.base.StartPageActivity"
+        filename="icon/com_greenpoint_android_mc10086_activity_com_leadeon_cmcc_base_StartPageActivity.png"
+        isMultiLauncher="1"
+        label="手机营业厅"
+        labelCn="手机营业厅"
+        package="com.greenpoint.android.mc10086.activity" />
+
+    <apkInfo
+        id="com.sinovatech.unicom.ui_com.sinovatech.unicom.ui.WelcomeClient"
+        name="com.sinovatech.unicom.ui.WelcomeClient"
+        filename="icon/com_sinovatech_unicom_ui_com_sinovatech_unicom_ui_WelcomeClient.png"
+        isMultiLauncher="1"
+        label="手机营业厅"
+        labelCn="手机营业厅"
+        package="com.sinovatech.unicom.ui" />
+
+    <apkInfo
+        id="com.sg.sledog_com.sogou.sledog.app.tabhost.MainTabHostActivity"
+        name="com.sogou.sledog.app.tabhost.MainTabHostActivity"
+        filename="icon/com_sg_sledog_com_sogou_sledog_app_tabhost_MainTabHostActivity.png"
+        isMultiLauncher="1"
+        label="搜狗号码通"
+        labelCn="搜狗号码通"
+        package="com.sg.sledog" />
+
+    <apkInfo
+        id="com.yx_com.yx.activity.welcome.Splash"
+        name="com.yx.activity.welcome.Splash"
+        filename="icon/com_yx_com_yx_activity_welcome_Splash.png"
+        isMultiLauncher="1"
+        label="有信"
+        labelCn="有信"
+        package="com.yx" />
+
+    <apkInfo
+        id="com.blovestorm_com.blovestorm.application.DialerActivity"
+        name="com.blovestorm.application.DialerActivity"
+        filename="icon/com_blovestorm_com_blovestorm_application_DialerActivity.png"
+        isMultiLauncher="1"
+        label="来电通"
+        labelCn="来电通"
+        package="com.blovestorm" />
+
+    <apkInfo
+        id="com.ct.client_com.ct.client.SplashActivity"
+        name="com.ct.client.SplashActivity"
+        filename="icon/com_ct_client_com_ct_client_SplashActivity.png"
+        isMultiLauncher="1"
+        label="电信营业厅"
+        labelCn="电信营业厅"
+        package="com.ct.client" />
+
+    <apkInfo
+        id="com.xiaomi.channel_com.xiaomi.channel.ui.ChannelLauncherActivity"
+        name="com.xiaomi.channel.ui.ChannelLauncherActivity"
+        filename="icon/com_xiaomi_channel_com_xiaomi_channel_ui_ChannelLauncherActivity.png"
+        isMultiLauncher="1"
+        label="Mi Talk"
+        labelCn="米聊"
+        package="com.xiaomi.channel" />
+
+    <apkInfo
+        id="com.cootek.smartdialer_com.cootek.smartdialer.TStartup"
+        name="com.cootek.smartdialer.TStartup"
+        filename="icon/com_cootek_smartdialer_com_cootek_smartdialer_TStartup.png"
+        isMultiLauncher="1"
+        label="触宝电话"
+        labelCn="觸寶電話"
+        package="com.cootek.smartdialer" />
+
+    <apkInfo
+        id="com.zte.backup.mmi_com.zte.backup.view_blueBG.StartActivity"
+        name="com.zte.backup.view_blueBG.StartActivity"
+        filename="icon/com_zte_backup_mmi_com_zte_backup_view_blueBG_StartActivity.png"
+        isMultiLauncher="1"
+        label="Backup &amp; Restore"
+        labelCn="Backup &amp; Restore"
+        package="com.zte.backup.mmi" />
+
+    <apkInfo
+        id="com.dianxinos.powermanager_com.dianxinos.powermanager.PowerMgrActivity"
+        name="com.dianxinos.powermanager.PowerMgrActivity"
+        filename="icon/com_dianxinos_powermanager_com_dianxinos_powermanager_PowerMgrActivity.png"
+        isMultiLauncher="1"
+        label="DU Battery Saver"
+        labelCn="DU Battery Saver"
+        package="com.dianxinos.powermanager" />
+
+    <apkInfo
+        id="com.kingroot.kinguser_com.kingroot.kinguser.activitys.SliderMainActivity"
+        name="com.kingroot.kinguser.activitys.SliderMainActivity"
+        filename="icon/com_kingroot_kinguser_com_kingroot_kinguser_activitys_SliderMainActivity.png"
+        isMultiLauncher="1"
+        label="KingRoot"
+        labelCn="KingRoot"
+        package="com.kingroot.kinguser" />
+
+    <apkInfo
+        id="com.speedsoftware.rootexplorer_com.speedsoftware.rootexplorer.RootExplorer"
+        name="com.speedsoftware.rootexplorer.RootExplorer"
+        filename="icon/com_speedsoftware_rootexplorer_com_speedsoftware_rootexplorer_RootExplorer.png"
+        isMultiLauncher="1"
+        label="Root Explorer"
+        labelCn="Root Explorer"
+        package="com.speedsoftware.rootexplorer" />
+
+    <apkInfo
+        id="com.mgyun.shua.su_com.mgyun.shua.su.ui.SplashActivity"
+        name="com.mgyun.shua.su.ui.SplashActivity"
+        filename="icon/com_mgyun_shua_su_com_mgyun_shua_su_ui_SplashActivity.png"
+        isMultiLauncher="1"
+        label="ROOT大师"
+        labelCn="ROOT大师"
+        package="com.mgyun.shua.su" />
+
+    <apkInfo
+        id="com.zhiqupk.root_com.zhiqupk.root.NewSplashActivity"
+        name="com.zhiqupk.root.NewSplashActivity"
+        filename="icon/com_zhiqupk_root_com_zhiqupk_root_NewSplashActivity.png"
+        isMultiLauncher="1"
+        label="一键Root大师"
+        labelCn="一键Root大师"
+        package="com.zhiqupk.root" />
+
+    <apkInfo
+        id="cn.com.opda.android.clearmaster_cn.com.opda.android.clearmaster.MainClearActivity"
+        name="cn.com.opda.android.clearmaster.MainClearActivity"
+        filename="icon/cn_com_opda_android_clearmaster_cn_com_opda_android_clearmaster_MainClearActivity.png"
+        isMultiLauncher="1"
+        label="一键清理大师"
+        labelCn="一键清理大师"
+        package="cn.com.opda.android.clearmaster" />
+
+    <apkInfo
+        id="com.dianxinos.superuser_com.baidu.superroot.MainActivity"
+        name="com.baidu.superroot.MainActivity"
+        filename="icon/com_dianxinos_superuser_com_baidu_superroot_MainActivity.png"
+        isMultiLauncher="1"
+        label="授权管理"
+        labelCn="授权管理"
+        package="com.dianxinos.superuser" />
+
+    <apkInfo
+        id="com.cleanmaster.mguard_cn_com.keniu.security.main.MainActivity"
+        name="com.keniu.security.main.MainActivity"
+        filename="icon/com_cleanmaster_mguard_cn_com_keniu_security_main_MainActivity.png"
+        isMultiLauncher="1"
+        label="猎豹清理大师"
+        labelCn="猎豹清理大师"
+        package="com.cleanmaster.mguard_cn" />
+
+    <apkInfo
+        id="com.baidu.easyroot_com.baidu.easyroot.SplashActivity"
+        name="com.baidu.easyroot.SplashActivity"
+        filename="icon/com_baidu_easyroot_com_baidu_easyroot_SplashActivity.png"
+        isMultiLauncher="1"
+        label="百度一键root"
+        labelCn="百度一键root"
+        package="com.baidu.easyroot" />
+
+    <apkInfo
+        id="cn.netdroid.shengdiandashi_cn.netdroid.shengdiandashi.SplashActivity"
+        name="cn.netdroid.shengdiandashi.SplashActivity"
+        filename="icon/cn_netdroid_shengdiandashi_cn_netdroid_shengdiandashi_SplashActivity.png"
+        isMultiLauncher="1"
+        label="省电大师"
+        labelCn="省电大师"
+        package="cn.netdroid.shengdiandashi" />
+
+    <apkInfo
+        id="com.baidu.superroot_com.baidu.superroot.MainActivity"
+        name="com.baidu.superroot.MainActivity"
+        filename="icon/com_baidu_superroot_com_baidu_superroot_MainActivity.png"
+        isMultiLauncher="1"
+        label="超级Root大师"
+        labelCn="超级Root大师"
+        package="com.baidu.superroot" />
+
+    <apkInfo
+        id="com.ijinshan.kbatterydoctor_com.ijinshan.kbatterydoctor.SplashActivity"
+        name="com.ijinshan.kbatterydoctor.SplashActivity"
+        filename="icon/com_ijinshan_kbatterydoctor_com_ijinshan_kbatterydoctor_SplashActivity.png"
+        isMultiLauncher="1"
+        label="Battery Doctor"
+        labelCn="金山電池醫生"
+        package="com.ijinshan.kbatterydoctor" />
+
+    <apkInfo
+        id="com.thestore.main_com.thestore.main.LoadingActivity"
+        name="com.thestore.main.LoadingActivity"
+        filename="icon/com_thestore_main_com_thestore_main_LoadingActivity.png"
+        isMultiLauncher="1"
+        label="1号店"
+        labelCn="1号店"
+        package="com.thestore.main" />
+
+    <apkInfo
+        id="com.qihoo360.mobilesafe_com.qihoo360.mobilesafe.ui.index.AppEnterActivity"
+        name="com.qihoo360.mobilesafe.ui.index.AppEnterActivity"
+        filename="icon/com_qihoo360_mobilesafe_com_qihoo360_mobilesafe_ui_index_AppEnterActivity.png"
+        isMultiLauncher="1"
+        label=" 360卫士"
+        labelCn=" 360卫士"
+        package="com.qihoo360.mobilesafe" />
+
+    <apkInfo
+        id="com.qihoo360.mobilesafe_lenovo_com.qihoo360.mobilesafe.ui.index.AppEnterActivity"
+        name="com.qihoo360.mobilesafe.ui.index.AppEnterActivity"
+        filename="icon/com_qihoo360_mobilesafe_lenovo_com_qihoo360_mobilesafe_ui_index_AppEnterActivity.png"
+        isMultiLauncher="1"
+        label=" 360卫士"
+        labelCn=" 360卫士"
+        package="com.qihoo360.mobilesafe_lenovo" />
+
+    <apkInfo
+        id="com.tencent.qqphonebook_com.tencent.qqphonebook.ui.PhoneBookActivity"
+        name="com.tencent.qqphonebook.ui.PhoneBookActivity"
+        filename="icon/com_tencent_qqphonebook_com_tencent_qqphonebook_ui_PhoneBookActivity.png"
+        isMultiLauncher="1"
+        label="QQ通讯录"
+        labelCn="QQ通讯录"
+        package="com.tencent.qqphonebook" />
+
+    <apkInfo
+        id="com.tencent.qqmusic_com.tencent.qqmusic.activity.AppStarterActivity"
+        name="com.tencent.qqmusic.activity.AppStarterActivity"
+        filename="icon/com_tencent_qqmusic_com_tencent_qqmusic_activity_AppStarterActivity.png"
+        isMultiLauncher="1"
+        label="QQ音乐"
+        labelCn="QQ音乐"
+        package="com.tencent.qqmusic" />
+
+    <apkInfo
+        id="com.samsung.android.app.sreminder_com.samsung.android.app.sreminder.phone.cardlist.SReminderActivity"
+        name="com.samsung.android.app.sreminder.phone.cardlist.SReminderActivity"
+        filename="icon/com_samsung_android_app_sreminder_com_samsung_android_app_sreminder_phone_cardlist_SReminderActivity.png"
+        isMultiLauncher="1"
+        label="S Assistant"
+        labelCn="S Assistant"
+        package="com.samsung.android.app.sreminder" />
+
+    <apkInfo
+        id="com.ubercab_null"
+        filename="icon/com_ubercab.png"
+        isMultiLauncher="0"
+        label="Uber"
+        labelCn="Uber"
+        package="com.ubercab" />
+
+    <apkInfo
+        id="com.UCMobile_com.UCMobile.main.UCMobile"
+        name="com.UCMobile.main.UCMobile"
+        filename="icon/com_UCMobile_com_UCMobile_main_UCMobile.png"
+        isMultiLauncher="1"
+        label="UC浏览器"
+        labelCn="UC浏览器"
+        package="com.UCMobile" />
+
+    <apkInfo
+        id="com.unicom.yiqiwo_com.unicom.yiqiwo.controller.start.StartActivity"
+        name="com.unicom.yiqiwo.controller.start.StartActivity"
+        filename="icon/com_unicom_yiqiwo_com_unicom_yiqiwo_controller_start_StartActivity.png"
+        isMultiLauncher="1"
+        label="17wo"
+        labelCn="一起沃"
+        package="com.unicom.yiqiwo" />
+	<apkInfo
+        id="cn.com.wo_cn.com.wo.UsageActivity"
+        name="cn.com.wo.UsageActivity"
+        filename="icon/cn_com_wo_cn_com_wo_UsageActivity.png"
+        isMultiLauncher="1"
+        label="沃门户"
+        labelCn="沃门户"
+        package="cn.com.wo" />
+	<apkInfo
+        id="com.infinit.wostore.ui_com.infinit.wostore.ui.BeginActivity"
+        name="com.infinit.wostore.ui.BeginActivity"
+        filename="icon/com_infinit_wostore_ui_com_infinit_wostore_ui_BeginActivity.png"
+        isMultiLauncher="1"
+        label="沃商店"
+        labelCn="沃商店"
+        package="com.infinit.wostore.ui" />
+	<apkInfo
+        id="cn.unicompay.wallet_cn.unicompay.wallet.login.PreLoginActivity"
+        name="cn.unicompay.wallet.login.PreLoginActivity"
+        filename="icon/cn_unicompay_wallet_cn_unicompay_wallet_login_PreLoginActivity.png"
+        isMultiLauncher="1"
+        label="手机钱包"
+        labelCn="手机钱包"
+        package="cn.unicompay.wallet" />
+	<apkInfo
+        id="com.neusoft.td.android.wo116114_com.neusoft.td.android.wo116114.activity.StartActivity"
+        name="com.neusoft.td.android.wo116114.activity.StartActivity"
+        filename="icon/com_neusoft_td_android_wo116114_com_neusoft_td_android_wo116114_activity_StartActivity.png"
+        isMultiLauncher="1"
+        label="116114"
+        labelCn="116114"
+        package="com.neusoft.td.android.wo116114" />
+
+    <apkInfo
+        id="com.zol.android_com.zol.android.ui.FirstActivity"
+        name="com.zol.android.ui.FirstActivity"
+        filename="icon/com_zol_android_com_zol_android_ui_FirstActivity.png"
+        isMultiLauncher="1"
+        label="中关村在线"
+        labelCn="中关村在线"
+        package="com.zol.android" />
+
+    <apkInfo
+        id="cn.amazon.mShop.android_null"
+        filename="icon/cn_amazon_mShop_android.png"
+        isMultiLauncher="0"
+        label="Amazon Shopping"
+        labelCn="亚马逊购物"
+        package="cn.amazon.mShop.android" />
+
+    <apkInfo
+        id="com.duowan.lolbox_com.duowan.lolbox.LolBoxStartActivity"
+        name="com.duowan.lolbox.LolBoxStartActivity"
+        filename="icon/com_duowan_lolbox_com_duowan_lolbox_LolBoxStartActivity.png"
+        isMultiLauncher="1"
+        label="多玩饭盒"
+        labelCn="多玩饭盒"
+        package="com.duowan.lolbox" />
+
+    <apkInfo
+        id="com.tmall.wireless_com.tmall.wireless.module.splash.TMSplashActivity"
+        name="com.tmall.wireless.module.splash.TMSplashActivity"
+        filename="icon/com_tmall_wireless_com_tmall_wireless_module_splash_TMSplashActivity.png"
+        isMultiLauncher="1"
+        label="天猫"
+        labelCn="天猫"
+        package="com.tmall.wireless" />
+
+    <apkInfo
+        id="cn.cntv_cn.cntv.activity.LogoActivity"
+        name="cn.cntv.activity.LogoActivity"
+        filename="icon/cn_cntv_cn_cntv_activity_LogoActivity.png"
+        isMultiLauncher="1"
+        label="央视影音"
+        labelCn="央视影音"
+        package="cn.cntv" />
+
+    <apkInfo
+        id="com.pingan.pabank.activity_com.paic.pabank.activity.LoadingActivity"
+        name="com.paic.pabank.activity.LoadingActivity"
+        filename="icon/com_pingan_pabank_activity_com_paic_pabank_activity_LoadingActivity.png"
+        isMultiLauncher="1"
+        label="平安口袋银行"
+        labelCn="平安口袋银行"
+        package="com.pingan.pabank.activity" />
+
+    <apkInfo
+        id="com.dangdang.buy2_com.dangdang.buy2.StartupActivity"
+        name="com.dangdang.buy2.StartupActivity"
+        filename="icon/com_dangdang_buy2_com_dangdang_buy2_StartupActivity.png"
+        isMultiLauncher="1"
+        label="当当"
+        labelCn="当当"
+        package="com.dangdang.buy2" />
+
+    <apkInfo
+        id="com.sinovatech.unicom.ui_com.sinovatech.unicom.ui.WelcomeClient"
+        name="com.sinovatech.unicom.ui.WelcomeClient"
+        filename="icon/com_sinovatech_unicom_ui_com_sinovatech_unicom_ui_WelcomeClient.png"
+        isMultiLauncher="1"
+        label="手机营业厅"
+        labelCn="手机营业厅"
+        package="com.sinovatech.unicom.ui" />
+
+    <apkInfo
+        id="xxt.com.cn.ui_xxt.com.cn.ui.welcome.Welcome"
+        name="xxt.com.cn.ui.welcome.Welcome"
+        filename="icon/xxt_com_cn_ui_xxt_com_cn_ui_welcome_Welcome.png"
+        isMultiLauncher="1"
+        label="沃·行讯通"
+        labelCn="沃·行讯通"
+        package="xxt.com.cn.ui" />
+
+    <apkInfo
+        id="com.baidu.netdisk_com.baidu.netdisk.ui.Navigate"
+        name="com.baidu.netdisk.ui.Navigate"
+        filename="icon/com_baidu_netdisk_com_baidu_netdisk_ui_Navigate.png"
+        isMultiLauncher="1"
+        label="百度云"
+        labelCn="百度云"
+        package="com.baidu.netdisk" />
+
+    <apkInfo
+        id="com.zhihu.android_com.zhihu.android.ui.activity.GuideActivity"
+        name="com.zhihu.android.ui.activity.GuideActivity"
+        filename="icon/com_zhihu_android_com_zhihu_android_ui_activity_GuideActivity.png"
+        isMultiLauncher="1"
+        label="知乎"
+        labelCn="知乎"
+        package="com.zhihu.android" />
+
+    <apkInfo
+        id="com.netease.vopen_com.netease.vopen.activity.WelcomeActivity"
+        name="com.netease.vopen.activity.WelcomeActivity"
+        filename="icon/com_netease_vopen_com_netease_vopen_activity_WelcomeActivity.png"
+        isMultiLauncher="1"
+        label="网易公开课"
+        labelCn="网易公开课"
+        package="com.netease.vopen" />
+
+    <apkInfo
+        id="com.sankuai.meituan_com.sankuai.meituan.activity.Welcome"
+        name="com.sankuai.meituan.activity.Welcome"
+        filename="icon/com_sankuai_meituan_com_sankuai_meituan_activity_Welcome.png"
+        isMultiLauncher="1"
+        label="美团"
+        labelCn="美团"
+        package="com.sankuai.meituan" />
+
+    <apkInfo
+        id="com.douban.radio_com.douban.radio.ui.WelcomeActivity"
+        name="com.douban.radio.ui.WelcomeActivity"
+        filename="icon/com_douban_radio_com_douban_radio_ui_WelcomeActivity.png"
+        isMultiLauncher="1"
+        label="豆瓣FM"
+        labelCn="豆瓣FM"
+        package="com.douban.radio" />
+
+    <apkInfo
+        id="com.xunlei.downloadprovider_com.xunlei.downloadprovider.loading.LoadingActivity"
+        name="com.xunlei.downloadprovider.loading.LoadingActivity"
+        filename="icon/com_xunlei_downloadprovider_com_xunlei_downloadprovider_loading_LoadingActivity.png"
+        isMultiLauncher="1"
+        label="迅雷"
+        labelCn="迅雷"
+        package="com.xunlei.downloadprovider" />
+
+    <apkInfo
+        id="com.MobileTicket_com.MobileTicket.MobileTicket"
+        name="com.MobileTicket.MobileTicket"
+        filename="icon/com_MobileTicket_com_MobileTicket_MobileTicket.png"
+        isMultiLauncher="1"
+        label="铁路12306"
+        labelCn="铁路12306"
+        package="com.MobileTicket" />
+
+    <apkInfo
+        id="com.android.bankabc_com.android.bankabc.EMPView"
+        name="com.android.bankabc.EMPView"
+        filename="icon/com_android_bankabc_com_android_bankabc_EMPView.png"
+        isMultiLauncher="1"
+        label="农行掌上银行"
+        labelCn="农行掌上银行"
+        package="com.android.bankabc" />
+
+    <apkInfo
+        id="com.cmschina_com.cmschina.page.CmsMenuPage"
+        name="com.cmschina.page.CmsMenuPage"
+        filename="icon/com_cmschina_com_cmschina_page_CmsMenuPage.png"
+        isMultiLauncher="1"
+        label="招商智远理财"
+        labelCn="招商智远理财"
+        package="com.cmschina" />
+
+    <apkInfo
+        id="cn.jj_cn.jj.mobile.lobby.view.Main"
+        name="cn.jj.mobile.lobby.view.Main"
+        filename="icon/cn_jj_cn_jj_mobile_lobby_view_Main.png"
+        isMultiLauncher="1"
+        label="JJ斗地主"
+        labelCn="JJ斗地主"
+        package="cn.jj" />
+
+    <apkInfo
+        id="com.popcap.pvzq_com.popcap.pvzq.Main"
+        name="com.popcap.pvzq.Main"
+        filename="icon/com_popcap_pvzq_com_popcap_pvzq_Main.png"
+        isMultiLauncher="1"
+        label="Plants Vs Zombies"
+        labelCn="Plants Vs Zombies"
+        package="com.popcap.pvzq" />
+
+    <apkInfo
+        id="com.brianbaek.popstar_com.zplay.android.sdk.pay.ZplayActivity"
+        name="com.zplay.android.sdk.pay.ZplayActivity"
+        filename="icon/com_brianbaek_popstar_com_zplay_android_sdk_pay_ZplayActivity.png"
+        isMultiLauncher="1"
+        label="PopStar！消灭星星官方正版"
+        labelCn="PopStar！消灭星星官方正版"
+        package="com.brianbaek.popstar" />
+
+    <apkInfo
+        id="com.cnvcs.xiangqi_com.cnvcs.App"
+        name="com.cnvcs.App"
+        filename="icon/com_cnvcs_xiangqi_com_cnvcs_App.png"
+        isMultiLauncher="1"
+        label="中国象棋"
+        labelCn="中国象棋"
+        package="com.cnvcs.xiangqi" />
+
+    <apkInfo
+        id="com.outfit7.talkingtom2free_com.outfit7.talkingtom2.Main"
+        name="com.outfit7.talkingtom2.Main"
+        filename="icon/com_outfit7_talkingtom2free_com_outfit7_talkingtom2_Main.png"
+        isMultiLauncher="1"
+        label="Talking Tom Cat 2"
+        labelCn="会说话的汤姆猫2"
+        package="com.outfit7.talkingtom2free" />
+
+    <apkInfo
+        id="com.carrot.carrotfantasy_com.carrot.carrotfantasy.CarrotFantasy"
+        name="com.carrot.carrotfantasy.CarrotFantasy"
+        filename="icon/com_carrot_carrotfantasy_com_carrot_carrotfantasy_CarrotFantasy.png"
+        isMultiLauncher="1"
+        label="保卫萝卜"
+        labelCn="保卫萝卜"
+        package="com.carrot.carrotfantasy" />
+
+    <apkInfo
+        id="com.tencent.tmgp.carrot2_com.tencent.tmgp.carrot2.CarrotFantasy"
+        name="com.tencent.tmgp.carrot2.CarrotFantasy"
+        filename="icon/com_tencent_tmgp_carrot2_com_tencent_tmgp_carrot2_CarrotFantasy.png"
+        isMultiLauncher="1"
+        label="保卫萝卜2"
+        labelCn="保卫萝卜2"
+        package="com.tencent.tmgp.carrot2" />
+
+    <apkInfo
+        id="com.tencent.ttx5_com.tencent.ttx5.H3DProxyActivity"
+        name="com.tencent.ttx5.H3DProxyActivity"
+        filename="icon/com_tencent_ttx5_com_tencent_ttx5_H3DProxyActivity.png"
+        isMultiLauncher="1"
+        label="全民炫舞"
+        labelCn="全民炫舞"
+        package="com.tencent.ttx5" />
+
+    <apkInfo
+        id="com.bestcompany.bcbk_com.bestcompany.bcbk.tile"
+        name="com.bestcompany.bcbk.tile"
+        filename="icon/com_bestcompany_bcbk_com_bestcompany_bcbk_tile.png"
+        isMultiLauncher="1"
+        label="别踩白块儿"
+        labelCn="别踩白块儿"
+        package="com.bestcompany.bcbk" />
+
+    <apkInfo
+        id="com.boyaa.lordland.sina_com.boyaa.lordland.sina.LoginAcitivity"
+        name="com.boyaa.lordland.sina.LoginAcitivity"
+        filename="icon/com_boyaa_lordland_sina_com_boyaa_lordland_sina_LoginAcitivity.png"
+        isMultiLauncher="1"
+        label="博雅斗地主"
+        labelCn="博雅斗地主"
+        package="com.boyaa.lordland.sina" />
+
+    <apkInfo
+        id="com.kiloo.subwaysurf_com.skynet.android.impl.ui.SkynetSplashActivity"
+        name="com.skynet.android.impl.ui.SkynetSplashActivity"
+        filename="icon/com_kiloo_subwaysurf_com_skynet_android_impl_ui_SkynetSplashActivity.png"
+        isMultiLauncher="1"
+        label="地铁跑酷"
+        labelCn="地铁跑酷"
+        package="com.kiloo.subwaysurf" />
+
+    <apkInfo
+        id="com.tencent.game.VXDGame_com.tencent.game.VXDGame.VXDGame"
+        name="com.tencent.game.VXDGame.VXDGame"
+        filename="icon/com_tencent_game_VXDGame_com_tencent_game_VXDGame_VXDGame.png"
+        isMultiLauncher="1"
+        label="天天炫斗"
+        labelCn="天天炫斗"
+        package="com.tencent.game.VXDGame" />
+
+    <apkInfo
+        id="com.tencent.peng_com.tencent.peng.RedGame"
+        name="com.tencent.peng.RedGame"
+        filename="icon/com_tencent_peng_com_tencent_peng_RedGame.png"
+        isMultiLauncher="1"
+        label="天天爱消除"
+        labelCn="天天爱消除"
+        package="com.tencent.peng" />
+
+    <apkInfo
+        id="com.happyelements.AndroidAnimal.wtwd_com.happyelements.hellolua.MainActivity"
+        name="com.happyelements.hellolua.MainActivity"
+        filename="icon/com_happyelements_AndroidAnimal_wtwd_com_happyelements_hellolua_MainActivity.png"
+        isMultiLauncher="1"
+        label="开心消消乐"
+        labelCn="开心消消乐"
+        package="com.happyelements.AndroidAnimal.wtwd" />
+		
+	<apkInfo
+        id="com.happyelements.AndroidAnimal_com.happyelements.hellolua.MainActivity"
+        name="com.happyelements.hellolua.MainActivity"
+        filename="icon/com_happyelements_AndroidAnimal_com_happyelements_hellolua_MainActivity.png"
+        isMultiLauncher="1"
+        label="开心消消乐"
+        labelCn="开心消消乐"
+        package="com.happyelements.AndroidAnimal" />
+
+    <apkInfo
+        id="com.mojang.minecraftpe_cn.loader.LoaderActivity"
+        name="cn.loader.LoaderActivity"
+        filename="icon/com_mojang_minecraftpe_cn_loader_LoaderActivity.png"
+        isMultiLauncher="1"
+        label="我的世界"
+        labelCn="我的世界"
+        package="com.mojang.minecraftpe" />
+
+    <apkInfo
+        id="mobi.rgmipmj.uhojtk.spqvh_mobi.rgmipmj.uhojtk.spqvh.a"
+        name="mobi.rgmipmj.uhojtk.spqvh.a"
+        filename="icon/mobi_rgmipmj_uhojtk_spqvh_mobi_rgmipmj_uhojtk_spqvh_a.png"
+        isMultiLauncher="1"
+        label="斗地主单机版"
+        labelCn="斗地主单机版"
+        package="mobi.rgmipmj.uhojtk.spqvh" />
+
+    <apkInfo
+        id="com.yinhan.hunter.tx_com.yinhan.hunter.update.MainActivity"
+        name="com.yinhan.hunter.update.MainActivity"
+        filename="icon/com_yinhan_hunter_tx_com_yinhan_hunter_update_MainActivity.png"
+        isMultiLauncher="1"
+        label="时空猎人"
+        labelCn="时空猎人"
+        package="com.yinhan.hunter.tx" />
+
+    <apkInfo
+        id="com.centurysoft.fruityrobo_com.idsky.android.impl.ui.SkynetSplashActivity"
+        name="com.idsky.android.impl.ui.SkynetSplashActivity"
+        filename="icon/com_centurysoft_fruityrobo_com_idsky_android_impl_ui_SkynetSplashActivity.png"
+        isMultiLauncher="1"
+        label="果宝三国"
+        labelCn="果宝三国"
+        package="com.centurysoft.fruityrobo" />
+
+    <apkInfo
+        id="com.popcap.pvz2qq_com.popcap.SexyApp.SexyAppActivity"
+        name="com.popcap.SexyApp.SexyAppActivity"
+        filename="icon/com_popcap_pvz2qq_com_popcap_SexyApp_SexyAppActivity.png"
+        isMultiLauncher="1"
+        label="植物大战僵尸2"
+        labelCn="植物大战僵尸2"
+        package="com.popcap.pvz2qq" />
+
+    <apkInfo
+        id="com.qqgame.hlddz_com.qqgame.hlddz.NewHLDDZ"
+        name="com.qqgame.hlddz.NewHLDDZ"
+        filename="icon/com_qqgame_hlddz_com_qqgame_hlddz_NewHLDDZ.png"
+        isMultiLauncher="1"
+        label="欢乐斗地主"
+        labelCn="欢乐斗地主"
+        package="com.qqgame.hlddz" />
+
+    <apkInfo
+        id="com.qqgame.happymj_com.qqgame.happymj.ActivityMain"
+        name="com.qqgame.happymj.ActivityMain"
+        filename="icon/com_qqgame_happymj_com_qqgame_happymj_ActivityMain.png"
+        isMultiLauncher="1"
+        label="欢乐麻将全集"
+        labelCn="欢乐麻将全集"
+        package="com.qqgame.happymj" />
+
+    <apkInfo
+        id="com.halfbrick.fruitninja_com.idsky.android.impl.ui.SkynetSplashActivity"
+        name="com.idsky.android.impl.ui.SkynetSplashActivity"
+        filename="icon/com_halfbrick_fruitninja_com_idsky_android_impl_ui_SkynetSplashActivity.png"
+        isMultiLauncher="1"
+        label="水果忍者"
+        labelCn="水果忍者"
+        package="com.halfbrick.fruitninja" />
+
+    <apkInfo
+        id="com.yodo1.SkiSafari.TXYYB_01_com.yodo1.sdk.game.Yodo14GameSplashActivity"
+        name="com.yodo1.sdk.game.Yodo14GameSplashActivity"
+        filename="icon/com_yodo1_SkiSafari_TXYYB_01_com_yodo1_sdk_game_Yodo14GameSplashActivity.png"
+        isMultiLauncher="0"
+        label="滑雪大冒险"
+        labelCn="滑雪大冒险"
+        package="com.yodo1.SkiSafari.TXYYB_01" />
+
+    <apkInfo
+        id="com.sdu.didi.psnger_com.didi.frame.SplashActivity"
+        name="com.didi.frame.SplashActivity"
+        filename="icon/com_sdu_didi_psnger_com_didi_frame_SplashActivity.png"
+        isMultiLauncher="1"
+        label="滴滴打车"
+        labelCn="滴滴打车"
+        package="com.sdu.didi.psnger" />
+
+    <apkInfo
+        id="com.jiongji.andriod.card_com.baicizhan.main.activity.LoadingPageActivity"
+        name="com.baicizhan.main.activity.LoadingPageActivity"
+        filename="icon/com_jiongji_andriod_card_com_baicizhan_main_activity_LoadingPageActivity.png"
+        isMultiLauncher="1"
+        label="百词斩"
+        labelCn="百词斩"
+        package="com.jiongji.andriod.card" />
+
+    <apkInfo
+        id="com.gameloft.android.ANMP.GloftDMCN_com.gameloft.android.ANMP.GloftDMCN.Game"
+        name="com.gameloft.android.ANMP.GloftDMCN.Game"
+        filename="icon/com_gameloft_android_ANMP_GloftDMCN_com_gameloft_android_ANMP_GloftDMCN_Game.png"
+        isMultiLauncher="1"
+        label="神偷奶爸：小黄人快跑（果酱工厂版）"
+        labelCn="神偷奶爸：小黄人快跑（果酱工厂版）"
+        package="com.gameloft.android.ANMP.GloftDMCN" />
+
+    <apkInfo
+        id="com.imangi.templerun2_com.templerun2.SuperIdsSingleSplashActivity"
+        name="com.templerun2.SuperIdsSingleSplashActivity"
+        filename="icon/com_imangi_templerun2_com_templerun2_SuperIdsSingleSplashActivity.png"
+        isMultiLauncher="1"
+        label="神庙逃亡2"
+        labelCn="神庙逃亡2"
+        package="com.imangi.templerun2" />
+
+    <apkInfo
+        id="com.tencent.king.candycrushsaga_com.king.candycrushsaga.CandyCrushSagaActivity"
+        name="com.king.candycrushsaga.CandyCrushSagaActivity"
+        filename="icon/com_tencent_king_candycrushsaga_com_king_candycrushsaga_CandyCrushSagaActivity.png"
+        isMultiLauncher="1"
+        label="糖果传奇"
+        labelCn="糖果传奇"
+        package="com.tencent.king.candycrushsaga" />
+
+    <apkInfo
+        id="com.supercell.clashofclans_com.supercell.clashofclans.GameApp"
+        name="com.supercell.clashofclans.GameApp"
+        filename="icon/com_supercell_clashofclans_com_supercell_clashofclans_GameApp.png"
+        isMultiLauncher="1"
+        label="Clash of Clans"
+        labelCn="部落冲突"
+        package="com.supercell.clashofclans" />
+
+    <apkInfo
+        id="com.handsgo.jiakao.android_com.handsgo.jiakao.android.Login"
+        name="com.handsgo.jiakao.android.Login"
+        filename="icon/com_handsgo_jiakao_android_com_handsgo_jiakao_android_Login.png"
+        isMultiLauncher="1"
+        label="驾考宝典-驾校科目一,考驾照一点通"
+        labelCn="驾考宝典-驾校科目一,考驾照一点通"
+        package="com.handsgo.jiakao.android" />
+
+    <apkInfo
+        id="com.android.systemui_com.android.systemui.onelock.OneLock"
+        name="com.android.systemui.onelock.OneLock"
+        filename="icon/com_android_systemui_com_android_systemui_onelock_OneLock.png"
+        isMultiLauncher="0"
+        label="System UI"
+        labelCn="System UI"
+        package="com.android.systemui" />
+
+    <apkInfo
+        id="com.autonavi.minimap_com.autonavi.map.activity.SplashActivity"
+        name="com.autonavi.map.activity.SplashActivity"
+        filename="icon/com_autonavi_minimap_com_autonavi_map_activity_SplashActivity.png"
+        isMultiLauncher="1"
+        label="Amap"
+        labelCn="Amap"
+        package="com.autonavi.minimap" />
+
+	<apkInfo 
+	   id="com.tencent.qqlite_com.tencent.mobileqq.activity.SplashActivity"
+	   name="com.tencent.mobileqq.activity.SplashActivity"
+	   filename="icon/com_tencent_qqlite_com_tencent_mobileqq_activity_SplashActivity.png"
+	   isMultiLauncher="1"
+	   label="QQ轻聊版" 
+	   labelCn="QQ轻聊版" 
+	   package="com.tencent.qqlite"/>
+	   
+	<apkInfo
+	  id="com.zol.android_com.zol.android.ui.FirstActivity"
+	  name="com.zol.android.ui.FirstActivity" 
+	  filename="icon/com_zol_android_com_zol_android_ui_FirstActivity.png" 
+	  isMultiLauncher="1" 
+	  label="中关村在线"
+	  labelCn="中关村在线"
+	  package="com.zol.android"/>
+	  
+	<apkInfo 
+	  id="cn.cntv_cn.cntv.activity.LogoActivity" 
+	  name="cn.cntv.activity.LogoActivity"
+	  filename="icon/cn_cntv_cn_cntv_activity_LogoActivity.png" 
+	  isMultiLauncher="1"
+	  label="央视影音"
+	  labelCn="央视影音" 
+	  package="cn.cntv"/>
+	  
+	<apkInfo
+	  id="com.ibox.flashlight_com.ibox.flashlight.FlashLightActivity" 
+	  name="com.ibox.flashlight.FlashLightActivity"
+	  filename="icon/com_ibox_flashlight_com_ibox_flashlight_FlashLightActivity.png"
+	  isMultiLauncher="1" 
+	  label="iDO Flashlight" 
+	  labelCn="手电筒"
+	  package="com.ibox.flashlight"/>
+	  
+	<apkInfo 
+	  id="xxt.com.cn.ui_xxt.com.cn.ui.welcome.Welcome"
+	  name="xxt.com.cn.ui.welcome.Welcome"
+	  filename="icon/xxt_com_cn_ui_xxt_com_cn_ui_welcome_Welcome.png" 
+	  isMultiLauncher="1" 
+	  label="沃·行讯通" 
+	  labelCn="沃·行讯通"
+	  package="xxt.com.cn.ui"/>
+	  
+	<apkInfo 
+	  id="com.netease.vopen_com.netease.vopen.activity.WelcomeActivity"
+	  name="com.netease.vopen.activity.WelcomeActivity"
+	  filename="icon/com_netease_vopen_com_netease_vopen_activity_WelcomeActivity.png"
+	  isMultiLauncher="1"
+	  label="网易公开课" 
+	  labelCn="网易公开课" 
+	  package="com.netease.vopen"/>
+	  
+	<apkInfo 
+	  id="com.tigerknows_com.tigerknows.LauncherActivity"
+	  name="com.tigerknows.LauncherActivity" 
+	  filename="icon/com_tigerknows_com_tigerknows_LauncherActivity.png"
+	  isMultiLauncher="1" 
+	  label="老虎地图"
+	  labelCn="老虎地图" 
+	  package="com.tigerknows"/>
+	  
+	<apkInfo 
+	  id="com.douban.radio_com.douban.radio.ui.WelcomeActivity"
+	  name="com.douban.radio.ui.WelcomeActivity" 
+	  filename="icon/com_douban_radio_com_douban_radio_ui_WelcomeActivity.png" 
+	  isMultiLauncher="1"
+	  label="豆瓣FM"
+	  labelCn="豆瓣FM"
+	  package="com.douban.radio"/>
+	  
+	<apkInfo id="com.wandoujia.phoenix2_com.wandoujia.jupiter.activity.HomeActivity" 
+	  name="com.wandoujia.jupiter.activity.HomeActivity" 
+	  filename="icon/com_wandoujia_phoenix2_com_wandoujia_jupiter_activity_HomeActivity.png" 
+	  isMultiLauncher="1" 
+	  label="豌豆荚" 
+	  labelCn="豌豆荚" 
+	  package="com.wandoujia.phoenix2"/>
+		
+	<apkInfo 
+	  id="com.qq.reader_com.qq.reader.activity.SplashActivity" 
+	  name="com.qq.reader.activity.SplashActivity" 
+	  filename="icon/com_qq_reader_com_qq_reader_activity_SplashActivity.png" 
+	  isMultiLauncher="1" 
+	  label="QQ阅读"
+	  labelCn="QQ阅读" 
+	  package="com.qq.reader"/>
+	  
+	<apkInfo 
+	  id="com.ophone.reader.ui_com.cmread.bplusc.bookshelf.LocalMainActivity" 
+	  name="com.cmread.bplusc.bookshelf.LocalMainActivity" 
+	  filename="icon/com_ophone_reader_ui_com_cmread_bplusc_bookshelf_LocalMainActivity.png"
+	  isMultiLauncher="1"
+	  label="和阅读" 
+	  labelCn="和阅读" 
+	  package="com.ophone.reader.ui"/>
+	  
+	<apkInfo 
+	  id="com.chaozh.iReaderFree_com.chaozh.iReader.ui.activity.WelcomeActivity"
+	  name="com.chaozh.iReader.ui.activity.WelcomeActivity" 
+	  filename="icon/com_chaozh_iReaderFree_com_chaozh_iReader_ui_activity_WelcomeActivity.png" 
+	  isMultiLauncher="1" 
+	  label="掌阅iReader" 
+	  labelCn="掌阅iReader" 
+	  package="com.chaozh.iReaderFree"/>
+	  
+	<apkInfo 
+	  id="com.zhangyue.tingreader_com.zhangyue.ting.modules.activity.SplashActivity" 
+	  name="com.zhangyue.ting.modules.activity.SplashActivity" 
+	  filename="icon/com_zhangyue_tingreader_com_zhangyue_ting_modules_activity_SplashActivity.png" 
+	  isMultiLauncher="1"
+	  label="掌阅听书"
+	  labelCn="掌阅听书" 
+	  package="com.zhangyue.tingreader"/>
+	  
+	<apkInfo 
+	  id="cn.eclicks.drivingtest_cn.eclicks.drivingtest.StartPageActivity" 
+	  name="cn.eclicks.drivingtest.StartPageActivity"
+	  filename="icon/cn_eclicks_drivingtest_cn_eclicks_drivingtest_StartPageActivity.png"
+	  isMultiLauncher="1"
+	  label="车轮考驾照"
+	  labelCn="车轮考驾照" 
+	  package="cn.eclicks.drivingtest"/>
+	  
+	<apkInfo 
+	  id="com.jxedt_com.jxedt.ui.activitys.GuideActivity"
+	  name="com.jxedt.ui.activitys.GuideActivity" 
+	  filename="icon/com_jxedt_com_jxedt_ui_activitys_GuideActivity.png" 
+	  isMultiLauncher="1" 
+	  label="驾校一点通" 
+	  labelCn="驾校一点通" 
+	  package="com.jxedt"/>
+	  
+	<apkInfo 
+	  id="com.sina.weibo_com.sina.weibo.SplashActivity"
+	  name="com.sina.weibo.SplashActivity" 
+	  filename="icon/com_sina_weibo_com_sina_weibo_SplashActivity.png" 
+	  isMultiLauncher="1" 
+	  label="微博" 
+	  labelCn="微博" 
+	  package="com.sina.weibo"/>
+	
+	<apkInfo 
+	  id="com.tencent.mm_com.tencent.mm.ui.LauncherUI"
+	  name="com.tencent.mm.ui.LauncherUI" 
+	  filename="icon/com_tencent_mm_com_tencent_mm_ui_LauncherUI.png" 
+	  isMultiLauncher="1" 
+	  label="微信" 
+	  labelCn="微信" 
+	  package="com.tencent.mm"/>
+	  
+	<apkInfo 
+	  id="com.dianping.v1_com.dianping.base.permission.PermissionActivity"
+	  name="com.dianping.base.permission.PermissionActivity" 
+	  filename="icon/com_dianping_v1_com_dianping_base_permission_PermissionActivity.png" 
+	  isMultiLauncher="1" 
+	  label="大众点评" 
+	  labelCn="大众点评" 
+	  package="com.dianping.v1"/>
+	
+	<apkInfo 
+	  id="com.dianping.v1_com.dianping.main.guide.SplashScreenActivity"
+	  name="com.dianping.main.guide.SplashScreenActivity" 
+	  filename="icon/com_dianping_v1_com_dianping_main_guide_SplashScreenActivity.png" 
+	  isMultiLauncher="1" 
+	  label="大众点评" 
+	  labelCn="大众点评" 
+	  package="com.dianping.v1"/>
+	 
+    <apkInfo 
+	  id="com.chaozh.iReader_com.chaozh.iReader.ui.activity.WelcomeActivity"
+	  name="com.chaozh.iReader.ui.activity.WelcomeActivity" 
+	  filename="icon/com_chaozh_iReader_com_chaozh_iReader_ui_activity_WelcomeActivity.png" 
+	  isMultiLauncher="1" 
+	  label="掌阅iReader" 
+	  labelCn="掌阅iReader" 
+	  package="com.chaozh.iReader"/>
+	  
+	<apkInfo 
+	  id="com.chaozh.iReaderFree_com.chaozh.iReader.ui.activity.WelcomeActivity"
+	  name="com.chaozh.iReader.ui.activity.WelcomeActivity" 
+	  filename="icon/com_chaozh_iReaderFree_com_chaozh_iReader_ui_activity_WelcomeActivity.png" 
+	  isMultiLauncher="1" 
+	  label="掌阅iReader" 
+	  labelCn="掌阅iReader" 
+	  package="com.chaozh.iReaderFree"/>
+
+	<apkInfo
+        id="cn.egame.terminal.client4g_cn.egame.terminal.client4g.uis.Egame4GFlashActivity"
+        name="cn.egame.terminal.client4g.uis.Egame4GFlashActivity"
+        filename="icon/cn_egame_terminal_client4g_cn_egame_terminal_client4g_uis_Egame4GFlashActivity.png"
+        isMultiLauncher="1"
+        label="4Game"
+        labelCn="爱玩4G"
+        package="cn.egame.terminal.client4g" />	
+		
+	<apkInfo
+        id="com.android.shotcutkey_com.android.shotcutkey.GuideActivity"
+        name="com.android.shotcutkey.GuideActivity"
+        filename="icon/com.android.shotcutkey.GuideActivity.png"
+        isMultiLauncher="1"
+        label="superKey"
+        labelCn="鲜键"
+        package="com.android.shotcutkey" />			
+	<apkInfo
+        id="com.telecom.video.ikan4g_com.telecom.video.ikan4g.ui.activity.LoadingActivity"
+        name="com.telecom.video.ikan4g.ui.activity.LoadingActivity"
+        filename="icon/com.telecom.video.ikan4g.ui.activity.LoadingActivity.png"
+        isMultiLauncher="1"
+        label="iKan 4G"
+        labelCn="爱看4G"
+        package="com.telecom.video.ikan4g" />
+	<apkInfo
+        id="com.imusic.iting_com.gwsoft.imusic.controller.LoadingActivity"
+        name="com.gwsoft.imusic.controller.LoadingActivity"
+        filename="icon/com.gwsoft.imusic.controller.LoadingActivity.png"
+        isMultiLauncher="1"
+        label="iTing"
+        labelCn="爱听4G"
+        package="com.imusic.iting" />
+	<apkInfo
+        id="im.yixin_com.yixin.activity.WelcomeActivity"
+        name="im.yixin.activity.WelcomeActivity"
+        filename="icon/im.yixin.activity.WelcomeActivity.png"
+        isMultiLauncher="1"
+        label="Easychar"
+        labelCn="易信"
+        package="im.yixin" />			
+	<apkInfo
+        id="com.ume.browser_com.ume.browser.MainActivity"
+        name="com.ume.browser.MainActivity"
+        filename="icon/com_ume_browser.png"
+        isMultiLauncher="1"
+        label="Browser"
+        labelCn="互联网"
+        package="com.ume.browser" />
+	<apkInfo
+        id="com.besttone.hall_com.besttone.hall.activity.MainActivity"
+        name="com.besttone.hall.activity.MainActivity"
+        filename="icon/com_besttone_hall_com_besttone_hall_MainActivity.png"
+        isMultiLauncher="1"
+        label="Besttone"
+        labelCn="号码百事通"
+        package="com.besttone.hall" />
+    <apkInfo
+        id="com.zte.heartyservice_com.zte.heartyservice.main.heartserviceactivitylauncher"
+        name="com.zte.heartyservice.main.heartserviceactivitylauncher"
+        filename="icon/com_zte_heartyservice_com_zte_heartyservice_main_heartserviceactivitylauncher.png"
+        isMultiLauncher="1"
+        label="Heart Service"
+        labelCn="掌心管家"
+        package="com.zte.heartyservice" />
+	<apkInfo
+        id="com.android.stk_com.android.stk.StkMain"
+        name="com.android.stk.StkMain"
+        filename="icon/com_android_stk_com_android_stk_StkMain.png"
+        isMultiLauncher="1"
+        label="SIM Card"
+        labelCn="SIM卡应用"
+        package="com.android.stk" />
+	<apkInfo
+        id="com.android.stk_com.android.stk.StkLauncherActivityII"
+        name="com.android.stk.StkLauncherActivityII"
+        filename="icon/com_android_stk_com_android_stk_StkLauncherActivityII.png"
+        isMultiLauncher="1"
+        label="USIM card 2"
+        labelCn="USIM卡应用2"
+        package="com.android.stk" />
+    <apkInfo
+        id="zte.com.market_zte.com.market.LoginActivity"
+        name="zte.com.market.LoginActivity"
+        filename="icon/zte_com_market_zte_com_market_LoginActivity.png"
+        isMultiLauncher="1"
+        label="应用商店"
+        labelCn="应用商店"
+        package="zte.com.market" />		
+		
+	<apkInfo
+        id="com.android.MiEasyMode_com.android.MiEasyMode.ELauncher.HomeActivity"
+        name="com.android.MiEasyMode.ELauncher.HomeActivity"
+        filename="icon/com_android_MiEasyMode_com_android_MiEasyMode_ELauncher_HomeActivity.png"
+        isMultiLauncher="1"
+        label="亲情模式"
+        labelCn="亲情模式"
+        package="com.android.MiEasyMode" />	
+	<apkInfo
+        id="com.android.MiEasyMode_com.android.MiEasyMode.ELauncher2.HomeActivity2"
+        name="com.android.MiEasyMode.ELauncher2.HomeActivity2"
+        filename="icon/com_android_MiEasyMode_com_android_MiEasyMode_ELauncher_HomeActivity.png"
+        isMultiLauncher="1"
+        label="亲情模式"
+        labelCn="亲情模式"
+        package="com.android.MiEasyMode" />
+	<apkInfo
+        id="com.android.MiEasyMode_com.android.MiEasyMode.ELauncher3.HomeActivity3"
+        name="com.android.MiEasyMode.ELauncher3.HomeActivity3"
+        filename="icon/com_android_MiEasyMode_com_android_MiEasyMode_ELauncher_HomeActivity.png"
+        isMultiLauncher="1"
+        label="亲情模式"
+        labelCn="亲情模式"
+        package="com.android.MiEasyMode" />
+		
+    <apkInfo
+        id="com.zte.handservice_com.zte.handservice.MainActivity"
+        name="com.zte.handservice.MainActivity"
+        filename="icon/com_zte_handservice_com_zte_handservice_MainActivity.png"
+        isMultiLauncher="1"
+        label="中兴客服"
+        labelCn="中兴客服"
+        package="com.zte.handservice" />
+	
+    <apkInfo
+        id="sogou.mobile.explorer_sogou.mobile.explorer.NoDisplayActivity"
+        name="sogou.mobile.explorer.NoDisplayActivity"
+        filename="icon/sogou_mobile_explorer_sogou_mobile_explorer_NoDisplayActivity.png"
+        isMultiLauncher="1"
+        label="Sogou explorer"
+        labelCn="搜狗浏览器"
+        package="sogou.mobile.explorer" />
+
+    <apkInfo
+        id="com.sogou.activity.src_com.sogou.activity.src.SplashActivity"
+        name="com.sogou.activity.src.SplashActivity"
+        filename="icon/com.sogou.activity.src.png"
+        isMultiLauncher="1"
+        label="Sogou search"
+        labelCn="搜狗搜索"
+        package="com.sogou.activity.src" />	
+	<apkInfo
+        id="com.aspire.mm_com.aspire.mm.app.HotSaleActivity"
+        name="com.aspire.mm.app.HotSaleActivity"
+        filename="icon/com_aspire_mm_com_aspire_mm_app_HotSaleActivity.png"
+        isMultiLauncher="1"
+        label="MM Store"
+        labelCn="MM 商城"
+        package="com.aspire.mm" />
+	<apkInfo
+        id="com.andreader.prein_com.cmread.bplusc.bookshelf.LocalMainActivity"
+        name="com.cmread.bplusc.bookshelf.LocalMainActivity"
+        filename="icon/com_andreader_prein_com_cmread_bplusc_bookshelf_LocalMainActivity.png"
+        isMultiLauncher="1"
+        label="和阅读"
+        labelCn="和阅读"
+        package="com.andreader.prein" />
+	<apkInfo
+        id="com.andreader.prein_com.cmread.bplusc.bookshelf.promptMainActivity"
+        name="com.cmread.bplusc.bookshelf.promptMainActivity"
+        filename="icon/com_andreader_prein_com_cmread_bplusc_bookshelf_LocalMainActivity.png"
+        isMultiLauncher="1"
+        label="和阅读"
+        labelCn="和阅读"
+        package="com.andreader.prein" />		
+	<apkInfo
+        id="com.whty.wicity.china_com.whty.activity.LoadActivity"
+        name="com.whty.activity.LoadActivity"
+        filename="icon/com_whty_wicity_china_com_whty_activity_LoadActivity.png"
+        isMultiLauncher="1"
+        label="和生活"
+        labelCn="和生活"
+        package="com.whty.wicity.china" />
+		
+	<apkInfo
+        id="cn.cmvideo.isj_com.cmcc.mobilevideo.StartActivity"
+        name="com.cmcc.mobilevideo.StartActivity"
+        filename="icon/cn_cmvideo_isj_com_cmcc_mobilevideo_StartActivity.png"
+        isMultiLauncher="1"
+        label="和视界"
+        labelCn="和视界"
+        package="cn.cmvideo.isj" />
+		
+	<apkInfo
+        id="com.chinamobile.mcloud_com.chinamobile.mcloud.client.ui.logo.LogoActivity"
+        name="com.chinamobile.mcloud.client.ui.logo.LogoActivity"
+        filename="icon/com_chinamobile_mcloud_com_chinamobile_mcloud_client_ui_logo_LogoActivity.png"
+        isMultiLauncher="1"
+        label="和彩云"
+        labelCn="和彩云"
+        package="com.chinamobile.mcloud" />
+	<apkInfo
+        id="cn.emagsoftware.gamehall_cn.emagsoftware.gamehall.GameHallShowcase"
+        name="cn.emagsoftware.gamehall.GameHallShowcase"
+        filename="icon/cn_emagsoftware_gamehall_cn_emagsoftware_gamehall_GameHallShowcase.png"
+        isMultiLauncher="1"
+        label="咪咕游戏"
+        labelCn="咪咕游戏"
+        package="cn.emagsoftware.gamehall" />
+	<apkInfo
+        id="cn.com.fetion_cn.com.fetion.activity.LaunchActivity"
+        name="cn.com.fetion.activity.LaunchActivity"
+        filename="icon/cn_com_fetion_cn_com_fetion_activity_LaunchActivity.png"
+        isMultiLauncher="1"
+        label="飞信"
+        labelCn="飞信"
+        package="cn.com.fetion" />
+	<apkInfo
+        id="com.dpx.mengchong_com.dpx.mengchong.GameFirstActivity"
+        name="com.dpx.mengchong.GameFirstActivity"
+        filename="icon/com_dpx_mengchong_com_dpx_mengchong_GameFirstActivity.png"
+        isMultiLauncher="1"
+        label="萌宠消消乐"
+        labelCn="萌宠消消乐"
+        package="com.dpx.mengchong" />	
+	<apkInfo
+        id="sogou.mobile.explorer_sogou.mobile.explorer.NoDisplayActivity"
+        name="sogou.mobile.explorer.NoDisplayActivity"
+        filename="icon/sogou_mobile_explorer_sogou_mobile_explorer_NoDisplayActivity.png"
+        isMultiLauncher="1"
+        label="Sogou explorer"
+        labelCn="搜狗浏览器"
+        package="sogou.mobile.explorer" />		
+	<apkInfo
+        id="com.zte.heartyservice_com.zte.heartyservice.privacy.PrivacyStartActivity"
+        name="com.zte.heartyservice.privacy.PrivacyStartActivity"
+        filename="icon/anti_leakage.png"
+        isMultiLauncher="1"
+        label="Anti-leakage"
+        labelCn="私密空间"
+        package="com.zte.heartyservice" />
+	<apkInfo
+        id="com.android.systemui_com.android.systemui.onelock.OneLock"
+        name="com.android.systemui.onelock.OneLock"
+        filename="icon/com_android_systemui_com_android_systemui_onelock_OneLock.png"
+        isMultiLauncher="1"
+        label="OneLock"
+        labelCn="一键锁屏"
+        package="com.android.systemui" />	
+    <!--start  double app adapter-->				
+	<apkInfo
+        id="com.cn.doubleapp_com.cn.doubleapp.activity.GuideActivity"
+        name="com.cn.doubleapp.activity.GuideActivity"
+        filename="icon/com_cn_doubleapp_com_cn_doubleapp_activity_GuideActivity.png"
+        isMultiLauncher="1"
+        label="doubleapp"
+        labelCn="分身有术"
+        package="com.cn.doubleapp" />
+	<apkInfo
+        id="com.cn.doubleapp_com.cn.doubleapp.activity.secondactivity.WeixinActivity"
+        name="com.cn.doubleapp.activity.secondactivity.WeixinActivity"
+        filename="icon/doubleapp_weixin.png"
+        isMultiLauncher="1"
+        label="微信"
+        labelCn="微信"
+        package="com.cn.doubleapp" />			
+	<apkInfo
+        id="com.cn.doubleapp_com.cn.doubleapp.activity.secondactivity.TaobaoActivity"
+        name="com.cn.doubleapp.activity.secondactivity.TaobaoActivity"
+        filename="icon/doubleapp_taobao.png"
+        isMultiLauncher="1"
+        label="淘宝"
+        labelCn="淘宝"
+        package="com.cn.doubleapp" />
+	<apkInfo
+        id="com.cn.doubleapp_com.cn.doubleapp.activity.secondactivity.WeiboActivity"
+        name="com.cn.doubleapp.activity.secondactivity.WeiboActivity"
+        filename="icon/doubleapp_weibo.png"
+        isMultiLauncher="1"
+        label="微博"
+        labelCn="微博"
+        package="com.cn.doubleapp" />
+	<apkInfo
+        id="com.cn.doubleapp_com.cn.doubleapp.activity.secondactivity.QqActivity"
+        name="com.cn.doubleapp.activity.secondactivity.QqActivity"
+        filename="icon/doubleapp_qq.png"
+        isMultiLauncher="1"
+        label="QQ"
+        labelCn="QQ"
+        package="com.cn.doubleapp" />
+	<apkInfo
+        id="com.cn.doubleapp_com.cn.doubleapp.activity.secondactivity.AlipayActivity"
+        name="com.cn.doubleapp.activity.secondactivity.AlipayActivity"
+        filename="icon/doubleapp_alipay.png"
+        isMultiLauncher="1"
+        label="Alipay"
+        labelCn="支付宝"
+        package="com.cn.doubleapp" />
+	<apkInfo
+        id="com.cn.doubleapp_com.cn.doubleapp.activity.secondactivity.QianniuActivity"
+        name="com.cn.doubleapp.activity.secondactivity.QianniuActivity"
+        filename="icon/doubleapp_qianniu.png"
+        isMultiLauncher="1"
+        label="千牛"
+        labelCn="千牛"
+        package="com.cn.doubleapp" />		
+	<apkInfo
+        id="com.cn.doubleapp_com.cn.doubleapp.activity.secondactivity.WeishopActivity"
+        name="com.cn.doubleapp.activity.secondactivity.WeishopActivity"
+        filename="icon/doubleapp_weishop.png"
+        isMultiLauncher="1"
+        label="微店"
+        labelCn="微店"
+        package="com.cn.doubleapp" />		
+	<apkInfo
+        id="com.cn.doubleapp_com.cn.doubleapp.activity.secondactivity.OkweiActivity"
+        name="com.cn.doubleapp.activity.secondactivity.OkweiActivity"
+        filename="icon/doubleapp_okwei.png"
+        isMultiLauncher="1"
+        label="微店网"
+        labelCn="微店网"
+        package="com.cn.doubleapp" />
+	<!--end  double app adapter-->
+	<apkInfo
+        id="com.okwei.mobile_com.okwei.mobile.ui.SplashActivity"
+        name="com.okwei.mobile.ui.SplashActivity"
+        filename="icon/okwei.png"
+        isMultiLauncher="1"
+        label="微店网"
+        labelCn="微店网"
+        package="com.okwei.mobile" />	
+	<apkInfo
+        id="com.taobao.qianniu_com.taobao.qianniu.ui.InitActivity"
+        name="com.taobao.qianniu.ui.InitActivity"
+        filename="icon/qianniu.png"
+        isMultiLauncher="1"
+        label="千牛"
+        labelCn="千牛"
+        package="com.taobao.qianniu" />		
+	
+</apkInfos>

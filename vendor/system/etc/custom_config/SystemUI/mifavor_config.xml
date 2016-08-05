@@ -1,0 +1,19 @@
+<resources>
+
+    <!-- The default tiles to display in QuickSettings -->
+    <string name="mifavor_quick_settings_tiles_default" translatable="false">
+        wifi,dataconnection,airplane,bt,hotspot,location,rotation,camera,flashlight
+    </string>
+    <!--wifi,data,airplane,sound,vibrate,bt,sync,hotspot,location,rotation,glove,pop,smart,standby,voice,camera,flashlight,network-->
+    <string name="mifavor_quick_settings_tiles_default_msim" translatable="false">
+        wifi,dataconnection,simdataconnection,bt,flashlight,hotspot,airplane,rotation,location,standby
+    </string>
+	<!--wifi,data0,data1,airplane,sound,vibrate,bt,sync,hotspot,location,rotation,glove,pop,smart,standby,voice,camera,flashlight,network,dual,data1,data2-->
+
+	<!--
+	    Keyguard BottomLeft Button custom. 
+		Default is 0 to start phone; 1 is FavoriteLockScreen; 2 is VoiceHelper.
+		@same as PHONE_BUTTON/FAVORITELOCKSCREEN_BUTTON/VOICEHELPER_BUTTON in ExtendConfigHelper.java@
+	-->
+	<integer name="bottomleft_button">0</integer>
+</resources>

@@ -1,0 +1,15 @@
+<resources>
+	<!--use internal plugin-->
+    <string name="operator_china_telecom">
+		P635N34,P_P635N34,P635B32,GA_P635N34,S_P635N34
+    </string>
+	
+    <string name="operator_china_mobile">
+
+    </string>
+		
+    <string name="operator_china_unicom">
+        V_P635N34,CU_P635N34
+    </string>
+
+</resources>

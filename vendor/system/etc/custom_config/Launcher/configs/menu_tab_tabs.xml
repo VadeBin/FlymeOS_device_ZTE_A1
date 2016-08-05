@@ -1,0 +1,498 @@
+<menutabconfigs>
+
+    <colors>
+
+        <color
+            id="YS53a16202e4b0a9b7f2e7d937"
+            colorId="Amethyst"
+            refId="YS53a25728e4b0a9b7f2e7d945"
+            setupwizard="1" />
+
+        <color
+            id="YS53a1628de4b0a9b7f2e7d939"
+            colorId="FreshPeach"
+            refId="YS53a161e1e4b0a9b7f2e7d936"
+            setupwizard="2" />
+
+        <color
+            id="YS541fef17e4b0644255cae764"
+            colorId="AquaGreen"
+            refId="YS53a16202e4b0a9b7f2e7d937"
+            setupwizard="3" />
+
+        <color
+            id="YS541fef4de4b0644255cae765"
+            colorId="TigerLily"
+            refId="YS53a16202e4b0a9b7f2e7d937"
+            setupwizard="4" />
+
+        <color
+            id="YS541fee5fe4b0644255cae762"
+            colorId="OceanBlue"
+            refId="YS541fef17e4b0644255cae764"
+            setupwizard="5" />
+
+        <color
+            id="YS53a161e1e4b0a9b7f2e7d936"
+            colorId="Dafodil"
+            refId="YS53a1628de4b0a9b7f2e7d939" />
+
+        <color
+            id="YS53a256bfe4b0a9b7f2e7d943"
+            colorId="Cochineal"
+            refId="YS53a25728e4b0a9b7f2e7d945" />
+
+        <color
+            id="YS53a25728e4b0a9b7f2e7d945"
+            colorId="BudGreen"
+            refId="YS53a16202e4b0a9b7f2e7d937" />
+
+        <color
+            id="YS53a2579fe4b0a9b7f2e7d949"
+            colorId="Lilac"
+            refId="YS53a25728e4b0a9b7f2e7d945" />
+
+        <color
+            id="YS53a25764e4b0a9b7f2e7d947"
+            colorId="Emerald"
+            refId="YS541fef4de4b0644255cae765" />
+    </colors>
+
+    <wallpapers>
+
+	
+		<wallpaper
+            id="BZ3paperreserveforzte00034"
+            filename="new_lilies.png" />
+
+		<wallpaper
+            id="BZ3paperreserveforzte00035"
+            filename="new_goldfish.png" />
+
+		<wallpaper
+            id="BZ3paperreserveforzte00047"
+            filename="new_vase.png" />
+			
+		<wallpaper
+            id="BZ3paperreserveforzte00029"
+            filename="new_pic_9.png" />
+	
+		<wallpaper
+            id="BZ3paperreserveforzte00010"
+            filename="fresh_default_00.png" />
+
+        <wallpaper
+            id="BZ3paperreserveforzte00011"
+            filename="fresh_default_01.png" />
+
+        <!--<wallpaper
+            id="BZ3paperreserveforzte00012"
+            filename="fresh_default_02.png" />-->
+
+        <wallpaper
+            id="BZ3paperreserveforzte00013"
+            filename="fresh_default_03.png" />
+
+        <!--<wallpaper
+            id="BZ3paperreserveforzte00014"
+            filename="fresh_default_04.png" />-->
+
+        <wallpaper
+            id="BZ3paperreserveforzte00015"
+            filename="fresh_default_05.png" />
+
+        <wallpaper
+            id="BZ3paperreserveforzte00001"
+            filename="Inner_luxury.jpg" />
+		<!--<wallpaper
+            id="BZ3paperreserveforzte00005"
+            filename="Knight.jpg" />-->
+		<wallpaper
+            id="BZ3paperreserveforzte00007"
+            filename="Life.jpg" />
+		<wallpaper
+            id="BZ54c1e81ae4b02e63fd5120de"
+            filename="night.jpg" />
+
+		<wallpaper
+            id="BZ5450b13be4b05c4ae252aa4a"
+            filename="new_pic_2.jpg" />
+		<wallpaper
+            id="BZ3paperreserveforzte00002"
+            filename="new_pic_4.jpg" />
+		<wallpaper
+            id="BZ3paperreserveforzte00008"
+            filename="new_pic_13.jpg" />
+		<wallpaper
+            id="BZ3paperreserveforzte00009"
+            filename="new_pic_14.jpg" />
+    </wallpapers>
+
+    <icons>
+	    
+
+        <icon
+            id="default_icon_00"
+            style="0"
+            filename="icons_fantasy.zip" />
+
+        <icon
+            id="ZT5473297be4b09722fc043792"
+            style="1"
+            filename="icons_classic.zip" />
+
+        <icon
+            id="ZT53b11d79e4b05795ef7d8f7d"
+            style="2"
+            filename="icons_refraction.zip" />
+			
+		<icon
+            id="default_icon_01"
+            style="4"
+            filename="icons_axon_classic.zip" />			
+    </icons>
+
+    <effects>
+
+        <effect
+            id="default_effect_00"
+            style="0"
+            filename="effect_smooth.png" />
+
+        <effect
+            id="default_effect_01"
+            style="1"
+            filename="effect_random.png" />
+
+        <effect
+            id="default_effect_02"
+            style="2"
+            filename="effect_cross.png" />
+
+        <effect
+            id="default_effect_03"
+            style="3"
+            filename="effect_wave.png" />
+
+        <effect
+            id="default_effect_04"
+            style="4"
+            filename="effect_outbox.png" />
+
+        <effect
+            id="default_effect_05"
+            style="5"
+            filename="effect_inbox.png" />
+
+        <effect
+            id="default_effect_06"
+            style="6"
+            filename="effect_fanlight.png" />
+    </effects>
+
+    <statics>
+
+        <static
+            id="default_color_online"
+            backgroud="ff454b58"
+            className="com.nqmobile.live.store.fragment.StoryMainACTF"
+            icon="icon_new"
+            isAsCorner="true"
+            packageName="com.nqmobile.livestore.ztemf32" />
+
+        <static
+            id="default_wallpaper_online"
+            backgroud="ff454b58"
+            className="com.nqmobile.live.store.fragment.StoryMainACTF"
+            icon="icon_new"
+            isAsCorner="true"
+            packageName="com.nqmobile.livestore.ztemf32" />
+
+        <static
+            id="default_icon_online"
+            backgroud="ff454b58"
+            className="com.nqmobile.live.store.fragment.StoryMainACTF"
+            icon="icon_new"
+            isAsCorner="true"
+            packageName="com.nqmobile.livestore.ztemf32" />
+
+        <static
+            id="default_color_live"
+            backgroud="live_color_icon"
+            className="com.everystripe.wallpaper.free.LauncherActivity"
+            packageName="com.everystripe.wallpaper.light" />
+
+        <static
+            id="default_wallpaper_gallery"
+            backgroud="ff454b58"
+            className="com.zte.mifavor.launcher.menu.GALLERY"
+            icon="icon_gallery" />
+
+        <static
+            id="default_color_camera"
+            backgroud="ff3c3c3c"
+            icon="icon_picker" />
+
+        <static
+            id="default_wallpaper_camera"
+            backgroud="ff3c3c3c"
+            icon="icon_camera" />
+
+        <static
+            id="default_lockscreen_00"
+            backgroud="ff72bb45"
+            className="com.albumwall.action.MAIN"
+            icon="ic_lock_home_screen" />
+
+        <static
+            id="default_lockscreen_01"
+            backgroud="ffe2255b"
+            className="com.albumwall.action.ME"
+            icon="ic_lock_home_me" />
+    </statics>
+
+    <menutabs>
+
+        <menutab id="menutab_color" >
+
+            <item
+                id="default_color_online"
+                type="static"/>
+
+            <!--item
+                id="default_color_live"
+                flag="1"
+                type="static"/-->
+
+            <item
+                id="default_color_camera"
+                flag="1"
+                type="static"/>
+
+            <item
+                id="YS53a16202e4b0a9b7f2e7d937"
+                type="color"/>
+
+            <item
+                id="YS53a1628de4b0a9b7f2e7d939"
+                type="color"/>
+
+            <item
+                id="YS541fef17e4b0644255cae764"
+                type="color"/>
+
+            <item
+                id="YS541fef4de4b0644255cae765"
+                type="color"/>
+
+            <item
+                id="YS541fee5fe4b0644255cae762"
+                type="color"/>
+
+            <item
+                id="YS53a161e1e4b0a9b7f2e7d936"
+                type="color"/>
+
+            <item
+                id="YS53a256bfe4b0a9b7f2e7d943"
+                type="color"/>
+
+            <item
+                id="YS53a25728e4b0a9b7f2e7d945"
+                type="color"/>
+
+            <item
+                id="YS53a2579fe4b0a9b7f2e7d949"
+                type="color"/>
+
+            <item
+                id="YS53a25764e4b0a9b7f2e7d947"
+                type="color"/>
+        </menutab>
+
+        <menutab id="menutab_wallpaper" >
+
+            <item
+                id="default_wallpaper_online"
+                type="static"/>
+
+            <item
+                id="default_wallpaper_gallery"
+                type="gallery"/>
+
+            <item
+                id="default_wallpaper_camera"
+                flag="1"
+                type="static"/>
+
+			<item
+				id="BZ3paperreserveforzte00034"
+				type="wallpaper"/>
+				
+			<item
+				id="BZ3paperreserveforzte00035"
+				type="wallpaper"/>				
+
+			<item
+				id="BZ3paperreserveforzte00047"
+				type="wallpaper"/>			
+				
+			<item
+				id="BZ3paperreserveforzte00029"
+				type="wallpaper"/>
+			
+			<item
+                id="BZ3paperreserveforzte00010"
+                type="wallpaper"/>
+
+            <item
+                id="BZ3paperreserveforzte00011"
+                type="wallpaper"/>
+
+            <!--<item
+                id="BZ3paperreserveforzte00012"
+                type="wallpaper"/>-->
+
+            <item
+                id="BZ3paperreserveforzte00013"
+                type="wallpaper"/>
+
+            <!--<item
+                id="BZ3paperreserveforzte00014"
+                type="wallpaper"/>-->
+
+            <item
+                id="BZ3paperreserveforzte00015"
+                type="wallpaper"/>
+				
+            <item
+                id="BZ3paperreserveforzte00001"
+				foreColor="0xFFFFFFFF"
+                type="wallpaper"/>
+			<!--<item
+                id="BZ3paperreserveforzte00005"
+                type="wallpaper"/>-->
+			<item
+                id="BZ3paperreserveforzte00007"
+				foreColor="0xFFFFFFFF"
+                type="wallpaper"/>
+			<item
+                id="BZ54c1e81ae4b02e63fd5120de"
+                type="wallpaper"/>
+
+			<!--<item
+				id="BZ5450b13be4b05c4ae252aa4a"
+				type="wallpaper"/>-->
+			<item
+				id="BZ3paperreserveforzte00002"
+				type="wallpaper"/>
+			<item
+				id="BZ3paperreserveforzte00008"
+				type="wallpaper"/>
+			<item
+				id="BZ3paperreserveforzte00009"
+				type="wallpaper"/>
+        </menutab>
+
+        <menutab id="menutab_icon" >
+
+            <item
+                id="default_icon_online"
+                type="static"/>
+				
+            <item
+                id="default_icon_00"
+                type="icon"/>
+
+            <item
+                id="ZT5473297be4b09722fc043792"
+                type="icon"/>
+
+            <item
+                id="ZT53b11d79e4b05795ef7d8f7d"
+                type="icon"/>
+				
+			<item
+                id="default_icon_01"
+                type="icon"/>
+
+        </menutab>
+
+        <menutab id="menutab_effect" >
+
+            <item
+                id="default_effect_00"
+                type="effect"/>
+
+            <item
+                id="default_effect_01"
+                type="effect"/>
+
+            <item
+                id="default_effect_02"
+                type="effect"/>
+
+            <item
+                id="default_effect_03"
+                type="effect"/>
+
+            <item
+                id="default_effect_04"
+                type="effect"/>
+
+            <item
+                id="default_effect_05"
+                type="effect"/>
+
+            <item
+                id="default_effect_06"
+                type="effect"/>
+        </menutab>
+
+        <menutab id="menutab_lockscreen" >
+
+            <item
+                id="default_lockscreen_00"
+                type="static"/>
+
+            <item
+                id="default_lockscreen_01"
+                flag="1"
+                type="static"/>
+        </menutab>
+    </menutabs>
+
+    <menutabconfig
+        curColorWallpaperId="YS53a16202e4b0a9b7f2e7d937"
+        curEffectId="default_effect_00"
+        curIconId="ZT5473297be4b09722fc043792"
+        curTab="menutab_color"
+        curWallpaperId="BZ3paperreserveforzte00029"
+        isColorWallpaper="false"
+        type="0" >
+
+        <tab id="menutab_color" />
+
+        <tab id="menutab_wallpaper" />
+
+        <tab id="menutab_icon" />
+
+        <tab id="menutab_effect" />
+    </menutabconfig>
+
+    <menutabconfig
+        curColorWallpaperId="YS53a25728e4b0a9b7f2e7d945"
+        curLockscreenId="default_lockscreen_00"
+        curTab="menutab_color"
+        curWallpaperId="BZ3paperreserveforzte00047"
+        isColorWallpaper="false"
+        type="1" >
+
+        <tab id="menutab_color" />
+
+        <tab id="menutab_wallpaper" />
+
+        <!--tab id="menutab_lockscreen" /-->
+    </menutabconfig>
+
+</menutabconfigs>
