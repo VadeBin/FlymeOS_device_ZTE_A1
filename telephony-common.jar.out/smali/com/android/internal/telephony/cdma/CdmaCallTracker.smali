@@ -1089,7 +1089,9 @@
     .line 1557
     iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->mPhone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
-    invoke-virtual {v3}, Lcom/android/internal/telephony/cdma/CDMAPhone;->notifyCdmaCallAccepted()V
+#hxs fix cdma sim call err begin
+    #invoke-virtual {v3}, Lcom/android/internal/telephony/cdma/CDMAPhone;->notifyCdmaCallAccepted()V
+#hxs fix cdma sim call err end
 
     .line 1560
     .end local v0    # "c":Lcom/android/internal/telephony/cdma/CdmaConnection;
