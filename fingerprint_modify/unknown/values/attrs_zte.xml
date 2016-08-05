@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2006 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<!-- Formatting note: terminate all comments with a period, to avoid breaking
+     the documentation output. To suppress comment lines from the documentation
+     output, insert an eat-comment element after the comment lines.
+-->
+
+<resources>
+    <!-- These are the standard attributes that make up a complete theme. -->
+     <declare-styleable name="Theme.ZTE">
+	     <!--yangpeng for theme change -->
+	    <!--actionBarHomeMarginRight yangpeng-->
+	    <attr name="actionBarHomeMarginRight" format="dimension" />
+ 
+    	    <!-- only use by zte dialog  layout and theme -->
+	    <attr name="dialogTitleBackground" format="reference" />
+	    <!--yangpeng for theme change -->
+	    
+	    <attr name="spinnerHeight" format="dimension" />
+	    <attr name="volumePanelDrawable" format="reference" />
+	    <attr name="resolveItemBackground" format="reference" />
+	    <attr name="actionMenuDrawableAtTop" format="boolean" />
+
+	    <attr name="alertDialogStyle" format="reference" />
+		
+		
+		<!-- 
+		=============================================================
+			those attr is overriden from res package 
+		=============================================================
+		-->
+		
+		<!-- Window decor layout to use in dialog mode with title only -->
+        <attr name="dialogTitleDecorLayout" format="reference" />
+		<!-- Default GestureOverlayView style. -->
+        <attr name="gestureOverlayViewStyle" format="reference" />
+		<!-- Preference frame layout styles. -->
+        <attr name="preferenceFrameLayoutStyle" format="reference" />
+		<!-- Drawable used as an overlay on top of quickcontact photos. -->
+        <attr name="quickContactBadgeOverlay" format="reference" />
+		<!-- Theme to use for Search Dialogs -->
+        <attr name="searchDialogTheme" format="reference" />
+		 <!-- Default StackView style. -->
+        <attr name="stackViewStyle" format="reference" />
+		<!-- Default style for the Switch widget. -->
+        <attr name="switchStyle" format="reference" />
+        <!-- Default Checkbox style. -->
+        <attr name="checkboxStyle" format="reference" />
+        <!-- Default RadioButton style. -->
+        <attr name="radioButtonStyle" format="reference" />		
+        <!-- Default SeekBar style. -->
+        <attr name="seekBarStyle" format="reference" />		
+		 <!-- The TimePicker style. -->
+        <attr name="timePickerStyle" format="reference" />
+		 <!-- Window decor layout to use in dialog mode with custom titles -->
+        <attr name="dialogCustomTitleDecorLayout" format="reference" />
+		<!-- Window decor layout to use in dialog mode with icons -->
+        <attr name="dialogTitleIconsDecorLayout" format="reference" />
+		<!-- NumberPicker style. -->
+        <attr name="numberPickerStyle" format="reference" />
+		
+		
+        <!-- Default style for Preference. -->
+        <attr name="preferenceStyle" format="reference" />
+        <!-- Default style for PreferenceCategory. -->
+        <attr name="preferenceCategoryStyle" format="reference" />
+        <!-- Default style for PreferenceScreen. -->
+        <attr name="preferenceScreenStyle" format="reference" />
+        <!-- Default style for DialogPreference. -->
+        <attr name="dialogPreferenceStyle" format="reference" />		
+        <!-- Default style for the PreferenceActivity. -->
+        <attr name="preferenceActivityStyle" format="reference" />		
+		<!-- Default style for Headers pane in PreferenceActivity. -->
+        <attr name="preferenceFragmentStyle" format="reference" />
+		<!-- Preference fragment list style -->
+        <attr name="preferenceFragmentListStyle" format="reference" />	
+        <!-- Preference panel style -->
+        <attr name="preferencePanelStyle" format="reference" />		
+        <!-- Preference headers panel style -->
+        <attr name="preferenceHeaderPanelStyle" format="reference" />	
+        <!-- Preference list style -->
+        <attr name="preferenceListStyle" format="reference" />
+        <!-- Default style for CheckBoxPreference. -->
+        <attr name="checkBoxPreferenceStyle" format="reference" />
+        <!-- Default style for RingtonePreference. -->
+        <attr name="ringtonePreferenceStyle" format="reference" />
+        <!-- Default style for seekbar preferences. -->
+        <attr name="seekBarPreferenceStyle" format="reference" />
+        <!-- Default style for informational Preference. -->
+        <attr name="preferenceInformationStyle" format="reference" />
+        <!-- Default style for YesNoPreference. -->
+        <attr name="yesNoPreferenceStyle" format="reference" />
+        <!-- The preference layout that has the child/tabbed effect. -->
+        <attr name="preferenceLayoutChild" format="reference" />
+        <!-- Preference fragment padding side -->
+        <attr name="preferenceFragmentPaddingSide" format="dimension" />
+		
+		<!-- Background to use for toasts -->
+        <attr name="toastFrameBackground" format="reference" />
+        <!-- Default style for switch preferences. -->
+        <attr name="switchPreferenceStyle" format="reference" />
+        <!-- Default style for EditTextPreference. -->
+        <attr name="editTextPreferenceStyle" format="reference" />
+        <!-- Bright text color for use over activated backgrounds. -->
+        <attr name="textColorPrimaryActivated" format="reference|color" />
+        <!-- Dim text color for use over activated backgrounds. -->
+        <attr name="textColorSecondaryActivated" format="reference|color" />		
+    </declare-styleable>
+	  
+	
+
+    <declare-styleable name="AlertDialog">
+        <attr name="fullDark" format="reference|color" />
+        <attr name="topDark" format="reference|color" />
+        <attr name="centerDark" format="reference|color" />
+        <attr name="bottomDark" format="reference|color" />
+        <attr name="fullBright" format="reference|color" />
+        <attr name="topBright" format="reference|color" />
+        <attr name="centerBright" format="reference|color" />
+        <attr name="bottomBright" format="reference|color" />
+        <attr name="bottomMedium" format="reference|color" />
+        <attr name="centerMedium" format="reference|color" />
+        <attr name="buttonPanelSideLayout" format="reference" />
+        <attr name="layout" format="reference" />
+        <attr name="listLayout" format="reference" />
+        <attr name="multiChoiceItemLayout" format="reference" />
+        <attr name="singleChoiceItemLayout" format="reference" />
+        <attr name="listItemLayout" format="reference" />
+        <attr name="progressLayout" format="reference" />
+        <!--attr name="horizontalProgressLayout" format="reference" /-->
+        <!-- @hide Whether fullDark, etc. should use default values if null. -->
+        <attr name="needsDefaultBackgrounds" format="boolean" />
+    </declare-styleable>
+     <attr name="menuDrawerStyle" format="reference" />
+
+    <!-- Styleables used for styling the menu drawer. -->
+    <declare-styleable name="MenuDrawer">
+
+        <!-- Drawable to use for the background of the content. -->
+        <attr name="mdContentBackground" format="reference" />
+
+        <!-- Drawable to use for the background of the menu. -->
+        <attr name="mdMenuBackground" format="reference" />
+
+        <!-- The size of the menu. -->
+        <attr name="mdMenuSize" format="dimension" />
+
+        <!-- Drawable used as indicator for the active view. -->
+        <attr name="mdActiveIndicator" format="reference" />
+
+        <!-- Defines whether the content will have a dropshadow onto the menu. Default is true. -->
+        <attr name="mdDropShadowEnabled" format="boolean" />
+
+        <!-- The size of the drop shadow. Default is 6dp -->
+        <attr name="mdDropShadowSize" format="dimension" />
+
+        <!-- The color of the drop shadow. Default is #FF000000. -->
+        <attr name="mdDropShadowColor" format="color" />
+
+        <!-- Drawable used for the drop shadow. -->
+        <attr name="mdDropShadow" format="reference" />
+
+        <!-- The touch bezel size. -->
+        <attr name="mdTouchBezelSize" format="dimension" />
+
+        <!-- Whether the indicator should be animated between active views. -->
+        <attr name="mdAllowIndicatorAnimation" format="boolean" />
+
+        <!-- The maximum animation duration -->
+        <attr name="mdMaxAnimationDuration" format="integer" />
+
+        <!-- Drawable that replaces the up indicator -->
+        <attr name="mdSlideDrawable" format="reference" />
+
+        <!-- String to use as the up indicators content description when the drawer is open -->
+        <attr name="mdDrawerOpenUpContentDescription" format="string" />
+
+        <!-- String to use as the up indicators content description when the drawer is closed -->
+        <attr name="mdDrawerClosedUpContentDescription" format="string" />
+
+        <!-- Whether an overlay should be drawn as the drawer is opened and closed -->
+        <attr name="mdDrawOverlay" format="boolean" />
+
+        <!-- The position of the drawer -->
+        <attr name="mdPosition" format="enum">
+            <enum name="left" value="0" />
+            <enum name="top" value="1" />
+            <enum name="right" value="2" />
+            <enum name="bottom" value="3" />
+        </attr>
+    </declare-styleable>
+	
+    <!-- Base attributes available to Preference. -->
+    <declare-styleable name="Preference">
+        <!-- The optional icon for the preference -->
+        <attr name="android:icon" />
+        <!-- The key to store the Preference value. -->
+        <attr name="android:key"/>
+        <!-- The title for the Preference in a PreferenceActivity screen. -->
+        <attr name="android:title" />
+        <!-- The summary for the Preference in a PreferenceActivity screen. -->
+        <attr name="android:summary" />
+        <!-- The order for the Preference (lower values are to be ordered first). If this is not
+             specified, the default orderin will be alphabetic. -->
+        <attr name="android:order"/>
+        <!-- When used inside of a modern PreferenceActivity, this declares
+             a new PreferenceFragment to be shown when the user selects this item. -->
+        <attr name="android:fragment" />
+        <!-- The layout for the Preference in a PreferenceActivity screen. This should
+             rarely need to be changed, look at widgetLayout instead. -->
+        <attr name="android:layout" />
+        <!-- The layout for the controllable widget portion of a Preference. This is inflated
+             into the layout for a Preference and should be used more frequently than
+             the layout attribute. For example, a checkbox preference would specify
+             a custom layout (consisting of just the CheckBox) here. -->
+        <attr name="android:widgetLayout"/>
+        <!-- Whether the Preference is enabled. -->
+        <attr name="android:enabled" />
+        <!-- Whether the Preference is selectable. -->
+        <attr name="android:selectable"/>
+        <!-- The key of another Preference that this Preference will depend on.  If the other
+             Preference is not set or is off, this Preference will be disabled. -->
+        <attr name="android:dependency"/>
+        <!-- Whether the Preference stores its value to the shared preferences. -->
+        <attr name="android:persistent" />
+        <!-- The default value for the preference, which will be set either if persistence
+             is off or persistence is on and the preference is not found in the persistent
+             storage.  -->
+        <attr name="android:defaultValue"/>
+        <!-- Whether the view of this Preference should be disabled when
+             this Preference is disabled. -->
+        <attr name="android:shouldDisableView"/>
+    </declare-styleable>
+
+    <!-- Base attributes available to PreferenceGroup. -->
+    <declare-styleable name="PreferenceGroup">
+        <!-- Whether to order the Preference under this group as they appear in the XML file.
+             If this is false, the ordering will follow the Preference order attribute and
+             default to alphabetic for those without the order attribute. -->
+        <attr name="android:orderingFromXml"/>
+    </declare-styleable>
+
+	
+    <!-- Base attributes available to PreferenceActivity. -->
+    <declare-styleable name="PreferenceActivity">
+        <!-- The layout for the Preference Activity. This should rarely need to be changed. -->
+        <attr name="android:layout" />
+        <!-- The layout for the Preference Header. This should rarely need to be changed. -->
+        <attr name="headerLayout" format="reference" />
+        <!-- true if the Icon view will be removed when there is none and thus not showing
+             the fixed margins. -->
+        <attr name="headerRemoveIconIfEmpty" format="boolean" />
+    </declare-styleable>	
+    <!-- Base attributes available to PreferenceFragment. -->
+    <declare-styleable name="PreferenceFragment">
+        <!-- The layout for the PreferenceFragment. This should rarely need to be changed. -->
+        <attr name="android:layout" />
+    </declare-styleable>	
+    <declare-styleable name="PreferenceFrameLayout">
+        <!-- Padding to use at the top of the prefs content. -->
+        <attr name="borderTop" format="dimension" />
+        <!-- Padding to use at the bottom of the prefs content. -->
+        <attr name="borderBottom" format="dimension" />
+        <!-- Padding to use at the left of the prefs content. -->
+        <attr name="borderLeft" format="dimension" />
+        <!-- Padding to use at the right of the prefs content. -->
+        <attr name="borderRight" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="PreferenceFrameLayout_Layout">
+        <!-- Padding to use at the top of the prefs content. -->
+        <attr name="layout_removeBorders" format="boolean" />
+    </declare-styleable>
+	
+	    <!-- Attribute for a header describing the item shown in the top-level list
+         from which the selects the set of preference to dig in to. -->
+    <declare-styleable name="PreferenceHeader">
+        <!-- Identifier value for the header. -->
+        <attr name="android:id" />
+        <!-- The title of the item that is shown to the user. -->
+        <attr name="android:title" />
+        <!-- The summary for the item. -->
+        <attr name="android:summary" />
+        <!-- The title for the bread crumb of this item. -->
+        <attr name="android:breadCrumbTitle"/>
+        <!-- The short title for the bread crumb of this item. -->
+        <attr name="android:breadCrumbShortTitle"/>
+        <!-- An icon for the item. -->
+        <attr name="android:icon" />
+        <!-- The fragment that is displayed when the user selects this item. -->
+        <attr name="android:fragment"/>
+    </declare-styleable>
+	
+    <!-- Base attributes available to DialogPreference. -->
+    <declare-styleable name="DialogPreference">
+        <!-- The title in the dialog. -->
+        <attr name="android:dialogTitle"/>
+        <!-- The message in the dialog. If a dialogLayout is provided and contains
+             a TextView with ID android:id/message, this message will be placed in there. -->
+        <attr name="android:dialogMessage" />
+        <!-- The icon for the dialog. -->
+        <attr name="android:dialogIcon"/>
+        <!-- The positive button text for the dialog. Set to @null to hide the positive button. -->
+        <attr name="android:positiveButtonText"/>
+        <!-- The negative button text for the dialog. Set to @null to hide the negative button. -->
+        <attr name="android:negativeButtonText"/>
+        <!-- A layout to be used as the content View for the dialog. By default, this shouldn't
+             be needed. If a custom DialogPreference is required, this should be set. For example,
+             the EditTextPreference uses a layout with an EditText as this attribute. -->
+        <attr name="android:dialogLayout"/>
+    </declare-styleable>
+	
+    <!-- Base attributes available to ListPreference. -->
+    <declare-styleable name="ListPreference">
+        <!-- The human-readable array to present as a list. Each entry must have a corresponding
+             index in entryValues. -->
+        <attr name="android:entries" />
+        <!-- The array to find the value to save for a preference when an entry from
+             entries is selected. If a user clicks on the second item in entries, the
+             second item in this array will be saved to the preference. -->
+        <attr name="android:entryValues" />
+    </declare-styleable>
+
+    <declare-styleable name="MultiSelectListPreference">
+        <!-- The human-readable array to present as a list. Each entry must have a corresponding
+             index in entryValues. -->
+        <attr name="android:entries" />
+        <!-- The array to find the value to save for a preference when an entry from
+             entries is selected. If a user clicks the second item in entries, the
+             second item in this array will be saved to the preference. -->
+        <attr name="android:entryValues" />
+    </declare-styleable>
+    <!-- Base attributes available to VolumePreference. -->
+    <declare-styleable name="VolumePreference">
+        <!-- Different audio stream types. -->
+        <attr name="android:streamType"/>
+    </declare-styleable>
+	
+    <!-- Base attributes available to CheckBoxPreference. -->
+    <declare-styleable name="CheckBoxPreference">
+        <!-- The summary for the Preference in a PreferenceActivity screen when the
+             CheckBoxPreference is checked. If separate on/off summaries are not
+             needed, the summary attribute can be used instead. -->
+        <attr name="android:summaryOn"/>
+        <!-- The summary for the Preference in a PreferenceActivity screen when the
+             CheckBoxPreference is unchecked. If separate on/off summaries are not
+             needed, the summary attribute can be used instead. -->
+        <attr name="android:summaryOff"/>
+        <!-- The state (true for on, or false for off) that causes dependents to be disabled. By default,
+             dependents will be disabled when this is unchecked, so the value of this preference is false. -->
+        <attr name="android:disableDependentsState"/>
+    </declare-styleable>
+    <declare-styleable name="SwitchPreference">
+        <!-- The summary for the Preference in a PreferenceActivity screen when the
+             SwitchPreference is checked. If separate on/off summaries are not
+             needed, the summary attribute can be used instead. -->
+        <attr name="android:summaryOn" />
+        <!-- The summary for the Preference in a PreferenceActivity screen when the
+             SwitchPreference is unchecked. If separate on/off summaries are not
+             needed, the summary attribute can be used instead. -->
+        <attr name="android:summaryOff" />
+        <!-- The text used on the switch itself when in the "on" state.
+             This should be a very SHORT string, as it appears in a small space. -->
+        <attr name="android:switchTextOn"/>
+        <!-- The text used on the switch itself when in the "off" state.
+             This should be a very SHORT string, as it appears in a small space. -->
+        <attr name="android:switchTextOff"/>
+        <!-- The state (true for on, or false for off) that causes dependents to be disabled. By default,
+             dependents will be disabled when this is unchecked, so the value of this preference is false. -->
+        <attr name="android:disableDependentsState" />
+    </declare-styleable>
+    <!-- Base attributes available to RingtonePreference. -->
+    <declare-styleable name="RingtonePreference">
+        <!-- Which ringtone type(s) to show in the picker. -->
+        <attr name="android:ringtoneType"/>
+        <!-- Whether to show an item for a default sound. -->
+        <attr name="android:showDefault"/>
+        <!-- Whether to show an item for 'Silent'. -->
+        <attr name="android:showSilent"/>
+    </declare-styleable>
+    <declare-styleable name="SeekBarPreference">
+        <attr name="android:layout" />
+    </declare-styleable>
+    <declare-styleable name="Switch">
+        <attr name="android:color" />
+    </declare-styleable>
+    <declare-styleable name="CheckBox">
+        <attr name="android:color" />
+    </declare-styleable>
+    <declare-styleable name="RadioButton">
+        <attr name="android:color" />
+    </declare-styleable>
+    <declare-styleable name="SeekBar">
+        <attr name="android:color" />
+    </declare-styleable>	
+    <declare-styleable name="PreferenceCategory">
+        <attr name="android:color" />
+    </declare-styleable>	
+</resources>    

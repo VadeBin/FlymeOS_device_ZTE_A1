@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+**
+** Copyright 2007, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources>
+    <item name="mdContent" type="id" />
+    <item name="mdMenu" type="id" />
+    <item name="md__content" type="id" />
+    <item name="md__menu" type="id" />
+    <item name="md__drawer" type="id" />
+    <item name="mdActiveViewPosition" type="id" />
+    <item name="md__translationX" type="id" />
+    <item name="md__translationY" type="id" />
+	<item name="week" type="id" />
+	<item name="md__background" type="id" />
+	<item name="md__splitbackground" type="id" />
+	<item name="increment" type="id" />
+	<item name="decrement" type="id" />
+	<item name="action_mode_close_button" type="id" />
+	<item name="alertTitle" type="id" />
+	<item name="amPm" type="id" />
+    <item name="body" type="id" />
+    <item name="buttonPanel" type="id" />
+    <item name="calendar_view" type="id" />
+    <item name="cancel" type="id" />
+    <item name="contentPanel" type="id" />
+    <item name="custom" type="id" />
+    <item name="customPanel" type="id" />
+    <item name="datePicker" type="id" />
+    <item name="day" type="id" />
+    <item name="divider" type="id" />
+    <item name="edittext_container" type="id" />
+    <item name="hour" type="id" />
+    <item name="icon" type="id" />
+    <item name="left_icon" type="id" />  
+    <item name="linearLayout" type="id" />
+    <item name="linecancel" type="id" />
+    <item name="lineok" type="id" />
+    <item name="message" type="id" /> 
+    <item name="minute" type="id" />
+    <item name="modifyTime" type="id" />  
+    <item name="month" type="id" />
+    <item name="numberpicker_input" type="id" />
+    <item name="ok" type="id" />
+    <item name="parentPanel" type="id" />
+    <item name="pickers" type="id" />  
+    <item name="progress" type="id" />
+    <item name="radio" type="id" />
+    <item name="repeat_fri" type="id" /> 
+    <item name="repeat_mon" type="id" />
+    <item name="repeat_sat" type="id" />  
+    <item name="repeat_sun" type="id" />
+    <item name="repeat_thu" type="id" />
+    <item name="repeat_tue" type="id" />
+    <item name="repeat_wed" type="id" />
+    <item name="right_icon" type="id" />
+    <item name="scrollView" type="id" />
+    <item name="select_dialog_listview" type="id" />
+    <item name="switchWidget" type="id" />
+    <item name="text1" type="id" />
+    <item name="text2" type="id" />
+    <item name="textSpacerNoButtons" type="id" />
+    <item name="timePickerLayout" type="id" />
+    <item name="title" type="id" />
+    <item name="titleDivider" type="id" />
+    <item name="titleDividerTop" type="id" />
+    <item name="title_container" type="id" />
+    <item name="title_template" type="id" />
+    <item name="topPanel" type="id" />
+    <item name="weekText" type="id" />
+    <item name="year" type="id" />
+    <item name="zte_popup_list" type="id" />
+    <item name="on" type="id" />
+    <item name="off" type="id" />
+	<item name="back_button" type="id" />
+	<item name="breadcrumb_section" type="id" />
+	<item name="button1" type="id" />
+	<item name="button2" type="id" />
+	<item name="button3" type="id" />
+	<item name="button_bar" type="id" />
+	<item name="headers" type="id" />
+	<item name="icon_frame" type="id" />
+	<item name="list_footer" type="id" />
+	<item name="next_button" type="id" />
+	<item name="prefs" type="id" />
+	<item name="prefs_frame" type="id" />
+	<item name="seekbar" type="id" />
+	<item name="skip_button" type="id" />
+	<item name="pressed" type="id" />
+    <item name="not_pressed" type="id" />
+    <item name="ib_add" type="id" />
+</resources>

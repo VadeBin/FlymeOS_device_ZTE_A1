@@ -1,0 +1,34 @@
+
+<com.android.internal.app.RingtoneCheckableRelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="64dip"
+    android:gravity="center_vertical"
+    android:ignoreGravity="@+id/radio">
+
+    <TextView android:id="@+id/title"
+        android:layout_alignParentLeft="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:paddingLeft="16dip"
+        android:paddingRight="16dip"
+        android:layout_marginRight="8dip"
+        android:maxWidth="290dip"
+        android:singleLine="false" 
+        android:text="@string/set_silent" />
+    
+     <RadioButton
+        android:id="@+id/radio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="4dip"
+        android:layout_marginLeft="4dip"
+        android:paddingLeft="4dip"
+        android:focusable="false"
+        android:clickable="false" />
+    
+</com.android.internal.app.RingtoneCheckableRelativeLayout>

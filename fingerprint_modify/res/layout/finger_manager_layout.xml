@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@android:color/white" android:padding="20.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/fingerprint_layout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <EditText android:textColor="@color/bright_foreground_zte_light" android:gravity="left" android:id="@id/fingerprint" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <ImageButton android:id="@id/clear_btn" android:background="@drawable/clear_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_below="@id/fingerprint_layout">
+        <Button android:textColor="@color/bright_foreground_zte_light" android:id="@id/delete" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/delete" android:layout_weight="1.0" />
+        <Button android:textColor="@color/bright_foreground_zte_light" android:id="@id/save" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="@string/save" android:layout_weight="1.0" android:layout_below="@id/fingerprint_layout" />
+    </LinearLayout>
+</RelativeLayout>

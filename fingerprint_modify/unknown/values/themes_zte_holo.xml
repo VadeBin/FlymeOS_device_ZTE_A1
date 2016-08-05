@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2011 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<!--
+===============================================================
+                        PLEASE READ
+===============================================================
+This file contains the themes that are the Device Defaults.
+If you want to edit themes to skin your device, do it here.
+We recommend that you do not edit themes.xml and instead edit
+this file.
+
+Editing this file instead of themes.xml will greatly simplify
+merges for future platform versions and CTS compliance will be
+easier.
+===============================================================
+                        PLEASE READ
+===============================================================
+ -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:androidprv="http://schemas.android.com/apk/prv/res/android" >
+   
+    <style name="Theme.ZTE.Light.Holo" parent="@android:style/Theme.Holo.Light" >
+
+	<!--yangpeng text color ,we just use holo define, NOT holo_light
+        <item name="android:textColorPrimaryInverse">@android:color/primary_text_holo_light</item>
+	-->
+	   <item name="android:colorBackgroundCacheHint">@drawable/background_cache_hint_selector_zte_light</item>
+        <!-- Text styles -->
+        <item name="android:textAppearance">@style/TextAppearance.ZTE.Light.Holo</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_holo_dark</item>
+        <item name="android:textColorHintInverse">@color/hint_foreground_holo_zte_dark</item>
+        <item name="android:textColorHighlightInverse">@color/highlighted_text_holo_zte_dark</item>
+        <item name="android:textColorLinkInverse">@color/holo_zte_blue_light</item>                
+        <item name="android:textAppearanceInverse">@style/TextAppearance.ZTE.Light.Holo.Inverse</item>
+
+        <item name="android:textAppearanceLarge">@style/TextAppearance.ZTE.Light.Holo.Large</item>
+        <item name="android:textAppearanceMedium">@style/TextAppearance.ZTE.Light.Holo.Medium</item>
+        <item name="android:textAppearanceSmall">@style/TextAppearance.ZTE.Light.Holo.Small</item>
+        <item name="android:textAppearanceLargeInverse">@style/TextAppearance.ZTE.Light.Holo.Large.Inverse</item>
+        <item name="android:textAppearanceMediumInverse">@style/TextAppearance.ZTE.Light.Holo.Medium.Inverse</item>
+        <item name="android:textAppearanceSmallInverse">@style/TextAppearance.ZTE.Light.Holo.Small.Inverse</item>
+        <item name="android:textAppearanceSearchResultTitle">@style/TextAppearance.ZTE.Light.Holo.SearchResult.Title</item>
+        <item name="android:textAppearanceSearchResultSubtitle">@style/TextAppearance.ZTE.Light.Holo.SearchResult.Subtitle</item>
+        <item name="android:textAppearanceButton">@style/TextAppearance.ZTE.Light.Holo.Widget.Button</item>
+         <!--lcj for edittext -->
+	   <item name="android:editTextBackground">@drawable/edit_text_zte_light</item>
+	   <item name="android:textCheckMark">@drawable/indicator_check_mark_zte_dark</item>
+        <item name="android:textCheckMarkInverse">@drawable/indicator_check_mark_zte_light</item>
+	    <!--end lcj for edittext -->
+        <item name="android:textAppearanceLargePopupMenu">@style/TextAppearance.ZTE.Light.Holo.Widget.PopupMenu.Large</item>
+        <item name="android:textAppearanceSmallPopupMenu">@style/TextAppearance.ZTE.Light.Holo.Widget.PopupMenu.Small</item>
+
+        <item name="android:textColorHighlight">@color/zte_green_light</item>
+		<item name="android:textColorSecondary">@color/secondary_text_zte_light</item>
+
+        <!-- Button styles -->
+        <item name="android:buttonStyle">@style/Widget.ZTE.Light.Holo.Button</item>
+        <item name="android:buttonStyleSmall">@style/Widget.ZTE.Light.Holo.Button.Small</item>
+        <item name="android:buttonStyleInset">@style/Widget.ZTE.Light.Holo.Button.Inset</item>
+        <item name="android:buttonStyleToggle">@style/Widget.ZTE.Light.Holo.Button.Toggle</item>
+
+		<!--item name="switchStyle">@style/Widget.ZTE.Light.CompoundButton.Switch</item-->
+
+
+		 <item name="android:selectableItemBackground">@drawable/item_background_zte_light</item>
+
+        <item name="android:borderlessButtonStyle">@style/Widget.ZTE.Light.Holo.Button.Borderless</item>
+		<item name="android:homeAsUpIndicator">@drawable/ic_ab_back_zte_light</item>
+	
+        <item name="android:listDivider">@drawable/list_divider_zte_light</item>
+        <item name="android:listSeparatorTextViewStyle">@style/Widget.ZTE.Light.Holo.TextView.ListSeparator</item>
+		<!--start zhuxu-->
+        <item name="android:listChoiceIndicatorSingle">@drawable/btn_radio_zte_light</item>
+        <item name="android:listChoiceIndicatorMultiple">@drawable/btn_check_zte_light</item>
+		<!--end zhuxu-->
+        <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector_zte_light</item>
+		<item name="android:activatedBackgroundIndicator">@drawable/activated_background_zte_light</item>
+        <item name="android:listDividerAlertDialog">@drawable/list_divider_zte_light</item>
+
+        <item name="android:windowTitleStyle">@style/WindowTitle.ZTE.Holo</item>
+        <item name="android:windowTitleBackgroundStyle">@style/WindowTitleBackground.ZTE.Holo</item>
+        <item name="android:windowAnimationStyle">@style/Animation.ZTE.Holo.Activity</item>
+
+        <!-- List attributes -->
+        <item name="android:listPreferredItemHeight">58dip</item>
+        <item name="android:textAppearanceListItemSmall">?android:attr/textAppearanceMedium</item>
+        <item name="android:listPreferredItemPaddingLeft">8dip</item>
+        <item name="android:listPreferredItemPaddingRight">8dip</item>
+        <item name="android:listPreferredItemPaddingStart">8dip</item>
+        <item name="android:listPreferredItemPaddingEnd">8dip</item>
+        
+        <!-- Dialog attributes -->
+        <!--item name="android:alertDialogStyle">@style/AlertDialog.ZTE.Light</item>
+        <item name="android:dialogTheme">@style/Theme.ZTE.Light.Dialog</item>
+	 	<item name="dialogTitleIconsDecorLayout">@layout/dialog_title_icons_zte_light</item>
+	 	<item name="dialogCustomTitleDecorLayout">@layout/dialog_custom_title_zte_light</item>
+        <item name="android:alertDialogTheme">@style/Theme.ZTE.Light.Dialog.Alert</item>
+	  	<item name="android:alertDialogIcon">@null</item>
+        <item name="toastFrameBackground">@drawable/toast_frame_zte_light</item>
+        <item name="dialogTitleDecorLayout">@layout/dialog_title_zte_light</item>
+        <item name="dialogTitleBackground">@drawable/dialog_top_zte_light</item-->
+
+        
+
+        <!-- Text selection handle attributes -->
+        <item name="android:textSelectHandleWindowStyle">@style/Widget.ZTE.Holo.TextSelectHandle</item>
+        <item name="android:textSuggestionsWindowStyle">@style/Widget.ZTE.Light.Holo.TextSuggestionsPopupWindow</item>
+        <!--lcj for text -->
+        <item name="android:textSelectHandleLeft">@drawable/text_select_handle_left_zte_light</item>
+        <item name="android:textSelectHandleRight">@drawable/text_select_handle_right_zte_light</item>
+        <item name="android:textSelectHandle">@drawable/text_select_handle_middle_zte_light</item>
+        <item name="android:textEditPasteWindowLayout">@layout/text_edit_paste_window_zte_light</item>
+        <item name="android:textEditNoPasteWindowLayout">@layout/text_edit_no_paste_window_zte_light</item>
+        <item name="android:textEditSidePasteWindowLayout">@layout/text_edit_side_paste_window_zte_light</item>
+        <item name="android:textEditSideNoPasteWindowLayout">@layout/text_edit_side_no_paste_window_zte_light</item>
+        <item name="android:textCursorDrawable">@drawable/text_cursor_zte_light</item>
+        <!--end lcj for text -->
+
+
+	<!-- Panel attributes -->
+        <!--item name="android:panelBackground">@*android:drawable/menu_hardkey_panel_holo_light</item>
+        <item name="android:panelFullBackground">@*android:drawable/menu_background_fill_parent_width</item-->
+        <!-- These three attributes do not seems to be used by the framework. Declared public though -->
+        <item name="android:panelColorBackground">#000</item>
+        <item name="android:panelColorForeground">?android:attr/textColorPrimary</item>
+        <item name="android:panelTextAppearance">?android:attr/textAppearance</item>
+        
+	<!--yangpeng volumePanel-->
+        <item name="volumePanelDrawable">@drawable/dialog_full_zte_light</item>
+
+	<!-- Scrollbar attributes -->
+        <item name="android:scrollbarThumbHorizontal">@drawable/scrollbar_handle_horizontal_zte_light</item>
+        <item name="android:scrollbarThumbVertical">@drawable/scrollbar_handle_vertical_zte_light</item>
+
+
+        <!-- Widget styles -->
+        <item name="android:absListViewStyle">@style/Widget.ZTE.Light.Holo.AbsListView</item>
+        <item name="android:autoCompleteTextViewStyle">@style/Widget.ZTE.Light.Holo.AutoCompleteTextView</item>
+        <item name="android:checkboxStyle">@style/Widget.ZTE.Light.Holo.CompoundButton.CheckBox</item>
+        <item name="android:editTextStyle">@style/Widget.ZTE.Light.Holo.EditText</item>
+        <item name="android:expandableListViewStyle">@style/Widget.ZTE.Light.Holo.ExpandableListView</item>
+        <item name="android:expandableListViewWhiteStyle">@style/Widget.ZTE.Light.Holo.ExpandableListView.White</item>
+        <item name="android:galleryStyle">@style/Widget.ZTE.Light.Holo.Gallery</item>
+        <item name="gestureOverlayViewStyle">@style/Widget.ZTE.Light.Holo.GestureOverlayView</item>
+        <item name="android:listViewStyle">@style/Widget.ZTE.Light.Holo.ListView</item>
+        <item name="android:progressBarStyle">@style/Widget.ZTE.Light.Holo.ProgressBar</item>
+        <item name="android:progressBarStyleHorizontal">@style/Widget.ZTE.Light.Holo.ProgressBar.Horizontal</item>
+        <item name="android:progressBarStyleSmall">@style/Widget.ZTE.Light.Holo.ProgressBar.Small</item>
+        <item name="android:progressBarStyleLarge">@style/Widget.ZTE.Light.Holo.ProgressBar.Large</item>
+        <item name="android:seekBarStyle">@style/Widget.ZTE.Light.Holo.SeekBar</item>    
+        <item name="quickContactBadgeOverlay">@drawable/quickcontact_badge_overlay_zte_light</item>
+        <item name="android:listPopupWindowStyle">@style/Widget.ZTE.Light.Holo.ListPopupWindow</item>
+       
+
+        <!-- Preference styles -->
+        <item name="preferenceScreenStyle">@style/Preference.ZTE.PreferenceScreen</item>
+        <item name="preferenceActivityStyle">@style/Preference.ZTE.ActivityStyle</item>
+	
+        <item name="preferenceFragmentStyle">@style/PreferenceFragment.ZTE.Light</item>
+        <item name="preferenceCategoryStyle">@style/Preference.ZTE.Category</item>
+        <item name="preferenceStyle">@style/Preference.ZTE</item>
+        <item name="preferenceInformationStyle">@style/Preference.ZTE.Information</item>
+        <item name="checkBoxPreferenceStyle">@style/Preference.ZTE.CheckBoxPreference</item>
+        <item name="switchPreferenceStyle">@style/Preference.ZTE.SwitchPreference</item>
+        <item name="yesNoPreferenceStyle">@style/Preference.ZTE.DialogPreference.YesNoPreference</item>
+        <item name="dialogPreferenceStyle">@style/Preference.ZTE.DialogPreference</item>
+        <item name="editTextPreferenceStyle">@style/Preference.ZTE.DialogPreference.EditTextPreference</item>
+        <item name="ringtonePreferenceStyle">@style/Preference.ZTE.RingtonePreference</item>
+	<item name="preferenceLayoutChild">@layout/preference_child_material</item>
+        <item name="seekBarPreferenceStyle">@style/Preference.ZTE.SeekBarPreference</item>
+        <item name="preferenceFragmentListStyle">@style/PreferenceFragmentList.ZTE</item>
+        <item name="preferenceFrameLayoutStyle">@style/Preference.ZTE.PreferenceFrameLayout</item>
+        <item name="preferencePanelStyle">@style/PreferencePanel.ZTE</item>
+        <item name="preferenceHeaderPanelStyle">@style/PreferenceHeaderPanel.ZTE</item>
+        <item name="preferenceListStyle">@style/PreferenceHeaderList.ZTE</item>
+	<item name="preferenceFragmentPaddingSide">@dimen/preference_fragment_padding_side_material</item>
+        <!-- Action bar styles -->
+        <item name="android:actionDropDownStyle">@style/Widget.ZTE.Light.Holo.Spinner.DropDown.ActionBar</item>
+        <item name="android:actionButtonStyle">@style/Widget.ZTE.Light.Holo.ActionButton</item>
+        <item name="android:actionOverflowButtonStyle">@style/Widget.ZTE.Light.Holo.ActionButton.Overflow</item>
+        <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_zte_light</item>
+        <item name="android:actionModeCloseDrawable">@drawable/ic_cab_done_zte_light</item>
+        <item name="android:actionBarTabStyle">@style/Widget.ZTE.Light.Holo.ActionBar.TabView</item>
+        <item name="android:actionBarTabBarStyle">@style/Widget.ZTE.Light.Holo.ActionBar.TabBar</item>
+        <item name="android:actionBarTabTextStyle">@style/Widget.ZTE.Light.Holo.ActionBar.TabText</item>
+        <item name="android:actionModeStyle">@style/Widget.ZTE.Light.Holo.ActionMode</item>
+        <item name="android:actionModeCloseButtonStyle">@style/Widget.ZTE.Light.Holo.ActionButton.CloseMode</item>
+        <item name="android:actionBarStyle">@style/Widget.ZTE.Light.Holo.ActionBar</item>
+        <item name="android:actionBarItemBackground">@drawable/action_bar_home_background</item>
+	
+	<item name="android:actionBarDivider">@drawable/bottom_line</item>
+	<item name="android:actionBarSize">@dimen/action_bar_default_height_zte</item>
+	<item name="actionBarHomeMarginRight">@dimen/action_bar_home_up_margin_right_zte</item>
+	 <!--yangpeng-->
+	 <item name="android:actionModeBackground">@drawable/ab_transparent_light_zte</item>
+
+	 <item name="android:actionModeCutDrawable">@drawable/ic_menu_cut_holo_dark</item>
+        <item name="android:actionModeCopyDrawable">@drawable/ic_menu_copy_holo_dark</item>
+        <item name="android:actionModePasteDrawable">@drawable/ic_menu_paste_holo_dark</item>
+        <item name="android:actionModeSelectAllDrawable">@drawable/ic_menu_selectall_holo_dark</item>
+
+	 <!--Color of menu disable modify by yangpeng just for ZTE Light-->
+	 	<item name="android:actionMenuTextColor">@color/action_button_color</item>
+        <item name="android:actionMenuTextAppearance">@style/TextAppearance.ZTE.Light.Holo.Widget.ActionBar.Menu</item>
+
+
+        <item name="android:buttonBarStyle">@style/ZTE.Light.Holo.ButtonBar</item>
+          <item name="android:buttonBarButtonStyle">@style/ZTE.Light.Holo.ButtonBar</item>
+       
+        <!-- DatePicker style -->
+
+	<!-- yangpeng -->
+        <item name="android:fastScrollThumbDrawable">@drawable/fastscroll_thumb_zte</item>
+        <item name="android:fastScrollPreviewBackgroundLeft">@drawable/fastscroll_label_left_zte_light</item>
+        <item name="android:fastScrollPreviewBackgroundRight">@drawable/fastscroll_label_right_zte_light</item>
+        <item name="android:fastScrollTrackDrawable">@drawable/fastscroll_track_zte_light</item>
+
+	<!--yangpeng Add new attr(Picker Activity)-->
+	<item name="resolveItemBackground">@null</item>
+	<item name="actionMenuDrawableAtTop">true</item>
+    </style>
+
+  
+    <style name="Theme.ZTE.Light.Holo.NoActionBar" >
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+ <!-- yanchengzhi  add  -->
+    <style name="Theme.ZTE.Light.Holo.NoTitleBar">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    
+    <style name="Theme.ZTE.Light.Holo.NoActionBar.Fullscreen" >
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    
+    
+
+    <!--yangpeng add modify Theme.ZTE.Light.Dialog-->
+    <!-- Light holo dialog themes -->
+
+    <!-- Holo light theme for dialog windows and activities, which is used by the
+         {@link android.app.Dialog} class.  This changes the window to be
+         floating (not fill the entire screen), and puts a frame around its
+         contents.  You can set this theme on an activity if you would like to
+         make an activity that looks like a Dialog.
+         This is the default Dialog theme for applications targeting Honeycomb
+         or newer. 
+         
+         -->
+    <style name="Theme.ZTE.Light.Holo.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowTitleStyle">@style/DialogWindowTitle.ZTE.Light.Holo</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@style/Animation.ZTE.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+	 <item name="android:windowBackground">@drawable/dialog_full_zte_light </item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+
+	<item name="dialogTitleBackground">@drawable/dialog_activity_top_zte_light</item>
+	
+
+        <item name="android:textAppearance">@style/TextAppearance.ZTE.Light.Holo</item>
+        <item name="android:textAppearanceInverse">@style/TextAppearance.ZTE.Light.Holo.Inverse</item>
+
+        <item name="android:listPreferredItemPaddingLeft">16dip</item>
+        <item name="android:listPreferredItemPaddingRight">16dip</item>
+    </style>
+
+    <!-- Variant of Theme.ZTE.Light.Dialog that has a nice minimum width for
+         a regular dialog. -->
+    <style name="Theme.ZTE.Light.Holo.Dialog.MinWidth">
+        <item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>
+        <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
+    </style>
+
+    <!-- Variant of Theme.Holo.Light.Dialog that does not include a title bar. -->
+    <style name="Theme.ZTE.Light.Holo.Dialog.NoActionBar">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <!-- Variant of Theme.Holo.Light.Dialog.NoActionBar that has a nice minimum width for
+         a regular dialog. -->
+    <style name="Theme.ZTE.Light.Holo.Dialog.NoActionBar.MinWidth">
+        <item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>
+        <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
+    </style>
+
+    <!-- Variant of Theme.Holo.Light.Dialog that has a fixed size. -->
+    <!--  style name="Theme.ZTE.Light.Dialog.FixedSize">
+        <item name="windowFixedWidthMajor">@*android:dimen/dialog_fixed_width_major</item>
+        <item name="windowFixedWidthMinor">@*android:dimen/dialog_fixed_width_minor</item>
+        <item name="windowFixedHeightMajor">@*android:dimen/dialog_fixed_height_major</item>
+        <item name="windowFixedHeightMinor">@*android:dimen/dialog_fixed_height_minor</item>
+    </style-->
+
+    <!-- Variant of Theme.Holo.Light.Dialog.NoActionBar that has a fixed size. -->
+    <!--style name="Theme.ZTE.Light.Dialog.NoActionBar.FixedSize">
+        <item name="windowFixedWidthMajor">@*android:dimen/dialog_fixed_width_major</item>
+        <item name="windowFixedWidthMinor">@*android:dimen/dialog_fixed_width_minor</item>
+        <item name="windowFixedHeightMajor">@*android:dimen/dialog_fixed_height_major</item>
+        <item name="windowFixedHeightMinor">@*android:dimen/dialog_fixed_height_minor</item>
+    </style-->
+
+    <!-- Theme for a window that will be displayed either full-screen on
+         smaller screens (small, normal) or as a dialog on larger screens
+         (large, xlarge). -->
+    <style name="Theme.ZTE.Light.Holo.DialogWhenLarge" parent="@style/Theme.ZTE.Light.Holo">
+    </style>
+
+    <!-- Theme for a window without an action bar that will be displayed either full-screen
+         on smaller screens (small, normal) or as a dialog on larger screens
+         (large, xlarge). -->
+    <style name="Theme.ZTE.Light.Holo.DialogWhenLarge.NoActionBar"
+            parent="@style/Theme.ZTE.Light.NoActionBar">
+    </style>
+
+    <!-- Holo light theme for alert dialog windows, which is used by the
+         {@link android.app.AlertDialog} class.  This is basically a dialog
+         but sets the background to empty so it can do two-tone backgrounds.
+         For applications targeting Honeycomb or newer, this is the default
+         AlertDialog theme. -->
+    <style name="Theme.ZTE.Light.Holo.Dialog.Alert">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowTitleStyle">@style/DialogWindowTitle.ZTE.Light.Holo</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowMinWidthMajor">100%</item>
+        <item name="android:windowMinWidthMinor">100%</item>
+    </style>
+
+	
+
+	<!--Theme.ZTE.Light.Dialog end -->
+
+  
+    <style name="Theme.ZTE.Light.Holo.Panel" parent="Theme.ZTE.Light.Holo" >
+	<item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    
+   
+
+    <style name="Theme.ZTE.Light.Holo.Wallpaper" parent="Theme.ZTE.Light.Holo" >
+    	<item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowShowWallpaper">true</item>
+    </style>
+    <style name="Theme.ZTE.Light.Holo.Wallpaper.NoTitleBar" parent="Theme.ZTE.Light.Holo.Wallpaper" >
+	<item name="android:windowNoTitle">true</item>
+    </style>
+    
+ 
+    <style name="Theme.ZTE.Light.Holo.DarkActionBar" parent="@android:style/Theme.Holo.Light.DarkActionBar" >
+        <item name="android:actionBarStyle">@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse</item>
+
+        <item name="android:actionDropDownStyle">@style/Widget.ZTE.Holo.Spinner.DropDown.ActionBar</item>
+        <item name="android:actionButtonStyle">@style/Widget.ZTE.Holo.ActionButton</item>
+        <item name="android:actionOverflowButtonStyle">@style/Widget.ZTE.Holo.ActionButton.Overflow</item>
+        <item name="android:actionBarTabStyle">@style/Widget.ZTE.Light.Holo.ActionBar.TabView.Inverse</item>
+        <item name="android:actionBarTabBarStyle">@style/Widget.ZTE.Light.Holo.ActionBar.TabBar.Inverse</item>
+        <item name="android:actionBarTabTextStyle">@style/Widget.ZTE.Light.Holo.ActionBar.TabText.Inverse</item>
+        <item name="android:actionModeStyle">@style/Widget.ZTE.Light.Holo.ActionMode.Inverse</item>
+
+    </style>
+
+   
+
+  
+    <!--yangpepng <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_zte_light</item> -->
+    <style name="Theme.ZTE.Light.Holo.SearchBar" parent="Theme.ZTE.Light.Panel">
+    	<item name="android:actionModeBackground">@drawable/cab_background_top_zte_light</item>
+    	<item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_zte_light</item>
+    	
+    </style>
+
+
+
+
+	<!-- parent="Theme.Holo.Light.CompactMenu" -->
+    <style name="Theme.ZTE.Light.Holo.CompactMenu" parent="Theme.ZTE.Light">
+        <!-- Menu/item attributes -->
+        <item name="android:itemTextAppearance">?android:attr/textAppearanceMedium</item>
+        <item name="android:listViewStyle">@style/Widget.ZTE.Light.Holo.ListView</item>
+        <item name="android:background">@null</item>
+    </style>
+
+    <!-- Theme for translucent activities (on API level 10 and lower). That is, windows
+         that allow you to see through them to the windows behind.  This sets up the translucent
+         flag and appropriate animations for your windows.  -->
+    <style name="Theme.ZTE.Light.Holo.Translucent">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- Note that we use the base animation style here (that is no
+             animations) because we really have no idea how this kind of
+             activity will be used. -->
+    </style>
+
+    <!-- Variant of {@link #Theme_Translucent} with no title bar -->
+    <style name="Theme.ZTE.Light.Holo.Translucent.NoTitleBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!-- Variant of {@link #Theme_Translucent} that has no title bar and
+         no status bar -->
+    <style name="Theme.ZTE.Light.Holo.Translucent.NoTitleBar.Fullscreen">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:oneshot="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="500" android:drawable="@drawable/introduce01" />
+    <item android:duration="350" android:drawable="@drawable/introduce02" />
+    <item android:duration="500" android:drawable="@drawable/introduce03" />
+    <item android:duration="350" android:drawable="@drawable/introduce04" />
+    <item android:duration="500" android:drawable="@drawable/introduce05" />
+    <item android:duration="350" android:drawable="@drawable/introduce06" />
+    <item android:duration="500" android:drawable="@drawable/introduce07" />
+    <item android:duration="350" android:drawable="@drawable/introduce08" />
+    <item android:duration="500" android:drawable="@drawable/introduce09" />
+    <item android:duration="350" android:drawable="@drawable/introduce10" />
+    <item android:duration="500" android:drawable="@drawable/introduce11" />
+    <item android:duration="350" android:drawable="@drawable/introduce12" />
+    <item android:duration="500" android:drawable="@drawable/introduce13" />
+    <item android:duration="350" android:drawable="@drawable/introduce14" />
+    <item android:duration="500" android:drawable="@drawable/introduce15" />
+    <item android:duration="350" android:drawable="@drawable/introduce16" />
+    <item android:duration="500" android:drawable="@drawable/introduce17" />
+    <item android:duration="350" android:drawable="@drawable/introduce18" />
+    <item android:duration="500" android:drawable="@drawable/introduce19" />
+    <item android:duration="350" android:drawable="@drawable/introduce20" />
+</animation-list>

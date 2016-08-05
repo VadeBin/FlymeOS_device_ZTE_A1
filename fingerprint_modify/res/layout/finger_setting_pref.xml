@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zte.mifavor.preference.PreferenceScreen android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.zte.mifavor.preference.PreferenceCategory android:title="@string/apply_to" android:key="@string/apply_to">
+        <com.zte.mifavor.preference.SwitchPreference android:title="@string/black_wakeup_unlock" android:key="lock_for_screen" android:summary="@string/black_wakeup_unlock_sum" />
+    </com.zte.mifavor.preference.PreferenceCategory>
+    <com.zte.mifavor.preference.PreferenceCategory android:title="@string/fingerprint" android:key="@string/fingerprint" />
+</com.zte.mifavor.preference.PreferenceScreen>

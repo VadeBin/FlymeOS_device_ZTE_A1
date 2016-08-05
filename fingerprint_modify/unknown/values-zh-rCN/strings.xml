@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/* //device/apps/common/assets/res/any/strings.xml
+**
+** Copyright 2006, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+	
+    <string name="wifi_hotspot_turned_off">WLAN 热点关闭</string>
+    <string name="wifi_hotspot_turned_off_summary">休眠时间被激活，您可以在 WLAN 热点休眠策略里进行修改。</string>
+    	<!-- // by yangbin for PLMN_MULTI_LANGUAGE plmn display  -->
+	<string name="multi_language_46019">460 19</string>
+	<string name="multi_language_20404">中国电信</string>
+	<string name="multi_language_46003">中国电信</string>
+	<string name="multi_language_46001">中国联通</string>
+	<string name="multi_language_46000">中国移动</string>
+	<string name="multi_language_46002">中国移动</string>
+    <string name="multi_language_46007">中国移动</string>
+    <!-- // ZTE_MODIFY end --> 
+    <string name="connect_joystick_notification_title">外接游戏手柄已连接</string>
+    <string name="disconnect_joystick_notification_title">外接游戏手柄已移除</string>
+    <string name="connect_keyboard_notification_title">外接键盘已连接</string>
+    <string name="disconnect_keyboard_notification_title">外接键盘已移除</string>
+	
+	<!-- ZTE_MODIYF lixiange add for connect to OTG -->
+	<string name="ota_mount_notification_title">外部存储设备已连接</string>
+	<string name="ota_mount_notification_message">选择在手机与外部存储设备之间复制文件</string>
+	<string name="ota_unmount_notification_title">卸载外部存储设备</string>
+	<string name="ota_unmount_notification_message">卸载外部存储设备以将其安全移除</string>
+	<string name="ota_unexpectedly_removed_notification_title">外部存储设备异常拔出</string>
+	<string name="ota_unexpectedly_removed_notification_message">移除外部存储设备之前请先将其卸载</string>
+	<string name="ota_unmounted_notification_title">外部存储设备已卸载</string>
+	<!-- ZTE_MODIYF end -->
+	
+	<!-- zte add for global action menu,begin -->
+	<string name="global_action_reset">重启</string>
+	<string name="global_action_quickpower_on">快速开机已开启</string>
+	<string name="global_action_quickpower_off">快速开机已停用</string>
+	<string name="global_action_rboot_message">长按电源键10秒以上可关机</string>
+	<string name="reboot_title">重启</string>
+	<string name="reboot_confirm">您的手机会重启。</string>
+	<string name="reboot_confirm_question">您要重启吗？</string>
+	<!-- zte add,end -->
+
+    <string name="toast_wifi_connected_message">已经连接到 SSID <xliff:g id="ssid">%1$s</xliff:g>。</string>
+	
+	<string name="pppoe_indicator_detail_connected">已连接</string>
+    <string name="pppoe_indicator_detail_connecting">正在连接...</string>
+    <string name="pppoe_indicator_detail_connect_failure">未连接</string>
+	<string name="datetime_dialog_title">设置日期&amp;时间</string>
+	
+	<string name="zte_days_of_week_Mon">周一</string>
+    <string name="zte_days_of_week_Tue">周二</string>
+    <string name="zte_days_of_week_Wed">周三</string>
+    <string name="zte_days_of_week_Thu">周四</string>
+    <string name="zte_days_of_week_Fri">周五</string>
+    <string name="zte_days_of_week_Sat">周六</string>
+    <string name="zte_days_of_week_Sun">周日</string>
+    <string name="alwaysUse">默认情况下使用该操作。</string>
+    <string name="whichApplication">"选择要使用的应用："</string>
+    <string name="whichHomeApplication">"选择主屏幕应用"</string>
+    <string name="noApplications">"没有应用可执行此操作。"</string>
+    <string name="time_picker_increment_minute_button" msgid="8865885114028614321">"增大分钟值"</string>
+    <string name="time_picker_decrement_minute_button" msgid="6246834937080684791">"减小分钟值"</string>
+    <string name="time_picker_increment_hour_button" msgid="3652056055810223139">"增大小时值"</string>
+    <string name="time_picker_decrement_hour_button" msgid="1377479863429214792">"减小小时值"</string>
+    <string name="time_picker_increment_set_pm_button" msgid="4147590696151230863">"设置下午时间"</string>
+    <string name="time_picker_decrement_set_am_button" msgid="8302140353539486752">"设置上午时间"</string>
+    <string name="date_picker_increment_month_button" msgid="5369998479067934110">"增大月份值"</string>
+    <string name="date_picker_decrement_month_button" msgid="1832698995541726019">"减小月份值"</string>
+    <string name="date_picker_increment_day_button" msgid="7130465412308173903">"增大日期值"</string>
+    <string name="date_picker_decrement_day_button" msgid="4131881521818750031">"减小日期值"</string>
+    <string name="date_picker_increment_year_button" msgid="6318697384310808899">"增大年份值"</string>
+    <string name="date_picker_decrement_year_button" msgid="4482021813491121717">"减小年份值"</string>
+</resources>
