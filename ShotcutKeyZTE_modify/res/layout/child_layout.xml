@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:baselineAligned="false" android:minHeight="60.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="9.0" android:layout_marginStart="30.0dip">
+        <ImageView android:layout_gravity="center_vertical" android:id="@id/image" android:layout_width="48.0dip" android:layout_height="48.0dip" android:layout_marginEnd="10.0dip" />
+        <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:textSize="16.0sp" android:textColor="#ff666666" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:textSize="12.0sp" android:textColor="#ff999999" android:id="@id/subTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+    <View android:layout_gravity="center_vertical" android:background="#ffcccccc" android:layout_width="1.0dip" android:layout_height="40.0dip" />
+    <FrameLayout android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <com.zte.mifavor.widget.SwitchZTE android:id="@id/switchButton" android:focusable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:color="@color/app_color" />
+        <ImageView android:id="@id/arrow" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/arrow_press" />
+    </FrameLayout>
+</LinearLayout>

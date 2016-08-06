@@ -58,7 +58,7 @@
     <string name="app_name">指纹服务</string>
     <string name="apply_to">将指纹应用于</string>
     <string name="black_wakeup_unlock">唤醒解锁</string>
-    <string name="black_wakeup_unlock_sum">允许手机在黑屏和锁屏界面通过指纹解锁</string>
+    <string name="black_wakeup_unlock_sum">温馨提示:此功能需设置解锁密码</string>
     <string name="access_app_ctl_tip">访问程序锁</string>
     <string name="access_app_ctl_tip_sum">允许通过验证指纹来访问掌心管家的程序锁</string>
     <string name="access_privacy_ctl_tip">访问私密空间</string>

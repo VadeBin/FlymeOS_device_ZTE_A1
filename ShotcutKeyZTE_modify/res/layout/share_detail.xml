@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListView android:id="@id/shareAppSelect" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <ImageView android:layout_gravity="center_horizontal" android:id="@id/shareAppImage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="22.0dip" />
+    <TextView android:textSize="14.0sp" android:textColor="#ff999999" android:id="@id/shareAppInfo" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="22.0dip" android:layout_marginStart="20.0dip" android:layout_marginEnd="20.0dip" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="24.0dip" android:layout_marginStart="10.0dip" android:layout_marginEnd="10.0dip">
+        <Button android:id="@id/select_function" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/change_function" android:layout_weight="1.0" />
+        <View android:layout_width="1.0dip" android:layout_height="fill_parent" />
+        <Button android:id="@id/ok" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/OK" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>
