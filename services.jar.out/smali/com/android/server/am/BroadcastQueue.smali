@@ -8201,7 +8201,6 @@
 
     invoke-static {v4, v6, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1050
     .end local v18    # "e":Landroid/os/RemoteException;
     :cond_36
     sget-boolean v4, Lcom/android/server/am/BroadcastQueue;->DEBUG_BROADCAST:Z

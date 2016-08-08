@@ -31,7 +31,6 @@
     .prologue
     const/high16 v3, 0x20000
 
-    .line 48
     # invokes: Lcom/android/server/am/BaseErrorDialog$Inject;->getThemeResID(Landroid/content/Context;)I
     invoke-static {p1}, Lcom/android/server/am/BaseErrorDialog$Inject;->access$000(Landroid/content/Context;)I
 
@@ -122,8 +121,7 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 74
-    const v1, 0x1020019
+    const v1, #android:id@button1#t
 
     invoke-virtual {p0, v1}, Lcom/android/server/am/BaseErrorDialog;->findViewById(I)Landroid/view/View;
 
@@ -140,7 +138,7 @@
 
     .line 78
     :cond_0
-    const v1, 0x102001a
+    const v1, #android:id@button2#t
 
     invoke-virtual {p0, v1}, Lcom/android/server/am/BaseErrorDialog;->findViewById(I)Landroid/view/View;
 
@@ -158,7 +156,7 @@
 
     .line 82
     :cond_1
-    const v1, 0x102001b
+    const v1, #android:id@button3#t
 
     invoke-virtual {p0, v1}, Lcom/android/server/am/BaseErrorDialog;->findViewById(I)Landroid/view/View;
 

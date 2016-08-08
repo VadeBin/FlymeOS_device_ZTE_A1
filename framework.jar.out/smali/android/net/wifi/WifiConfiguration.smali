@@ -12,6 +12,7 @@
         Landroid/net/wifi/WifiConfiguration$Visibility;,
         Landroid/net/wifi/WifiConfiguration$Status;,
         Landroid/net/wifi/WifiConfiguration$GroupCipher;,
+        Landroid/net/wifi/WifiConfiguration$FlymeInjector;,
         Landroid/net/wifi/WifiConfiguration$PairwiseCipher;,
         Landroid/net/wifi/WifiConfiguration$AuthAlgorithm;,
         Landroid/net/wifi/WifiConfiguration$Protocol;,
@@ -142,6 +143,14 @@
 
 
 # instance fields
+.field public BandMode:I
+
+.field public HexSSID:Ljava/lang/String;
+
+.field public adhocMode:Ljava/lang/String;
+
+.field public preSharedKeyEncry:Ljava/lang/String;
+
 .field public BSSID:Ljava/lang/String;
 
 .field public FQDN:Ljava/lang/String;
@@ -592,29 +601,24 @@
 
     iput-object v1, p0, Landroid/net/wifi/WifiConfiguration;->enterpriseConfig:Landroid/net/wifi/WifiEnterpriseConfig;
 
-    .line 1010
     iput v4, p0, Landroid/net/wifi/WifiConfiguration;->autoJoinStatus:I
 
-    .line 1011
     iput-boolean v4, p0, Landroid/net/wifi/WifiConfiguration;->selfAdded:Z
 
-    .line 1012
     iput-boolean v4, p0, Landroid/net/wifi/WifiConfiguration;->didSelfAdd:Z
 
-    .line 1013
     iput-boolean v4, p0, Landroid/net/wifi/WifiConfiguration;->ephemeral:Z
 
-    .line 1014
     iput-boolean v4, p0, Landroid/net/wifi/WifiConfiguration;->validatedInternetAccess:Z
 
-    .line 1015
     new-instance v1, Landroid/net/IpConfiguration;
 
     invoke-direct {v1}, Landroid/net/IpConfiguration;-><init>()V
 
     iput-object v1, p0, Landroid/net/wifi/WifiConfiguration;->mIpConfiguration:Landroid/net/IpConfiguration;
 
-    .line 1016
+    invoke-static/range {p0 .. p0}, Landroid/net/wifi/WifiConfiguration$FlymeInjector;->initFlymeExtraFields(Landroid/net/wifi/WifiConfiguration;)V
+
     return-void
 .end method
 
@@ -928,204 +932,164 @@
 
     iput-object v1, p0, Landroid/net/wifi/WifiConfiguration;->visibility:Landroid/net/wifi/WifiConfiguration$Visibility;
 
-    .line 1726
     :cond_4
     iget-object v1, p1, Landroid/net/wifi/WifiConfiguration;->lastFailure:Ljava/lang/String;
 
     iput-object v1, p0, Landroid/net/wifi/WifiConfiguration;->lastFailure:Ljava/lang/String;
 
-    .line 1727
     iget-boolean v1, p1, Landroid/net/wifi/WifiConfiguration;->didSelfAdd:Z
 
     iput-boolean v1, p0, Landroid/net/wifi/WifiConfiguration;->didSelfAdd:Z
 
-    .line 1728
     iget v1, p1, Landroid/net/wifi/WifiConfiguration;->lastConnectUid:I
 
     iput v1, p0, Landroid/net/wifi/WifiConfiguration;->lastConnectUid:I
 
-    .line 1729
     iget v1, p1, Landroid/net/wifi/WifiConfiguration;->lastUpdateUid:I
 
     iput v1, p0, Landroid/net/wifi/WifiConfiguration;->lastUpdateUid:I
 
-    .line 1730
     iget v1, p1, Landroid/net/wifi/WifiConfiguration;->creatorUid:I
 
     iput v1, p0, Landroid/net/wifi/WifiConfiguration;->creatorUid:I
 
-    .line 1731
     iget-object v1, p1, Landroid/net/wifi/WifiConfiguration;->peerWifiConfiguration:Ljava/lang/String;
 
     iput-object v1, p0, Landroid/net/wifi/WifiConfiguration;->peerWifiConfiguration:Ljava/lang/String;
 
-    .line 1732
     iget-wide v2, p1, Landroid/net/wifi/WifiConfiguration;->blackListTimestamp:J
 
     iput-wide v2, p0, Landroid/net/wifi/WifiConfiguration;->blackListTimestamp:J
 
-    .line 1733
     iget-wide v2, p1, Landroid/net/wifi/WifiConfiguration;->lastConnected:J
 
     iput-wide v2, p0, Landroid/net/wifi/WifiConfiguration;->lastConnected:J
 
-    .line 1734
     iget-wide v2, p1, Landroid/net/wifi/WifiConfiguration;->lastDisconnected:J
 
     iput-wide v2, p0, Landroid/net/wifi/WifiConfiguration;->lastDisconnected:J
 
-    .line 1735
     iget-wide v2, p1, Landroid/net/wifi/WifiConfiguration;->lastConnectionFailure:J
 
     iput-wide v2, p0, Landroid/net/wifi/WifiConfiguration;->lastConnectionFailure:J
 
-    .line 1736
     iget-wide v2, p1, Landroid/net/wifi/WifiConfiguration;->lastRoamingFailure:J
 
     iput-wide v2, p0, Landroid/net/wifi/WifiConfiguration;->lastRoamingFailure:J
 
-    .line 1737
     iget v1, p1, Landroid/net/wifi/WifiConfiguration;->lastRoamingFailureReason:I
 
     iput v1, p0, Landroid/net/wifi/WifiConfiguration;->lastRoamingFailureReason:I
 
-    .line 1738
     iget-wide v2, p1, Landroid/net/wifi/WifiConfiguration;->roamingFailureBlackListTimeMilli:J
 
     iput-wide v2, p0, Landroid/net/wifi/WifiConfiguration;->roamingFailureBlackListTimeMilli:J
 
-    .line 1739
     iget v1, p1, Landroid/net/wifi/WifiConfiguration;->numConnectionFailures:I
 
     iput v1, p0, Landroid/net/wifi/WifiConfiguration;->numConnectionFailures:I
 
-    .line 1740
     iget v1, p1, Landroid/net/wifi/WifiConfiguration;->numIpConfigFailures:I
 
     iput v1, p0, Landroid/net/wifi/WifiConfiguration;->numIpConfigFailures:I
 
-    .line 1741
     iget v1, p1, Landroid/net/wifi/WifiConfiguration;->numAuthFailures:I
 
     iput v1, p0, Landroid/net/wifi/WifiConfiguration;->numAuthFailures:I
 
-    .line 1742
     iget v1, p1, Landroid/net/wifi/WifiConfiguration;->numScorerOverride:I
 
     iput v1, p0, Landroid/net/wifi/WifiConfiguration;->numScorerOverride:I
 
-    .line 1743
     iget v1, p1, Landroid/net/wifi/WifiConfiguration;->numScorerOverrideAndSwitchedNetwork:I
 
     iput v1, p0, Landroid/net/wifi/WifiConfiguration;->numScorerOverrideAndSwitchedNetwork:I
 
-    .line 1744
     iget v1, p1, Landroid/net/wifi/WifiConfiguration;->numAssociation:I
 
     iput v1, p0, Landroid/net/wifi/WifiConfiguration;->numAssociation:I
 
-    .line 1745
     iget v1, p1, Landroid/net/wifi/WifiConfiguration;->numUserTriggeredWifiDisableLowRSSI:I
 
     iput v1, p0, Landroid/net/wifi/WifiConfiguration;->numUserTriggeredWifiDisableLowRSSI:I
 
-    .line 1746
     iget v1, p1, Landroid/net/wifi/WifiConfiguration;->numUserTriggeredWifiDisableBadRSSI:I
 
     iput v1, p0, Landroid/net/wifi/WifiConfiguration;->numUserTriggeredWifiDisableBadRSSI:I
 
-    .line 1747
     iget v1, p1, Landroid/net/wifi/WifiConfiguration;->numUserTriggeredWifiDisableNotHighRSSI:I
 
     iput v1, p0, Landroid/net/wifi/WifiConfiguration;->numUserTriggeredWifiDisableNotHighRSSI:I
 
-    .line 1748
     iget v1, p1, Landroid/net/wifi/WifiConfiguration;->numTicksAtLowRSSI:I
 
     iput v1, p0, Landroid/net/wifi/WifiConfiguration;->numTicksAtLowRSSI:I
 
-    .line 1749
     iget v1, p1, Landroid/net/wifi/WifiConfiguration;->numTicksAtBadRSSI:I
 
     iput v1, p0, Landroid/net/wifi/WifiConfiguration;->numTicksAtBadRSSI:I
 
-    .line 1750
     iget v1, p1, Landroid/net/wifi/WifiConfiguration;->numTicksAtNotHighRSSI:I
 
     iput v1, p0, Landroid/net/wifi/WifiConfiguration;->numTicksAtNotHighRSSI:I
 
-    .line 1751
     iget v1, p1, Landroid/net/wifi/WifiConfiguration;->numUserTriggeredJoinAttempts:I
 
     iput v1, p0, Landroid/net/wifi/WifiConfiguration;->numUserTriggeredJoinAttempts:I
 
-    .line 1752
     iget-object v1, p1, Landroid/net/wifi/WifiConfiguration;->autoJoinBSSID:Ljava/lang/String;
 
     iput-object v1, p0, Landroid/net/wifi/WifiConfiguration;->autoJoinBSSID:Ljava/lang/String;
 
-    .line 1753
     iget v1, p1, Landroid/net/wifi/WifiConfiguration;->autoJoinUseAggressiveJoinAttemptThreshold:I
 
     iput v1, p0, Landroid/net/wifi/WifiConfiguration;->autoJoinUseAggressiveJoinAttemptThreshold:I
 
-    .line 1755
     iget-boolean v1, p1, Landroid/net/wifi/WifiConfiguration;->autoJoinBailedDueToLowRssi:Z
 
     iput-boolean v1, p0, Landroid/net/wifi/WifiConfiguration;->autoJoinBailedDueToLowRssi:Z
 
-    .line 1756
     iget-boolean v1, p1, Landroid/net/wifi/WifiConfiguration;->dirty:Z
 
     iput-boolean v1, p0, Landroid/net/wifi/WifiConfiguration;->dirty:Z
 
-    .line 1757
     iget v1, p1, Landroid/net/wifi/WifiConfiguration;->numNoInternetAccessReports:I
 
     iput v1, p0, Landroid/net/wifi/WifiConfiguration;->numNoInternetAccessReports:I
 
-    .line 1759
     sget-boolean v1, Landroid/net/wifi/WifiConfiguration;->mMtkEapSimAka:Z
 
     if-eqz v1, :cond_5
 
-    .line 1760
     iget-object v1, p1, Landroid/net/wifi/WifiConfiguration;->imsi:Ljava/lang/String;
 
     iput-object v1, p0, Landroid/net/wifi/WifiConfiguration;->imsi:Ljava/lang/String;
 
-    .line 1761
     iget-object v1, p1, Landroid/net/wifi/WifiConfiguration;->simSlot:Ljava/lang/String;
 
     iput-object v1, p0, Landroid/net/wifi/WifiConfiguration;->simSlot:Ljava/lang/String;
 
-    .line 1762
     iget-object v1, p1, Landroid/net/wifi/WifiConfiguration;->pcsc:Ljava/lang/String;
 
     iput-object v1, p0, Landroid/net/wifi/WifiConfiguration;->pcsc:Ljava/lang/String;
 
-    .line 1764
     :cond_5
     iget-object v1, p1, Landroid/net/wifi/WifiConfiguration;->pacFile:Ljava/lang/String;
 
     iput-object v1, p0, Landroid/net/wifi/WifiConfiguration;->pacFile:Ljava/lang/String;
 
-    .line 1765
     iget-object v1, p1, Landroid/net/wifi/WifiConfiguration;->phase1:Ljava/lang/String;
 
     iput-object v1, p0, Landroid/net/wifi/WifiConfiguration;->phase1:Ljava/lang/String;
 
-    .line 1766
     iget v1, p1, Landroid/net/wifi/WifiConfiguration;->channel:I
 
     iput v1, p0, Landroid/net/wifi/WifiConfiguration;->channel:I
 
-    .line 1767
     iget v1, p1, Landroid/net/wifi/WifiConfiguration;->channelWidth:I
 
     iput v1, p0, Landroid/net/wifi/WifiConfiguration;->channelWidth:I
 
-    .line 1770
     .end local v0    # "i":I
     :cond_6
     return-void
@@ -5300,62 +5264,52 @@
     :goto_2
     invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1796
     iget-object v4, p0, Landroid/net/wifi/WifiConfiguration;->updateIdentifier:Ljava/lang/String;
 
     invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1798
     iget-object v4, p0, Landroid/net/wifi/WifiConfiguration;->allowedKeyManagement:Ljava/util/BitSet;
 
     invoke-static {p1, v4}, Landroid/net/wifi/WifiConfiguration;->writeBitSet(Landroid/os/Parcel;Ljava/util/BitSet;)V
 
-    .line 1799
     iget-object v4, p0, Landroid/net/wifi/WifiConfiguration;->allowedProtocols:Ljava/util/BitSet;
 
     invoke-static {p1, v4}, Landroid/net/wifi/WifiConfiguration;->writeBitSet(Landroid/os/Parcel;Ljava/util/BitSet;)V
 
-    .line 1800
     iget-object v4, p0, Landroid/net/wifi/WifiConfiguration;->allowedAuthAlgorithms:Ljava/util/BitSet;
 
     invoke-static {p1, v4}, Landroid/net/wifi/WifiConfiguration;->writeBitSet(Landroid/os/Parcel;Ljava/util/BitSet;)V
 
-    .line 1801
     iget-object v4, p0, Landroid/net/wifi/WifiConfiguration;->allowedPairwiseCiphers:Ljava/util/BitSet;
 
     invoke-static {p1, v4}, Landroid/net/wifi/WifiConfiguration;->writeBitSet(Landroid/os/Parcel;Ljava/util/BitSet;)V
 
-    .line 1802
     iget-object v4, p0, Landroid/net/wifi/WifiConfiguration;->allowedGroupCiphers:Ljava/util/BitSet;
 
     invoke-static {p1, v4}, Landroid/net/wifi/WifiConfiguration;->writeBitSet(Landroid/os/Parcel;Ljava/util/BitSet;)V
 
-    .line 1804
+    invoke-static/range {p0 .. p1}, Landroid/net/wifi/WifiConfiguration$FlymeInjector;->writeFlymeExtraFields(Landroid/net/wifi/WifiConfiguration;Landroid/os/Parcel;)V
+
     iget-object v4, p0, Landroid/net/wifi/WifiConfiguration;->enterpriseConfig:Landroid/net/wifi/WifiEnterpriseConfig;
 
     invoke-virtual {p1, v4, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 1806
     iget-object v4, p0, Landroid/net/wifi/WifiConfiguration;->mIpConfiguration:Landroid/net/IpConfiguration;
 
     invoke-virtual {p1, v4, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 1807
     iget-object v4, p0, Landroid/net/wifi/WifiConfiguration;->dhcpServer:Ljava/lang/String;
 
     invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1808
     iget-object v4, p0, Landroid/net/wifi/WifiConfiguration;->defaultGwMacAddress:Ljava/lang/String;
 
     invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1809
     iget v4, p0, Landroid/net/wifi/WifiConfiguration;->autoJoinStatus:I
 
     invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1810
     iget-boolean v4, p0, Landroid/net/wifi/WifiConfiguration;->selfAdded:Z
 
     if-eqz v4, :cond_4

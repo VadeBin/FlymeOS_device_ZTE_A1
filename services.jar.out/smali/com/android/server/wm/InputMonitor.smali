@@ -1946,25 +1946,19 @@
 
     if-eqz v0, :cond_2
 
-    .line 607
     iget-object v0, p1, Lcom/android/server/wm/WindowState;->mToken:Lcom/android/server/wm/WindowToken;
 
     iput-boolean v3, v0, Lcom/android/server/wm/WindowToken;->paused:Z
 
-    .line 610
     :cond_2
     iput-object p1, p0, Lcom/android/server/wm/InputMonitor;->mInputFocus:Lcom/android/server/wm/WindowState;
 
-    .line 611
     invoke-virtual {p0}, Lcom/android/server/wm/InputMonitor;->setUpdateInputWindowsNeededLw()V
 
-    .line 613
     if-eqz p2, :cond_3
 
-    .line 614
     invoke-virtual {p0, v3}, Lcom/android/server/wm/InputMonitor;->updateInputWindowsLw(Z)V
 
-    .line 617
     :cond_3
     return-void
 .end method
@@ -2053,6 +2047,8 @@
 
     .line 376
     :cond_0
+    invoke-static/range {p0 .. p0}, Lcom/android/server/wm/InputMonitor$FlymeInjector;->updateInputWindowsLw(Lcom/android/server/wm/InputMonitor;)V
+
     const/4 v2, 0x0
 
     move-object/from16 v0, p0
@@ -2639,4 +2635,13 @@
     move-exception v0
 
     goto :goto_0
+.end method
+
+.method flymeGetFieldService()Lcom/android/server/wm/WindowManagerService;
+    .locals 1
+
+    .prologue
+    iget-object v0, p0, Lcom/android/server/wm/InputMonitor;->mService:Lcom/android/server/wm/WindowManagerService;
+
+    return-object v0
 .end method
