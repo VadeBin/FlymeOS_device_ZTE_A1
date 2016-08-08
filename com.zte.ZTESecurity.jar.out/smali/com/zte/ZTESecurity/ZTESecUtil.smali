@@ -253,6 +253,8 @@
 
     move-result-object v1
 
+    const/4 v1, 0x0
+
     .line 44
     .local v1, "mService":Lcom/zte/privacy/IZTEPrivacyManager;
     return-object v1
