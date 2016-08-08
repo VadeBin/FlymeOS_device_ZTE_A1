@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/menu_scan_save_channels" android:title="@string/fm_all_list_scan" />
+    <item android:id="@id/menu_allChannels" android:title="@string/fm_allChannels" />
+    <item android:id="@id/menu_recordStart" android:title="@string/menu_record_start" />
+    <item android:id="@id/menu_recordStop" android:title="@string/menu_record_stop" />
+    <item android:id="@id/menu_sleepTimer" android:title="@string/fm_sleep_timer" />
+    <item android:id="@id/menu_sleepTimerCancel" android:title="@string/menu_sleep_cancel" />
+    <item android:id="@id/menu_exit" android:title="@string/fm_exit_menu" />
+</menu>

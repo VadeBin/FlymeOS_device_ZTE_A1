@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="action_mode_close_button" />
+    <item type="id" name="alertTitle" />
+    <item type="id" name="amPm" />
+    <item type="id" name="body" />
+    <item type="id" name="buttonPanel" />
+    <item type="id" name="calendar_view" />
+    <item type="id" name="cancel" />
+    <item type="id" name="contentPanel" />
+    <item type="id" name="custom" />
+    <item type="id" name="customPanel" />
+    <item type="id" name="datePicker" />
+    <item type="id" name="day" />
+    <item type="id" name="decrement" />
+    <item type="id" name="divider" />
+    <item type="id" name="edittext_container" />
+    <item type="id" name="hour" />
+    <item type="id" name="icon" />
+    <item type="id" name="increment" />
+    <item type="id" name="left_icon" />
+    <item type="id" name="linearLayout" />
+    <item type="id" name="linecancel" />
+    <item type="id" name="lineok" />
+    <item type="id" name="mdActiveViewPosition" />
+    <item type="id" name="mdContent" />
+    <item type="id" name="mdMenu" />
+    <item type="id" name="md__background" />
+    <item type="id" name="md__content" />
+    <item type="id" name="md__drawer" />
+    <item type="id" name="md__menu" />
+    <item type="id" name="md__splitbackground" />
+    <item type="id" name="md__translationX" />
+    <item type="id" name="md__translationY" />
+    <item type="id" name="message" />
+    <item type="id" name="minute" />
+    <item type="id" name="modifyTime" />
+    <item type="id" name="month" />
+    <item type="id" name="numberpicker_input" />
+    <item type="id" name="ok" />
+    <item type="id" name="parentPanel" />
+    <item type="id" name="pickers" />
+    <item type="id" name="progress" />
+    <item type="id" name="radio" />
+    <item type="id" name="repeat_fri" />
+    <item type="id" name="repeat_mon" />
+    <item type="id" name="repeat_sat" />
+    <item type="id" name="repeat_sun" />
+    <item type="id" name="repeat_thu" />
+    <item type="id" name="repeat_tue" />
+    <item type="id" name="repeat_wed" />
+    <item type="id" name="right_icon" />
+    <item type="id" name="scrollView" />
+    <item type="id" name="select_dialog_listview" />
+    <item type="id" name="switchWidget" />
+    <item type="id" name="text1" />
+    <item type="id" name="text2" />
+    <item type="id" name="textSpacerNoButtons" />
+    <item type="id" name="timePickerLayout" />
+    <item type="id" name="title" />
+    <item type="id" name="titleDivider" />
+    <item type="id" name="titleDividerTop" />
+    <item type="id" name="title_container" />
+    <item type="id" name="title_template" />
+    <item type="id" name="topPanel" />
+    <item type="id" name="week" />
+    <item type="id" name="weekText" />
+    <item type="id" name="year" />
+    <item type="id" name="zte_popup_list" />
+    <item type="id" name="on" />
+    <item type="id" name="off" />
+    <item type="id" name="back_button" />
+    <item type="id" name="breadcrumb_section" />
+    <item type="id" name="button1" />
+    <item type="id" name="button2" />
+    <item type="id" name="button3" />
+    <item type="id" name="button_bar" />
+    <item type="id" name="headers" />
+    <item type="id" name="icon_frame" />
+    <item type="id" name="list_footer" />
+    <item type="id" name="next_button" />
+    <item type="id" name="prefs" />
+    <item type="id" name="prefs_frame" />
+    <item type="id" name="seekbar" />
+    <item type="id" name="skip_button" />
+    <item type="id" name="not_pressed" />
+    <item type="id" name="pressed" />
+    <item type="id" name="ib_add" />
+    <item type="id" name="list_edit">false</item>
+    <item type="id" name="main_view">false</item>
+    <item type="id" name="rl_middlepart">false</item>
+    <item type="id" name="bottombar_parent">false</item>
+    <item type="id" name="button_linear">false</item>
+    <item type="id" name="station0">false</item>
+    <item type="id" name="station1">false</item>
+    <item type="id" name="station2">false</item>
+    <item type="id" name="station3">false</item>
+    <item type="id" name="station4">false</item>
+    <item type="id" name="station5">false</item>
+    <item type="id" name="linelayout_button">false</item>
+    <item type="id" name="pass_button">false</item>
+    <item type="id" name="fail_button">false</item>
+    <item type="id" name="favor_item_view">false</item>
+    <item type="id" name="favor_content">false</item>
+    <item type="id" name="favor_freq">false</item>
+    <item type="id" name="favor_name">false</item>
+    <item type="id" name="split_line">false</item>
+    <item type="id" name="favorite_view">false</item>
+    <item type="id" name="station_list">false</item>
+    <item type="id" name="empty">false</item>
+    <item type="id" name="fm_widget">false</item>
+    <item type="id" name="fm_widget_container">false</item>
+    <item type="id" name="stopRadio">false</item>
+    <item type="id" name="seekPrev">false</item>
+    <item type="id" name="seekNext">false</item>
+    <item type="id" name="current_freq">false</item>
+    <item type="id" name="radio_part">false</item>
+    <item type="id" name="middle_control">false</item>
+    <item type="id" name="station_wave">false</item>
+    <item type="id" name="station_freq">false</item>
+    <item type="id" name="freq_text">false</item>
+    <item type="id" name="fm_frequency_ic_1">false</item>
+    <item type="id" name="fm_frequency_ic_2">false</item>
+    <item type="id" name="fm_frequency_ic_3">false</item>
+    <item type="id" name="fm_frequency_ic_4">false</item>
+    <item type="id" name="fm_frequency_ic_5">false</item>
+    <item type="id" name="fm_frequency_ic_mhz">false</item>
+    <item type="id" name="button_prevstation">false</item>
+    <item type="id" name="button_nextstation">false</item>
+    <item type="id" name="fm_switch_next_btn">false</item>
+    <item type="id" name="station_name">false</item>
+    <item type="id" name="station_buttons">false</item>
+    <item type="id" name="button_switch_to_speaker">false</item>
+    <item type="id" name="button_add_to_favorite">false</item>
+    <item type="id" name="station_info">false</item>
+    <item type="id" name="fm_ic_recorder">false</item>
+    <item type="id" name="fm_timer_recorder">false</item>
+    <item type="id" name="fm_timer_sleep">false</item>
+    <item type="id" name="fm_ic_sleep">false</item>
+    <item type="id" name="middle_ruler">false</item>
+    <item type="id" name="fm_preLoading">false</item>
+    <item type="id" name="fm_ic_ruler">false</item>
+    <item type="id" name="fm_freqSelectionBar">false</item>
+    <item type="id" name="favor_part">false</item>
+    <item type="id" name="favor_title">false</item>
+    <item type="id" name="favor_geocity">false</item>
+    <item type="id" name="favor_drawer_open">false</item>
+    <item type="id" name="favor_drawer_close">false</item>
+    <item type="id" name="favor_view">false</item>
+    <item type="id" name="no_favr_text">false</item>
+    <item type="id" name="no_favor_star">false</item>
+    <item type="id" name="favor_grid">false</item>
+    <item type="id" name="mhz">false</item>
+    <item type="id" name="khz">false</item>
+    <item type="id" name="frequencyPicker">false</item>
+    <item type="id" name="lv_current_station">false</item>
+    <item type="id" name="lv_station_freq">false</item>
+    <item type="id" name="lv_station_suffix">false</item>
+    <item type="id" name="lv_station_name">false</item>
+    <item type="id" name="lv_station_type">false</item>
+    <item type="id" name="frequency">false</item>
+    <item type="id" name="ic_indicate_fav">false</item>
+    <item type="id" name="ic_indicate_next">false</item>
+    <item type="id" name="ic_indicate_stop">false</item>
+    <item type="id" name="ic_indicate_prev">false</item>
+    <item type="id" name="fm_add_channel">false</item>
+    <item type="id" name="fm_scan">false</item>
+    <item type="id" name="fm_menu">false</item>
+    <item type="id" name="menu_scan_save_channels">false</item>
+    <item type="id" name="menu_allChannels">false</item>
+    <item type="id" name="menu_recordStart">false</item>
+    <item type="id" name="menu_recordStop">false</item>
+    <item type="id" name="menu_sleepTimer">false</item>
+    <item type="id" name="menu_sleepTimerCancel">false</item>
+    <item type="id" name="menu_exit">false</item>
+    <item type="id" name="rename_item">false</item>
+    <item type="id" name="delete_item">false</item>
+    <item type="id" name="deletefavor_item">false</item>
+    <item type="id" name="addfavor_item">false</item>
+    <item type="id" name="switchfreq_item">false</item>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/main_view" android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="vertical" android:id="@id/rl_middlepart" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/bottombar_parent">
+        <LinearLayout android:orientation="vertical" android:id="@id/button_linear" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:layout_centerHorizontal="true">
+            <Button android:textSize="10.0pt" android:id="@id/station0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/station0" android:layout_centerHorizontal="true" />
+            <Button android:textSize="10.0pt" android:id="@id/station1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/station1" android:layout_centerHorizontal="true" />
+            <Button android:textSize="10.0pt" android:id="@id/station2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/station2" android:layout_centerHorizontal="true" />
+            <Button android:textSize="10.0pt" android:id="@id/station3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/station3" android:layout_centerHorizontal="true" />
+            <Button android:textSize="10.0pt" android:id="@id/station4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/station4" android:layout_centerHorizontal="true" />
+            <Button android:textSize="10.0pt" android:id="@id/station5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/station5" android:layout_centerHorizontal="true" />
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout android:layout_gravity="bottom|center" android:orientation="horizontal" android:id="@id/linelayout_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="15.0px" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+        <Button android:id="@id/pass_button" android:layout_width="150.0dip" android:layout_height="wrap_content" android:text="@string/pass" />
+        <Button android:id="@id/fail_button" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="@string/fail" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/rename_item" android:title="@string/menu_rename" />
+    <item android:id="@id/delete_item" android:title="@string/menu_delete" />
+    <item android:id="@id/deletefavor_item" android:title="@string/menu_deletefavor" />
+    <item android:id="@id/addfavor_item" android:title="@string/menu_addfavor" />
+    <item android:id="@id/switchfreq_item" android:title="@string/menu_switchfreq" />
+</menu>
