@@ -75,6 +75,18 @@
 
     iget-object v3, p0, Landroid/widget/AbsListView$PerformClick;->this$0:Landroid/widget/AbsListView;
 
+    invoke-virtual {v3}, Landroid/widget/AbsListView;->mzPerformClick()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_flyme_0
+
+    return-void
+
+    :cond_flyme_0
+
+    iget-object v3, p0, Landroid/widget/AbsListView$PerformClick;->this$0:Landroid/widget/AbsListView;
+
     # getter for: Landroid/widget/AbsListView;->mIsDetaching:Z
     invoke-static {v3}, Landroid/widget/AbsListView;->access$700(Landroid/widget/AbsListView;)Z
 

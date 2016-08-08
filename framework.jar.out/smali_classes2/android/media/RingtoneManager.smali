@@ -251,15 +251,15 @@
 
     aput-object v1, v0, v6
 
-    const-string v1, "is_drm"
+    #const-string v1, "is_drm"
 
-    aput-object v1, v0, v7
+    #aput-object v1, v0, v7
 
-    const/4 v1, 0x5
+    #const/4 v1, 0x5
 
-    const-string v2, "drm_method"
+    #const-string v2, "drm_method"
 
-    aput-object v2, v0, v1
+    #aput-object v2, v0, v1
 
     sput-object v0, Landroid/media/RingtoneManager;->MEDIA_COLUMNS:[Ljava/lang/String;
 
@@ -2053,6 +2053,8 @@
     move-result-object v2
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-static/range {p0 .. p2}, Landroid/media/RingtoneManager;->setFlymeActualDefaultRingtoneUri(Landroid/content/Context;ILandroid/net/Uri;)V
 
     goto :goto_0
 

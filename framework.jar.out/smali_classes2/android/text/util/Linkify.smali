@@ -168,52 +168,51 @@
 .end method
 
 .method public static final addLinks(Landroid/text/Spannable;I)Z
-    .locals 15
+    .locals 12
     .param p0, "text"    # Landroid/text/Spannable;
     .param p1, "mask"    # I
 
     .prologue
-    .line 218
+    const/4 v5, 0x0
+
+    const/4 v11, 0x1
+
+    const/4 v10, 0x0
+
     if-nez p1, :cond_0
 
-    .line 219
-    const/4 v1, 0x0
+    move v1, v10
 
-    .line 273
     :goto_0
     return v1
 
-    .line 222
     :cond_0
-    const/4 v1, 0x0
-
     invoke-interface {p0}, Landroid/text/Spannable;->length()I
 
-    move-result v4
+    move-result v1
 
-    const-class v5, Landroid/text/style/URLSpan;
+    const-class v2, Landroid/text/style/URLSpan;
 
-    invoke-interface {p0, v1, v4, v5}, Landroid/text/Spannable;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
+    invoke-interface {p0, v10, v1, v2}, Landroid/text/Spannable;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
 
-    move-result-object v13
+    move-result-object v9
 
-    check-cast v13, [Landroid/text/style/URLSpan;
+    check-cast v9, [Landroid/text/style/URLSpan;
 
-    .line 224
-    .local v13, "old":[Landroid/text/style/URLSpan;
-    array-length v1, v13
+    .local v9, "old":[Landroid/text/style/URLSpan;
+    array-length v1, v9
 
-    add-int/lit8 v10, v1, -0x1
+    add-int/lit8 v6, v1, -0x1
 
-    .local v10, "i":I
+    .local v6, "i":I
     :goto_1
-    if-ltz v10, :cond_1
+    if-ltz v6, :cond_1
 
-    aget-object v1, v13, v10
+    aget-object v1, v9, v6
 
     invoke-interface {p0, v1}, Landroid/text/Spannable;->removeSpan(Ljava/lang/Object;)V
 
-    add-int/lit8 v10, v10, -0x1
+    add-int/lit8 v6, v6, -0x1
 
     goto :goto_1
 
@@ -227,85 +226,63 @@
 
     if-eqz v1, :cond_2
 
-    const-class v1, Lcom/mediatek/common/util/IWebProtocolNames;
+    invoke-static {}, Landroid/os/BuildExt;->isProductInternational()Z
 
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    move-result v1
 
-    move-result-object v1
+    if-nez v1, :cond_flyme_0
 
-    invoke-static {v1}, Lcom/mediatek/common/MPlugin;->createInstance(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p0, v0}, Landroid/text/util/Linkify;->flymeGatherLinks(Landroid/text/Spannable;Ljava/util/ArrayList;)V
 
-    move-result-object v14
+    goto/16 :goto_flyme_0
 
-    check-cast v14, Lcom/mediatek/common/util/IWebProtocolNames;
+    :cond_flyme_0
 
-    .line 234
-    .local v14, "plugin":Lcom/mediatek/common/util/IWebProtocolNames;
-    if-eqz v14, :cond_6
+    sget-object v2, Landroid/util/Patterns;->WEB_URL:Ljava/util/regex/Pattern;
 
-    .line 235
-    invoke-interface {v14}, Lcom/mediatek/common/util/IWebProtocolNames;->getWebProtocolNames()[Ljava/lang/String;
+    const/4 v1, 0x3
 
-    move-result-object v3
+    new-array v3, v1, [Ljava/lang/String;
 
-    .line 236
-    .local v3, "webProtocolNames":[Ljava/lang/String;
-    invoke-static {}, Landroid/util/Patterns;->getWebUrlPattern()Ljava/util/regex/Pattern;
+    const-string v1, "http://"
 
-    move-result-object v2
+    aput-object v1, v3, v10
 
-    .line 238
-    .local v2, "webUrlPattern":Ljava/util/regex/Pattern;
-    const/4 v1, 0x1
+    const-string v1, "https://"
 
-    sput v1, Landroid/text/util/Linkify;->sAddLinkMask:I
+    aput-object v1, v3, v11
 
-    .line 239
+    const/4 v1, 0x2
+
+    const-string/jumbo v4, "rtsp://"
+
+    aput-object v4, v3, v1
+
     sget-object v4, Landroid/text/util/Linkify;->sUrlMatchFilter:Landroid/text/util/Linkify$MatchFilter;
-
-    const/4 v5, 0x0
 
     move-object v1, p0
 
     invoke-static/range {v0 .. v5}, Landroid/text/util/Linkify;->gatherLinks(Ljava/util/ArrayList;Landroid/text/Spannable;Ljava/util/regex/Pattern;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)V
 
-    .line 247
-    .end local v2    # "webUrlPattern":Ljava/util/regex/Pattern;
-    .end local v3    # "webProtocolNames":[Ljava/lang/String;
-    .end local v14    # "plugin":Lcom/mediatek/common/util/IWebProtocolNames;
     :cond_2
-    :goto_2
+    :goto_flyme_0
     and-int/lit8 v1, p1, 0x2
 
     if-eqz v1, :cond_3
 
-    .line 249
-    const/4 v1, 0x2
+    sget-object v2, Landroid/util/Patterns;->EMAIL_ADDRESS:Ljava/util/regex/Pattern;
 
-    sput v1, Landroid/text/util/Linkify;->sAddLinkMask:I
+    new-array v3, v11, [Ljava/lang/String;
 
-    .line 250
-    sget-object v6, Landroid/util/Patterns;->EMAIL_ADDRESS:Ljava/util/regex/Pattern;
+    const-string/jumbo v1, "mailto:"
 
-    const/4 v1, 0x1
+    aput-object v1, v3, v10
 
-    new-array v7, v1, [Ljava/lang/String;
+    move-object v1, p0
 
-    const/4 v1, 0x0
+    move-object v4, v5
 
-    const-string v4, "mailto:"
-
-    aput-object v4, v7, v1
-
-    const/4 v8, 0x0
-
-    const/4 v9, 0x0
-
-    move-object v4, v0
-
-    move-object v5, p0
-
-    invoke-static/range {v4 .. v9}, Landroid/text/util/Linkify;->gatherLinks(Ljava/util/ArrayList;Landroid/text/Spannable;Ljava/util/regex/Pattern;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)V
+    invoke-static/range {v0 .. v5}, Landroid/text/util/Linkify;->gatherLinks(Ljava/util/ArrayList;Landroid/text/Spannable;Ljava/util/regex/Pattern;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)V
 
     :cond_3
     and-int/lit8 v1, p1, 0x4
@@ -330,59 +307,45 @@
 
     move-result v1
 
-    if-nez v1, :cond_7
+    if-nez v1, :cond_6
 
-    const/4 v1, 0x0
+    move v1, v10
 
     goto :goto_0
 
-    .restart local v14    # "plugin":Lcom/mediatek/common/util/IWebProtocolNames;
     :cond_6
-    const-string v1, "Linkify"
-
-    const-string v4, "addLinks(), IWebProtocolNames fail to create plugin instance"
-
-    invoke-static {v1, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_2
-
-    .line 269
-    .end local v14    # "plugin":Lcom/mediatek/common/util/IWebProtocolNames;
-    :cond_7
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
-    move-result-object v11
+    move-result-object v7
 
-    .local v11, "i$":Ljava/util/Iterator;
-    :goto_3
-    invoke-interface {v11}, Ljava/util/Iterator;->hasNext()Z
+    .local v7, "i$":Ljava/util/Iterator;
+    :goto_2
+    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_8
+    if-eqz v1, :cond_7
 
-    invoke-interface {v11}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v12
+    move-result-object v8
 
-    check-cast v12, Landroid/text/util/LinkSpec;
+    check-cast v8, Landroid/text/util/LinkSpec;
 
-    .line 270
-    .local v12, "link":Landroid/text/util/LinkSpec;
-    iget-object v1, v12, Landroid/text/util/LinkSpec;->url:Ljava/lang/String;
+    .local v8, "link":Landroid/text/util/LinkSpec;
+    iget-object v1, v8, Landroid/text/util/LinkSpec;->url:Ljava/lang/String;
 
-    iget v4, v12, Landroid/text/util/LinkSpec;->start:I
+    iget v2, v8, Landroid/text/util/LinkSpec;->start:I
 
-    iget v5, v12, Landroid/text/util/LinkSpec;->end:I
+    iget v3, v8, Landroid/text/util/LinkSpec;->end:I
 
-    invoke-static {v1, v4, v5, p0}, Landroid/text/util/Linkify;->applyLink(Ljava/lang/String;IILandroid/text/Spannable;)V
+    invoke-static {v1, v2, v3, p0}, Landroid/text/util/Linkify;->applyLink(Ljava/lang/String;IILandroid/text/Spannable;)V
 
-    goto :goto_3
+    goto :goto_2
 
-    .line 273
-    .end local v12    # "link":Landroid/text/util/LinkSpec;
-    :cond_8
-    const/4 v1, 0x1
+    .end local v8    # "link":Landroid/text/util/LinkSpec;
+    :cond_7
+    move v1, v11
 
     goto/16 :goto_0
 .end method
