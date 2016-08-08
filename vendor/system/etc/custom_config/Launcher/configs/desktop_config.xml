@@ -1,0 +1,47 @@
+<config>
+
+    <defaultScreen id="1" />
+
+    <appHiddens>
+
+        <appInfo
+            className="cn.com.zte.yp.NumberLocatorActivity"
+            iconType="0"
+            packageName="cn.com.zte.yp" />
+
+        <appInfo
+            className="com.everystripe.wallpaper.free.LauncherActivity"
+            iconType="0"
+            packageName="com.everystripe.wallpaper.light" />
+			
+        <appInfo
+            className="com.slightech.slife.ui.SplashActivity"
+            iconType="0"
+            packageName="com.slightech.slife.zte" />	
+
+        <appInfo
+            className="com.moji.zteweather.CSplashScreen"
+            iconType="0"
+            packageName="com.moji.zteweather" />
+
+        <appInfo
+            className="com.sohu.inputmethod.sogou.SogouIMELauncher"
+            iconType="0"
+            packageName="com.sohu.inputmethod.sogou" />
+
+        <appInfo
+            className="com.android.utk.UtkLauncherActivity"
+            iconType="0"
+            packageName="com.android.utk" />			
+			
+		<appInfo
+            className="com.utooo.huahualock.MainActivity"
+            iconType="0"
+            packageName="com.utooo.huahualock.zte" />			
+    </appHiddens>
+	
+<!--	<iconReserved>
+		<apkInfo id="com.ume.browser_com.ume.browser.MainActivity" />
+	</iconReserved>-->
+
+</config>
