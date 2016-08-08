@@ -1,0 +1,87 @@
+Manifest-Version: 1.0
+Created-By: 1.7.0_65 (Oracle Corporation)
+
+Name: res/drawable/bt_share.xml
+SHA1-Digest: EsmTDyTps+6h1f6abMLBBMST0KQ=
+
+Name: res/drawable/ic_launcher_folder_bluetooth.xml
+SHA1-Digest: hSK/ACwG8nHwqFCwMs74jcBAc9s=
+
+Name: res/layout/auth.xml
+SHA1-Digest: FMGntsTqmkSt0h5K7tHsg83MuVc=
+
+Name: res/drawable-hdpi-v4/bt_share.png
+SHA1-Digest: P5wCZmR1LLybNEjeFpaeZnKKiHU=
+
+Name: res/layout/file_transfer.xml
+SHA1-Digest: 5ujHoQlNWL5cfKbMk7Q6A7VJqU8=
+
+Name: resources.arsc
+SHA1-Digest: hpaa5TsHGEnaEHWR18UsvP6LPZs=
+
+Name: res/menu/transferhistorycontextfinished.xml
+SHA1-Digest: V6prhpeCZehQRrXepd6DivzTd38=
+
+Name: res/drawable-xhdpi-v4/bt_incomming_file_notification.png
+SHA1-Digest: Otbi7t6gndZbRSwvx9O1kSTIAto=
+
+Name: AndroidManifest.xml
+SHA1-Digest: G3AuOiFos7NT77XY6IvKQQzsexk=
+
+Name: res/layout/confirm_dialog.xml
+SHA1-Digest: OwrcwcKwIuy/DtqaBnoxply3EwE=
+
+Name: res/menu/transferhistory.xml
+SHA1-Digest: ze755J+LvIrMJ/GU1DmDcMy7Aes=
+
+Name: res/menu/receivedfilescontextfinished.xml
+SHA1-Digest: 5/qBeoJVw6Qlr0PNroxZf4g8vhM=
+
+Name: res/layout/sim_selector.xml
+SHA1-Digest: kp+OA8isAO0gcbHO8w81s2AgXlk=
+
+Name: res/layout/bt_enabling_progress.xml
+SHA1-Digest: /qCki9GuemIrLFYCkN2FLqW3Zsw=
+
+Name: res/drawable-hdpi-v4/bt_share_am.png
+SHA1-Digest: P5wCZmR1LLybNEjeFpaeZnKKiHU=
+
+Name: res/drawable-hdpi-v4/ic_launcher_folder_bluetooth.png
+SHA1-Digest: F0U42VgucrUGyi6hK63PaEA/FSM=
+
+Name: res/layout/no_transfers.xml
+SHA1-Digest: r/n0b9p2U8vtlHDSEmFuYlKpT5k=
+
+Name: res/drawable-xhdpi-v4/bt_incomming_file_notification_am.png
+SHA1-Digest: Otbi7t6gndZbRSwvx9O1kSTIAto=
+
+Name: res/layout/bluetooth_transfers_page.xml
+SHA1-Digest: U8mU6nY3lT4lAqXv3g8WRn2SngU=
+
+Name: res/layout/bluetooth_map_email_settings.xml
+SHA1-Digest: PG9+fKxbzWJTuT+sr0oggB6FnmY=
+
+Name: classes.dex
+SHA1-Digest: ccx5Xb04GWyOOckKIwVISRn5Tq4=
+
+Name: res/layout/bluetooth_map_email_settings_account_item.xml
+SHA1-Digest: rEFsUj5jY8b7UHyrIYutjNr8WiI=
+
+Name: res/layout/testactivity_main.xml
+SHA1-Digest: +aXDSGU6oi/QaWymasOPJJSFvFE=
+
+Name: res/layout/bluetooth_transfer_item.xml
+SHA1-Digest: zFitepkrGH2L39/tjG0QJcZpHp4=
+
+Name: res/drawable-hdpi-v4/ic_launcher_folder_bluetooth_am.png
+SHA1-Digest: F0U42VgucrUGyi6hK63PaEA/FSM=
+
+Name: res/layout/bluetooth_map_email_settings_account_group.xml
+SHA1-Digest: gVQcSPMRXEYqsCvngmkTxl7h7/E=
+
+Name: res/layout/incoming_dialog.xml
+SHA1-Digest: ejXwtGo1g1Iz9iFks24enHD5pn8=
+
+Name: res/drawable/bt_incomming_file_notification.xml
+SHA1-Digest: iudw1MNHWEF5PMDTilFzqqsf8K0=
+

@@ -1,0 +1,88 @@
+Signature-Version: 1.0
+Created-By: 1.0 (Android SignApk)
+SHA1-Digest-Manifest: KGo82s18RcsgJxr6nAmkZdDb3n8=
+
+Name: res/drawable/bt_share.xml
+SHA1-Digest-Manifest: jf8JgSEAssVvumD7s0cSpgsQ+HU=
+
+Name: res/drawable/ic_launcher_folder_bluetooth.xml
+SHA1-Digest-Manifest: /8mhf1RUQvfElvPSD24mz4hXyrY=
+
+Name: res/layout/auth.xml
+SHA1-Digest-Manifest: JM9+D/H/PdppKYfyC+k74vXGe58=
+
+Name: res/drawable-hdpi-v4/bt_share.png
+SHA1-Digest-Manifest: AVId4wbf0OclSzpNzCYRTXYAtdA=
+
+Name: res/layout/file_transfer.xml
+SHA1-Digest-Manifest: 4Q/FUgQSvGScPHs85akZVyJIlg4=
+
+Name: resources.arsc
+SHA1-Digest-Manifest: ymbmus4BUrv+YMJlNMddhKbRhAU=
+
+Name: res/drawable-xhdpi-v4/bt_incomming_file_notification.png
+SHA1-Digest-Manifest: QuBUYUkJI1+zcEywUIyYdp1DFbE=
+
+Name: res/menu/transferhistorycontextfinished.xml
+SHA1-Digest-Manifest: kMY4TjHkkQHQA6aUvGTof0uEOzs=
+
+Name: res/layout/confirm_dialog.xml
+SHA1-Digest-Manifest: MhEgGzlghe8j1c8pwuV1OD6TiNw=
+
+Name: AndroidManifest.xml
+SHA1-Digest-Manifest: i7oCFfkNcRDMb351vp+UxGwJHTE=
+
+Name: res/menu/receivedfilescontextfinished.xml
+SHA1-Digest-Manifest: gmr55k1K7S2QoGEsApFZHV8nNj0=
+
+Name: res/menu/transferhistory.xml
+SHA1-Digest-Manifest: YMVS9osCGDxOnIff14JLAcBheC4=
+
+Name: res/layout/sim_selector.xml
+SHA1-Digest-Manifest: KubqguKfXAuyJhPB+lrShFJEM5Y=
+
+Name: res/layout/bt_enabling_progress.xml
+SHA1-Digest-Manifest: /4sL19Jp1K0BFgZFlsMP3RhDNuw=
+
+Name: res/drawable-hdpi-v4/bt_share_am.png
+SHA1-Digest-Manifest: E0520OUPwa43nYHRVwNvYizKZQw=
+
+Name: res/drawable-hdpi-v4/ic_launcher_folder_bluetooth.png
+SHA1-Digest-Manifest: lDsIusQSdt4Tc9dUVSiYJMLQAYA=
+
+Name: res/layout/no_transfers.xml
+SHA1-Digest-Manifest: U4X1ldGjpIhN+E7XYz5mVmHram0=
+
+Name: res/drawable-xhdpi-v4/bt_incomming_file_notification_am.png
+SHA1-Digest-Manifest: 8gC8B1FTD02mUPH8W6uymKWkOf4=
+
+Name: res/layout/bluetooth_transfers_page.xml
+SHA1-Digest-Manifest: qKtJyI+KNH30O/mzEIhhp4vcPiU=
+
+Name: res/layout/bluetooth_map_email_settings.xml
+SHA1-Digest-Manifest: 0zC3I0MUvRfoAuZ2CiB0eUo+wtE=
+
+Name: classes.dex
+SHA1-Digest-Manifest: 4vVqdA7+/Xca3FazumNy5rulbFM=
+
+Name: res/layout/bluetooth_map_email_settings_account_item.xml
+SHA1-Digest-Manifest: r0G9xTMuXDBYfDfqNwu8nfzz6o0=
+
+Name: res/layout/testactivity_main.xml
+SHA1-Digest-Manifest: 9s2DHfyyKzmYXXdnxT+yz1xjzSw=
+
+Name: res/layout/bluetooth_transfer_item.xml
+SHA1-Digest-Manifest: MueTytuM22Oo2fA1vqGxGQYZRaM=
+
+Name: res/drawable-hdpi-v4/ic_launcher_folder_bluetooth_am.png
+SHA1-Digest-Manifest: WRDwEByeVsggxbPG+vbbQngA2dQ=
+
+Name: res/layout/bluetooth_map_email_settings_account_group.xml
+SHA1-Digest-Manifest: eQa8mutmOFU8B9EtZdHOYyJPKrk=
+
+Name: res/layout/incoming_dialog.xml
+SHA1-Digest-Manifest: /D8+vsw4yfIki3aiTyh00B4he/8=
+
+Name: res/drawable/bt_incomming_file_notification.xml
+SHA1-Digest-Manifest: C7jpvwditeLkRwJ0fE1E0tl95Ng=
+
