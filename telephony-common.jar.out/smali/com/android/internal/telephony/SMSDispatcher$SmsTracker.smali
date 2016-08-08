@@ -420,6 +420,8 @@
 
     invoke-virtual {v8, v9, v10}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
+    invoke-direct {p0, v8}, Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;->setFlymeExtraValues(Landroid/content/ContentValues;)V
+
     iget-object v9, p0, Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;->mAppInfo:Landroid/content/pm/PackageInfo;
 
     if-eqz v9, :cond_7

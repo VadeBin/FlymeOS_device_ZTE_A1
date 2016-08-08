@@ -56,7 +56,8 @@ vendor_modify_images := boot
 #-----------------------------------------------------------------------------
 vendor_saved_apps := Bluetooth KeyChain HTMLViewer UserDictionaryProvider BackupRestoreConfirmation \
                      FusedLocation PrintSpooler SharedStorageBackup  ExternalStorageProvider InputDevices \
-                     ProxyHandler Shell DefaultContainerService SuperSU Camera_ZTE FmRadio_ZTE
+                     ProxyHandler Shell DefaultContainerService SuperSU Camera_ZTE FmRadio_ZTE VirtualHardKey \
+                     ShotcutKeyZTE MIPop zgesture Flashlight_ZTE fingerprint FingerprintService FPCFingerprintService
 
 ##############################################################################
 # The value decides which vendor apk you want to modify.
@@ -110,7 +111,7 @@ board_remove_apps := NfcNci
 # The command idtoname how to use: first use "apktool d source/system/framework/framework-res.apk other/TMP/framework-res",
 # and then use "idtoname other/TMP/framework-res/res/values/public_master.xml XXXX/smali"(XXXX is the directory where you decode board system apk).
 #-----------------------------------------------------------------------------
-board_modify_apps := Mms Settings MzCallSetting
+board_modify_apps := Mms Settings MzCallSetting SystemUI
 
 ##############################################################################
 # The value decides which jar you want to modify, when the jar is based on the board framework jar.
