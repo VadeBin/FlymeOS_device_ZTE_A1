@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* //device/apps/common/assets/res/any/strings.xml
+**
+** Copyright 2006, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+<string name="system_res_label">System Resources Package</string>
+<string name="no_content">No corresponding content</string>
+<string name="set_silent">Silent</string>
+<string name="wifi_hotspot_turned_off">WLAN Hotspot turned off</string>
+<string name="wifi_hotspot_turned_off_summary">Sleep time is activated, you can modify it in WLAN hotspot-Advanced-Hotspot sleep policy.</string>
+	<!-- //  for PLMN_MULTI_LANGUAGE plmn display  -->
+	<string name="multi_language_46019">460 19</string>
+	<string name="multi_language_20404">China Telecom</string>
+	<string name="multi_language_46003">China Telecom</string>
+	<string name="multi_language_46001">China Unicom</string>
+	<string name="multi_language_46000">China Mobile</string>
+	<string name="multi_language_46002">China Mobile</string>
+    <string name="multi_language_46007">China Mobile</string>
+    <!-- // ZTE_MODIFY end -->
+    <string name="connect_joystick_notification_title">External joystick connected</string>
+    <string name="disconnect_joystick_notification_title">External joystick removed</string>
+    <string name="connect_keyboard_notification_title">External keyboard connected</string>
+    <string name="disconnect_keyboard_notification_title">External keyboard removed</string>
+	
+	<!-- ZTE_MODIYF lixiange add for connect to OTG -->
+	<string name="ota_mount_notification_title">External storage device connected</string>
+	<string name="ota_mount_notification_message">Select to copy files to/from external storage device</string>
+	<string name="ota_unmount_notification_title">Unmount external storage device</string>
+	<string name="ota_unmount_notification_message">Unmount the external storage device so you can safely remove it</string>
+	<string name="ota_unexpectedly_removed_notification_title">External storage devices unexpectedly removed</string>
+	<string name="ota_unexpectedly_removed_notification_message">Unmount external storage device before removing to avoid data loss</string>
+	<string name="ota_unmounted_notification_title">External storage device Unmounted</string>
+	<!-- ZTE_MODIYF end -->
+	
+	<!-- zte add for global action menu,begin -->
+	<string name="global_action_reset">Restart</string>
+	<string name="global_action_quickpower_on">Quick start is ON</string>
+	<string name="global_action_quickpower_off">Quick start is OFF</string>
+	<string name="global_action_rboot_message">Power off your phone when long pressing Power key for 10s</string>
+	<string name="reboot_title">Restart</string>
+    <string name="reboot_confirm">Your phone will restart.</string>
+    <string name="reboot_confirm_question">Do you want to restart?</string>
+    <!-- zte add,end -->
+
+    <string name="toast_wifi_connected_message">Has connected to SSID <xliff:g id="ssid">%1$s</xliff:g>.</string>
+	
+	<string name="pppoe_indicator_title">PPPOE</string>
+    <string name="pppoe_indicator_detail_connected">Connected</string>
+    <string name="pppoe_indicator_detail_connecting">Connecting...</string>
+    <string name="pppoe_indicator_detail_connect_failure">Unconnected</string>
+	
+	<!-- This is the default button label in the system-wide search UI.
+         It is also used by the home screen's search "widget". It should be short -->
+    <string name="search_go">Search</string>
+    <!-- SearchView accessibility description for search button [CHAR LIMIT=NONE] -->
+    <string name="searchview_description_search">Search</string>
+    <!-- SearchView accessibility description for search text field [CHAR LIMIT=NONE] -->
+    <string name="searchview_description_query">Search query</string>
+    <!-- SearchView accessibility description for clear button [CHAR LIMIT=NONE] -->
+    <string name="searchview_description_clear">Clear query</string>
+    <!-- SearchView accessibility description for submit button [CHAR LIMIT=NONE] -->
+    <string name="searchview_description_submit">Submit query</string>
+    <!-- SearchView accessibility description for voice button [CHAR LIMIT=NONE] -->
+    <string name="searchview_description_voice">Voice search</string>
+	
+	<string name="datetime_dialog_title">Set Date&amp;Time</string>
+	<!-- guojingdong menudrawer -->
+	<string name="md__drawerOpenIndicatorDesc">Close drawer</string>
+
+    <string name="md__drawerClosedIndicatorDesc">Open drawer</string>
+	<!-- guojingdong menudrawer -->
+	
+	<string name="zte_days_of_week_Mon">Mon</string>
+    <string name="zte_days_of_week_Tue">Tue</string>
+    <string name="zte_days_of_week_Wed">Wed</string>
+    <string name="zte_days_of_week_Thu">Thu</string>
+    <string name="zte_days_of_week_Fri">Fri</string>
+    <string name="zte_days_of_week_Sat">Sat</string>
+    <string name="zte_days_of_week_Sun">Sun</string>
+    <string name="alwaysUse">Use by default for this action.</string>
+    <string name="whichApplication">Complete action using</string>
+    <string name="whichHomeApplication">Select a home app</string>
+    <string name="noApplications">No apps can perform this action.</string>
+    <string name="date_time_done">Done</string>
+    <string name="date_picker_dialog_title">Set date</string>
+    <string name="texton">""</string>
+    <string name="textoff">""</string>
+     <string name="time_picker_increment_minute_button">Increase minute</string>
+    <!-- Description of the button to decrease the TimePicker's minute value. [CHAR LIMIT=NONE] -->
+    <string name="time_picker_decrement_minute_button">Decrease minute</string>
+    <!-- Description of the button to increase the TimePicker's hour value. [CHAR LIMIT=NONE] -->
+    <string name="time_picker_increment_hour_button">Increase hour</string>
+    <!-- Description of the button to decrease the TimePicker's hour value. [CHAR LIMIT=NONE] -->
+    <string name="time_picker_decrement_hour_button">Decrease hour</string>
+    <!-- Description of the button to increase the TimePicker's set PM value. [CHAR LIMIT=NONE] -->
+    <string name="time_picker_increment_set_pm_button">Set PM</string>
+    <!-- Description of the button to decrease the TimePicker's set AM value. [CHAR LIMIT=NONE] -->
+    <string name="time_picker_decrement_set_am_button">Set AM</string>
+
+    <!-- DatePicker - accessibility support -->
+    <!-- Description of the button to increase the DatePicker's month value. [CHAR LIMIT=NONE] -->
+    <string name="date_picker_increment_month_button">Increase month</string>
+    <!-- Description of the button to decrease the DatePicker's month value. [CHAR LIMIT=NONE] -->
+    <string name="date_picker_decrement_month_button">Decrease month</string>
+    <!-- Description of the button to increase the DatePicker's day value. [CHAR LIMIT=NONE] -->
+    <string name="date_picker_increment_day_button">Increase day</string>
+    <!-- Description of the button to decrease the DatePicker's day value. [CHAR LIMIT=NONE] -->
+    <string name="date_picker_decrement_day_button">Decrease day</string>
+    <!-- Description of the button to increase the DatePicker's year value. [CHAR LIMIT=NONE] -->
+    <string name="date_picker_increment_year_button">Increase year</string>
+    <!-- Description of the button to decrease the DatePicker's year value. [CHAR LIMIT=NONE] -->
+    <string name="date_picker_decrement_year_button">Decrease year</string>
+
+    <!--  Strings for possible PreferenceActivity Back/Next buttons -->
+    <string name="back_button_label">Back</string>
+    <string name="next_button_label">Next</string>
+
+    <!-- Optional button to Skip a PreferenceActivity [CHAR LIMIT=20] -->
+    <string name="skip_button_label">Skip</string>
+    <!-- Default text for a button that can be toggled on and off. -->
+    <string name="capital_on">ON</string>
+    <!-- Default text for a button that can be toggled on and off. -->
+    <string name="capital_off">OFF</string>	
+</resources>

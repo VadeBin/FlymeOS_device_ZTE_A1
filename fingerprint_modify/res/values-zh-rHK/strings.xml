@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">指紋服務</string>
+    <string name="apply_to">將指紋應用於</string>
+    <string name="black_wakeup_unlock">喚醒解鎖</string>
+    <string name="black_wakeup_unlock_sum">允許手機在黑屏和鎖屏界面通過指紋解鎖</string>
+    <string name="access_app_ctl_tip">訪問程序鎖</string>
+    <string name="access_app_ctl_tip_sum">允許通過驗證指紋來訪問掌心管家的程序鎖</string>
+    <string name="access_privacy_ctl_tip">訪問私密空間</string>
+    <string name="access_privacy_ctl_tip_sum">允許通過驗證指紋來訪問掌心管家的私密空間</string>
+    <string name="fingerprint">指紋</string>
+    <string name="fingerprint_manager">指紋管理</string>
+    <string name="add_fingerprint">添加指紋</string>
+    <string name="fingerprint_input">添加指紋</string>
+    <string name="fingerprint_input_later">稍後錄入</string>
+    <string name="fingerprint_input_now">錄入</string>
+    <string name="fingerprint_input_tip">您還沒有錄入指紋，是否現在開始錄入</string>
+    <string name="rename">重命名</string>
+    <string name="delete">刪除</string>
+    <string name="confirm">確定</string>
+    <string name="cancel">取消</string>
+    <string name="delete_confirm">確認刪除：%1$s</string>
+    <string name="please_start">請將手指放在手機背部的指紋識別器上錄入指紋</string>
+    <string name="please_continue">請將手指放在指紋識別器上，感覺到振動後抬起手指並調整姿勢繼續錄入</string>
+    <string name="please_continue1">放置手指</string>
+    <string name="enroll_success">錄入完成</string>
+    <string name="enroll_success1">"您已完成了指紋錄入!
+"</string>
+    <string name="move_finger">輕抬手指，再次錄入</string>
+    <string name="re_move_finger">請重新放置手指</string>
+    <string name="finger_exist">指紋已經存在</string>
+    <string name="finger_percent_tip">%1$d/6</string>
+    <string name="finger_max_5">最多只能錄入5個指紋</string>
+    <string name="finger_fail">指紋模塊出現錯誤，請稍後重試！</string>
+    <string name="finger_fail_reboot">指紋模塊遇到不可恢復的錯誤，請重啟手機後重試！</string>
+    <string name="fingerprint_enrol_error">指紋錄入失敗，請重新啟動錄入</string>
+    <string name="please_enrol_more">"一個完整且安全的指紋信息應包含
+手指正面及邊緣的紋路"</string>
+    <string name="touch_for_take_photo_tip">拍照</string>
+    <string name="touch_for_take_photo_sum">相機界面長按指紋識別器進行拍照</string>
+    <string name="touch_for_answer_call_tip">接聽電話</string>
+    <string name="touch_for_answer_call_sum">來電界面長按指紋識別器接聽電話</string>
+    <string name="delete_confirm2">確定刪除該指紋？</string>
+    <string name="enrol_hint_front">放置手指，錄入指紋正面</string>
+    <string name="enrol_hint_front2">輕抬手指，錄入指紋正面</string>
+    <string name="enrol_hint_front_sum">請參照圖示，依次錄入手指正面及邊緣的紋路</string>
+    <string name="enrol_hint_side">放置手指，錄入指紋邊緣</string>
+    <string name="enrol_hint_side_sum">請將手指放在指紋識別器上，感覺到震動後抬起手指並調整姿勢繼續錄入</string>
+    <string name="enrol_hint_side2">輕抬手指，錄入指紋邊緣</string>
+    <string name="enrol_hint_side2_sum">請參照圖示，依次錄入手指正面及邊緣的紋路</string>
+    <string name="save">保存</string>
+    <string name="fingerprint_function">指紋功能（需要驗證指紋）</string>
+    <string name="touch_function">觸控功能（不需要驗證指紋）</string>
+</resources>

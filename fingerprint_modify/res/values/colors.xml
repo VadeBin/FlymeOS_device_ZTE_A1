@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="action_bar_home_pressed">#18000000</color>
+    <color name="bright_foreground_dark">@android:color/background_light</color>
+    <color name="bright_foreground_disabled_zte_dark">#66ffffff</color>
+    <color name="bright_foreground_disabled_zte_light">#ff999999</color>
+    <color name="bright_foreground_zte_light">#ff333333</color>
+    <color name="dim_foreground_dark_inverse_disabled">#80323232</color>
+    <color name="dim_foreground_disabled_zte_light">#ffcccccc</color>
+    <color name="dim_foreground_zte_light">#ff999999</color>
+    <color name="list_view_background_zte_light">#fffafafa</color>
+    <color name="md__defaultBackground">#ffffffff</color>
+    <color name="md__transparent">#00000000</color>
+    <color name="notification_title_text_color_mifavor">#ff2e2e2e</color>
+    <color name="notification_title_text_line2_mifavor">#ff969696</color>
+    <color name="zte_green_light">#33328bde</color>
+    <color name="accent_material_light">#ff009688</color>
+    <color name="primary_text_default_material_dark">#ffffffff</color>
+    <color name="primary_text_default_material_light">#de000000</color>
+    <color name="secondary_text_default_material_dark">#b3ffffff</color>
+    <color name="secondary_text_default_material_light">#8a000000</color>
+    <color name="highlighted_text_holo_zte_dark">#6633b5e5</color>
+    <color name="hint_foreground_holo_zte_dark">#ff808080</color>
+    <color name="holo_zte_blue_light">#ff33b5e5</color>
+    <color name="bright_foreground_disabled_holo_zte_dark">#ff4c4c4c</color>
+    <color name="bright_foreground_holo_zte_dark">#fff3f3f3</color>
+    <color name="mask_latest_green">#ff8fbc8f</color>
+    <color name="mask_next_blue">#ff009fe3</color>
+    <color name="mask_normal_grey">#ff888888</color>
+    <color name="fpc_blue_uncoted">#ff216a95</color>
+    <color name="finger_mf_32">#ff6b6bb2</color>
+</resources>
