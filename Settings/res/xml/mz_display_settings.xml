@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/diaplay_and_brightness"
+  xmlns:android="http://schemas.android.com/apk/prv/res/android"
+  xmlns:flyme="http://schemas.android.com/apk/prv/res/flyme"
+  xmlns:settings="http://schemas.android.com/apk/res/com.android.settings" xmlns:meizu="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory android:title="@string/brightness_category_title" android:key="brightness_category" />
+    <com.meizu.settings.display.BrightnessPreference android:persistent="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:key="brightness_meizu" />
+    <com.meizu.common.preference.SwitchPreference android:title="@string/automatic_brightness" android:key="automatic_brightnessr_meizu" />
+    <PreferenceCategory android:title="@string/display_settings" />
+    <com.meizu.common.preference.SwitchPreference android:title="@string/blur_view_switch_title" android:key="blur_view_effect" />
+    <com.meizu.common.preference.SwitchPreference android:title="@string/accelerometer_title" android:key="auto_rotate" />
+    <com.meizu.common.preference.SwitchPreference android:title="@string/button_backlight_title" android:key="button_backlight" />
+    <ListPreference android:persistent="false" android:entries="@array/mz_screen_timeout_entries" android:title="@string/screen_timeout" android:key="screen_timeout" android:summary="@string/screen_timeout_summary" android:entryValues="@array/mz_screen_timeout_values" />
+    <com.meizu.settings.display.MzFontPreference android:persistent="false" android:entries="@array/entries_meizu_app_font_size" android:title="@string/title_font_size" android:key="font_size_meizu" android:widgetLayout="@flyme:layout/mz_preference_group_list_item_layout" android:entryValues="@array/entryvalues_meizu_app_font_size" />
+    <Preference android:title="@string/color_temperature_title" android:key="color_temperature" android:widgetLayout="@flyme:layout/mz_select_dialog_item" />
+</PreferenceScreen>

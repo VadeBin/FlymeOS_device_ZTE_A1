@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <add-resource type="string" name="keyexchange_title" />
+    <item type="string" name="keyexchange_title">Virtual Hard Key</item>
+    <add-resource type="string" name="gesture_title" />
+    <item type="string" name="gesture_title">Gesture</item>
+    <add-resource type="string" name="fp_title" />
+    <item type="string" name="fp_title">Touch ID</item>
+    <add-resource type="string" name="button_backlight_title" />
+    <item type="string" name="button_backlight_title">Button BackLight</item>
+</resources>

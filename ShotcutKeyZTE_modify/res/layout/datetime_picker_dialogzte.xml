@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/pickers" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:textSize="16.0sp" android:layout_gravity="center_horizontal" android:id="@id/week" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:layout_marginBottom="30.0dip" android:importantForAccessibility="no" />
+        <com.zte.mifavor.widget.DateTimePickerZTE android:layout_gravity="center_horizontal" android:id="@id/datePicker" android:layout_width="wrap_content" android:layout_height="210.0dip" android:spinnersShown="true" android:calendarViewShown="false" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TabHost android:id="@android:id/tabhost" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="7.0">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TabWidget android:id="@android:id/tabs" android:layout_width="fill_parent" android:layout_height="64.0dip" android:layout_weight="1.0" />
+            <FrameLayout android:id="@android:id/tabcontent" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="7.0">
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:gravity="center" android:id="@android:id/empty" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/no_content" />
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+    <LinearLayout android:orientation="horizontal" android:id="@id/linearLayout" android:background="#ff404040" android:layout_width="fill_parent" android:layout_height="54.0dip" android:divider="?android:dividerVertical" android:showDividers="middle" android:dividerPadding="12.0dip" style="?android:attr/actionButtonStyle">
+        <LinearLayout android:id="@id/linecancel" android:layout_width="180.0dip" android:layout_height="54.0dip">
+            <TextView android:textSize="18.0sp" android:textColor="#ffffffff" android:gravity="center" android:id="@id/cancel" android:layout_width="fill_parent" android:layout_height="54.0dip" android:text="@android:string/cancel" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/lineok" android:layout_width="180.0dip" android:layout_height="54.0dip">
+            <TextView android:textSize="18.0sp" android:textColor="#ffffffff" android:gravity="center" android:id="@id/ok" android:layout_width="fill_parent" android:layout_height="54.0dip" android:text="@android:string/ok" android:layout_weight="1.0" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

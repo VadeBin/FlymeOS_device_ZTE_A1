@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingLeft="20.0dip" android:paddingTop="10.0dip" android:paddingRight="20.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="60.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="7.0">
+            <TextView android:textSize="18.0sp" android:textColor="#ff666666" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:textSize="12.0sp" android:textColor="#ff999999" android:id="@id/subTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <com.zte.mifavor.widget.SwitchZTE android:layout_gravity="center_vertical" android:id="@id/switchButton" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="3.0" android:color="@color/app_color" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/progressLayout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <FrameLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="12.0sp" android:textColor="#ff999999" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/slow" />
+            <TextView android:textSize="12.0sp" android:textColor="#ff999999" android:layout_gravity="right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/fast" />
+        </FrameLayout>
+        <com.zte.mifavor.widget.SeekBarZTE android:id="@id/seekBar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:max="1000" android:progress="500" android:color="@color/app_color" style="?android:attr/progressBarStyleHorizontal" />
+    </LinearLayout>
+</LinearLayout>
