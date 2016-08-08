@@ -7,6 +7,8 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/android/server/am/BroadcastQueue$AppNotResponding;,
+        Lcom/android/server/am/BroadcastQueue$PowerSupperInjector;,
+        Lcom/android/server/am/BroadcastQueue$FlymeBroadcastQueueInjector;,
         Lcom/android/server/am/BroadcastQueue$BroadcastHandler;,
         Lcom/android/server/am/BroadcastQueue$AnrBroadcastQueue;
     }
@@ -8257,6 +8259,8 @@
 
     .line 1053
     :cond_37
+    invoke-static/range {v34 .. v34}, Lcom/android/server/am/BroadcastQueue$FlymeBroadcastQueueInjector;->setCurrentBroadcastRecord(Lcom/android/server/am/BroadcastRecord;)V
+
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/server/am/BroadcastQueue;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -8319,7 +8323,7 @@
     iget v14, v14, Lcom/android/server/am/ProcessRecord;->dataId:I
 
     :goto_e
-    invoke-virtual/range {v4 .. v14}, Lcom/android/server/am/ActivityManagerService;->startProcessLocked(Ljava/lang/String;Landroid/content/pm/ApplicationInfo;ZILjava/lang/String;Landroid/content/ComponentName;ZZZI)Lcom/android/server/am/ProcessRecord;
+    invoke-virtual/range {v4 .. v13}, Lcom/android/server/am/ActivityManagerService;->hook_startProcessLocked(Ljava/lang/String;Landroid/content/pm/ApplicationInfo;ZILjava/lang/String;Landroid/content/ComponentName;ZZZ)Lcom/android/server/am/ProcessRecord;
 
     move-result-object v4
 

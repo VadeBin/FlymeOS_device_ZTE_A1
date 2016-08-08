@@ -9900,6 +9900,27 @@
 
     .line 2422
     :cond_3
+
+    iget-object v6, p0, Lcom/android/server/power/PowerManagerService;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v6}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v6
+
+    const-string v7, "button_backlight"
+
+    const/4 v8, -0x2
+
+    invoke-static {v6, v7, v4, v8}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v6
+
+    if-nez v6, :cond_hxs_0
+
+    move v3, v5
+
+    :cond_hxs_0
+
     iget-object v6, p0, Lcom/android/server/power/PowerManagerService;->mButtonLight:Lcom/android/server/lights/Light;
 
     invoke-virtual {v6, v3}, Lcom/android/server/lights/Light;->setBrightness(I)V

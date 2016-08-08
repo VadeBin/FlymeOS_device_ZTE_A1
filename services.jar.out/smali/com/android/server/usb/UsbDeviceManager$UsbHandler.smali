@@ -4821,7 +4821,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v9}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    #invoke-virtual {v0, v9}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
     .line 2044
     const/4 v0, 0x1
