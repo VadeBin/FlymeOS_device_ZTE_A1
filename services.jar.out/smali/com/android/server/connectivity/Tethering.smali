@@ -8043,14 +8043,3 @@
 
     throw v20
 .end method
-
-.method private showFlymeTetheredNotification()V
-    .locals 1
-
-    .prologue
-    sget v0, Lcom/flyme/internal/R$drawable;->mz_stat_sys_tether_wifi:I
-
-    invoke-direct {p0, v0}, Lcom/android/server/connectivity/Tethering;->showTetheredNotification(I)V
-
-    return-void
-.end method
