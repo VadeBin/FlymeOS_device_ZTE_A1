@@ -1006,13 +1006,45 @@
 .end method
 
 .method public setViewMediatorCallback(Lcom/android/keyguard/ViewMediatorCallback;)V
-    .locals 2
+# hxs modify begin
+    .locals 3
+# hxs modify end
     .param p1, "viewMediatorCallback"    # Lcom/android/keyguard/ViewMediatorCallback;
 
     .prologue
     iput-object p1, p0, Lcom/android/keyguard/KeyguardViewBase;->mViewMediatorCallback:Lcom/android/keyguard/ViewMediatorCallback;
 
 # hxs modify begin
+    const/4 v0, 0x1
+
+    const-string v1, "ro.flyme.romer"
+
+    invoke-static {v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "hexiaoshuai"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-ne v0, v1, :cond_0
+
+    const-string v1, "ro.product.model_romer"
+
+    invoke-static {v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "ZTE_A1_hexiaoshuai"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-ne v0, v1, :cond_0
+
     iget-object v0, p0, Lcom/android/keyguard/KeyguardViewBase;->mFingerprintUnlock:Lcom/android/keyguard/FingerprintUnlock;
 
     if-eqz v0, :cond_0
