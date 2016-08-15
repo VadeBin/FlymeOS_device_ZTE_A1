@@ -5626,12 +5626,12 @@
     .line 899
     const-string v4, "demoMode"
 
-    const-string v5, "onScreenoff and playVideo and delay : 30000"
+    const-string v5, "onScreenoff and playVideo and delay : 10000"
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 900
-    const-wide/16 v4, 0x7530
+    const-wide/16 v4, 0x2710
 
     invoke-direct {p0, v4, v5}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->playVideoLocked(J)V
 

@@ -37,8 +37,10 @@
 .method public abstract userActivity()V
 .end method
 
+# hxs modify begin
 .method public abstract isOccluded()Z
 .end method
 
 .method public abstract setFingerprintFlag(Z)V
 .end method
+# hxs modify end

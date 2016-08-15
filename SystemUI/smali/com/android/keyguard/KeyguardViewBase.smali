@@ -49,8 +49,10 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
+    .line 85
     invoke-direct {p0, p1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
+    .line 65
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardViewBase;->mTelephonyManager:Landroid/telephony/TelephonyManager;
@@ -58,13 +60,14 @@
 # hxs modify begin
     iput-object v0, p0, Lcom/android/keyguard/KeyguardViewBase;->mFingerprintUnlock:Lcom/android/keyguard/FingerprintUnlock;
 # hxs modify end
-
+    .line 440
     new-instance v0, Lcom/android/keyguard/KeyguardViewBase$1;
 
     invoke-direct {v0, p0}, Lcom/android/keyguard/KeyguardViewBase$1;-><init>(Lcom/android/keyguard/KeyguardViewBase;)V
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardViewBase;->mActivityLauncher:Lcom/android/keyguard/KeyguardActivityLauncher;
 
+    .line 86
     return-void
 .end method
 
@@ -422,6 +425,7 @@
 
     const/4 v2, 0x1
 
+    .line 185
     iget-object v1, p0, Lcom/android/keyguard/KeyguardViewBase;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/KeyguardUpdateMonitor;
@@ -430,38 +434,47 @@
 
     invoke-virtual {v1, v2}, Lcom/android/keyguard/KeyguardUpdateMonitor;->setAlternateUnlockEnabled(Z)V
 
+    .line 189
     const/4 v0, 0x0
 
+    .line 190
     .local v0, "deferKeyguardDone":Z
     iget-object v1, p0, Lcom/android/keyguard/KeyguardViewBase;->mDismissAction:Lcom/android/keyguard/KeyguardHostView$OnDismissAction;
 
     if-eqz v1, :cond_0
 
+    .line 191
     iget-object v1, p0, Lcom/android/keyguard/KeyguardViewBase;->mDismissAction:Lcom/android/keyguard/KeyguardHostView$OnDismissAction;
 
     invoke-interface {v1}, Lcom/android/keyguard/KeyguardHostView$OnDismissAction;->onDismiss()Z
 
     move-result v0
 
+    .line 192
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/keyguard/KeyguardViewBase;->mDismissAction:Lcom/android/keyguard/KeyguardHostView$OnDismissAction;
 
+    .line 194
     :cond_0
     iget-object v1, p0, Lcom/android/keyguard/KeyguardViewBase;->mViewMediatorCallback:Lcom/android/keyguard/ViewMediatorCallback;
 
     if-eqz v1, :cond_1
 
+    .line 195
     if-eqz v0, :cond_2
 
+    .line 196
     iget-object v1, p0, Lcom/android/keyguard/KeyguardViewBase;->mViewMediatorCallback:Lcom/android/keyguard/ViewMediatorCallback;
 
     invoke-interface {v1}, Lcom/android/keyguard/ViewMediatorCallback;->keyguardDonePending()V
 
+    .line 201
     :cond_1
     :goto_0
     return-void
 
+    .line 198
     :cond_2
     iget-object v1, p0, Lcom/android/keyguard/KeyguardViewBase;->mViewMediatorCallback:Lcom/android/keyguard/ViewMediatorCallback;
 
@@ -1012,6 +1025,7 @@
     .param p1, "viewMediatorCallback"    # Lcom/android/keyguard/ViewMediatorCallback;
 
     .prologue
+    .line 431
     iput-object p1, p0, Lcom/android/keyguard/KeyguardViewBase;->mViewMediatorCallback:Lcom/android/keyguard/ViewMediatorCallback;
 
 # hxs modify begin
@@ -1068,6 +1082,7 @@
 
     invoke-interface {v0, v1}, Lcom/android/keyguard/ViewMediatorCallback;->setNeedsInput(Z)V
 
+    .line 434
     return-void
 .end method
 

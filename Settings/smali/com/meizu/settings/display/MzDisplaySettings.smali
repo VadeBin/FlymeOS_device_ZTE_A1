@@ -28,9 +28,13 @@
 
 .field private final mCurConfig:Landroid/content/res/Configuration;
 
+.field private mHideNavigationBar:Lcom/meizu/common/preference/SwitchPreference;
+
 .field private mMeizuFontSizePref:Lcom/meizu/settings/display/MzFontPreference;
 
 .field private mOldAutomatic:I
+
+.field private mReverseNavigationBarPosition:Lcom/meizu/common/preference/SwitchPreference;
 
 .field private final mRotationPolicyListener:Lcom/android/internal/view/RotationPolicy$RotationPolicyListener;
 
@@ -44,7 +48,7 @@
     .locals 1
 
     .prologue
-    .line 337
+    .line 437
     new-instance v0, Lcom/meizu/settings/display/MzDisplaySettings$3;
 
     invoke-direct {v0}, Lcom/meizu/settings/display/MzDisplaySettings$3;-><init>()V
@@ -58,24 +62,24 @@
     .locals 2
 
     .prologue
-    .line 52
+    .line 54
     invoke-direct {p0}, Lcom/android/settings/SettingsPreferenceFragment;-><init>()V
 
-    .line 80
+    .line 93
     new-instance v0, Landroid/content/res/Configuration;
 
     invoke-direct {v0}, Landroid/content/res/Configuration;-><init>()V
 
     iput-object v0, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mCurConfig:Landroid/content/res/Configuration;
 
-    .line 84
+    .line 97
     new-instance v0, Lcom/meizu/settings/display/MzDisplaySettings$1;
 
     invoke-direct {v0, p0}, Lcom/meizu/settings/display/MzDisplaySettings$1;-><init>(Lcom/meizu/settings/display/MzDisplaySettings;)V
 
     iput-object v0, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mRotationPolicyListener:Lcom/android/internal/view/RotationPolicy$RotationPolicyListener;
 
-    .line 330
+    .line 430
     new-instance v0, Lcom/meizu/settings/display/MzDisplaySettings$2;
 
     new-instance v1, Landroid/os/Handler;
@@ -94,7 +98,7 @@
     .param p0, "x0"    # Lcom/meizu/settings/display/MzDisplaySettings;
 
     .prologue
-    .line 52
+    .line 54
     iget-object v0, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mAutoRotateSwitchPreference:Lcom/meizu/common/preference/SwitchPreference;
 
     return-object v0
@@ -105,7 +109,7 @@
     .param p0, "x0"    # Lcom/meizu/settings/display/MzDisplaySettings;
 
     .prologue
-    .line 52
+    .line 54
     invoke-direct {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->onBrightnessModeChanged()V
 
     return-void
@@ -116,7 +120,7 @@
     .param p0, "x0"    # Landroid/content/res/Resources;
 
     .prologue
-    .line 52
+    .line 54
     invoke-static {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->isAutomaticBrightnessAvailable(Landroid/content/res/Resources;)Z
 
     move-result v0
@@ -128,14 +132,14 @@
     .locals 3
 
     .prologue
-    .line 377
+    .line 477
     const-string v2, "persist.sys.disable_blur_view"
 
     invoke-static {v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 378
+    .line 478
     .local v1, "blurViewState":Ljava/lang/String;
     const-string v2, "persist.sys.static_blur_mode"
 
@@ -143,7 +147,7 @@
 
     move-result-object v0
 
-    .line 380
+    .line 480
     .local v0, "blurModeState":Ljava/lang/String;
     const-string v2, "false"
 
@@ -161,10 +165,10 @@
 
     if-eqz v2, :cond_0
 
-    .line 381
+    .line 481
     const/4 v2, 0x0
 
-    .line 383
+    .line 483
     :goto_0
     return v2
 
@@ -178,7 +182,7 @@
     .locals 2
 
     .prologue
-    .line 251
+    .line 351
     invoke-virtual {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -196,12 +200,51 @@
     :goto_0
     invoke-static {v1, v0}, Lcom/android/internal/view/RotationPolicy;->setRotationLock(Landroid/content/Context;Z)V
 
-    .line 253
+    .line 353
     return-void
 
-    .line 251
+    .line 351
     :cond_0
     const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method private hasNavigationBar()Z
+    .locals 3
+
+    .prologue
+    .line 168
+    const/4 v0, 0x0
+
+    .line 169
+    .local v0, "hasNavBar":Z
+    const-string v2, "window"
+
+    invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+
+    move-result-object v2
+
+    invoke-static {v2}, Landroid/view/IWindowManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/view/IWindowManager;
+
+    move-result-object v1
+
+    .line 171
+    .local v1, "wm":Landroid/view/IWindowManager;
+    :try_start_0
+    invoke-interface {v1}, Landroid/view/IWindowManager;->hasNavigationBar()Z
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v0
+
+    .line 174
+    :goto_0
+    return v0
+
+    .line 172
+    :catch_0
+    move-exception v2
 
     goto :goto_0
 .end method
@@ -210,12 +253,12 @@
     .locals 3
 
     .prologue
-    .line 145
+    .line 178
     invoke-virtual {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    .line 146
+    .line 179
     .local v0, "context":Landroid/content/Context;
     invoke-static {v0}, Lcom/android/internal/view/RotationPolicy;->isRotationLockToggleVisible(Landroid/content/Context;)Z
 
@@ -223,7 +266,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 147
+    .line 180
     const-string v1, "auto_rotate"
 
     invoke-virtual {p0, v1}, Lcom/meizu/settings/display/MzDisplaySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -234,7 +277,7 @@
 
     iput-object v1, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mAutoRotateSwitchPreference:Lcom/meizu/common/preference/SwitchPreference;
 
-    .line 148
+    .line 181
     iget-object v2, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mAutoRotateSwitchPreference:Lcom/meizu/common/preference/SwitchPreference;
 
     invoke-static {v0}, Lcom/android/internal/view/RotationPolicy;->isRotationLocked(Landroid/content/Context;)Z
@@ -248,17 +291,17 @@
     :goto_0
     invoke-virtual {v2, v1}, Lcom/meizu/common/preference/SwitchPreference;->setChecked(Z)V
 
-    .line 152
+    .line 185
     :goto_1
     return-void
 
-    .line 148
+    .line 181
     :cond_0
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 150
+    .line 183
     :cond_1
     const-string v1, "auto_rotate"
 
@@ -272,7 +315,7 @@
     .param p0, "res"    # Landroid/content/res/Resources;
 
     .prologue
-    .line 288
+    .line 388
     const v0, 0x112001e
 
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getBoolean(I)Z
@@ -288,12 +331,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 323
+    .line 423
     iget-object v2, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mAutoBrightnessPreference:Lcom/meizu/common/preference/SwitchPreference;
 
     if-eqz v2, :cond_1
 
-    .line 324
+    .line 424
     invoke-virtual {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v2
@@ -304,7 +347,7 @@
 
     move-result v0
 
-    .line 326
+    .line 426
     .local v0, "brightnessMode":I
     iget-object v2, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mAutoBrightnessPreference:Lcom/meizu/common/preference/SwitchPreference;
 
@@ -315,9 +358,111 @@
     :cond_0
     invoke-virtual {v2, v1}, Lcom/meizu/common/preference/SwitchPreference;->setChecked(Z)V
 
-    .line 328
+    .line 428
     .end local v0    # "brightnessMode":I
     :cond_1
+    return-void
+.end method
+
+.method private onToggleNavigationBarHide(Z)V
+    .locals 2
+    .param p1, "checked"    # Z
+
+    .prologue
+    .line 291
+    new-instance v0, Landroid/content/Intent;
+
+    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
+
+    .line 292
+    .local v0, "intent":Landroid/content/Intent;
+    const-string v1, "com.android.systemui"
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 293
+    if-eqz p1, :cond_0
+
+    .line 294
+    const-string v1, "android.intent.action.ACTION_ADD_HIDE_NAVIGATION_BAR_BUTTON"
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 298
+    :goto_0
+    invoke-virtual {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->getActivity()Landroid/app/Activity;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Landroid/app/Activity;->sendBroadcast(Landroid/content/Intent;)V
+
+    .line 299
+    invoke-virtual {p0, p1}, Lcom/meizu/settings/display/MzDisplaySettings;->setHideNavigationBarFlag(Z)V
+
+    .line 300
+    return-void
+
+    .line 296
+    :cond_0
+    const-string v1, "android.intent.action.ACTION_REMOVE_HIDE_NAVIGATION_BAR_BUTTON"
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+
+    goto :goto_0
+.end method
+
+.method private onToggleNavigationBarReverse(Z)V
+    .locals 1
+    .param p1, "flag"    # Z
+
+    .prologue
+    .line 310
+    invoke-virtual {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->isNavigationBarReverse()Z
+
+    move-result v0
+
+    if-eq v0, p1, :cond_0
+
+    .line 311
+    invoke-virtual {p0, p1}, Lcom/meizu/settings/display/MzDisplaySettings;->setNavigationBarReverseFlag(Z)V
+
+    .line 312
+    invoke-direct {p0, p1}, Lcom/meizu/settings/display/MzDisplaySettings;->sendNavigationBarReverseBroadcast(Z)V
+
+    .line 314
+    :cond_0
+    return-void
+.end method
+
+.method private sendNavigationBarReverseBroadcast(Z)V
+    .locals 2
+    .param p1, "flag"    # Z
+
+    .prologue
+    .line 334
+    new-instance v0, Landroid/content/Intent;
+
+    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
+
+    .line 335
+    .local v0, "intent":Landroid/content/Intent;
+    const-string v1, "com.android.systemui"
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 336
+    const-string v1, "android.intent.action.ACTION_CHANGE_NAVIGATION_BAR_POSITION"
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 337
+    invoke-virtual {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->getActivity()Landroid/app/Activity;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Landroid/app/Activity;->sendBroadcast(Landroid/content/Intent;)V
+
+    .line 338
     return-void
 .end method
 
@@ -325,10 +470,10 @@
     .locals 2
 
     .prologue
-    .line 257
+    .line 357
     invoke-direct {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->onBrightnessModeChanged()V
 
-    .line 258
+    .line 358
     iget-object v0, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mBlurViewEffect:Lcom/meizu/common/preference/SwitchPreference;
 
     invoke-direct {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->getBlurState()Z
@@ -337,7 +482,7 @@
 
     invoke-virtual {v0, v1}, Lcom/meizu/common/preference/SwitchPreference;->setChecked(Z)V
 
-    .line 259
+    .line 359
     return-void
 .end method
 
@@ -346,10 +491,10 @@
     .param p1, "currentTimeout"    # J
 
     .prologue
-    .line 262
+    .line 362
     iget-object v3, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mScreenTimeoutPreference:Landroid/preference/ListPreference;
 
-    .line 264
+    .line 364
     .local v3, "preference":Landroid/preference/ListPreference;
     const-wide/16 v8, 0x0
 
@@ -357,31 +502,31 @@
 
     if-gez v8, :cond_0
 
-    .line 266
+    .line 366
     const-string v4, ""
 
-    .line 284
+    .line 384
     .local v4, "summary":Ljava/lang/String;
     :goto_0
     invoke-virtual {v3, v4}, Landroid/preference/ListPreference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 285
+    .line 385
     return-void
 
-    .line 268
+    .line 368
     .end local v4    # "summary":Ljava/lang/String;
     :cond_0
     invoke-virtual {v3}, Landroid/preference/ListPreference;->getEntries()[Ljava/lang/CharSequence;
 
     move-result-object v1
 
-    .line 269
+    .line 369
     .local v1, "entries":[Ljava/lang/CharSequence;
     invoke-virtual {v3}, Landroid/preference/ListPreference;->getEntryValues()[Ljava/lang/CharSequence;
 
     move-result-object v5
 
-    .line 270
+    .line 370
     .local v5, "values":[Ljava/lang/CharSequence;
     if-eqz v1, :cond_1
 
@@ -389,19 +534,19 @@
 
     if-nez v8, :cond_2
 
-    .line 271
+    .line 371
     :cond_1
     const-string v4, ""
 
     .restart local v4    # "summary":Ljava/lang/String;
     goto :goto_0
 
-    .line 273
+    .line 373
     .end local v4    # "summary":Ljava/lang/String;
     :cond_2
     const/4 v0, 0x0
 
-    .line 274
+    .line 374
     .local v0, "best":I
     const/4 v2, 0x0
 
@@ -411,7 +556,7 @@
 
     if-ge v2, v8, :cond_4
 
-    .line 275
+    .line 375
     aget-object v8, v5, v2
 
     invoke-interface {v8}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
@@ -422,22 +567,22 @@
 
     move-result-wide v6
 
-    .line 276
+    .line 376
     .local v6, "timeout":J
     cmp-long v8, p1, v6
 
     if-ltz v8, :cond_3
 
-    .line 277
+    .line 377
     move v0, v2
 
-    .line 274
+    .line 374
     :cond_3
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 280
+    .line 380
     .end local v6    # "timeout":J
     :cond_4
     invoke-virtual {v3}, Landroid/preference/ListPreference;->getContext()Landroid/content/Context;
@@ -466,20 +611,84 @@
 
 
 # virtual methods
+.method public getHideNavigationBarFlag()Z
+    .locals 5
+
+    .prologue
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    .line 346
+    invoke-virtual {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v3
+
+    const-string v4, "hide_navigation_bar_flag"
+
+    invoke-static {v3, v4, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+
+    .line 347
+    .local v0, "value":I
+    if-ne v0, v1, :cond_0
+
+    :goto_0
+    return v1
+
+    :cond_0
+    move v1, v2
+
+    goto :goto_0
+.end method
+
+.method public isNavigationBarReverse()Z
+    .locals 5
+
+    .prologue
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    .line 322
+    invoke-virtual {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v3
+
+    const-string v4, "reverse_navigation_bar_flag"
+
+    invoke-static {v3, v4, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+
+    .line 323
+    .local v0, "value":I
+    if-ne v0, v1, :cond_0
+
+    :goto_0
+    return v1
+
+    :cond_0
+    move v1, v2
+
+    goto :goto_0
+.end method
+
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V
     .locals 1
     .param p1, "newConfig"    # Landroid/content/res/Configuration;
 
     .prologue
-    .line 174
+    .line 207
     iget-object v0, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mMeizuFontSizePref:Lcom/meizu/settings/display/MzFontPreference;
 
     invoke-virtual {v0}, Lcom/meizu/settings/display/MzFontPreference;->readFontScale()V
 
-    .line 175
+    .line 208
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 176
+    .line 209
     return-void
 .end method
 
@@ -490,26 +699,26 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 98
+    .line 111
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 99
+    .line 112
     invoke-virtual {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    .line 100
+    .line 113
     .local v0, "activity":Landroid/app/Activity;
     const v5, #com.android.settings:string@diaplay_and_brightness#t
 
     invoke-virtual {v0, v5}, Landroid/app/Activity;->setTitle(I)V
 
-    .line 102
+    .line 115
     invoke-virtual {v0}, Landroid/app/Activity;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    .line 104
+    .line 117
     .local v1, "resolver":Landroid/content/ContentResolver;
     invoke-static {v0}, Lcom/meizu/settings/datareport/UsageStatsProxy;->getInstance(Landroid/content/Context;)Lcom/meizu/settings/datareport/UsageStatsProxy;
 
@@ -517,12 +726,12 @@
 
     iput-object v5, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mUsageStatsProxy:Lcom/meizu/settings/datareport/UsageStatsProxy;
 
-    .line 106
+    .line 119
     const v5, #com.android.settings:xml@mz_display_settings#t
 
     invoke-virtual {p0, v5}, Lcom/meizu/settings/display/MzDisplaySettings;->addPreferencesFromResource(I)V
 
-    .line 108
+    .line 121
     const-string v5, "brightness_meizu"
 
     invoke-virtual {p0, v5}, Lcom/meizu/settings/display/MzDisplaySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -558,8 +767,7 @@
 
     invoke-virtual {v7, v5}, Lcom/meizu/common/preference/SwitchPreference;->setChecked(Z)V
 # hxs modify end
-
-    .line 110
+    .line 123
     const-string v5, "screen_timeout"
 
     invoke-virtual {p0, v5}, Lcom/meizu/settings/display/MzDisplaySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -570,7 +778,7 @@
 
     iput-object v5, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mScreenTimeoutPreference:Landroid/preference/ListPreference;
 
-    .line 111
+    .line 124
     const-string v5, "screen_off_timeout"
 
     const-wide/16 v8, 0x7530
@@ -579,7 +787,7 @@
 
     move-result-wide v2
 
-    .line 113
+    .line 126
     .local v2, "currentTimeout":J
     iget-object v5, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mScreenTimeoutPreference:Landroid/preference/ListPreference;
 
@@ -589,15 +797,15 @@
 
     invoke-virtual {v5, v7}, Landroid/preference/ListPreference;->setValue(Ljava/lang/String;)V
 
-    .line 114
+    .line 127
     iget-object v5, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mScreenTimeoutPreference:Landroid/preference/ListPreference;
 
     invoke-virtual {v5, p0}, Landroid/preference/ListPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
-    .line 115
+    .line 128
     invoke-direct {p0, v2, v3}, Lcom/meizu/settings/display/MzDisplaySettings;->updateTimeoutPreferenceDescription(J)V
 
-    .line 117
+    .line 130
     const-string v5, "font_size_meizu"
 
     invoke-virtual {p0, v5}, Lcom/meizu/settings/display/MzDisplaySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -608,12 +816,12 @@
 
     iput-object v5, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mMeizuFontSizePref:Lcom/meizu/settings/display/MzFontPreference;
 
-    .line 118
+    .line 131
     iget-object v5, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mMeizuFontSizePref:Lcom/meizu/settings/display/MzFontPreference;
 
     invoke-virtual {v5, p0}, Lcom/meizu/settings/display/MzFontPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
-    .line 119
+    .line 132
     invoke-virtual {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v5
@@ -624,7 +832,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 120
+    .line 133
     invoke-virtual {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v5
@@ -633,7 +841,7 @@
 
     invoke-virtual {v5, v7}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
-    .line 123
+    .line 136
     :cond_0
     const-string v5, "automatic_brightnessr_meizu"
 
@@ -645,7 +853,7 @@
 
     iput-object v5, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mAutoBrightnessPreference:Lcom/meizu/common/preference/SwitchPreference;
 
-    .line 125
+    .line 138
     :try_start_0
     const-string v5, "screen_brightness_mode"
 
@@ -657,7 +865,7 @@
     :try_end_0
     .catch Landroid/provider/Settings$SettingNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 130
+    .line 143
     :goto_0
     iget-object v7, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mAutoBrightnessPreference:Lcom/meizu/common/preference/SwitchPreference;
 
@@ -670,7 +878,7 @@
     :goto_1
     invoke-virtual {v7, v5}, Lcom/meizu/common/preference/SwitchPreference;->setChecked(Z)V
 
-    .line 132
+    .line 145
     const-string v5, "blur_view_effect"
 
     invoke-virtual {p0, v5}, Lcom/meizu/settings/display/MzDisplaySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -681,7 +889,7 @@
 
     iput-object v5, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mBlurViewEffect:Lcom/meizu/common/preference/SwitchPreference;
 
-    .line 135
+    .line 148
     invoke-virtual {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v5
@@ -690,7 +898,7 @@
 
     invoke-virtual {v5, v6}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
-    .line 138
+    .line 151
     invoke-virtual {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v5
@@ -703,17 +911,65 @@
 
     invoke-virtual {v5, v6}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
-    .line 141
+    .line 154
     invoke-direct {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->initAutoRotatePreference()V
 
-    .line 142
+    .line 156
+    const-string v5, "navigation_bar_hide_toggle"
+
+    invoke-virtual {p0, v5}, Lcom/meizu/settings/display/MzDisplaySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v5
+
+    check-cast v5, Lcom/meizu/common/preference/SwitchPreference;
+
+    iput-object v5, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mHideNavigationBar:Lcom/meizu/common/preference/SwitchPreference;
+
+    .line 157
+    const-string v5, "navigation_bar_position_reverse"
+
+    invoke-virtual {p0, v5}, Lcom/meizu/settings/display/MzDisplaySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v5
+
+    check-cast v5, Lcom/meizu/common/preference/SwitchPreference;
+
+    iput-object v5, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mReverseNavigationBarPosition:Lcom/meizu/common/preference/SwitchPreference;
+
+    .line 158
+    invoke-direct {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->hasNavigationBar()Z
+
+    move-result v5
+
+    if-nez v5, :cond_2
+
+    .line 159
+    invoke-virtual {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
+
+    move-result-object v5
+
+    iget-object v6, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mHideNavigationBar:Lcom/meizu/common/preference/SwitchPreference;
+
+    invoke-virtual {v5, v6}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
+
+    .line 160
+    invoke-virtual {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
+
+    move-result-object v5
+
+    iget-object v6, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mReverseNavigationBarPosition:Lcom/meizu/common/preference/SwitchPreference;
+
+    invoke-virtual {v5, v6}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
+
+    .line 165
+    :goto_2
     return-void
 
-    .line 127
+    .line 140
     :catch_0
     move-exception v4
 
-    .line 128
+    .line 141
     .local v4, "snfe":Landroid/provider/Settings$SettingNotFoundException;
     iput v6, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mOldAutomatic:I
 
@@ -723,8 +979,29 @@
     :cond_1
     move v5, v6
 
-    .line 130
+    .line 143
     goto :goto_1
+
+    .line 162
+    :cond_2
+    iget-object v5, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mHideNavigationBar:Lcom/meizu/common/preference/SwitchPreference;
+
+    invoke-virtual {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->getHideNavigationBarFlag()Z
+
+    move-result v6
+
+    invoke-virtual {v5, v6}, Lcom/meizu/common/preference/SwitchPreference;->setChecked(Z)V
+
+    .line 163
+    iget-object v5, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mReverseNavigationBarPosition:Lcom/meizu/common/preference/SwitchPreference;
+
+    invoke-virtual {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->isNavigationBarReverse()Z
+
+    move-result v6
+
+    invoke-virtual {v5, v6}, Lcom/meizu/common/preference/SwitchPreference;->setChecked(Z)V
+
+    goto :goto_2
 
 # hxs modify begin
     :catch_hxs_0
@@ -737,20 +1014,20 @@
     .locals 2
 
     .prologue
-    .line 185
+    .line 218
     invoke-super {p0}, Lcom/android/settings/SettingsPreferenceFragment;->onPause()V
 
-    .line 186
+    .line 219
     iget-object v0, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mBrightnessPreference:Lcom/meizu/settings/display/BrightnessPreference;
 
     if-eqz v0, :cond_0
 
-    .line 187
+    .line 220
     iget-object v0, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mBrightnessPreference:Lcom/meizu/settings/display/BrightnessPreference;
 
     invoke-virtual {v0}, Lcom/meizu/settings/display/BrightnessPreference;->onPause()V
 
-    .line 189
+    .line 222
     :cond_0
     invoke-virtual {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -760,7 +1037,7 @@
 
     invoke-virtual {v0, v1}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 191
+    .line 224
     invoke-virtual {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -771,7 +1048,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 192
+    .line 225
     invoke-virtual {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -780,7 +1057,7 @@
 
     invoke-static {v0, v1}, Lcom/android/internal/view/RotationPolicy;->unregisterRotationPolicyListener(Landroid/content/Context;Lcom/android/internal/view/RotationPolicy$RotationPolicyListener;)V
 
-    .line 195
+    .line 228
     :cond_1
     return-void
 .end method
@@ -791,12 +1068,12 @@
     .param p2, "objValue"    # Ljava/lang/Object;
 
     .prologue
-    .line 204
+    .line 237
     invoke-virtual {p1}, Landroid/preference/Preference;->getKey()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 205
+    .line 238
     .local v1, "key":Ljava/lang/String;
     iget-object v3, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mUsageStatsProxy:Lcom/meizu/settings/datareport/UsageStatsProxy;
 
@@ -804,7 +1081,7 @@
 
     invoke-virtual {v3, v4, v1, p1, p2}, Lcom/meizu/settings/datareport/UsageStatsProxy;->reportData(Ljava/lang/String;Ljava/lang/String;Landroid/preference/Preference;Ljava/lang/Object;)V
 
-    .line 207
+    .line 240
     const-string v3, "screen_timeout"
 
     invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -813,7 +1090,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 209
+    .line 242
     :try_start_0
     check-cast p2, Ljava/lang/String;
 
@@ -822,7 +1099,7 @@
 
     move-result v2
 
-    .line 210
+    .line 243
     .local v2, "value":I
     invoke-virtual {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -832,14 +1109,14 @@
 
     invoke-static {v3, v4, v2}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 211
+    .line 244
     int-to-long v4, v2
 
     invoke-direct {p0, v4, v5}, Lcom/meizu/settings/display/MzDisplaySettings;->updateTimeoutPreferenceDescription(J)V
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 218
+    .line 251
     .end local v2    # "value":I
     :cond_0
     :goto_0
@@ -847,11 +1124,11 @@
 
     return v3
 
-    .line 212
+    .line 245
     :catch_0
     move-exception v0
 
-    .line 213
+    .line 246
     .local v0, "e":Ljava/lang/NumberFormatException;
     const-string v3, "MzDisplaySettings"
 
@@ -861,7 +1138,7 @@
 
     goto :goto_0
 
-    .line 215
+    .line 248
     .end local v0    # "e":Ljava/lang/NumberFormatException;
     .restart local p2    # "objValue":Ljava/lang/Object;
     :cond_1
@@ -873,7 +1150,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 216
+    .line 249
     iget-object v3, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mMeizuFontSizePref:Lcom/meizu/settings/display/MzFontPreference;
 
     invoke-virtual {v3, p2}, Lcom/meizu/settings/display/MzFontPreference;->writeFontSizePreference(Ljava/lang/Object;)V
@@ -889,12 +1166,12 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 223
+    .line 256
     invoke-virtual {p2}, Landroid/preference/Preference;->getKey()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 224
+    .line 257
     .local v2, "key":Ljava/lang/String;
     iget-object v3, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mUsageStatsProxy:Lcom/meizu/settings/datareport/UsageStatsProxy;
 
@@ -902,19 +1179,19 @@
 
     invoke-virtual {v3, v5, v2, p2}, Lcom/meizu/settings/datareport/UsageStatsProxy;->reportData(Ljava/lang/String;Ljava/lang/String;Landroid/preference/Preference;)V
 
-    .line 225
+    .line 258
     iget-object v3, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mAutoBrightnessPreference:Lcom/meizu/common/preference/SwitchPreference;
 
     if-ne p2, v3, :cond_1
 
-    .line 226
+    .line 259
     iget-object v3, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mAutoBrightnessPreference:Lcom/meizu/common/preference/SwitchPreference;
 
     invoke-virtual {v3}, Lcom/meizu/common/preference/SwitchPreference;->isChecked()Z
 
     move-result v0
 
-    .line 227
+    .line 260
     .local v0, "auto":Z
     invoke-virtual {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -929,19 +1206,19 @@
     :goto_0
     invoke-static {v5, v6, v3}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 247
+    .line 287
     .end local v0    # "auto":Z
     :goto_1
     return v4
 
-    .line 227
+    .line 260
     .restart local v0    # "auto":Z
     :cond_0
     const/4 v3, 0x0
 
     goto :goto_0
 
-    .line 230
+    .line 263
     .end local v0    # "auto":Z
     :cond_1
 # hxs modify begin
@@ -982,7 +1259,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 232
+    .line 265
     new-instance v1, Landroid/content/Intent;
 
     invoke-virtual {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->getActivity()Landroid/app/Activity;
@@ -993,20 +1270,20 @@
 
     invoke-direct {v1, v3, v5}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 233
+    .line 266
     .local v1, "intent":Landroid/content/Intent;
     invoke-virtual {p0, v1}, Lcom/meizu/settings/display/MzDisplaySettings;->startActivity(Landroid/content/Intent;)V
 
     goto :goto_1
 
-    .line 235
+    .line 268
     .end local v1    # "intent":Landroid/content/Intent;
     :cond_2
     iget-object v3, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mBlurViewEffect:Lcom/meizu/common/preference/SwitchPreference;
 
     if-ne p2, v3, :cond_5
 
-    .line 236
+    .line 269
     iget-object v3, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mBlurViewEffect:Lcom/meizu/common/preference/SwitchPreference;
 
     invoke-virtual {v3}, Lcom/meizu/common/preference/SwitchPreference;->isChecked()Z
@@ -1015,21 +1292,21 @@
 
     if-eqz v3, :cond_4
 
-    .line 237
+    .line 270
     const-string v3, "persist.sys.disable_blur_view"
 
     const-string v4, "true"
 
     invoke-static {v3, v4}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 238
+    .line 271
     const-string v3, "persist.sys.static_blur_mode"
 
     const-string v4, "true"
 
     invoke-static {v3, v4}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 247
+    .line 287
     :cond_3
     :goto_2
     invoke-super {p0, p1, p2}, Lcom/android/settings/SettingsPreferenceFragment;->onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
@@ -1038,7 +1315,7 @@
 
     goto :goto_1
 
-    .line 240
+    .line 273
     :cond_4
     const-string v3, "persist.sys.disable_blur_view"
 
@@ -1046,7 +1323,7 @@
 
     invoke-static {v3, v4}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 241
+    .line 274
     const-string v3, "persist.sys.static_blur_mode"
 
     const-string v4, "false"
@@ -1055,14 +1332,48 @@
 
     goto :goto_2
 
-    .line 243
+    .line 276
     :cond_5
     iget-object v3, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mAutoRotateSwitchPreference:Lcom/meizu/common/preference/SwitchPreference;
 
+    if-ne p2, v3, :cond_6
+
+    .line 277
+    invoke-direct {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->handleLockScreenRotationPreferenceClick()V
+
+    goto :goto_1
+
+    .line 279
+    :cond_6
+    iget-object v3, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mHideNavigationBar:Lcom/meizu/common/preference/SwitchPreference;
+
+    if-ne p2, v3, :cond_7
+
+    .line 280
+    iget-object v3, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mHideNavigationBar:Lcom/meizu/common/preference/SwitchPreference;
+
+    invoke-virtual {v3}, Lcom/meizu/common/preference/SwitchPreference;->isChecked()Z
+
+    move-result v3
+
+    invoke-direct {p0, v3}, Lcom/meizu/settings/display/MzDisplaySettings;->onToggleNavigationBarHide(Z)V
+
+    goto :goto_1
+
+    .line 282
+    :cond_7
+    iget-object v3, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mReverseNavigationBarPosition:Lcom/meizu/common/preference/SwitchPreference;
+
     if-ne p2, v3, :cond_3
 
-    .line 244
-    invoke-direct {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->handleLockScreenRotationPreferenceClick()V
+    .line 283
+    iget-object v3, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mReverseNavigationBarPosition:Lcom/meizu/common/preference/SwitchPreference;
+
+    invoke-virtual {v3}, Lcom/meizu/common/preference/SwitchPreference;->isChecked()Z
+
+    move-result v3
+
+    invoke-direct {p0, v3}, Lcom/meizu/settings/display/MzDisplaySettings;->onToggleNavigationBarReverse(Z)V
 
     goto :goto_1
 .end method
@@ -1071,10 +1382,10 @@
     .locals 4
 
     .prologue
-    .line 156
+    .line 189
     invoke-super {p0}, Lcom/android/settings/SettingsPreferenceFragment;->onResume()V
 
-    .line 157
+    .line 190
     invoke-virtual {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -1091,26 +1402,26 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 160
+    .line 193
     invoke-direct {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->updateState()V
 
-    .line 161
+    .line 194
     iget-object v0, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mBrightnessPreference:Lcom/meizu/settings/display/BrightnessPreference;
 
     if-eqz v0, :cond_0
 
-    .line 162
+    .line 195
     iget-object v0, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mBrightnessPreference:Lcom/meizu/settings/display/BrightnessPreference;
 
     invoke-virtual {v0}, Lcom/meizu/settings/display/BrightnessPreference;->onResume()V
 
-    .line 164
+    .line 197
     :cond_0
     iget-object v0, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mMeizuFontSizePref:Lcom/meizu/settings/display/MzFontPreference;
 
     invoke-virtual {v0}, Lcom/meizu/settings/display/MzFontPreference;->readFontScale()V
 
-    .line 166
+    .line 199
     invoke-virtual {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -1121,7 +1432,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 167
+    .line 200
     invoke-virtual {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -1130,7 +1441,7 @@
 
     invoke-static {v0, v1}, Lcom/android/internal/view/RotationPolicy;->registerRotationPolicyListener(Landroid/content/Context;Lcom/android/internal/view/RotationPolicy$RotationPolicyListener;)V
 
-    .line 170
+    .line 203
     :cond_1
     return-void
 .end method
@@ -1139,17 +1450,17 @@
     .locals 2
 
     .prologue
-    .line 180
+    .line 213
     invoke-super {p0}, Lcom/android/settings/SettingsPreferenceFragment;->onStart()V
 
-    .line 181
+    .line 214
     iget-object v0, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mUsageStatsProxy:Lcom/meizu/settings/datareport/UsageStatsProxy;
 
     const-string v1, "MzDisplaySettings"
 
     invoke-virtual {v0, v1}, Lcom/meizu/settings/datareport/UsageStatsProxy;->onPageStart(Ljava/lang/String;)V
 
-    .line 182
+    .line 215
     return-void
 .end method
 
@@ -1157,16 +1468,74 @@
     .locals 2
 
     .prologue
-    .line 198
+    .line 231
     invoke-super {p0}, Lcom/android/settings/SettingsPreferenceFragment;->onStop()V
 
-    .line 199
+    .line 232
     iget-object v0, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mUsageStatsProxy:Lcom/meizu/settings/datareport/UsageStatsProxy;
 
     const-string v1, "MzDisplaySettings"
 
     invoke-virtual {v0, v1}, Lcom/meizu/settings/datareport/UsageStatsProxy;->onPageStop(Ljava/lang/String;)V
 
-    .line 200
+    .line 233
     return-void
+.end method
+
+.method public setHideNavigationBarFlag(Z)V
+    .locals 3
+    .param p1, "flag"    # Z
+
+    .prologue
+    .line 306
+    invoke-virtual {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string v2, "hide_navigation_bar_flag"
+
+    if-eqz p1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    invoke-static {v1, v2, v0}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+
+    .line 307
+    return-void
+
+    .line 306
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public setNavigationBarReverseFlag(Z)V
+    .locals 3
+    .param p1, "flag"    # Z
+
+    .prologue
+    .line 330
+    invoke-virtual {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string v2, "reverse_navigation_bar_flag"
+
+    if-eqz p1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    invoke-static {v1, v2, v0}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+
+    .line 331
+    return-void
+
+    .line 330
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
