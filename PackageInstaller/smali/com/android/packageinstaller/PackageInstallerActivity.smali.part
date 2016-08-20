@@ -1,0 +1,49 @@
+.method private getInstallVersionName()Ljava/lang/String;
+    .locals 2
+
+    .prologue
+    const/4 v0, 0x0
+
+    iget-object v1, p0, Lcom/android/packageinstaller/PackageInstallerActivity;->mPkgInfo:Landroid/content/pm/PackageParser$Package;
+
+    if-eqz v1, :cond_1
+
+    #iget-object v1, p0, Lcom/android/packageinstaller/PackageInstallerActivity;->mPkgInfo:Landroid/content/pm/PackageParser$Package;
+
+    #iget-object v1, v1, Landroid/content/pm/PackageParser$Package;->mVersionName:Ljava/lang/String;
+
+    #invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    #move-result v1
+
+    #if-nez v1, :cond_1
+
+    iget-object v0, p0, Lcom/android/packageinstaller/PackageInstallerActivity;->mPkgInfo:Landroid/content/pm/PackageParser$Package;
+
+    iget-object v0, v0, Landroid/content/pm/PackageParser$Package;->mVersionName:Ljava/lang/String;
+
+    :cond_0
+    :goto_0
+    return-object v0
+
+    :cond_1
+    iget-object v1, p0, Lcom/android/packageinstaller/PackageInstallerActivity;->packageInfo:Landroid/content/pm/PackageInfo;
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcom/android/packageinstaller/PackageInstallerActivity;->packageInfo:Landroid/content/pm/PackageInfo;
+
+    iget-object v1, v1, Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    iget-object v0, p0, Lcom/android/packageinstaller/PackageInstallerActivity;->packageInfo:Landroid/content/pm/PackageInfo;
+
+    iget-object v0, v0, Landroid/content/pm/PackageInfo;->versionName:Ljava/lang/String;
+
+    goto :goto_0
+.end method
