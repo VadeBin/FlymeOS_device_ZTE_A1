@@ -173,7 +173,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b0b96
+    const v3, #com.android.settings:string@root_permission_title#t
 
     const/4 v4, -0x1
 
@@ -299,7 +299,7 @@
     const/4 v2, 0x1
 
     .line 407
-    const v1, 0x7f08002e
+    const v1, #com.android.settings:xml@keyguard_settings#t
 
     invoke-virtual {p0, v1}, Lcom/meizu/settings/security/SecuritySettings;->addPreferencesFromResource(I)V
 
@@ -804,7 +804,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b0ab7
+    const v3, #com.android.settings:string@applock#t
 
     const/4 v4, -0x1
 
@@ -935,7 +935,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b0ac8
+    const v3, #com.android.settings:string@screen_lock#t
 
     move-object v0, p0
 
@@ -995,7 +995,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b0ac8
+    const v3, #com.android.settings:string@screen_lock#t
 
     const/4 v4, -0x1
 
@@ -1026,7 +1026,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0b0b04
+    const v0, #com.android.settings:string@opened#t
 
     :goto_0
     invoke-virtual {v1, v0}, Landroid/preference/Preference;->setSummary(I)V
@@ -1036,7 +1036,7 @@
 
     .line 506
     :cond_0
-    const v0, 0x7f0b0b03
+    const v0, #com.android.settings:string@closed#t
 
     goto :goto_0
 .end method
@@ -1056,7 +1056,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0b0b04
+    const v0, #com.android.settings:string@opened#t
 
     :goto_0
     invoke-virtual {v1, v0}, Landroid/preference/Preference;->setSummary(I)V
@@ -1066,7 +1066,7 @@
 
     .line 501
     :cond_0
-    const v0, 0x7f0b0b03
+    const v0, #com.android.settings:string@closed#t
 
     goto :goto_0
 .end method
@@ -1135,7 +1135,7 @@
 
     if-eqz v0, :cond_2
 
-    const v0, 0x7f0b0b04
+    const v0, #com.android.settings:string@opened#t
 
     :goto_0
     invoke-virtual {v1, v0}, Landroid/preference/Preference;->setSummary(I)V
@@ -1147,7 +1147,7 @@
 
     .line 346
     :cond_2
-    const v0, 0x7f0b0b03
+    const v0, #com.android.settings:string@closed#t
 
     goto :goto_0
 
@@ -1410,7 +1410,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0b0b04
+    const v0, #com.android.settings:string@opened#t
 
     :goto_0
     invoke-virtual {v1, v0}, Landroid/preference/Preference;->setSummary(I)V
@@ -1420,7 +1420,7 @@
 
     .line 496
     :cond_0
-    const v0, 0x7f0b0b03
+    const v0, #com.android.settings:string@closed#t
 
     goto :goto_0
 .end method
@@ -1509,7 +1509,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b0b05
+    const v2, #com.android.settings:string@warning#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1529,7 +1529,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b0474
+    const v2, #com.android.settings:string@install_all_warning#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
