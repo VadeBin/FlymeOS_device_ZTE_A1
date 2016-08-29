@@ -133,6 +133,8 @@
 
 .field private mStatusBarManager:Landroid/app/StatusBarManager;
 
+.field private mStopVideoIntent:Landroid/app/PendingIntent;
+
 .field private mSuppressNextLockSound:Z
 
 .field private mSuppressNextLockSoundForHolster:Z
@@ -3580,395 +3582,561 @@
 .end method
 
 .method private playVideoLocked(J)V
-    .locals 25
+    .locals 31
     .param p1, "delayMs"    # J
 
     .prologue
-    .line 2309
+    .line 2329
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->DEMO_MODE_ENABLE:Z
 
-    move/from16 v19, v0
+    move/from16 v23, v0
 
-    if-nez v19, :cond_0
+    if-nez v23, :cond_0
 
-    .line 2346
+    .line 2377
     :goto_0
     return-void
 
-    .line 2311
+    .line 2331
     :cond_0
-    const-string v19, "demoMode"
+    const-string v23, "demoMode"
 
-    const-string v22, "playVideoLocked"
+    const-string v28, "playVideoLocked"
 
-    move-object/from16 v0, v19
+    move-object/from16 v0, v23
 
-    move-object/from16 v1, v22
+    move-object/from16 v1, v28
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2312
+    .line 2332
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
-
-    move-result-object v14
-
-    .line 2313
-    .local v14, "now":Ljava/util/Calendar;
-    invoke-virtual {v14}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
 
     move-result-object v15
 
-    .line 2314
-    .local v15, "nowTime":Ljava/util/Date;
-    invoke-virtual {v15}, Ljava/util/Date;->getHours()I
+    .line 2333
+    .local v15, "now":Ljava/util/Calendar;
+    invoke-virtual {v15}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
 
-    move-result v9
+    move-result-object v16
 
-    .line 2315
-    .local v9, "hour":I
-    invoke-virtual {v15}, Ljava/util/Date;->getMinutes()I
+    .line 2334
+    .local v16, "nowTime":Ljava/util/Date;
+    invoke-virtual/range {v16 .. v16}, Ljava/util/Date;->getHours()I
 
-    move-result v13
+    move-result v10
 
-    .line 2316
-    .local v13, "min":I
-    const-string v16, "0900"
+    .line 2335
+    .local v10, "hour":I
+    invoke-virtual/range {v16 .. v16}, Ljava/util/Date;->getMinutes()I
 
-    .line 2317
-    .local v16, "start":Ljava/lang/String;
+    move-result v14
+
+    .line 2336
+    .local v14, "min":I
+    invoke-virtual/range {v16 .. v16}, Ljava/util/Date;->getSeconds()I
+
+    move-result v17
+
+    .line 2338
+    .local v17, "sec":I
+    const-string v20, "0900"
+
+    .line 2339
+    .local v20, "start":Ljava/lang/String;
     const-string v6, "2200"
 
-    .line 2318
+    .line 2340
     .local v6, "end":Ljava/lang/String;
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mContext:Landroid/content/Context;
 
-    move-object/from16 v19, v0
+    move-object/from16 v23, v0
 
-    invoke-virtual/range {v19 .. v19}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual/range {v23 .. v23}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    move-result-object v19
+    move-result-object v23
 
-    const-string v22, "meizu_shopdemo_tool_playtime"
+    const-string v28, "meizu_shopdemo_tool_playtime"
 
-    const/16 v23, 0x0
+    const/16 v29, 0x0
 
-    move-object/from16 v0, v19
+    move-object/from16 v0, v23
 
-    move-object/from16 v1, v22
+    move-object/from16 v1, v28
 
-    move/from16 v2, v23
+    move/from16 v2, v29
 
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
-    move-result v19
+    move-result v23
 
-    const/16 v22, 0x1
+    const/16 v28, 0x1
 
-    move/from16 v0, v19
+    move/from16 v0, v23
 
-    move/from16 v1, v22
+    move/from16 v1, v28
 
-    if-ne v0, v1, :cond_3
+    if-ne v0, v1, :cond_4
 
-    const/4 v10, 0x1
+    const/4 v11, 0x1
 
-    .line 2320
-    .local v10, "isOpenPlayTime":Z
+    .line 2342
+    .local v11, "isOpenPlayTime":Z
     :goto_1
-    if-eqz v10, :cond_4
+    if-eqz v11, :cond_5
 
-    .line 2321
+    .line 2343
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mContext:Landroid/content/Context;
 
-    move-object/from16 v19, v0
+    move-object/from16 v23, v0
 
-    invoke-virtual/range {v19 .. v19}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual/range {v23 .. v23}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    move-result-object v19
+    move-result-object v23
 
-    const-string v22, "meizu_shopdemo_tool_playtime_start"
+    const-string v28, "meizu_shopdemo_tool_playtime_start"
 
-    move-object/from16 v0, v19
+    move-object/from16 v0, v23
 
-    move-object/from16 v1, v22
+    move-object/from16 v1, v28
 
     invoke-static {v0, v1}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v16
+    move-result-object v20
 
-    .line 2323
+    .line 2345
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mContext:Landroid/content/Context;
 
-    move-object/from16 v19, v0
+    move-object/from16 v23, v0
 
-    invoke-virtual/range {v19 .. v19}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual/range {v23 .. v23}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    move-result-object v19
+    move-result-object v23
 
-    const-string v22, "meizu_shopdemo_tool_playtime_end"
+    const-string v28, "meizu_shopdemo_tool_playtime_end"
 
-    move-object/from16 v0, v19
+    move-object/from16 v0, v23
 
-    move-object/from16 v1, v22
+    move-object/from16 v1, v28
 
     invoke-static {v0, v1}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 2329
+    .line 2351
     :goto_2
-    const/16 v19, 0x0
+    const/16 v23, 0x0
 
-    const/16 v22, 0x2
+    const/16 v28, 0x2
 
-    move-object/from16 v0, v16
+    move-object/from16 v0, v20
 
-    move/from16 v1, v19
+    move/from16 v1, v23
 
-    move/from16 v2, v22
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v19
-
-    invoke-static/range {v19 .. v19}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v19
-
-    invoke-virtual/range {v19 .. v19}, Ljava/lang/Integer;->intValue()I
-
-    move-result v17
-
-    .line 2330
-    .local v17, "startHour":I
-    const/16 v19, 0x2
-
-    const/16 v22, 0x4
-
-    move-object/from16 v0, v16
-
-    move/from16 v1, v19
-
-    move/from16 v2, v22
+    move/from16 v2, v28
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v19
+    move-result-object v23
 
-    invoke-static/range {v19 .. v19}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+    invoke-static/range {v23 .. v23}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
 
-    move-result-object v19
+    move-result-object v23
 
-    invoke-virtual/range {v19 .. v19}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual/range {v23 .. v23}, Ljava/lang/Integer;->intValue()I
 
-    move-result v18
+    move-result v21
 
-    .line 2331
-    .local v18, "startMin":I
-    const/16 v19, 0x0
+    .line 2352
+    .local v21, "startHour":I
+    const/16 v23, 0x2
 
-    const/16 v22, 0x2
+    const/16 v28, 0x4
 
-    move/from16 v0, v19
+    move-object/from16 v0, v20
 
-    move/from16 v1, v22
+    move/from16 v1, v23
+
+    move/from16 v2, v28
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v23
+
+    invoke-static/range {v23 .. v23}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v23
+
+    invoke-virtual/range {v23 .. v23}, Ljava/lang/Integer;->intValue()I
+
+    move-result v22
+
+    .line 2353
+    .local v22, "startMin":I
+    const/16 v23, 0x0
+
+    const/16 v28, 0x2
+
+    move/from16 v0, v23
+
+    move/from16 v1, v28
 
     invoke-virtual {v6, v0, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v19
+    move-result-object v23
 
-    invoke-static/range {v19 .. v19}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+    invoke-static/range {v23 .. v23}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
 
-    move-result-object v19
+    move-result-object v23
 
-    invoke-virtual/range {v19 .. v19}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual/range {v23 .. v23}, Ljava/lang/Integer;->intValue()I
 
     move-result v7
 
-    .line 2332
+    .line 2354
     .local v7, "endHour":I
-    const/16 v19, 0x2
+    const/16 v23, 0x2
 
-    const/16 v22, 0x4
+    const/16 v28, 0x4
 
-    move/from16 v0, v19
+    move/from16 v0, v23
 
-    move/from16 v1, v22
+    move/from16 v1, v28
 
     invoke-virtual {v6, v0, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v19
+    move-result-object v23
 
-    invoke-static/range {v19 .. v19}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+    invoke-static/range {v23 .. v23}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
 
-    move-result-object v19
+    move-result-object v23
 
-    invoke-virtual/range {v19 .. v19}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual/range {v23 .. v23}, Ljava/lang/Integer;->intValue()I
 
     move-result v8
 
-    .line 2333
+    .line 2355
     .local v8, "endMin":I
-    move/from16 v0, v17
+    const/4 v9, 0x0
 
-    if-gt v9, v0, :cond_1
+    .line 2356
+    .local v9, "endSec":I
+    move/from16 v0, v21
 
-    move/from16 v0, v17
+    if-gt v10, v0, :cond_1
 
-    if-ne v9, v0, :cond_5
+    move/from16 v0, v21
 
-    move/from16 v0, v18
+    if-ne v10, v0, :cond_6
 
-    if-le v13, v0, :cond_5
+    move/from16 v0, v22
+
+    if-le v14, v0, :cond_6
 
     :cond_1
-    if-lt v9, v7, :cond_2
+    if-lt v10, v7, :cond_2
 
-    if-ne v9, v7, :cond_5
+    if-ne v10, v7, :cond_6
 
-    if-ge v13, v8, :cond_5
+    if-ge v14, v8, :cond_6
 
-    .line 2342
+    .line 2359
     :cond_2
+    sub-int v23, v7, v10
+
+    mul-int/lit8 v23, v23, 0x3c
+
+    mul-int/lit8 v23, v23, 0x3c
+
+    sub-int v28, v8, v14
+
+    mul-int/lit8 v28, v28, 0x3c
+
+    add-int v23, v23, v28
+
+    sub-int v28, v9, v17
+
+    add-int v23, v23, v28
+
+    move/from16 v0, v23
+
+    mul-int/lit16 v0, v0, 0x3e8
+
+    move/from16 v23, v0
+
+    move/from16 v0, v23
+
+    int-to-long v0, v0
+
+    move-wide/from16 v24, v0
+
+    .line 2367
+    .local v24, "stopDelayMs":J
     :goto_3
+    const-string v23, "demoMode"
+
+    new-instance v28, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v28 .. v28}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v29, "stopDelayMs = "
+
+    invoke-virtual/range {v28 .. v29}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v28
+
+    move-object/from16 v0, v28
+
+    move-wide/from16 v1, v24
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v28
+
+    invoke-virtual/range {v28 .. v28}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v28
+
+    move-object/from16 v0, v23
+
+    move-object/from16 v1, v28
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2368
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    move-result-wide v22
+    move-result-wide v28
 
-    add-long v20, v22, p1
+    add-long v18, v28, p1
 
-    .line 2343
-    .local v20, "when":J
+    .line 2369
+    .local v18, "playTime":J
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v28
+
+    add-long v26, v28, v24
+
+    .line 2370
+    .local v26, "stopTime":J
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mPlayVideoWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    move-object/from16 v19, v0
+    move-object/from16 v23, v0
 
-    invoke-virtual/range {v19 .. v19}, Landroid/os/PowerManager$WakeLock;->release()V
+    invoke-virtual/range {v23 .. v23}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 2344
+    .line 2371
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mAlarmManager:Landroid/app/AlarmManager;
-
-    move-object/from16 v19, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mPlayVideoIntent:Landroid/app/PendingIntent;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, v19
-
-    move-object/from16 v1, v22
-
-    invoke-virtual {v0, v1}, Landroid/app/AlarmManager;->cancel(Landroid/app/PendingIntent;)V
-
-    .line 2345
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mAlarmManager:Landroid/app/AlarmManager;
-
-    move-object/from16 v19, v0
-
-    const/16 v22, 0x2
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mPlayVideoIntent:Landroid/app/PendingIntent;
 
     move-object/from16 v23, v0
 
-    move-object/from16 v0, v19
+    move-object/from16 v0, p0
 
-    move/from16 v1, v22
+    iget-object v0, v0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mPlayVideoIntent:Landroid/app/PendingIntent;
 
-    move-wide/from16 v2, v20
+    move-object/from16 v28, v0
 
-    move-object/from16 v4, v23
+    move-object/from16 v0, v23
+
+    move-object/from16 v1, v28
+
+    invoke-virtual {v0, v1}, Landroid/app/AlarmManager;->cancel(Landroid/app/PendingIntent;)V
+
+    .line 2372
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mAlarmManager:Landroid/app/AlarmManager;
+
+    move-object/from16 v23, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mStopVideoIntent:Landroid/app/PendingIntent;
+
+    move-object/from16 v28, v0
+
+    move-object/from16 v0, v23
+
+    move-object/from16 v1, v28
+
+    invoke-virtual {v0, v1}, Landroid/app/AlarmManager;->cancel(Landroid/app/PendingIntent;)V
+
+    .line 2373
+    cmp-long v23, v24, p1
+
+    if-lez v23, :cond_3
+
+    .line 2374
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mAlarmManager:Landroid/app/AlarmManager;
+
+    move-object/from16 v23, v0
+
+    const/16 v28, 0x2
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mPlayVideoIntent:Landroid/app/PendingIntent;
+
+    move-object/from16 v29, v0
+
+    move-object/from16 v0, v23
+
+    move/from16 v1, v28
+
+    move-wide/from16 v2, v18
+
+    move-object/from16 v4, v29
+
+    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/app/AlarmManager;->set(IJLandroid/app/PendingIntent;)V
+
+    .line 2376
+    :cond_3
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mAlarmManager:Landroid/app/AlarmManager;
+
+    move-object/from16 v23, v0
+
+    const/16 v28, 0x2
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mStopVideoIntent:Landroid/app/PendingIntent;
+
+    move-object/from16 v29, v0
+
+    move-object/from16 v0, v23
+
+    move/from16 v1, v28
+
+    move-wide/from16 v2, v26
+
+    move-object/from16 v4, v29
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/app/AlarmManager;->set(IJLandroid/app/PendingIntent;)V
 
     goto/16 :goto_0
 
-    .line 2318
+    .line 2340
     .end local v7    # "endHour":I
     .end local v8    # "endMin":I
-    .end local v10    # "isOpenPlayTime":Z
-    .end local v17    # "startHour":I
-    .end local v18    # "startMin":I
-    .end local v20    # "when":J
-    :cond_3
-    const/4 v10, 0x0
+    .end local v9    # "endSec":I
+    .end local v11    # "isOpenPlayTime":Z
+    .end local v18    # "playTime":J
+    .end local v21    # "startHour":I
+    .end local v22    # "startMin":I
+    .end local v24    # "stopDelayMs":J
+    .end local v26    # "stopTime":J
+    :cond_4
+    const/4 v11, 0x0
 
     goto/16 :goto_1
 
-    .line 2326
-    .restart local v10    # "isOpenPlayTime":Z
-    :cond_4
-    const-string v16, "0900"
+    .line 2348
+    .restart local v11    # "isOpenPlayTime":Z
+    :cond_5
+    const-string v20, "0900"
 
-    .line 2327
+    .line 2349
     const-string v6, "2200"
 
     goto/16 :goto_2
 
-    .line 2338
+    .line 2362
     .restart local v7    # "endHour":I
     .restart local v8    # "endMin":I
-    .restart local v17    # "startHour":I
-    .restart local v18    # "startMin":I
-    :cond_5
-    if-lt v9, v7, :cond_6
+    .restart local v9    # "endSec":I
+    .restart local v21    # "startHour":I
+    .restart local v22    # "startMin":I
+    :cond_6
+    if-lt v10, v7, :cond_7
 
-    rsub-int/lit8 v19, v9, 0x17
+    rsub-int/lit8 v23, v10, 0x17
 
-    add-int v11, v19, v17
+    add-int v12, v23, v21
 
-    .line 2339
-    .local v11, "mHours":I
+    .line 2363
+    .local v12, "mHours":I
     :goto_4
-    sub-int v12, v18, v13
+    sub-int v13, v22, v14
 
-    .line 2340
-    .local v12, "mMins":I
-    mul-int/lit8 v19, v11, 0x3c
+    .line 2364
+    .local v13, "mMins":I
+    mul-int/lit8 v23, v12, 0x3c
 
-    mul-int/lit8 v19, v19, 0x3c
+    mul-int/lit8 v23, v23, 0x3c
 
-    mul-int/lit8 v22, v12, 0x3c
+    mul-int/lit8 v28, v13, 0x3c
 
-    add-int v19, v19, v22
+    add-int v23, v23, v28
 
-    move/from16 v0, v19
+    move/from16 v0, v23
 
     mul-int/lit16 v0, v0, 0x3e8
 
-    move/from16 v19, v0
+    move/from16 v23, v0
 
-    move/from16 v0, v19
+    move/from16 v0, v23
 
     int-to-long v0, v0
 
     move-wide/from16 p1, v0
 
-    goto :goto_3
+    .line 2365
+    sub-int v23, v7, v21
 
-    .line 2338
-    .end local v11    # "mHours":I
-    .end local v12    # "mMins":I
-    :cond_6
-    sub-int v11, v17, v9
+    mul-int/lit8 v23, v23, 0x3c
+
+    mul-int/lit8 v23, v23, 0x3c
+
+    sub-int v28, v8, v22
+
+    mul-int/lit8 v28, v28, 0x3c
+
+    add-int v23, v23, v28
+
+    sub-int v28, v9, v17
+
+    add-int v23, v23, v28
+
+    move/from16 v0, v23
+
+    mul-int/lit16 v0, v0, 0x3e8
+
+    move/from16 v23, v0
+
+    move/from16 v0, v23
+
+    int-to-long v0, v0
+
+    move-wide/from16 v28, v0
+
+    add-long v24, v28, p1
+
+    .restart local v24    # "stopDelayMs":J
+    goto/16 :goto_3
+
+    .line 2362
+    .end local v12    # "mHours":I
+    .end local v13    # "mMins":I
+    .end local v24    # "stopDelayMs":J
+    :cond_7
+    sub-int v12, v21, v10
 
     goto :goto_4
 .end method
@@ -4205,483 +4373,501 @@
 .end method
 
 .method private setupLocked()V
-    .locals 12
+    .locals 15
 
     .prologue
-    const/4 v7, 0x0
+    const/high16 v14, 0x10000000
 
-    const/4 v6, 0x1
+    const/4 v8, 0x0
 
-    .line 699
-    iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mContext:Landroid/content/Context;
+    const/4 v7, 0x1
 
-    const-string v8, "power"
+    .line 709
+    iget-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v5, v8}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    const-string v9, "power"
 
-    move-result-object v5
+    invoke-virtual {v6, v9}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    check-cast v5, Landroid/os/PowerManager;
+    move-result-object v6
 
-    iput-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mPM:Landroid/os/PowerManager;
+    check-cast v6, Landroid/os/PowerManager;
 
-    .line 700
+    iput-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mPM:Landroid/os/PowerManager;
+
+    .line 710
     invoke-static {}, Landroid/view/WindowManagerGlobal;->getWindowManagerService()Landroid/view/IWindowManager;
 
-    move-result-object v5
+    move-result-object v6
 
-    iput-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mWM:Landroid/view/IWindowManager;
+    iput-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mWM:Landroid/view/IWindowManager;
 
-    .line 701
-    iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mContext:Landroid/content/Context;
+    .line 711
+    iget-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mContext:Landroid/content/Context;
 
-    const-string v8, "trust"
+    const-string v9, "trust"
 
-    invoke-virtual {v5, v8}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v6, v9}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v6
 
-    check-cast v5, Landroid/app/trust/TrustManager;
+    check-cast v6, Landroid/app/trust/TrustManager;
 
-    iput-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mTrustManager:Landroid/app/trust/TrustManager;
+    iput-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mTrustManager:Landroid/app/trust/TrustManager;
 
-    .line 703
-    iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mPM:Landroid/os/PowerManager;
+    .line 713
+    iget-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mPM:Landroid/os/PowerManager;
 
-    const-string v8, "show keyguard"
+    const-string v9, "show keyguard"
 
-    invoke-virtual {v5, v6, v8}, Landroid/os/PowerManager;->newWakeLock(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;
+    invoke-virtual {v6, v7, v9}, Landroid/os/PowerManager;->newWakeLock(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;
 
-    move-result-object v5
+    move-result-object v6
 
-    iput-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mShowKeyguardWakeLock:Landroid/os/PowerManager$WakeLock;
+    iput-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mShowKeyguardWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    .line 704
-    iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mShowKeyguardWakeLock:Landroid/os/PowerManager$WakeLock;
+    .line 714
+    iget-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mShowKeyguardWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    invoke-virtual {v5, v7}, Landroid/os/PowerManager$WakeLock;->setReferenceCounted(Z)V
+    invoke-virtual {v6, v8}, Landroid/os/PowerManager$WakeLock;->setReferenceCounted(Z)V
 
-    .line 706
+    .line 716
     new-instance v1, Landroid/content/IntentFilter;
 
     invoke-direct {v1}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 707
+    .line 717
     .local v1, "filter":Landroid/content/IntentFilter;
-    const-string v5, "com.android.internal.policy.impl.PhoneWindowManager.DELAYED_KEYGUARD"
+    const-string v6, "com.android.internal.policy.impl.PhoneWindowManager.DELAYED_KEYGUARD"
 
-    invoke-virtual {v1, v5}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+    invoke-virtual {v1, v6}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 711
-    iget-boolean v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->DEMO_MODE_ENABLE:Z
+    .line 721
+    iget-boolean v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->DEMO_MODE_ENABLE:Z
 
-    if-eqz v5, :cond_0
-
-    .line 712
-    const-string v5, "com.android.internal.policy.impl.PhoneWindowManager.DELAYED_PLAYVIDEO"
-
-    invoke-virtual {v1, v5}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    .line 713
-    const-string v5, "com.meizu.action.PASSWORD_HAVE_CLEARD"
-
-    invoke-virtual {v1, v5}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    .line 715
-    :cond_0
-    iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mContext:Landroid/content/Context;
-
-    iget-object v8, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
-
-    invoke-virtual {v5, v8, v1}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
-
-    .line 718
-    new-instance v5, Lcom/android/keyguard/KeyguardDisplayManager;
-
-    iget-object v8, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mContext:Landroid/content/Context;
-
-    invoke-direct {v5, v8}, Lcom/android/keyguard/KeyguardDisplayManager;-><init>(Landroid/content/Context;)V
-
-    iput-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mKeyguardDisplayManager:Lcom/android/keyguard/KeyguardDisplayManager;
-
-    .line 720
-    iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mContext:Landroid/content/Context;
-
-    const-string v8, "alarm"
-
-    invoke-virtual {v5, v8}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Landroid/app/AlarmManager;
-
-    iput-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mAlarmManager:Landroid/app/AlarmManager;
+    if-eqz v6, :cond_0
 
     .line 722
-    iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mContext:Landroid/content/Context;
+    const-string v6, "com.android.internal.policy.impl.PhoneWindowManager.DELAYED_PLAYVIDEO"
 
-    invoke-static {v5}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/KeyguardUpdateMonitor;
+    invoke-virtual {v1, v6}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    move-result-object v5
+    .line 723
+    const-string v6, "com.meizu.action.PASSWORD_HAVE_CLEARD"
 
-    iput-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
-
-    .line 724
-    new-instance v5, Lcom/android/internal/widget/LockPatternUtils;
-
-    iget-object v8, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mContext:Landroid/content/Context;
-
-    invoke-direct {v5, v8}, Lcom/android/internal/widget/LockPatternUtils;-><init>(Landroid/content/Context;)V
-
-    iput-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+    invoke-virtual {v1, v6}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
     .line 725
-    iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+    :cond_0
+    iget-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mContext:Landroid/content/Context;
+
+    iget-object v9, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
+
+    invoke-virtual {v6, v9, v1}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+
+    .line 728
+    new-instance v6, Lcom/android/keyguard/KeyguardDisplayManager;
+
+    iget-object v9, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mContext:Landroid/content/Context;
+
+    invoke-direct {v6, v9}, Lcom/android/keyguard/KeyguardDisplayManager;-><init>(Landroid/content/Context;)V
+
+    iput-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mKeyguardDisplayManager:Lcom/android/keyguard/KeyguardDisplayManager;
+
+    .line 730
+    iget-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mContext:Landroid/content/Context;
+
+    const-string v9, "alarm"
+
+    invoke-virtual {v6, v9}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Landroid/app/AlarmManager;
+
+    iput-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mAlarmManager:Landroid/app/AlarmManager;
+
+    .line 732
+    iget-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mContext:Landroid/content/Context;
+
+    invoke-static {v6}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/KeyguardUpdateMonitor;
+
+    move-result-object v6
+
+    iput-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
+
+    .line 734
+    new-instance v6, Lcom/android/internal/widget/LockPatternUtils;
+
+    iget-object v9, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mContext:Landroid/content/Context;
+
+    invoke-direct {v6, v9}, Lcom/android/internal/widget/LockPatternUtils;-><init>(Landroid/content/Context;)V
+
+    iput-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+
+    .line 735
+    iget-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
 
-    move-result v8
+    move-result v9
 
-    invoke-virtual {v5, v8}, Lcom/android/internal/widget/LockPatternUtils;->setCurrentUser(I)V
+    invoke-virtual {v6, v9}, Lcom/android/internal/widget/LockPatternUtils;->setCurrentUser(I)V
 
-    .line 727
-    iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
+    .line 737
+    iget-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
-    iget-object v8, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mFindPhoneCallback:Lcom/android/keyguard/KeyguardUpdateMonitor$FindPhoneCallbacks;
+    iget-object v9, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mFindPhoneCallback:Lcom/android/keyguard/KeyguardUpdateMonitor$FindPhoneCallbacks;
 
-    invoke-virtual {v5, v8}, Lcom/android/keyguard/KeyguardUpdateMonitor;->registerFindPhoneCallback(Lcom/android/keyguard/KeyguardUpdateMonitor$FindPhoneCallbacks;)V
+    invoke-virtual {v6, v9}, Lcom/android/keyguard/KeyguardUpdateMonitor;->registerFindPhoneCallback(Lcom/android/keyguard/KeyguardUpdateMonitor$FindPhoneCallbacks;)V
 
-    .line 728
-    iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
+    .line 738
+    iget-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
-    iget-object v8, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+    iget-object v9, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    invoke-virtual {v5, v8}, Lcom/android/keyguard/KeyguardUpdateMonitor;->setLockPatternUtils(Lcom/android/internal/widget/LockPatternUtils;)V
+    invoke-virtual {v6, v9}, Lcom/android/keyguard/KeyguardUpdateMonitor;->setLockPatternUtils(Lcom/android/internal/widget/LockPatternUtils;)V
 
-    .line 730
+    .line 740
     invoke-direct {p0}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->shouldWaitForProvisioning()Z
 
-    move-result v5
+    move-result v6
 
-    if-nez v5, :cond_b
+    if-nez v6, :cond_b
 
-    iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+    iget-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    invoke-virtual {v5}, Lcom/android/internal/widget/LockPatternUtils;->isLockScreenDisabled()Z
+    invoke-virtual {v6}, Lcom/android/internal/widget/LockPatternUtils;->isLockScreenDisabled()Z
 
-    move-result v5
+    move-result v6
 
-    if-nez v5, :cond_b
+    if-nez v6, :cond_b
 
-    move v5, v6
+    move v6, v7
 
     :goto_0
-    invoke-direct {p0, v5}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->setShowingLocked(Z)V
+    invoke-direct {p0, v6}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->setShowingLocked(Z)V
 
-    .line 731
-    iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mTrustManager:Landroid/app/trust/TrustManager;
+    .line 741
+    iget-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mTrustManager:Landroid/app/trust/TrustManager;
 
-    invoke-virtual {v5}, Landroid/app/trust/TrustManager;->reportKeyguardShowingChanged()V
+    invoke-virtual {v6}, Landroid/app/trust/TrustManager;->reportKeyguardShowingChanged()V
 
-    .line 733
-    new-instance v5, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
+    .line 743
+    new-instance v6, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
 
-    iget-object v8, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mContext:Landroid/content/Context;
+    iget-object v9, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mContext:Landroid/content/Context;
 
-    iget-object v9, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mViewMediatorCallback:Lcom/android/keyguard/ViewMediatorCallback;
+    iget-object v10, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mViewMediatorCallback:Lcom/android/keyguard/ViewMediatorCallback;
 
-    iget-object v10, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+    iget-object v11, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    invoke-direct {v5, v8, v9, v10}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;-><init>(Landroid/content/Context;Lcom/android/keyguard/ViewMediatorCallback;Lcom/android/internal/widget/LockPatternUtils;)V
+    invoke-direct {v6, v9, v10, v11}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;-><init>(Landroid/content/Context;Lcom/android/keyguard/ViewMediatorCallback;Lcom/android/internal/widget/LockPatternUtils;)V
 
-    iput-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
+    iput-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
 
-    .line 735
-    iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mContext:Landroid/content/Context;
+    .line 745
+    iget-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v5}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {v6}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 737
+    .line 747
     .local v0, "cr":Landroid/content/ContentResolver;
-    iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mPM:Landroid/os/PowerManager;
+    iget-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mPM:Landroid/os/PowerManager;
 
-    invoke-virtual {v5}, Landroid/os/PowerManager;->isScreenOn()Z
+    invoke-virtual {v6}, Landroid/os/PowerManager;->isScreenOn()Z
 
-    move-result v5
+    move-result v6
 
-    iput-boolean v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mScreenOn:Z
+    iput-boolean v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mScreenOn:Z
 
-    .line 739
-    new-instance v5, Landroid/media/SoundPool;
+    .line 749
+    new-instance v6, Landroid/media/SoundPool;
 
-    invoke-direct {v5, v6, v6, v7}, Landroid/media/SoundPool;-><init>(III)V
+    invoke-direct {v6, v7, v7, v8}, Landroid/media/SoundPool;-><init>(III)V
 
-    iput-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockSounds:Landroid/media/SoundPool;
+    iput-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockSounds:Landroid/media/SoundPool;
 
-    .line 740
-    const-string v5, "lock_sound"
+    .line 750
+    const-string v6, "lock_sound"
 
-    invoke-static {v0, v5}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v6}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 741
+    .line 751
     .local v4, "soundPath":Ljava/lang/String;
     if-eqz v4, :cond_1
 
-    .line 742
-    iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockSounds:Landroid/media/SoundPool;
+    .line 752
+    iget-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockSounds:Landroid/media/SoundPool;
 
-    invoke-virtual {v5, v4, v6}, Landroid/media/SoundPool;->load(Ljava/lang/String;I)I
+    invoke-virtual {v6, v4, v7}, Landroid/media/SoundPool;->load(Ljava/lang/String;I)I
 
-    move-result v5
+    move-result v6
 
-    iput v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockSoundId:I
+    iput v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockSoundId:I
 
-    .line 744
+    .line 754
     :cond_1
     if-eqz v4, :cond_2
 
-    iget v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockSoundId:I
+    iget v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockSoundId:I
 
-    if-nez v5, :cond_3
+    if-nez v6, :cond_3
 
-    .line 745
+    .line 755
     :cond_2
-    const-string v5, "KeyguardViewMediator"
+    const-string v6, "KeyguardViewMediator"
 
-    new-instance v8, Ljava/lang/StringBuilder;
+    new-instance v9, Ljava/lang/StringBuilder;
 
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v9, "failed to load lock sound from "
+    const-string v10, "failed to load lock sound from "
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-static {v5, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v6, v9}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 747
+    .line 757
     :cond_3
-    const-string v5, "unlock_sound"
+    const-string v6, "unlock_sound"
 
-    invoke-static {v0, v5}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v6}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 748
+    .line 758
     if-eqz v4, :cond_4
 
-    .line 749
-    iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockSounds:Landroid/media/SoundPool;
+    .line 759
+    iget-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockSounds:Landroid/media/SoundPool;
 
-    invoke-virtual {v5, v4, v6}, Landroid/media/SoundPool;->load(Ljava/lang/String;I)I
+    invoke-virtual {v6, v4, v7}, Landroid/media/SoundPool;->load(Ljava/lang/String;I)I
 
-    move-result v5
+    move-result v6
 
-    iput v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mUnlockSoundId:I
+    iput v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mUnlockSoundId:I
 
-    .line 751
+    .line 761
     :cond_4
     if-eqz v4, :cond_5
 
-    iget v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mUnlockSoundId:I
+    iget v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mUnlockSoundId:I
 
-    if-nez v5, :cond_6
+    if-nez v6, :cond_6
 
-    .line 752
+    .line 762
     :cond_5
-    const-string v5, "KeyguardViewMediator"
+    const-string v6, "KeyguardViewMediator"
 
-    new-instance v8, Ljava/lang/StringBuilder;
+    new-instance v9, Ljava/lang/StringBuilder;
 
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v9, "failed to load unlock sound from "
+    const-string v10, "failed to load unlock sound from "
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-static {v5, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v6, v9}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 754
+    .line 764
     :cond_6
-    const-string v5, "trusted_sound"
+    const-string v6, "trusted_sound"
 
-    invoke-static {v0, v5}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v6}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 755
+    .line 765
     if-eqz v4, :cond_7
 
-    .line 756
-    iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockSounds:Landroid/media/SoundPool;
+    .line 766
+    iget-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockSounds:Landroid/media/SoundPool;
 
-    invoke-virtual {v5, v4, v6}, Landroid/media/SoundPool;->load(Ljava/lang/String;I)I
+    invoke-virtual {v6, v4, v7}, Landroid/media/SoundPool;->load(Ljava/lang/String;I)I
 
-    move-result v5
+    move-result v6
 
-    iput v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mTrustedSoundId:I
+    iput v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mTrustedSoundId:I
 
-    .line 758
+    .line 768
     :cond_7
     if-eqz v4, :cond_8
 
-    iget v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mTrustedSoundId:I
+    iget v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mTrustedSoundId:I
 
-    if-nez v5, :cond_9
+    if-nez v6, :cond_9
 
-    .line 759
+    .line 769
     :cond_8
-    const-string v5, "KeyguardViewMediator"
+    const-string v6, "KeyguardViewMediator"
 
-    new-instance v8, Ljava/lang/StringBuilder;
+    new-instance v9, Ljava/lang/StringBuilder;
 
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v9, "failed to load trusted sound from "
+    const-string v10, "failed to load trusted sound from "
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-static {v5, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 762
-    :cond_9
-    iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v5}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v5
-
-    const v8, 0x10e0005
-
-    invoke-virtual {v5, v8}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v3
-
-    .line 764
-    .local v3, "lockSoundDefaultAttenuation":I
-    const-wide/high16 v8, 0x4024000000000000L    # 10.0
-
-    int-to-float v5, v3
-
-    const/high16 v10, 0x41a00000    # 20.0f
-
-    div-float/2addr v5, v10
-
-    float-to-double v10, v5
-
-    invoke-static {v8, v9, v10, v11}, Ljava/lang/Math;->pow(DD)D
-
-    move-result-wide v8
-
-    double-to-float v5, v8
-
-    iput v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockSoundVolume:F
-
-    .line 766
-    iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mContext:Landroid/content/Context;
-
-    const v8, 0x10a002b
-
-    invoke-static {v5, v8}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
-
-    move-result-object v5
-
-    iput-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mHideAnimation:Landroid/view/animation/Animation;
+    invoke-static {v6, v9}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 772
-    iget-boolean v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->DEMO_MODE_ENABLE:Z
+    :cond_9
+    iget-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mContext:Landroid/content/Context;
 
-    if-eqz v5, :cond_a
+    invoke-virtual {v6}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    .line 773
-    iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mPM:Landroid/os/PowerManager;
+    move-result-object v6
 
-    const-string v8, "playvideo screenoff"
+    const v9, 0x10e0005
 
-    invoke-virtual {v5, v6, v8}, Landroid/os/PowerManager;->newWakeLock(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;
+    invoke-virtual {v6, v9}, Landroid/content/res/Resources;->getInteger(I)I
 
-    move-result-object v5
-
-    iput-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mPlayVideoWakeLock:Landroid/os/PowerManager$WakeLock;
+    move-result v2
 
     .line 774
-    iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mPlayVideoWakeLock:Landroid/os/PowerManager$WakeLock;
+    .local v2, "lockSoundDefaultAttenuation":I
+    const-wide/high16 v10, 0x4024000000000000L    # 10.0
 
-    invoke-virtual {v5, v7}, Landroid/os/PowerManager$WakeLock;->setReferenceCounted(Z)V
+    int-to-float v6, v2
 
-    .line 775
-    new-instance v2, Landroid/content/Intent;
+    const/high16 v9, 0x41a00000    # 20.0f
 
-    const-string v5, "com.android.internal.policy.impl.PhoneWindowManager.DELAYED_PLAYVIDEO"
+    div-float/2addr v6, v9
 
-    invoke-direct {v2, v5}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    float-to-double v12, v6
+
+    invoke-static {v10, v11, v12, v13}, Ljava/lang/Math;->pow(DD)D
+
+    move-result-wide v10
+
+    double-to-float v6, v10
+
+    iput v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockSoundVolume:F
 
     .line 776
-    .local v2, "intent":Landroid/content/Intent;
-    iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mContext:Landroid/content/Context;
+    iget-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mContext:Landroid/content/Context;
 
-    const/high16 v6, 0x10000000
+    const v9, 0x10a002b
 
-    invoke-static {v5, v7, v2, v6}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+    invoke-static {v6, v9}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
-    move-result-object v5
+    move-result-object v6
 
-    iput-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mPlayVideoIntent:Landroid/app/PendingIntent;
+    iput-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mHideAnimation:Landroid/view/animation/Animation;
 
-    .line 777
+    .line 782
+    iget-boolean v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->DEMO_MODE_ENABLE:Z
+
+    if-eqz v6, :cond_a
+
+    .line 783
+    iget-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mPM:Landroid/os/PowerManager;
+
+    const-string v9, "playvideo screenoff"
+
+    invoke-virtual {v6, v7, v9}, Landroid/os/PowerManager;->newWakeLock(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;
+
+    move-result-object v6
+
+    iput-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mPlayVideoWakeLock:Landroid/os/PowerManager$WakeLock;
+
+    .line 784
+    iget-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mPlayVideoWakeLock:Landroid/os/PowerManager$WakeLock;
+
+    invoke-virtual {v6, v8}, Landroid/os/PowerManager$WakeLock;->setReferenceCounted(Z)V
+
+    .line 785
+    new-instance v3, Landroid/content/Intent;
+
+    const-string v6, "com.android.internal.policy.impl.PhoneWindowManager.DELAYED_PLAYVIDEO"
+
+    invoke-direct {v3, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    .line 786
+    .local v3, "playIntent":Landroid/content/Intent;
+    iget-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mContext:Landroid/content/Context;
+
+    invoke-static {v6, v8, v3, v14}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+
+    move-result-object v6
+
+    iput-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mPlayVideoIntent:Landroid/app/PendingIntent;
+
+    .line 787
+    new-instance v6, Landroid/content/Intent;
+
+    const-string v7, "mz.action.demo.keyguard.lock"
+
+    invoke-direct {v6, v7}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    iput-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockIntent:Landroid/content/Intent;
+
+    .line 788
     new-instance v5, Landroid/content/Intent;
 
-    const-string v6, "mz.action.demo.keyguard.lock"
+    const-string v6, "com.android.internal.policy.impl.PhoneWindowManager.DELAYED_STOPVIDEO"
 
     invoke-direct {v5, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    iput-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mLockIntent:Landroid/content/Intent;
+    .line 789
+    .local v5, "stopIntent":Landroid/content/Intent;
+    iget-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mContext:Landroid/content/Context;
 
-    .line 779
-    .end local v2    # "intent":Landroid/content/Intent;
+    invoke-static {v6, v8, v5, v14}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+
+    move-result-object v6
+
+    iput-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mStopVideoIntent:Landroid/app/PendingIntent;
+
+    .line 791
+    .end local v3    # "playIntent":Landroid/content/Intent;
+    .end local v5    # "stopIntent":Landroid/content/Intent;
     :cond_a
     return-void
 
     .end local v0    # "cr":Landroid/content/ContentResolver;
-    .end local v3    # "lockSoundDefaultAttenuation":I
+    .end local v2    # "lockSoundDefaultAttenuation":I
     .end local v4    # "soundPath":Ljava/lang/String;
     :cond_b
-    move v5, v7
+    move v6, v8
 
-    .line 730
+    .line 740
     goto/16 :goto_0
 .end method
 
@@ -5779,35 +5965,35 @@
 .end method
 
 .method public onScreenTurnedOn(Lcom/android/internal/policy/IKeyguardShowCallback;)V
-    .locals 1
+    .locals 2
     .param p1, "callback"    # Lcom/android/internal/policy/IKeyguardShowCallback;
 
     .prologue
-    .line 970
+    .line 982
     monitor-enter p0
 
-    .line 971
+    .line 983
     const/4 v0, 0x1
 
     :try_start_0
     iput-boolean v0, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mScreenOn:Z
 
-    .line 972
+    .line 984
     invoke-direct {p0}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->cancelDoKeyguardLaterLocked()V
 
-    .line 974
+    .line 986
     if-eqz p1, :cond_0
 
-    .line 975
+    .line 987
     invoke-direct {p0, p1}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->notifyScreenOnLocked(Lcom/android/internal/policy/IKeyguardShowCallback;)V
 
-    .line 977
+    .line 989
     :cond_0
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 978
+    .line 990
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/KeyguardUpdateMonitor;
@@ -5816,13 +6002,38 @@
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->dispatchScreenTurnedOn()V
 
-    .line 979
+    .line 991
     invoke-direct {p0}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->maybeSendUserPresentBroadcast()V
 
-    .line 980
+    .line 995
+    iget-boolean v0, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->DEMO_MODE_ENABLE:Z
+
+    if-eqz v0, :cond_1
+
+    .line 996
+    iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mPlayVideoWakeLock:Landroid/os/PowerManager$WakeLock;
+
+    invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
+
+    .line 997
+    iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mAlarmManager:Landroid/app/AlarmManager;
+
+    iget-object v1, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mPlayVideoIntent:Landroid/app/PendingIntent;
+
+    invoke-virtual {v0, v1}, Landroid/app/AlarmManager;->cancel(Landroid/app/PendingIntent;)V
+
+    .line 998
+    const-string v0, "demoMode"
+
+    const-string v1, "onScreenoOn and remove playIntent"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 1000
+    :cond_1
     return-void
 
-    .line 977
+    .line 989
     :catchall_0
     move-exception v0
 

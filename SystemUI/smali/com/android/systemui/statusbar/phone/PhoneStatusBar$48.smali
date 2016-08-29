@@ -447,7 +447,6 @@
 
     :cond_hxs_0
 # hxs modify end
-
     const-string v25, "android.intent.action.SCREEN_OFF"
 
     move-object/from16 v0, v25
@@ -458,7 +457,7 @@
 
     if-eqz v25, :cond_4
 
-    .line 3969
+    .line 3980
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -474,7 +473,7 @@
     # setter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mScreenOn:Ljava/lang/Boolean;
     invoke-static/range {v25 .. v26}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$8902(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Ljava/lang/Boolean;)Ljava/lang/Boolean;
 
-    .line 3970
+    .line 3981
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -486,7 +485,7 @@
     # invokes: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->notifyNavigationBarScreenOn(Z)V
     invoke-static/range {v25 .. v26}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$9000(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Z)V
 
-    .line 3971
+    .line 3982
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -498,7 +497,7 @@
     # invokes: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->notifyHeadsUpScreenOn(Z)V
     invoke-static/range {v25 .. v26}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$9100(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Z)V
 
-    .line 3972
+    .line 3983
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -508,7 +507,7 @@
     # invokes: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->finishBarAnimations()V
     invoke-static/range {v25 .. v25}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$9200(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)V
 
-    .line 3977
+    .line 3988
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -537,7 +536,7 @@
 
     if-eq v0, v1, :cond_2
 
-    .line 3978
+    .line 3989
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -554,7 +553,7 @@
 
     goto :goto_0
 
-    .line 3982
+    .line 3993
     :cond_4
     const-string v25, "android.intent.action.SCREEN_ON"
 
@@ -566,7 +565,7 @@
 
     if-eqz v25, :cond_5
 
-    .line 3983
+    .line 3994
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -582,7 +581,7 @@
     # setter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mScreenOn:Ljava/lang/Boolean;
     invoke-static/range {v25 .. v26}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$9302(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Ljava/lang/Boolean;)Ljava/lang/Boolean;
 
-    .line 3984
+    .line 3995
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -596,7 +595,7 @@
 
     goto/16 :goto_0
 
-    .line 3986
+    .line 3997
     :cond_5
     const-string v25, "com.android.systemui.demo"
 
@@ -608,16 +607,16 @@
 
     if-eqz v25, :cond_6
 
-    .line 3987
+    .line 3998
     invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object v5
 
-    .line 3988
+    .line 3999
     .local v5, "bundle":Landroid/os/Bundle;
     if-eqz v5, :cond_2
 
-    .line 3989
+    .line 4000
     const-string v25, "command"
 
     const-string v26, ""
@@ -638,7 +637,7 @@
 
     move-result-object v6
 
-    .line 3990
+    .line 4001
     .local v6, "command":Ljava/lang/String;
     invoke-virtual {v6}, Ljava/lang/String;->length()I
 
@@ -646,7 +645,7 @@
 
     if-lez v25, :cond_2
 
-    .line 3992
+    .line 4003
     :try_start_0
     move-object/from16 v0, p0
 
@@ -662,11 +661,11 @@
 
     goto/16 :goto_0
 
-    .line 3993
+    .line 4004
     :catch_0
     move-exception v22
 
-    .line 3994
+    .line 4005
     .local v22, "t":Ljava/lang/Throwable;
     const-string v25, "PhoneStatusBar"
 
@@ -702,7 +701,7 @@
 
     goto/16 :goto_0
 
-    .line 3998
+    .line 4009
     .end local v5    # "bundle":Landroid/os/Bundle;
     .end local v6    # "command":Ljava/lang/String;
     .end local v22    # "t":Ljava/lang/Throwable;
@@ -717,7 +716,7 @@
 
     if-nez v25, :cond_2
 
-    .line 4002
+    .line 4013
     const-string v25, "android.intent.action.LOCK_WALLPAPER_CHANGED"
 
     move-object/from16 v0, v25
@@ -728,7 +727,7 @@
 
     if-eqz v25, :cond_8
 
-    .line 4006
+    .line 4017
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -758,7 +757,7 @@
     # setter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mLockWallpaper:Landroid/graphics/Bitmap;
     invoke-static/range {v25 .. v26}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$9402(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
-    .line 4009
+    .line 4020
     :try_start_1
     move-object/from16 v0, p0
 
@@ -795,7 +794,7 @@
     :try_end_1
     .catch Lcom/meizu/keyguard/BlurBitmapFactory$BlurBitmapError; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 4013
+    .line 4024
     :goto_1
     move-object/from16 v0, p0
 
@@ -839,7 +838,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 4015
+    .line 4026
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -856,7 +855,7 @@
 
     goto/16 :goto_0
 
-    .line 4013
+    .line 4024
     :cond_7
     move-object/from16 v0, p0
 
@@ -871,7 +870,7 @@
 
     goto :goto_2
 
-    .line 4018
+    .line 4029
     :cond_8
     const-string v25, "android.intent.action.ACCESS_CONTROL_CHANGED"
 
@@ -883,17 +882,17 @@
 
     if-eqz v25, :cond_16
 
-    .line 4019
+    .line 4030
     const-string v25, "PhoneStatusBar"
 
     const-string v26, "ACCESS_CONTROL_CHANGED!!!"
 
     invoke-static/range {v25 .. v26}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4022
+    .line 4033
     invoke-static {}, Lcom/flyme/systemui/statusbar/phone/FlymeStatusBarIconUtils;->clearAppEncrptedCache()V
 
-    .line 4024
+    .line 4035
     move-object/from16 v0, p2
 
     iget-object v0, v0, Landroid/content/Intent;->mFlymeIntent:Landroid/content/IntentExt;
@@ -904,7 +903,7 @@
 
     move-result-object v20
 
-    .line 4026
+    .line 4037
     .local v20, "pkg":Ljava/lang/String;
     const-string v25, "fromNotification"
 
@@ -920,7 +919,7 @@
 
     move-result v12
 
-    .line 4028
+    .line 4039
     .local v12, "fromNotification":Z
     const-string v25, "PhoneStatusBar"
 
@@ -948,10 +947,10 @@
 
     invoke-static/range {v25 .. v26}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4033
+    .line 4044
     if-nez v20, :cond_12
 
-    .line 4035
+    .line 4046
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -966,7 +965,7 @@
 
     if-eqz v25, :cond_d
 
-    .line 4039
+    .line 4050
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -982,7 +981,7 @@
 
     move-result v3
 
-    .line 4041
+    .line 4052
     .local v3, "N":I
     const/4 v13, 0x0
 
@@ -990,7 +989,7 @@
     :goto_3
     if-ge v13, v3, :cond_c
 
-    .line 4042
+    .line 4053
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -1008,7 +1007,7 @@
 
     move-result-object v8
 
-    .line 4043
+    .line 4054
     .local v8, "e":Lcom/android/systemui/statusbar/NotificationData$Entry;
     iget-object v0, v8, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Landroid/service/notification/StatusBarNotification;
 
@@ -1018,11 +1017,11 @@
 
     move-result-object v7
 
-    .line 4045
+    .line 4056
     .local v7, "curPkg":Ljava/lang/String;
     const/16 v16, 0x0
 
-    .line 4046
+    .line 4057
     .local v16, "isFakeExist":Z
     move-object/from16 v0, p0
 
@@ -1044,10 +1043,10 @@
 
     if-eqz v25, :cond_9
 
-    .line 4047
+    .line 4058
     const/16 v16, 0x1
 
-    .line 4050
+    .line 4061
     :cond_9
     move-object/from16 v0, p0
 
@@ -1069,7 +1068,7 @@
 
     if-nez v16, :cond_b
 
-    .line 4052
+    .line 4063
     new-instance v10, Lcom/android/systemui/statusbar/NotificationData$Entry;
 
     iget-object v0, v8, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Landroid/service/notification/StatusBarNotification;
@@ -1084,7 +1083,7 @@
 
     invoke-direct {v10, v0, v1}, Lcom/android/systemui/statusbar/NotificationData$Entry;-><init>(Landroid/service/notification/StatusBarNotification;Lcom/android/systemui/statusbar/StatusBarIconView;)V
 
-    .line 4054
+    .line 4065
     .local v10, "fakeEntry":Lcom/android/systemui/statusbar/NotificationData$Entry;
     const/16 v25, 0x1
 
@@ -1092,7 +1091,7 @@
 
     iput-boolean v0, v10, Lcom/android/systemui/statusbar/NotificationData$Entry;->isFake:Z
 
-    .line 4056
+    .line 4067
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -1121,7 +1120,7 @@
 
     if-nez v25, :cond_a
 
-    .line 4060
+    .line 4071
     :cond_a
     move-object/from16 v0, p0
 
@@ -1138,7 +1137,7 @@
 
     invoke-virtual {v0, v10}, Lcom/android/systemui/statusbar/NotificationData;->addFake(Lcom/android/systemui/statusbar/NotificationData$Entry;)V
 
-    .line 4061
+    .line 4072
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -1152,7 +1151,7 @@
 
     invoke-virtual/range {v25 .. v25}, Lcom/android/systemui/statusbar/NotificationData;->filterAndSortFakeEntries()V
 
-    .line 4062
+    .line 4073
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -1179,14 +1178,14 @@
 
     invoke-interface {v0, v1, v10}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 4041
+    .line 4052
     .end local v10    # "fakeEntry":Lcom/android/systemui/statusbar/NotificationData$Entry;
     :cond_b
     add-int/lit8 v13, v13, 0x1
 
     goto/16 :goto_3
 
-    .line 4065
+    .line 4076
     .end local v7    # "curPkg":Ljava/lang/String;
     .end local v8    # "e":Lcom/android/systemui/statusbar/NotificationData$Entry;
     .end local v16    # "isFakeExist":Z
@@ -1200,7 +1199,7 @@
     # invokes: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->updateNotificationShade()V
     invoke-static/range {v25 .. v25}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$5700(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)V
 
-    .line 4066
+    .line 4077
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -1211,7 +1210,7 @@
 
     goto/16 :goto_0
 
-    .line 4071
+    .line 4082
     .end local v3    # "N":I
     .end local v13    # "i":I
     :cond_d
@@ -1230,13 +1229,13 @@
 
     move-result v3
 
-    .line 4073
+    .line 4084
     .restart local v3    # "N":I
     new-instance v24, Ljava/util/ArrayList;
 
     invoke-direct/range {v24 .. v24}, Ljava/util/ArrayList;-><init>()V
 
-    .line 4075
+    .line 4086
     .local v24, "toRemove":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     const/4 v13, 0x0
 
@@ -1244,7 +1243,7 @@
     :goto_4
     if-ge v13, v3, :cond_f
 
-    .line 4076
+    .line 4087
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -1262,7 +1261,7 @@
 
     move-result-object v8
 
-    .line 4077
+    .line 4088
     .restart local v8    # "e":Lcom/android/systemui/statusbar/NotificationData$Entry;
     iget-object v0, v8, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Landroid/service/notification/StatusBarNotification;
 
@@ -1272,11 +1271,11 @@
 
     move-result-object v7
 
-    .line 4079
+    .line 4090
     .restart local v7    # "curPkg":Ljava/lang/String;
     const/16 v16, 0x0
 
-    .line 4080
+    .line 4091
     .restart local v16    # "isFakeExist":Z
     move-object/from16 v0, p0
 
@@ -1298,24 +1297,24 @@
 
     if-eqz v25, :cond_e
 
-    .line 4081
+    .line 4092
     const/16 v16, 0x1
 
-    .line 4086
+    .line 4097
     if-eqz v16, :cond_e
 
-    .line 4087
+    .line 4098
     move-object/from16 v0, v24
 
     invoke-virtual {v0, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4075
+    .line 4086
     :cond_e
     add-int/lit8 v13, v13, 0x1
 
     goto :goto_4
 
-    .line 4091
+    .line 4102
     .end local v7    # "curPkg":Ljava/lang/String;
     .end local v8    # "e":Lcom/android/systemui/statusbar/NotificationData$Entry;
     .end local v16    # "isFakeExist":Z
@@ -1339,7 +1338,7 @@
 
     check-cast v9, Ljava/lang/String;
 
-    .line 4092
+    .line 4103
     .local v9, "fake":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -1352,7 +1351,7 @@
     # invokes: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->removeFakeNotificationViews(Ljava/lang/String;)Landroid/service/notification/StatusBarNotification;
     invoke-static {v0, v9}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$10600(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Ljava/lang/String;)Landroid/service/notification/StatusBarNotification;
 
-    .line 4093
+    .line 4104
     const-string v25, "com.android.dialer"
 
     move-object/from16 v0, v25
@@ -1363,7 +1362,7 @@
 
     if-eqz v25, :cond_10
 
-    .line 4094
+    .line 4105
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -1375,7 +1374,7 @@
     # invokes: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->removeFakeNotificationViews(Ljava/lang/String;)Landroid/service/notification/StatusBarNotification;
     invoke-static/range {v25 .. v26}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$10700(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Ljava/lang/String;)Landroid/service/notification/StatusBarNotification;
 
-    .line 4095
+    .line 4106
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -1389,7 +1388,7 @@
 
     goto :goto_5
 
-    .line 4099
+    .line 4110
     .end local v9    # "fake":Ljava/lang/String;
     :cond_11
     move-object/from16 v0, p0
@@ -1401,7 +1400,7 @@
     # invokes: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->updateNotificationShade()V
     invoke-static/range {v25 .. v25}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$5700(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)V
 
-    .line 4100
+    .line 4111
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -1412,7 +1411,7 @@
 
     goto/16 :goto_0
 
-    .line 4108
+    .line 4119
     .end local v3    # "N":I
     .end local v13    # "i":I
     .end local v14    # "i$":Ljava/util/Iterator;
@@ -1438,7 +1437,7 @@
 
     if-eqz v25, :cond_13
 
-    .line 4109
+    .line 4120
     const-string v25, "PhoneStatusBar"
 
     new-instance v26, Ljava/lang/StringBuilder;
@@ -1467,7 +1466,7 @@
 
     goto/16 :goto_0
 
-    .line 4111
+    .line 4122
     :cond_13
     const-string v25, "PhoneStatusBar"
 
@@ -1495,7 +1494,7 @@
 
     invoke-static/range {v25 .. v26}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4112
+    .line 4123
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -1509,7 +1508,7 @@
     # invokes: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->removeFakeNotificationViews(Ljava/lang/String;)Landroid/service/notification/StatusBarNotification;
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$10900(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Ljava/lang/String;)Landroid/service/notification/StatusBarNotification;
 
-    .line 4113
+    .line 4124
     const-string v25, "com.android.dialer"
 
     move-object/from16 v0, v20
@@ -1522,7 +1521,7 @@
 
     if-eqz v25, :cond_14
 
-    .line 4114
+    .line 4125
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -1534,7 +1533,7 @@
     # invokes: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->removeFakeNotificationViews(Ljava/lang/String;)Landroid/service/notification/StatusBarNotification;
     invoke-static/range {v25 .. v26}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$11000(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Ljava/lang/String;)Landroid/service/notification/StatusBarNotification;
 
-    .line 4115
+    .line 4126
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -1546,7 +1545,7 @@
     # invokes: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->removeFakeNotificationViews(Ljava/lang/String;)Landroid/service/notification/StatusBarNotification;
     invoke-static/range {v25 .. v26}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$11100(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Ljava/lang/String;)Landroid/service/notification/StatusBarNotification;
 
-    .line 4117
+    .line 4128
     :cond_14
     move-object/from16 v0, p0
 
@@ -1557,7 +1556,7 @@
     # invokes: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->updateNotificationShade()V
     invoke-static/range {v25 .. v25}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$5700(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)V
 
-    .line 4118
+    .line 4129
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -1566,10 +1565,10 @@
 
     invoke-virtual/range {v25 .. v25}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->setAreThereNotifications()V
 
-    .line 4123
+    .line 4134
     if-eqz v12, :cond_2
 
-    .line 4124
+    .line 4135
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -1584,11 +1583,11 @@
 
     move-result-object v18
 
-    .line 4125
+    .line 4136
     .local v18, "only":Lcom/android/systemui/statusbar/NotificationData$Entry;
     if-eqz v18, :cond_15
 
-    .line 4129
+    .line 4140
     move-object/from16 v0, v18
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Landroid/service/notification/StatusBarNotification;
@@ -1605,7 +1604,7 @@
 
     move-object/from16 v17, v0
 
-    .line 4130
+    .line 4141
     .local v17, "it":Landroid/app/PendingIntent;
     move-object/from16 v0, v18
 
@@ -1617,7 +1616,7 @@
 
     move-result-object v19
 
-    .line 4131
+    .line 4142
     .local v19, "pk":Ljava/lang/String;
     move-object/from16 v0, v18
 
@@ -1629,7 +1628,7 @@
 
     move-result-object v23
 
-    .line 4132
+    .line 4143
     .local v23, "tag":Ljava/lang/String;
     move-object/from16 v0, v18
 
@@ -1641,7 +1640,7 @@
 
     move-result v15
 
-    .line 4135
+    .line 4146
     .local v15, "id":I
     move-object/from16 v0, p0
 
@@ -1659,7 +1658,7 @@
 
     goto/16 :goto_0
 
-    .line 4140
+    .line 4151
     .end local v15    # "id":I
     .end local v17    # "it":Landroid/app/PendingIntent;
     .end local v19    # "pk":Ljava/lang/String;
@@ -1675,7 +1674,7 @@
 
     goto/16 :goto_0
 
-    .line 4148
+    .line 4159
     .end local v12    # "fromNotification":Z
     .end local v18    # "only":Lcom/android/systemui/statusbar/NotificationData$Entry;
     .end local v20    # "pkg":Ljava/lang/String;
@@ -1690,7 +1689,7 @@
 
     if-eqz v25, :cond_17
 
-    .line 4149
+    .line 4160
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -1699,7 +1698,7 @@
 
     invoke-virtual/range {v25 .. v25}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->clearAllNotificationsAndNoAnimation()V
 
-    .line 4150
+    .line 4161
     const-string v25, "PhoneStatusBar"
 
     const-string v26, "demoMode receive DELAYED_PLAYVIDEO_ACTION and clearAllNotifications"
@@ -1708,7 +1707,7 @@
 
     goto/16 :goto_0
 
-    .line 4153
+    .line 4164
     :cond_17
     const-string v25, "android.intent.action.ACTION_REMOVE_HIDE_NAVIGATION_BAR_BUTTON"
 
@@ -1718,9 +1717,9 @@
 
     move-result v25
 
-    if-eqz v25, :cond_19
+    if-eqz v25, :cond_18
 
-    .line 4154
+    .line 4165
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -1734,33 +1733,35 @@
 
     if-eqz v25, :cond_2
 
-    .line 4155
+    .line 4166
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     move-object/from16 v25, v0
 
-    # getter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mNavigationBarHideFlag:Z
-    invoke-static/range {v25 .. v25}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$11300(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)Z
+    # getter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mNavigationBarView:Lcom/android/systemui/statusbar/phone/NavigationBarView;
+    invoke-static/range {v25 .. v25}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$11300(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)Lcom/android/systemui/statusbar/phone/NavigationBarView;
+
+    move-result-object v25
+
+    invoke-virtual/range {v25 .. v25}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->removeHideButton()V
+
+    goto/16 :goto_0
+
+    .line 4169
+    :cond_18
+    const-string v25, "android.intent.action.ACTION_ADD_HIDE_NAVIGATION_BAR_BUTTON"
+
+    move-object/from16 v0, v25
+
+    invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v25
 
-    if-eqz v25, :cond_18
+    if-eqz v25, :cond_19
 
-    .line 4156
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
-
-    move-object/from16 v25, v0
-
-    const/16 v26, 0x1
-
-    invoke-virtual/range {v25 .. v26}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->showNavigationBar(Z)V
-
-    .line 4158
-    :cond_18
+    .line 4170
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -1772,23 +1773,9 @@
 
     move-result-object v25
 
-    invoke-virtual/range {v25 .. v25}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->removeHideButton()V
+    if-eqz v25, :cond_2
 
-    goto/16 :goto_0
-
-    .line 4161
-    :cond_19
-    const-string v25, "android.intent.action.ACTION_ADD_HIDE_NAVIGATION_BAR_BUTTON"
-
-    move-object/from16 v0, v25
-
-    invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v25
-
-    if-eqz v25, :cond_1a
-
-    .line 4162
+    .line 4171
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -1800,26 +1787,12 @@
 
     move-result-object v25
 
-    if-eqz v25, :cond_2
-
-    .line 4163
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
-
-    move-object/from16 v25, v0
-
-    # getter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mNavigationBarView:Lcom/android/systemui/statusbar/phone/NavigationBarView;
-    invoke-static/range {v25 .. v25}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$11600(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)Lcom/android/systemui/statusbar/phone/NavigationBarView;
-
-    move-result-object v25
-
     invoke-virtual/range {v25 .. v25}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->addHideButton()V
 
     goto/16 :goto_0
 
-    .line 4166
-    :cond_1a
+    .line 4174
+    :cond_19
     const-string v25, "android.intent.action.ACTION_CHANGE_NAVIGATION_BAR_POSITION"
 
     move-object/from16 v0, v25
@@ -1830,7 +1803,7 @@
 
     if-eqz v25, :cond_2
 
-    .line 4167
+    .line 4175
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -1838,11 +1811,11 @@
     move-object/from16 v25, v0
 
     # invokes: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->repositionNavigationBar()V
-    invoke-static/range {v25 .. v25}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$11700(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)V
+    invoke-static/range {v25 .. v25}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$11600(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)V
 
     goto/16 :goto_0
 
-    .line 4011
+    .line 4022
     :catch_1
     move-exception v25
 

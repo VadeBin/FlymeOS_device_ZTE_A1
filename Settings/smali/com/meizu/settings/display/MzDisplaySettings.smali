@@ -612,7 +612,7 @@
 
 # virtual methods
 .method public getHideNavigationBarFlag()Z
-    .locals 5
+    .locals 6
 
     .prologue
     const/4 v1, 0x1
@@ -626,7 +626,9 @@
 
     const-string v4, "hide_navigation_bar_flag"
 
-    invoke-static {v3, v4, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    const/4 v5, -0x2
+
+    invoke-static {v3, v4, v2, v5}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v0
 
@@ -644,7 +646,7 @@
 .end method
 
 .method public isNavigationBarReverse()Z
-    .locals 5
+    .locals 6
 
     .prologue
     const/4 v1, 0x1
@@ -658,7 +660,9 @@
 
     const-string v4, "reverse_navigation_bar_flag"
 
-    invoke-static {v3, v4, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    const/4 v5, -0x2
+
+    invoke-static {v3, v4, v2, v5}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v0
 
@@ -1483,7 +1487,7 @@
 .end method
 
 .method public setHideNavigationBarFlag(Z)V
-    .locals 3
+    .locals 4
     .param p1, "flag"    # Z
 
     .prologue
@@ -1499,7 +1503,9 @@
     const/4 v0, 0x1
 
     :goto_0
-    invoke-static {v1, v2, v0}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    const/4 v3, -0x2
+
+    invoke-static {v1, v2, v0, v3}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
     .line 307
     return-void
@@ -1512,7 +1518,7 @@
 .end method
 
 .method public setNavigationBarReverseFlag(Z)V
-    .locals 3
+    .locals 4
     .param p1, "flag"    # Z
 
     .prologue
@@ -1528,7 +1534,9 @@
     const/4 v0, 0x1
 
     :goto_0
-    invoke-static {v1, v2, v0}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    const/4 v3, -0x2
+
+    invoke-static {v1, v2, v0, v3}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
     .line 331
     return-void
