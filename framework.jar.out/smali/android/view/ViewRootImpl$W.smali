@@ -1039,3 +1039,27 @@
     :cond_1
     return-void
 .end method
+
+# hxs modify begin
+.method public scrollWindowBy(I)V
+    .locals 2
+    .param p1, "amount"    # I
+
+    .prologue
+    iget-object v1, p0, Landroid/view/ViewRootImpl$W;->mViewAncestor:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/ViewRootImpl;
+
+    .local v0, "viewAncestor":Landroid/view/ViewRootImpl;
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0, p1}, Landroid/view/ViewRootImpl;->dispatchScreenShot(I)V
+
+    :cond_0
+    return-void
+.end method
+# hxs modify end

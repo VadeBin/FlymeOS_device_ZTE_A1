@@ -5226,67 +5226,88 @@
 .end method
 
 .method private interceptScreenshotChord()V
-    .locals 6
+    .locals 8
 
     .prologue
-    const-wide/16 v4, 0x96
+    const-wide/16 v6, 0x96
 
-    iget-boolean v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mScreenshotChordEnabled:Z
+    iget-boolean v4, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mScreenshotChordEnabled:Z
 
-    if-eqz v2, :cond_0
+    if-eqz v4, :cond_0
 
-    iget-boolean v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mScreenshotChordVolumeDownKeyTriggered:Z
+    iget-boolean v4, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mScreenshotChordVolumeDownKeyTriggered:Z
 
-    if-eqz v2, :cond_0
+    if-eqz v4, :cond_0
 
-    iget-boolean v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mScreenshotChordPowerKeyTriggered:Z
+    iget-boolean v4, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mScreenshotChordPowerKeyTriggered:Z
 
-    if-eqz v2, :cond_0
+    if-eqz v4, :cond_0
 
-    iget-boolean v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mScreenshotChordVolumeUpKeyTriggered:Z
+    iget-boolean v4, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mScreenshotChordVolumeUpKeyTriggered:Z
 
-    if-nez v2, :cond_0
+    if-nez v4, :cond_0
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    move-result-wide v0
+    move-result-wide v2
 
-    .local v0, "now":J
-    iget-wide v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mScreenshotChordVolumeDownKeyTime:J
+    .local v2, "now":J
+    iget-wide v4, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mScreenshotChordVolumeDownKeyTime:J
 
-    add-long/2addr v2, v4
+    add-long/2addr v4, v6
 
-    cmp-long v2, v0, v2
+    cmp-long v4, v2, v4
 
-    if-gtz v2, :cond_0
+    if-gtz v4, :cond_0
 
-    iget-wide v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mScreenshotChordPowerKeyTime:J
+    iget-wide v4, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mScreenshotChordPowerKeyTime:J
 
-    add-long/2addr v2, v4
+    add-long/2addr v4, v6
 
-    cmp-long v2, v0, v2
+    cmp-long v4, v2, v4
 
-    if-gtz v2, :cond_0
+    if-gtz v4, :cond_0
 
-    const/4 v2, 0x1
+    const/4 v4, 0x1
 
-    iput-boolean v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mScreenshotChordVolumeDownKeyConsumed:Z
+    iput-boolean v4, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mScreenshotChordVolumeDownKeyConsumed:Z
 
     invoke-direct {p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->cancelPendingPowerKeyAction()V
 
-    iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHandler:Landroid/os/Handler;
+    invoke-virtual {p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->isScreenOn()Z
 
-    iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mScreenshotRunnable:Ljava/lang/Runnable;
+    move-result v4
 
-    invoke-direct {p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->getScreenshotChordLongPressDelay()J
+    if-nez v4, :cond_1
 
-    move-result-wide v4
-
-    invoke-virtual {v2, v3, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    .end local v0    # "now":J
+    .end local v2    # "now":J
     :cond_0
+    :goto_0
     return-void
+
+    .restart local v2    # "now":J
+    :cond_1
+    new-instance v0, Landroid/content/ComponentName;
+
+    const-string v4, "com.android.mipop"
+
+    const-string v5, "com.android.mipop.cropimage.CropImageService"
+
+    invoke-direct {v0, v4, v5}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .local v0, "cn":Landroid/content/ComponentName;
+    new-instance v1, Landroid/content/Intent;
+
+    invoke-direct {v1}, Landroid/content/Intent;-><init>()V
+
+    .local v1, "service":Landroid/content/Intent;
+    invoke-virtual {v1, v0}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
+
+    iget-object v4, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v4, v1}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
+
+    goto :goto_0
 .end method
 
 .method private ipoSystemBooted()V

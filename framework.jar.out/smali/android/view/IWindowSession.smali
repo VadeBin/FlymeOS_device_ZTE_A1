@@ -238,3 +238,21 @@
         }
     .end annotation
 .end method
+
+# hxs modify begin
+.method public abstract screenShotModeOver(Landroid/os/IBinder;I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract scrollWindowOver(Landroid/os/IBinder;IIIIII)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+# hxs modify end

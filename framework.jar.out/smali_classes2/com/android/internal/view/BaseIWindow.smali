@@ -256,3 +256,13 @@
     .line 66
     return-void
 .end method
+
+# hxs modify begin
+.method public scrollWindowBy(I)V
+    .locals 0
+    .param p1, "amount"    # I
+
+    .prologue
+    return-void
+.end method
+# hxs modify end

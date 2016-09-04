@@ -605,6 +605,12 @@
 
 .field final mScreenRect:Landroid/graphics/Rect;
 
+# hxs modify begin
+.field mScreenShotWindow:Lcom/android/server/wm/WindowState;
+
+.field mRemoveScreenshotWindows:Lcom/android/server/wm/WindowList;
+# hxs modify end
+
 .field final mSessions:Landroid/util/ArraySet;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -947,6 +953,20 @@
     invoke-direct {p0}, Landroid/view/IWindowManager$Stub;-><init>()V
 
     .line 341
+
+
+# hxs modify begin
+    new-instance v9, Lcom/android/server/wm/WindowList;
+
+    invoke-direct {v9}, Lcom/android/server/wm/WindowList;-><init>()V
+
+    iput-object v9, p0, Lcom/android/server/wm/WindowManagerService;->mRemoveScreenshotWindows:Lcom/android/server/wm/WindowList;
+
+    const/4 v9, 0x0
+
+    iput-object v9, p0, Lcom/android/server/wm/WindowManagerService;->mScreenShotWindow:Lcom/android/server/wm/WindowState;
+# hxs modify end
+
     const/4 v9, 0x0
 
     iput-boolean v9, p0, Lcom/android/server/wm/WindowManagerService;->mIsPerfBoostEnable:Z
@@ -60002,6 +60022,91 @@
     invoke-virtual {v5, v6, v4}, Lcom/android/server/wm/AccessibilityController;->onRotationChangedLocked(Lcom/android/server/wm/DisplayContent;I)V
 
     :cond_18
+# hxs modify begin
+    const-string/jumbo v5, "guojingdong"
+
+    const-string/jumbo v6, "SCREEN ORITENSTION CHANGE OVER MODE"
+
+    invoke-static {v5, v6}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-object/from16 v0, p0
+
+    iget-object v5, v0, Lcom/android/server/wm/WindowManagerService;->mScreenShotWindow:Lcom/android/server/wm/WindowState;
+
+    if-eqz v5, :cond_hxs_0
+
+    const-string/jumbo v5, "guojingdong"
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v7, "SCREEN ORITENSTION CHANGE OVER MODE mScreenShotWindow="
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    move-object/from16 v0, p0
+
+    iget-object v7, v0, Lcom/android/server/wm/WindowManagerService;->mScreenShotWindow:Lcom/android/server/wm/WindowState;
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    :try_start_hxs_0
+    move-object/from16 v0, p0
+
+    iget-object v5, v0, Lcom/android/server/wm/WindowManagerService;->mScreenShotWindow:Lcom/android/server/wm/WindowState;
+
+    iget-object v5, v5, Lcom/android/server/wm/WindowState;->mClient:Landroid/view/IWindow;
+
+    const/4 v6, -0x1
+
+    invoke-interface {v5, v6}, Landroid/view/IWindow;->scrollWindowBy(I)V
+    :try_end_hxs_0
+    .catch Landroid/os/RemoteException; {:try_start_hxs_0 .. :try_end_hxs_0} :catch_hxs_0
+
+    :goto_hxs_0
+    invoke-virtual/range {p0 .. p0}, Lcom/android/server/wm/WindowManagerService;->showSytemAlert()V
+
+    new-instance v17, Landroid/content/Intent;
+
+    invoke-direct/range {v17 .. v17}, Landroid/content/Intent;-><init>()V
+
+    .local v17, "intent":Landroid/content/Intent;
+    const-string/jumbo v5, "com.zte.screenshotmodeover"
+
+    move-object/from16 v0, v17
+
+    invoke-virtual {v0, v5}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+
+    const-string/jumbo v5, "mode"
+
+    const/4 v6, 0x0
+
+    move-object/from16 v0, v17
+
+    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+
+    move-object/from16 v0, p0
+
+    iget-object v5, v0, Lcom/android/server/wm/WindowManagerService;->mContext:Landroid/content/Context;
+
+    move-object/from16 v0, v17
+
+    invoke-virtual {v5, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
+
+    .end local v17    # "intent":Landroid/content/Intent;
+    :cond_hxs_0
+# hxs modify end
     move-object/from16 v0, p0
 
     iget-boolean v5, v0, Lcom/android/server/wm/WindowManagerService;->mIsUpdateAlarmBootRotation:Z
@@ -60034,6 +60139,12 @@
     move-exception v5
 
     goto :goto_9
+# hxs modify begin
+    :catch_hxs_0
+    move-exception v16
+
+    goto :goto_hxs_0
+# hxs modify end
 .end method
 
 .method public updateShowImeWithHardKeyboard()V
@@ -62885,3 +62996,609 @@
 
     return-object v0
 .end method
+
+# hxs modify begin
+.method private removeSytemAlert()V
+    .locals 11
+
+    .prologue
+    invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
+
+    move-result-wide v4
+
+    .local v4, "origId":J
+    :try_start_0
+    iget-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mWindowMap:Ljava/util/HashMap;
+
+    monitor-enter v8
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    :try_start_1
+    iget-object v7, p0, Lcom/android/server/wm/WindowManagerService;->mDisplayContents:Landroid/util/SparseArray;
+
+    const/4 v9, 0x0
+
+    invoke-virtual {v7, v9}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/server/wm/DisplayContent;
+
+    .local v0, "displayContent":Lcom/android/server/wm/DisplayContent;
+    const-string/jumbo v7, "guojingdong"
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v10, "removeSsytemAlert ="
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v7, v9}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Lcom/android/server/wm/DisplayContent;->getWindowList()Lcom/android/server/wm/WindowList;
+
+    move-result-object v3
+
+    .local v3, "windows":Lcom/android/server/wm/WindowList;
+    const-string/jumbo v7, "guojingdong"
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v10, "removeSsytemAlert WindowList="
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v7, v9}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    if-eqz v3, :cond_1
+
+    invoke-virtual {v3}, Lcom/android/server/wm/WindowList;->size()I
+
+    move-result v7
+
+    add-int/lit8 v2, v7, -0x1
+
+    .local v2, "i":I
+    :goto_0
+    if-ltz v2, :cond_1
+
+    invoke-virtual {v3, v2}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Lcom/android/server/wm/WindowState;
+
+    .local v6, "wtemp":Lcom/android/server/wm/WindowState;
+    const-string/jumbo v7, "guojingdong"
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v10, "wtemp="
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v7, v9}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v7, v6, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
+
+    iget v7, v7, Landroid/view/WindowManager$LayoutParams;->type:I
+
+    const/16 v9, 0x7d3
+
+    if-ne v7, v9, :cond_0
+
+    iget-object v7, p0, Lcom/android/server/wm/WindowManagerService;->mRemoveScreenshotWindows:Lcom/android/server/wm/WindowList;
+
+    invoke-virtual {v7, v6}, Lcom/android/server/wm/WindowList;->add(Ljava/lang/Object;)Z
+
+    const-string/jumbo v7, "guojingdong"
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v10, "remove screenshot wtemp dis ="
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v7, v9}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v7, v6, Lcom/android/server/wm/WindowState;->mClient:Landroid/view/IWindow;
+
+    const/4 v9, 0x0
+
+    invoke-interface {v7, v9}, Landroid/view/IWindow;->dispatchAppVisibility(Z)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :cond_0
+    add-int/lit8 v2, v2, -0x1
+
+    goto :goto_0
+
+    .end local v2    # "i":I
+    .end local v3    # "windows":Lcom/android/server/wm/WindowList;
+    .end local v6    # "wtemp":Lcom/android/server/wm/WindowState;
+    :cond_1
+    :try_start_2
+    monitor-exit v8
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    invoke-static {v4, v5}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    .end local v0    # "displayContent":Lcom/android/server/wm/DisplayContent;
+    :goto_1
+    return-void
+
+    :catchall_0
+    move-exception v7
+
+    :try_start_3
+    monitor-exit v8
+
+    throw v7
+    :try_end_3
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    :catch_0
+    move-exception v1
+
+    .local v1, "e":Ljava/lang/Exception;
+    :try_start_4
+    const-string/jumbo v7, "guojingdong"
+
+    const-string/jumbo v8, "screen shot exception 1"
+
+    invoke-static {v7, v8, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+
+    invoke-static {v4, v5}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    goto :goto_1
+
+    .end local v1    # "e":Ljava/lang/Exception;
+    :catchall_1
+    move-exception v7
+
+    invoke-static {v4, v5}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    throw v7
+.end method
+
+.method static synthetic doRemoveSytemAlert(Lcom/android/server/wm/WindowManagerService;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/android/server/wm/WindowManagerService;->removeSytemAlert()V
+
+    return-void
+.end method
+
+.method public findFocusWindowScreenShot(I)V
+    .locals 9
+    .param p1, "step"    # I
+
+    .prologue
+    const/4 v6, -0x1
+
+    const/4 v7, 0x0
+
+    if-ne p1, v6, :cond_1
+
+    iget-object v6, p0, Lcom/android/server/wm/WindowManagerService;->mScreenShotWindow:Lcom/android/server/wm/WindowState;
+
+    if-eqz v6, :cond_0
+
+    :try_start_0
+    iget-object v6, p0, Lcom/android/server/wm/WindowManagerService;->mScreenShotWindow:Lcom/android/server/wm/WindowState;
+
+    iget-object v6, v6, Lcom/android/server/wm/WindowState;->mClient:Landroid/view/IWindow;
+
+    invoke-interface {v6, p1}, Landroid/view/IWindow;->scrollWindowBy(I)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_2
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
+    invoke-direct {p0}, Lcom/android/server/wm/WindowManagerService;->getFocusedWindowLocked()Lcom/android/server/wm/WindowState;
+
+    move-result-object v2
+
+    .local v2, "focusWindow":Lcom/android/server/wm/WindowState;
+    if-nez p1, :cond_3
+
+    iget-object v6, p0, Lcom/android/server/wm/WindowManagerService;->mDisplayContents:Landroid/util/SparseArray;
+
+    invoke-virtual {v6, v7}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/server/wm/DisplayContent;
+
+    .local v0, "displayContent":Lcom/android/server/wm/DisplayContent;
+    if-eqz v0, :cond_3
+
+    invoke-virtual {v0}, Lcom/android/server/wm/DisplayContent;->getWindowList()Lcom/android/server/wm/WindowList;
+
+    move-result-object v4
+
+    .local v4, "windows":Lcom/android/server/wm/WindowList;
+    if-eqz v4, :cond_3
+
+    invoke-virtual {v4}, Lcom/android/server/wm/WindowList;->size()I
+
+    move-result v6
+
+    add-int/lit8 v3, v6, -0x1
+
+    .local v3, "i":I
+    :goto_1
+    if-ltz v3, :cond_3
+
+    invoke-virtual {v4, v3}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lcom/android/server/wm/WindowState;
+
+    .local v5, "wtemp":Lcom/android/server/wm/WindowState;
+    const-string/jumbo v6, "guojingdong"
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v8, "findFocusWindowScreenShot wtemp name="
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    iget-object v8, v5, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
+
+    invoke-virtual {v8}, Landroid/view/WindowManager$LayoutParams;->getTitle()Ljava/lang/CharSequence;
+
+    move-result-object v8
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v6, v7}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string/jumbo v6, "com.android.mipop/com.android.mipop.cropimage.CropImageEx"
+
+    iget-object v7, v5, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
+
+    invoke-virtual {v7}, Landroid/view/WindowManager$LayoutParams;->getTitle()Ljava/lang/CharSequence;
+
+    move-result-object v7
+
+    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_5
+
+    :cond_2
+    if-lez v3, :cond_3
+
+    add-int/lit8 v3, v3, -0x1
+
+    invoke-virtual {v4, v3}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    .end local v2    # "focusWindow":Lcom/android/server/wm/WindowState;
+    check-cast v2, Lcom/android/server/wm/WindowState;
+
+    .restart local v2    # "focusWindow":Lcom/android/server/wm/WindowState;
+    iget-boolean v6, v2, Lcom/android/server/wm/WindowState;->mLayoutAttached:Z
+
+    if-nez v6, :cond_2
+
+    .end local v0    # "displayContent":Lcom/android/server/wm/DisplayContent;
+    .end local v3    # "i":I
+    .end local v4    # "windows":Lcom/android/server/wm/WindowList;
+    .end local v5    # "wtemp":Lcom/android/server/wm/WindowState;
+    :cond_3
+    if-eqz v2, :cond_4
+
+    const-string/jumbo v6, "com.android.mipop/com.android.mipop.cropimage.CropImageEx"
+
+    iget-object v7, v2, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
+
+    invoke-virtual {v7}, Landroid/view/WindowManager$LayoutParams;->getTitle()Ljava/lang/CharSequence;
+
+    move-result-object v7
+
+    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_6
+
+    :cond_4
+    :goto_2
+    const-string/jumbo v6, "guojingdong"
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v8, "findFocusWindowScreenShot ="
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    iget-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mScreenShotWindow:Lcom/android/server/wm/WindowState;
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    const-string/jumbo v8, " step="
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v6, v7}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v6, p0, Lcom/android/server/wm/WindowManagerService;->mScreenShotWindow:Lcom/android/server/wm/WindowState;
+
+    if-eq v2, v6, :cond_7
+
+    iget-object v6, p0, Lcom/android/server/wm/WindowManagerService;->mScreenShotWindow:Lcom/android/server/wm/WindowState;
+
+    if-eqz v6, :cond_7
+
+    const-string/jumbo v6, "guojingdong"
+
+    const-string/jumbo v7, "findFocusWindowScreenShot window is different clear ="
+
+    invoke-static {v6, v7}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    :try_start_1
+    iget-object v6, p0, Lcom/android/server/wm/WindowManagerService;->mScreenShotWindow:Lcom/android/server/wm/WindowState;
+
+    iget-object v6, v6, Lcom/android/server/wm/WindowState;->mClient:Landroid/view/IWindow;
+
+    const/4 v7, -0x1
+
+    invoke-interface {v6, v7}, Landroid/view/IWindow;->scrollWindowBy(I)V
+    :try_end_1
+    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_1
+
+    :goto_3
+    invoke-virtual {p0}, Lcom/android/server/wm/WindowManagerService;->showSytemAlert()V
+
+    return-void
+
+    .restart local v0    # "displayContent":Lcom/android/server/wm/DisplayContent;
+    .restart local v3    # "i":I
+    .restart local v4    # "windows":Lcom/android/server/wm/WindowList;
+    .restart local v5    # "wtemp":Lcom/android/server/wm/WindowState;
+    :cond_5
+    add-int/lit8 v3, v3, -0x1
+
+    goto/16 :goto_1
+
+    .end local v0    # "displayContent":Lcom/android/server/wm/DisplayContent;
+    .end local v3    # "i":I
+    .end local v4    # "windows":Lcom/android/server/wm/WindowList;
+    .end local v5    # "wtemp":Lcom/android/server/wm/WindowState;
+    :cond_6
+    if-nez p1, :cond_4
+
+    iput-object v2, p0, Lcom/android/server/wm/WindowManagerService;->mScreenShotWindow:Lcom/android/server/wm/WindowState;
+
+    goto :goto_2
+
+    :cond_7
+    iget-object v6, p0, Lcom/android/server/wm/WindowManagerService;->mScreenShotWindow:Lcom/android/server/wm/WindowState;
+
+    if-eqz v6, :cond_8
+
+    :try_start_2
+    iget-object v6, p0, Lcom/android/server/wm/WindowManagerService;->mScreenShotWindow:Lcom/android/server/wm/WindowState;
+
+    iget-object v6, v6, Lcom/android/server/wm/WindowState;->mClient:Landroid/view/IWindow;
+
+    invoke-interface {v6, p1}, Landroid/view/IWindow;->scrollWindowBy(I)V
+    :try_end_2
+    .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
+
+    :cond_8
+    :goto_4
+    return-void
+
+    :catch_0
+    move-exception v1
+
+    .local v1, "ex":Landroid/os/RemoteException;
+    goto :goto_4
+
+    .end local v1    # "ex":Landroid/os/RemoteException;
+    :catch_1
+    move-exception v1
+
+    .restart local v1    # "ex":Landroid/os/RemoteException;
+    goto :goto_3
+
+    .end local v1    # "ex":Landroid/os/RemoteException;
+    .end local v2    # "focusWindow":Lcom/android/server/wm/WindowState;
+    :catch_2
+    move-exception v1
+
+    .restart local v1    # "ex":Landroid/os/RemoteException;
+    goto/16 :goto_0
+.end method
+
+.method public showSytemAlert()V
+    .locals 6
+
+    .prologue
+    const/4 v5, 0x0
+
+    const-string/jumbo v3, "guojingdong"
+
+    const-string/jumbo v4, "wms screenmode -1"
+
+    invoke-static {v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    iput-object v5, p0, Lcom/android/server/wm/WindowManagerService;->mScreenShotWindow:Lcom/android/server/wm/WindowState;
+
+    iget-object v3, p0, Lcom/android/server/wm/WindowManagerService;->mRemoveScreenshotWindows:Lcom/android/server/wm/WindowList;
+
+    if-eqz v3, :cond_0
+
+    const/4 v1, 0x0
+
+    .local v1, "i":I
+    :goto_0
+    iget-object v3, p0, Lcom/android/server/wm/WindowManagerService;->mRemoveScreenshotWindows:Lcom/android/server/wm/WindowList;
+
+    invoke-virtual {v3}, Lcom/android/server/wm/WindowList;->size()I
+
+    move-result v3
+
+    if-ge v1, v3, :cond_0
+
+    iget-object v3, p0, Lcom/android/server/wm/WindowManagerService;->mRemoveScreenshotWindows:Lcom/android/server/wm/WindowList;
+
+    invoke-virtual {v3, v1}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/android/server/wm/WindowState;
+
+    .local v2, "wtemp":Lcom/android/server/wm/WindowState;
+    const-string/jumbo v3, "guojingdong"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v5, "show screenshot wtemp show ="
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    :try_start_0
+    iget-object v3, v2, Lcom/android/server/wm/WindowState;->mClient:Landroid/view/IWindow;
+
+    const/4 v4, 0x1
+
+    invoke-interface {v3, v4}, Landroid/view/IWindow;->dispatchAppVisibility(Z)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_1
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    .local v0, "e":Ljava/lang/Exception;
+    const-string/jumbo v3, "guojingdong"
+
+    const-string/jumbo v4, "screen shot exception 2"
+
+    invoke-static {v3, v4, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_1
+
+    .end local v0    # "e":Ljava/lang/Exception;
+    .end local v1    # "i":I
+    .end local v2    # "wtemp":Lcom/android/server/wm/WindowState;
+    :cond_0
+    iget-object v3, p0, Lcom/android/server/wm/WindowManagerService;->mRemoveScreenshotWindows:Lcom/android/server/wm/WindowList;
+
+    invoke-virtual {v3}, Lcom/android/server/wm/WindowList;->clear()V
+
+    return-void
+.end method
+# hxs modify end

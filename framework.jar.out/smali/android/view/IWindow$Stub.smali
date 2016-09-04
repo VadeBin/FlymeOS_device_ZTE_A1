@@ -54,6 +54,10 @@
 
 .field static final TRANSACTION_resized:I = 0x2
 
+# hxs modify begin
+.field static final TRANSACTION_scrollWindowBy:I = 0x10
+# hxs modify end
+
 .field static final TRANSACTION_windowFocusChanged:I = 0x6
 
 
@@ -817,6 +821,22 @@
 
     goto/16 :goto_0
 
+# hxs modify begin
+    :sswitch_10
+    const-string v0, "android.view.IWindow"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v1
+
+    .restart local v1    # "_arg0":I
+
+    invoke-virtual {p0, v1}, Landroid/view/IWindow$Stub;->scrollWindowBy(I)V
+
+    goto/16 :goto_0
+# hxs modify end
     .line 44
     nop
 
@@ -837,6 +857,9 @@
         0xd -> :sswitch_d
         0xe -> :sswitch_e
         0xf -> :sswitch_f
+# hxs modify begin
+        0x10 -> :sswitch_10
+# hxs modify end
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

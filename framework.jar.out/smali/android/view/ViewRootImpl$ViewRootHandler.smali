@@ -189,7 +189,12 @@
     const-string v0, "MSG_DISPATCH_WINDOW_SHOWN"
 
     goto :goto_0
+# hxs modify begin
+    :pswitch_18
+    const-string/jumbo v0, "MSG_DISPATCH_WINDOW_SCREEN_SHOT"
 
+    return-object v0
+# hxs modify end
     .line 3559
     nop
 
@@ -221,6 +226,9 @@
         :pswitch_15
         :pswitch_16
         :pswitch_17
+# hxs modify begin
+        :pswitch_18
+# hxs modify end
     .end packed-switch
 .end method
 
@@ -1918,6 +1926,278 @@
 
     goto/16 :goto_0
 
+# hxs modify begin
+    :pswitch_18
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Landroid/view/ViewRootImpl$ViewRootHandler;->this$0:Landroid/view/ViewRootImpl;
+
+    iget-object v4, v4, Landroid/view/ViewRootImpl;->mView:Landroid/view/View;
+
+    if-eqz v4, :cond_0
+
+    move-object/from16 v0, p1
+
+    iget v4, v0, Landroid/os/Message;->arg1:I
+
+    const/4 v5, -0x1
+
+    if-ne v4, v5, :cond_hxs_0
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Landroid/view/ViewRootImpl$ViewRootHandler;->this$0:Landroid/view/ViewRootImpl;
+
+    const/4 v5, 0x0
+
+    invoke-static {v4, v5}, Landroid/view/ViewRootImpl;->setMScreenShotMode(Landroid/view/ViewRootImpl;I)I
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Landroid/view/ViewRootImpl$ViewRootHandler;->this$0:Landroid/view/ViewRootImpl;
+
+    const/4 v5, 0x0
+
+    iput-object v5, v4, Landroid/view/ViewRootImpl;->find:Landroid/view/View;
+
+    return-void
+
+    :cond_hxs_0
+    move-object/from16 v0, p1
+
+    iget v4, v0, Landroid/os/Message;->arg1:I
+
+    if-nez v4, :cond_hxs_1
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Landroid/view/ViewRootImpl$ViewRootHandler;->this$0:Landroid/view/ViewRootImpl;
+
+    invoke-static {v4}, Landroid/view/ViewRootImpl;->getMScreenShotMode(Landroid/view/ViewRootImpl;)I
+
+    move-result v4
+
+    if-nez v4, :cond_hxs_1
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Landroid/view/ViewRootImpl$ViewRootHandler;->this$0:Landroid/view/ViewRootImpl;
+
+    const/4 v5, 0x1
+
+    invoke-static {v4, v5}, Landroid/view/ViewRootImpl;->setMScreenShotMode(Landroid/view/ViewRootImpl;I)I
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Landroid/view/ViewRootImpl$ViewRootHandler;->this$0:Landroid/view/ViewRootImpl;
+
+    const/4 v5, 0x0
+
+    iput-object v5, v4, Landroid/view/ViewRootImpl;->find:Landroid/view/View;
+
+    const-string v4, "guojingdong"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "screenshot start find ListOrScroll find="
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    move-object/from16 v0, p0
+
+    iget-object v6, v0, Landroid/view/ViewRootImpl$ViewRootHandler;->this$0:Landroid/view/ViewRootImpl;
+
+    iget-object v6, v6, Landroid/view/ViewRootImpl;->find:Landroid/view/View;
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Landroid/view/ViewRootImpl$ViewRootHandler;->this$0:Landroid/view/ViewRootImpl;
+
+    iget-object v4, v4, Landroid/view/ViewRootImpl;->find:Landroid/view/View;
+
+    if-eqz v4, :cond_hxs_2
+
+    :try_start_hxs_0
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Landroid/view/ViewRootImpl$ViewRootHandler;->this$0:Landroid/view/ViewRootImpl;
+
+    iget-object v1, v4, Landroid/view/ViewRootImpl;->mWindowSession:Landroid/view/IWindowSession;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Landroid/view/ViewRootImpl$ViewRootHandler;->this$0:Landroid/view/ViewRootImpl;
+
+    iget-object v2, v4, Landroid/view/ViewRootImpl;->mWindow:Landroid/view/ViewRootImpl$W;
+
+    const/4 v3, 0x5
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    const/16 v8, 0x0
+
+    invoke-interface/range {v1 .. v8}, Landroid/view/IWindowSession;->scrollWindowOver(Landroid/os/IBinder;IIIIII)V
+    :try_end_hxs_0
+    .catch Landroid/os/RemoteException; {:try_start_hxs_0 .. :try_end_hxs_0} :catch_hxs_0
+
+    :goto_hxs_0
+    const-string v4, "guojingdong"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "mode is start ScreenShotMode ff="
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    move-object/from16 v0, p0
+
+    iget-object v6, v0, Landroid/view/ViewRootImpl$ViewRootHandler;->this$0:Landroid/view/ViewRootImpl;
+
+    invoke-static {v6}, Landroid/view/ViewRootImpl;->getMScreenShotMode(Landroid/view/ViewRootImpl;)I
+
+    move-result v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_hxs_3
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Landroid/view/ViewRootImpl$ViewRootHandler;->this$0:Landroid/view/ViewRootImpl;
+
+    move-object/from16 v0, p0
+
+    iget-object v5, v0, Landroid/view/ViewRootImpl$ViewRootHandler;->this$0:Landroid/view/ViewRootImpl;
+
+    iget-object v5, v5, Landroid/view/ViewRootImpl;->mView:Landroid/view/View;
+
+    move-object/from16 v0, p1
+
+    iget v6, v0, Landroid/os/Message;->arg1:I
+
+    invoke-virtual {v4, v5, v6}, Landroid/view/ViewRootImpl;->findViewForScroll(Landroid/view/View;I)V
+
+    goto/16 :goto_0
+
+    :cond_hxs_2
+    :try_start_hxs_1
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Landroid/view/ViewRootImpl$ViewRootHandler;->this$0:Landroid/view/ViewRootImpl;
+
+    iget-object v1, v4, Landroid/view/ViewRootImpl;->mWindowSession:Landroid/view/IWindowSession;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Landroid/view/ViewRootImpl$ViewRootHandler;->this$0:Landroid/view/ViewRootImpl;
+
+    iget-object v2, v4, Landroid/view/ViewRootImpl;->mWindow:Landroid/view/ViewRootImpl$W;
+
+    const/4 v3, 0x6
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    const/16 v8, 0x0
+
+    invoke-interface/range {v1 .. v8}, Landroid/view/IWindowSession;->scrollWindowOver(Landroid/os/IBinder;IIIIII)V
+    :try_end_hxs_1
+    .catch Landroid/os/RemoteException; {:try_start_hxs_1 .. :try_end_hxs_1} :catch_hxs_1
+
+    goto :goto_hxs_0
+
+    :catch_hxs_1
+    move-exception v12
+
+    .restart local v12    # "ex":Landroid/os/RemoteException;
+    goto :goto_hxs_0
+
+    .end local v12    # "ex":Landroid/os/RemoteException;
+    :cond_hxs_1
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Landroid/view/ViewRootImpl$ViewRootHandler;->this$0:Landroid/view/ViewRootImpl;
+
+    invoke-static {v4}, Landroid/view/ViewRootImpl;->getMScreenShotMode(Landroid/view/ViewRootImpl;)I
+
+    move-result v4
+
+    if-nez v4, :cond_hxs_3
+
+    const-string v4, "guojingdong"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "mode is not in ScreenShotMode return ="
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    move-object/from16 v0, p0
+
+    iget-object v6, v0, Landroid/view/ViewRootImpl$ViewRootHandler;->this$0:Landroid/view/ViewRootImpl;
+
+    invoke-static {v6}, Landroid/view/ViewRootImpl;->getMScreenShotMode(Landroid/view/ViewRootImpl;)I
+
+    move-result v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto/16 :goto_0
+
+    :catch_hxs_0
+    move-exception v12
+
+    .restart local v12    # "ex":Landroid/os/RemoteException;
+    goto :goto_hxs_0
+# hxs modify end
     .line 3612
     :pswitch_data_0
     .packed-switch 0x1
@@ -1947,5 +2227,8 @@
         :pswitch_8
         :pswitch_c
         :pswitch_17
+# hxs modify begin
+        :pswitch_18
+# hxs modify end
     .end packed-switch
 .end method

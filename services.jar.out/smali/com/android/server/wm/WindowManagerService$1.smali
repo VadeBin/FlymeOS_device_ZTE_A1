@@ -79,6 +79,63 @@
     .line 436
     :cond_0
     :goto_0
+# hxs modify begin
+    const-string v1, "com.zte.scrollscreenshot"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_hxs_0
+
+    const-string v1, "step"
+
+    const/16 v2, 0x320
+
+    invoke-virtual {p2, v1, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+
+    move-result v7
+
+    .local v7, "step":I
+    if-nez v7, :cond_hxs_1
+
+    const-string/jumbo v1, "guojingdong"
+
+    const-string/jumbo v2, "wms screenmode 0"
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string/jumbo v1, "guojingdong"
+
+    const-string/jumbo v2, "removeSsytemAlert"
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v1, p0, Lcom/android/server/wm/WindowManagerService$1;->this$0:Lcom/android/server/wm/WindowManagerService;
+
+    invoke-static {v1}, Lcom/android/server/wm/WindowManagerService;->doRemoveSytemAlert(Lcom/android/server/wm/WindowManagerService;)V
+
+    :cond_hxs_2
+    :goto_hxs_0
+    iget-object v1, p0, Lcom/android/server/wm/WindowManagerService$1;->this$0:Lcom/android/server/wm/WindowManagerService;
+
+    invoke-virtual {v1, v7}, Lcom/android/server/wm/WindowManagerService;->findFocusWindowScreenShot(I)V
+
+    if-ne v7, v6, :cond_hxs_0
+
+    const-string/jumbo v1, "guojingdong"
+
+    const-string/jumbo v2, "wms screenmode -1"
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v1, p0, Lcom/android/server/wm/WindowManagerService$1;->this$0:Lcom/android/server/wm/WindowManagerService;
+
+    invoke-virtual {v1}, Lcom/android/server/wm/WindowManagerService;->showSytemAlert()V
+
+    .end local v7    # "step":I
+    :cond_hxs_0
+# hxs modify end
     return-void
 
     .line 359
@@ -520,4 +577,18 @@
     invoke-virtual {v1, v2}, Lcom/android/server/wm/WindowManagerService$H;->sendMessage(Landroid/os/Message;)Z
 
     goto/16 :goto_0
+
+# hxs modify begin
+    .restart local v7    # "step":I
+    :cond_hxs_1
+    if-lez v7, :cond_hxs_2
+
+    const-string/jumbo v1, "guojingdong"
+
+    const-string/jumbo v2, "wms screenmode >0"
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto/16 :goto_hxs_0
+# hxs modify end
 .end method

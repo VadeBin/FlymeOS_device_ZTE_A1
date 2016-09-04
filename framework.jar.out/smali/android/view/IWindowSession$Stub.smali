@@ -64,6 +64,12 @@
 
 .field static final TRANSACTION_reportDropResult:I = 0x12
 
+# hxs modify begin
+.field static final TRANSACTION_screenShotModeOver:I = 0x1e
+
+.field static final TRANSACTION_scrollWindowOver:I = 0x1d
+# hxs modify end
+
 .field static final TRANSACTION_sendWallpaperCommand:I = 0x18
 
 .field static final TRANSACTION_setInTouchMode:I = 0xd
@@ -2716,6 +2722,94 @@
     const/4 v2, 0x0
 
     goto :goto_2a
+# hxs modify begin
+    :sswitch_1d
+    const-string v2, "android.view.IWindowSession"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+
+    move-result-object v3
+
+    .restart local v3    # "_arg0":Landroid/os/IBinder;
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v4
+
+    .restart local v4    # "_arg1":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v5
+
+    .restart local v5    # "_arg2":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v6
+
+    .restart local v6    # "_arg3":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v7
+
+    .restart local v7    # "_arg4":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v8
+
+    .restart local v8    # "_arg5":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v9
+
+    .restart local v9    # "_arg6":I
+    move-object/from16 v2, p0
+
+    invoke-virtual/range {v2 .. v9}, Landroid/view/IWindowSession$Stub;->scrollWindowOver(Landroid/os/IBinder;IIIIII)V
+
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    const/4 v2, 0x1
+
+    goto/16 :goto_0
+
+    .end local v4    # "_arg1":I
+    .end local v6    # "_arg3":I
+    .end local v7    # "_arg4":I
+    .end local v8    # "_arg5":I
+    .end local v9    # "_arg6":I
+    .end local v5    # "_arg2":I
+    .end local v3    # "_arg0":Landroid/os/IBinder;
+
+    :sswitch_1e
+    const-string v2, "android.view.IWindowSession"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+
+    move-result-object v3
+
+    .restart local v3    # "_arg0":Landroid/os/IBinder;
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v4
+
+    .restart local v4    # "_arg1":I
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v3, v4}, Landroid/view/IWindowSession$Stub;->screenShotModeOver(Landroid/os/IBinder;I)V
+
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    const/4 v2, 0x1
+
+    goto/16 :goto_0
+# hxs modify end
 
     .line 43
     nop
@@ -2750,6 +2844,10 @@
         0x1a -> :sswitch_1a
         0x1b -> :sswitch_1b
         0x1c -> :sswitch_1c
+# hxs modify begin
+        0x1d -> :sswitch_1d
+        0x1e -> :sswitch_1e
+# hxs modify end
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method
