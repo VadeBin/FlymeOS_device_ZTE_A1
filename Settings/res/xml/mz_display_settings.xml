@@ -13,6 +13,6 @@
     <com.meizu.common.preference.SwitchPreference android:persistent="false" android:title="@string/navigation_bar_hide_button" android:key="navigation_bar_hide_toggle" android:summary="@string/navigation_bar_hide_button_summary" />
     <com.meizu.common.preference.SwitchPreference android:persistent="false" android:title="@string/navigation_bar_position_reverse" android:key="navigation_bar_position_reverse" android:summary="@string/navigation_bar_position_reverse_summary" />
     <ListPreference android:persistent="false" android:entries="@array/mz_screen_timeout_entries" android:title="@string/screen_timeout" android:key="screen_timeout" android:summary="@string/screen_timeout_summary" android:entryValues="@array/mz_screen_timeout_values" />
-    <com.meizu.settings.display.MzFontPreference android:persistent="false" android:entries="@array/entries_meizu_app_font_size" android:title="@string/title_font_size" android:key="font_size_meizu" android:widgetLayout="@flyme:layout/mz_preference_horizontal" android:entryValues="@array/entryvalues_meizu_app_font_size" />
-    <Preference android:title="@string/color_temperature_title" android:key="color_temperature" android:widgetLayout="@flyme:layout/mz_select_dialog_item_centre" />
+    <com.meizu.settings.display.MzFontPreference android:persistent="false" android:entries="@array/entries_meizu_app_font_size" android:title="@string/title_font_size" android:key="font_size_meizu" android:widgetLayout="@flyme:layout/mz_preference_dialog" android:entryValues="@array/entryvalues_meizu_app_font_size" />
+    <Preference android:title="@string/color_temperature_title" android:key="color_temperature" android:widgetLayout="@flyme:layout/mz_right_arrow" />
 </PreferenceScreen>
