@@ -1892,6 +1892,10 @@
 
     invoke-virtual {v5, v9}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
+    const-string/jumbo v9, "com.zte.scrollscreenshot"
+
+    invoke-virtual {v5, v9}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
     .line 1160
     const-string v9, "android.intent.action.ACTION_BOOT_IPO"
 
