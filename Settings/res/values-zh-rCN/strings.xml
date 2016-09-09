@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <add-resource type="string" name="keyexchange_title" />
-    <item type="string" name="keyexchange_title">导航键</item>
+    <item type="string" name="keyexchange_title">按键设置</item>
     <add-resource type="string" name="gesture_title" />
-    <item type="string" name="gesture_title">点击动作</item>
+    <item type="string" name="gesture_title">点击设置</item>
     <add-resource type="string" name="fp_title" />
     <item type="string" name="fp_title">指纹</item>
     <add-resource type="string" name="button_backlight_title" />
     <item type="string" name="button_backlight_title">按键灯</item>
+    <add-resource type="string" name="screen_effect_title" />
+    <item type="string" name="screen_effect_title">显示效果</item>
+    <add-resource type="string" name="scheduled_power_title" />
+    <item type="string" name="scheduled_power_title">定时开关机</item>
 </resources>
