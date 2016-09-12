@@ -12,4 +12,6 @@
     <item type="string" name="screen_effect_title">显示效果</item>
     <add-resource type="string" name="scheduled_power_title" />
     <item type="string" name="scheduled_power_title">定时开关机</item>
+    <add-resource type="string" name="aosp_screenshot_title" />
+    <item type="string" name="aosp_screenshot_title">AOSP 截图</item>
 </resources>

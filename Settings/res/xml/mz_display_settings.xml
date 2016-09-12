@@ -10,6 +10,7 @@
     <com.meizu.common.preference.SwitchPreference android:title="@string/blur_view_switch_title" android:key="blur_view_effect" />
     <com.meizu.common.preference.SwitchPreference android:title="@string/accelerometer_title" android:key="auto_rotate" />
     <com.meizu.common.preference.SwitchPreference android:title="@string/button_backlight_title" android:key="button_backlight" />
+    <com.meizu.common.preference.SwitchPreference android:title="@string/aosp_screenshot_title" android:key="aosp_screenshot" />
     <com.meizu.common.preference.SwitchPreference android:persistent="false" android:title="@string/navigation_bar_hide_button" android:key="navigation_bar_hide_toggle" android:summary="@string/navigation_bar_hide_button_summary" />
     <com.meizu.common.preference.SwitchPreference android:persistent="false" android:title="@string/navigation_bar_position_reverse" android:key="navigation_bar_position_reverse" android:summary="@string/navigation_bar_position_reverse_summary" />
     <ListPreference android:persistent="false" android:entries="@array/mz_screen_timeout_entries" android:title="@string/screen_timeout" android:key="screen_timeout" android:summary="@string/screen_timeout_summary" android:entryValues="@array/mz_screen_timeout_values" />

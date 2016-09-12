@@ -12,4 +12,6 @@
     <item type="string" name="screen_effect_title">Screen effect</item>
     <add-resource type="string" name="scheduled_power_title" />
     <item type="string" name="scheduled_power_title">Scheduled power on/off</item>
+    <add-resource type="string" name="aosp_screenshot_title" />
+    <item type="string" name="aosp_screenshot_title">AOSP ScreenShot</item>
 </resources>

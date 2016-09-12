@@ -14,6 +14,8 @@
 # instance fields
 # hxs modify begin
 .field private mButtonBackLightSwitchPreference:Lcom/meizu/common/preference/SwitchPreference;
+
+.field private mAospScreenShotSwitchPreference:Lcom/meizu/common/preference/SwitchPreference;
 # hxs modify end
 
 .field private mAutoBrightnessPreference:Lcom/meizu/common/preference/SwitchPreference;
@@ -770,6 +772,45 @@
     iget-object v7, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mButtonBackLightSwitchPreference:Lcom/meizu/common/preference/SwitchPreference;
 
     invoke-virtual {v7, v5}, Lcom/meizu/common/preference/SwitchPreference;->setChecked(Z)V
+
+    invoke-direct {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->hasNavigationBar()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_hxs_0
+
+    invoke-virtual {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
+
+    move-result-object v5
+
+    iget-object v7, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mButtonBackLightSwitchPreference:Lcom/meizu/common/preference/SwitchPreference;
+
+    invoke-virtual {v5, v7}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
+
+    :cond_hxs_0
+    const-string v5, "aosp_screenshot"
+
+    invoke-virtual {p0, v5}, Lcom/meizu/settings/display/MzDisplaySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v5
+
+    check-cast v5, Lcom/meizu/common/preference/SwitchPreference;
+
+    iput-object v5, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mAospScreenShotSwitchPreference:Lcom/meizu/common/preference/SwitchPreference;
+
+    :try_start_hxs_1
+    const-string v5, "aosp_screenshot"
+
+    invoke-static {v1, v5}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;)I
+
+    move-result v5
+    :try_end_hxs_1
+    .catch Landroid/provider/Settings$SettingNotFoundException; {:try_start_hxs_1 .. :try_end_hxs_1} :catch_hxs_1
+
+    :goto_hxs_1
+    iget-object v7, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mAospScreenShotSwitchPreference:Lcom/meizu/common/preference/SwitchPreference;
+
+    invoke-virtual {v7, v5}, Lcom/meizu/common/preference/SwitchPreference;->setChecked(Z)V
 # hxs modify end
     .line 123
     const-string v5, "screen_timeout"
@@ -1011,6 +1052,10 @@
     :catch_hxs_0
     const/4 v5, 0x1
     goto :goto_hxs_0
+
+    :catch_hxs_1
+    const/4 v5, 0x0
+    goto :goto_hxs_1
 # hxs modify end
 .end method
 
@@ -1253,6 +1298,27 @@
     goto :goto_1
 
     :cond_hxs_0
+    iget-object v3, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mAospScreenShotSwitchPreference:Lcom/meizu/common/preference/SwitchPreference;
+
+    if-ne p2, v3, :cond_hxs_1
+
+    iget-object v3, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mAospScreenShotSwitchPreference:Lcom/meizu/common/preference/SwitchPreference;
+
+    invoke-virtual {v3}, Lcom/meizu/common/preference/SwitchPreference;->isChecked()Z
+
+    move-result v3
+
+    invoke-virtual {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v5
+
+    const-string v6, "aosp_screenshot"
+
+    invoke-static {v5, v6, v3}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+
+    goto :goto_1
+
+    :cond_hxs_1
 # hxs modify end
 
     const-string v3, "color_temperature"
