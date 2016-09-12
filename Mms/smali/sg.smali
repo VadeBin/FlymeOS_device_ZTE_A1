@@ -1,4 +1,4 @@
-.class public Lse;
+.class public Lsg;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
@@ -6,7 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lse$a;
+        Lsg$a;
     }
 .end annotation
 
@@ -18,7 +18,7 @@
 
 .field public static c:[Ljava/lang/String;
 
-.field public static d:[Lsk$a;
+.field public static d:[Lsn$a;
 
 .field public static e:I
 
@@ -32,27 +32,23 @@
 
 .field public static j:I
 
-.field private static k:Ljava/lang/String;
-
-.field private static l:Ljava/lang/String;
-
-.field private static m:Ljava/util/HashSet;
+.field private static k:Ljava/util/HashSet;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashSet",
             "<",
-            "Lse$a;",
+            "Lsg$a;",
             ">;"
         }
     .end annotation
 .end field
 
-.field private static n:Ljava/util/HashSet;
+.field private static l:Ljava/util/HashSet;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashSet",
             "<",
-            "Lse$a;",
+            "Lsg$a;",
             ">;"
         }
     .end annotation
@@ -68,61 +64,51 @@
 
     const/4 v1, 0x0
 
-    .line 49
-    sput-boolean v1, Lse;->a:Z
+    .line 47
+    sput-boolean v1, Lsg;->a:Z
 
-    .line 53
+    .line 51
     const/4 v0, 0x1
 
-    sput v0, Lse;->b:I
+    sput v0, Lsg;->b:I
+
+    .line 52
+    sput-object v2, Lsg;->c:[Ljava/lang/String;
 
     .line 54
-    sput-object v2, Lse;->c:[Ljava/lang/String;
+    sput-object v2, Lsg;->d:[Lsn$a;
+
+    .line 55
+    sput v1, Lsg;->e:I
 
     .line 56
-    sput-object v2, Lse;->d:[Lsk$a;
+    sput v1, Lsg;->f:I
 
-    .line 57
-    sput v1, Lse;->e:I
-
-    .line 58
-    sput v1, Lse;->f:I
-
-    .line 66
-    const-string v0, ""
-
-    sput-object v0, Lse;->k:Ljava/lang/String;
-
-    .line 67
-    const-string v0, ""
-
-    sput-object v0, Lse;->l:Ljava/lang/String;
-
-    .line 70
+    .line 65
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    sput-object v0, Lse;->m:Ljava/util/HashSet;
+    sput-object v0, Lsg;->k:Ljava/util/HashSet;
+
+    .line 75
+    sput-boolean v1, Lsg;->g:Z
+
+    .line 77
+    new-instance v0, Ljava/util/HashSet;
+
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+
+    sput-object v0, Lsg;->l:Ljava/util/HashSet;
+
+    .line 78
+    sput-object v2, Lsg;->h:[Z
+
+    .line 79
+    sput v1, Lsg;->i:I
 
     .line 80
-    sput-boolean v1, Lse;->g:Z
-
-    .line 82
-    new-instance v0, Ljava/util/HashSet;
-
-    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
-
-    sput-object v0, Lse;->n:Ljava/util/HashSet;
-
-    .line 83
-    sput-object v2, Lse;->h:[Z
-
-    .line 84
-    sput v1, Lse;->i:I
-
-    .line 85
-    sput v1, Lse;->j:I
+    sput v1, Lsg;->j:I
 
     return-void
 .end method
@@ -135,14 +121,14 @@
 
     const/4 v0, 0x0
 
-    .line 178
-    sget v2, Lse;->b:I
+    .line 183
+    sget v2, Lsg;->b:I
 
     const/4 v3, 0x2
 
     if-ne v2, v3, :cond_0
 
-    .line 179
+    .line 184
     const-string v2, "DualSimMessageUtils"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -155,7 +141,7 @@
 
     move-result-object v3
 
-    sget-object v4, Lse;->d:[Lsk$a;
+    sget-object v4, Lsg;->d:[Lsn$a;
 
     aget-object v4, v4, v0
 
@@ -169,7 +155,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 180
+    .line 185
     const-string v2, "DualSimMessageUtils"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -182,7 +168,7 @@
 
     move-result-object v3
 
-    sget-object v4, Lse;->d:[Lsk$a;
+    sget-object v4, Lsg;->d:[Lsn$a;
 
     aget-object v4, v4, v1
 
@@ -196,16 +182,16 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 181
-    sget-object v2, Lse;->d:[Lsk$a;
+    .line 186
+    sget-object v2, Lsg;->d:[Lsn$a;
 
     aget-object v2, v2, v0
 
-    sget-object v3, Lsk$a;->d:Lsk$a;
+    sget-object v3, Lsn$a;->d:Lsn$a;
 
     if-ne v2, v3, :cond_1
 
-    .line 187
+    .line 192
     :cond_0
     :goto_0
     return v0
@@ -213,7 +199,7 @@
     :cond_1
     move v0, v1
 
-    .line 184
+    .line 189
     goto :goto_0
 .end method
 
@@ -221,12 +207,12 @@
     .locals 4
 
     .prologue
-    .line 687
-    invoke-static {p0, p1}, Lsk;->a(J)I
+    .line 603
+    invoke-static {p0, p1}, Lsn;->a(J)I
 
     move-result v0
 
-    .line 688
+    .line 604
     const-string v1, "DualSimMessageUtils"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -259,14 +245,14 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 689
-    invoke-static {v0}, Lse;->a(I)Z
+    .line 605
+    invoke-static {v0}, Lsg;->a(I)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 692
+    .line 608
     :goto_0
     return v0
 
@@ -292,25 +278,25 @@
     .end annotation
 
     .prologue
-    .line 664
+    .line 580
     const/4 v1, -0x1
 
-    .line 666
+    .line 582
     :try_start_0
-    invoke-static {p7}, Lsk;->a(I)J
+    invoke-static {p7}, Lsn;->a(I)J
 
     move-result-wide v2
 
-    invoke-static {v2, v3}, Lsk;->d(J)Landroid/telephony/SmsManager;
+    invoke-static {v2, v3}, Lsn;->d(J)Landroid/telephony/SmsManager;
 
     move-result-object v0
 
-    .line 667
+    .line 583
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v2
 
-    .line 668
+    .line 584
     const-string v3, "copyTextMessageToIccCard"
 
     const/4 v4, 0x5
@@ -351,7 +337,7 @@
 
     move-result-object v2
 
-    .line 672
+    .line 588
     const/4 v3, 0x5
 
     new-array v3, v3, [Ljava/lang/Object;
@@ -399,15 +385,15 @@
 
     move-result v0
 
-    .line 682
+    .line 598
     :goto_0
     return v0
 
-    .line 675
+    .line 591
     :catch_0
     move-exception v0
 
-    .line 676
+    .line 592
     :try_start_1
     const-string v2, "DualSimMessageUtils"
 
@@ -417,14 +403,14 @@
 
     move v0, v1
 
-    .line 682
+    .line 598
     goto :goto_0
 
-    .line 677
+    .line 593
     :catch_1
     move-exception v0
 
-    .line 678
+    .line 594
     const-string v2, "DualSimMessageUtils"
 
     const-string v3, "throw Exception :"
@@ -433,14 +419,14 @@
 
     move v0, v1
 
-    .line 682
+    .line 598
     goto :goto_0
 
-    .line 679
+    .line 595
     :catch_2
     move-exception v0
 
-    .line 680
+    .line 596
     const-string v2, "DualSimMessageUtils"
 
     const-string v3, "throw Exception :"
@@ -451,7 +437,7 @@
 
     move v0, v1
 
-    .line 682
+    .line 598
     goto :goto_0
 
     :catchall_0
@@ -463,101 +449,101 @@
 .end method
 
 .method public static a(Landroid/content/Intent;Ljava/lang/String;)I
-    .locals 3
+    .locals 4
 
     .prologue
-    const/4 v2, -0x1
+    const/4 v0, -0x1
 
-    .line 454
-    sget v0, Lse;->e:I
+    .line 370
+    sget v1, Lsg;->e:I
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    if-le v0, v1, :cond_2
+    if-le v1, v2, :cond_2
 
-    .line 455
+    .line 371
     if-nez p0, :cond_0
 
-    .line 456
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    .line 372
+    const-string v1, "DualSimMessageUtils"
 
-    const-string v1, "intent is null in DualSimMessageUtils.getSlotIdFromIntent"
+    const-string v2, " intent is null in DualSimMessageUtils.getSlotIdFromIntent !"
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    throw v0
-
-    .line 459
-    :cond_0
-    invoke-virtual {p0, p1}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 460
-    invoke-virtual {p0, p1, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
-
-    move-result v0
-
-    .line 469
+    .line 385
     :goto_0
     return v0
 
-    .line 462
-    :cond_1
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "intent:"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " not has extra "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 466
-    :cond_2
-    if-eqz p0, :cond_3
-
+    .line 375
+    :cond_0
     invoke-virtual {p0, p1}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_3
+    if-eqz v1, :cond_1
 
-    .line 467
-    invoke-virtual {p0, p1, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    .line 376
+    invoke-virtual {p0, p1, v0}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v0
 
     goto :goto_0
 
-    .line 469
+    .line 378
+    :cond_1
+    const-string v1, "DualSimMessageUtils"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "intent:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " not has extra "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+
+    .line 382
+    :cond_2
+    if-eqz p0, :cond_3
+
+    invoke-virtual {p0, p1}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    .line 383
+    invoke-virtual {p0, p1, v0}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+
+    move-result v0
+
+    goto :goto_0
+
+    .line 385
     :cond_3
     const/4 v0, 0x0
 
@@ -565,19 +551,19 @@
 .end method
 
 .method public static a(Ljava/lang/String;)I
-    .locals 3
+    .locals 4
 
     .prologue
     const/4 v0, 0x0
 
-    .line 155
+    .line 150
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-nez v1, :cond_3
 
-    .line 156
+    .line 151
     const-string v1, "-10"
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -586,71 +572,70 @@
 
     if-eqz v1, :cond_1
 
-    .line 157
+    .line 152
     const/16 v0, -0xa
 
-    .line 173
+    .line 170
     :cond_0
     :goto_0
     return v0
 
-    .line 159
+    .line 154
     :cond_1
-    sget-boolean v1, Lse;->a:Z
+    sget-boolean v1, Lsg;->a:Z
 
     if-eqz v1, :cond_0
 
-    .line 162
+    .line 158
+    invoke-static {}, Lsg;->l()[Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 159
     :goto_1
-    sget-object v1, Lse;->c:[Ljava/lang/String;
+    array-length v2, v1
 
-    array-length v1, v1
+    if-ge v0, v2, :cond_4
 
-    if-ge v0, v1, :cond_4
+    .line 160
+    aget-object v2, v1, v0
 
-    .line 163
-    sget-object v1, Lse;->c:[Ljava/lang/String;
+    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    aget-object v1, v1, v0
+    move-result v2
 
-    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    if-nez v2, :cond_2
 
-    move-result v1
+    aget-object v2, v1, v0
 
-    if-nez v1, :cond_2
+    invoke-virtual {v2, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    sget-object v1, Lse;->c:[Ljava/lang/String;
+    move-result v2
 
-    aget-object v1, v1, v0
+    if-eqz v2, :cond_2
 
-    invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 161
+    sget-object v2, Lsg;->d:[Lsn$a;
 
-    move-result v1
+    aget-object v2, v2, v0
 
-    if-eqz v1, :cond_2
+    sget-object v3, Lsn$a;->b:Lsn$a;
 
-    .line 164
-    sget-object v1, Lse;->d:[Lsk$a;
+    if-ne v2, v3, :cond_0
 
-    aget-object v1, v1, v0
-
-    sget-object v2, Lsk$a;->b:Lsk$a;
-
-    if-ne v1, v2, :cond_0
-
-    .line 162
+    .line 159
     :cond_2
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 170
+    .line 167
     :cond_3
-    sget-boolean v1, Lse;->a:Z
+    sget-boolean v1, Lsg;->a:Z
 
     if-eqz v1, :cond_0
 
-    .line 173
+    .line 170
     :cond_4
     const/4 v0, -0x1
 
@@ -661,14 +646,14 @@
     .locals 4
 
     .prologue
-    .line 655
+    .line 571
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
 
     if-le v0, v1, :cond_0
 
-    .line 656
+    .line 572
     const-string v0, "subscription"
 
     const/4 v1, -0x1
@@ -679,7 +664,7 @@
 
     int-to-long v0, v0
 
-    .line 658
+    .line 574
     :goto_0
     return-wide v0
 
@@ -703,23 +688,23 @@
 
     const/4 v5, 0x0
 
-    .line 270
+    .line 275
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
-    .line 271
+    .line 276
     const-string v0, ""
 
-    .line 273
-    invoke-static {p0, p1}, Lsk;->b(Landroid/content/Context;I)Ljava/lang/String;
+    .line 278
+    invoke-static {p0, p1}, Lsn;->b(Landroid/content/Context;I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 274
+    .line 279
     if-nez v1, :cond_0
 
-    .line 275
+    .line 280
     const-string v1, "DualSimMessageUtils"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -748,26 +733,26 @@
 
     invoke-static {v1, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 276
-    invoke-static {p1}, Lsk;->c(I)Z
+    .line 281
+    invoke-static {p1}, Lsn;->c(I)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 277
+    .line 282
     const-string v1, ""
 
-    .line 287
+    .line 292
     :cond_0
     :goto_0
     packed-switch p1, :pswitch_data_0
 
-    .line 297
+    .line 302
     :goto_1
     return-object v0
 
-    .line 279
+    .line 284
     :cond_1
     sget-boolean v1, Lcom/android/mms/MmsApp;->b:Z
 
@@ -775,7 +760,7 @@
 
     if-nez p1, :cond_2
 
-    .line 280
+    .line 285
     const v1, #com.android.mms:string@no_sim_cdma#t
 
     invoke-virtual {v2, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -784,7 +769,7 @@
 
     goto :goto_0
 
-    .line 282
+    .line 287
     :cond_2
     const v1, #com.android.mms:string@no_sim#t
 
@@ -794,7 +779,7 @@
 
     goto :goto_0
 
-    .line 289
+    .line 294
     :pswitch_0
     const v0, #com.android.mms:string@change_sim1_title#t
 
@@ -808,7 +793,7 @@
 
     goto :goto_1
 
-    .line 292
+    .line 297
     :pswitch_1
     const v0, #com.android.mms:string@change_sim2_title#t
 
@@ -822,13 +807,13 @@
 
     goto :goto_1
 
-    .line 295
+    .line 300
     :pswitch_2
     const-string v0, ""
 
     goto :goto_1
 
-    .line 287
+    .line 292
     nop
 
     :pswitch_data_0
@@ -839,83 +824,17 @@
     .end packed-switch
 .end method
 
-.method public static a(ILjava/lang/String;)V
-    .locals 3
-
-    .prologue
-    .line 365
-    sget-boolean v0, Lse;->a:Z
-
-    if-eqz v0, :cond_0
-
-    .line 366
-    const-string v0, "DualSimMessageUtils"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "setConversationDraftImsi slotId = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ", selectedImsi = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 367
-    invoke-static {p0}, Lse;->c(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lse;->l:Ljava/lang/String;
-
-    .line 368
-    sget-object v0, Lse;->l:Ljava/lang/String;
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 369
-    sput-object p1, Lse;->l:Ljava/lang/String;
-
-    .line 372
-    :cond_0
-    return-void
-.end method
-
 .method public static a(Landroid/content/Context;)V
     .locals 0
 
     .prologue
-    .line 88
-    invoke-static {}, Lse;->n()V
+    .line 83
+    invoke-static {}, Lsg;->j()V
 
-    .line 89
-    invoke-static {p0}, Lse;->b(Landroid/content/Context;)V
+    .line 84
+    invoke-static {p0}, Lsg;->b(Landroid/content/Context;)V
 
-    .line 90
+    .line 85
     return-void
 .end method
 
@@ -929,10 +848,10 @@
 
     const/4 v0, 0x0
 
-    .line 528
-    invoke-static {}, Lse;->n()V
+    .line 444
+    invoke-static {}, Lsg;->j()V
 
-    .line 529
+    .line 445
     const-string v2, "DualSimMessageUtils"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -975,25 +894,25 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 530
-    sget-boolean v2, Lse;->a:Z
+    .line 446
+    sget-boolean v2, Lsg;->a:Z
 
     if-eqz v2, :cond_4
 
-    .line 532
+    .line 448
     sget-boolean v2, Lcom/android/mms/MmsApp;->b:Z
 
     if-eqz v2, :cond_1
 
     if-nez p1, :cond_1
 
-    invoke-static {p0}, Lse;->f(Landroid/content/Context;)Z
+    invoke-static {p0}, Lsg;->g(Landroid/content/Context;)Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 533
+    .line 449
     if-ne p2, v5, :cond_0
 
     if-eq p3, v5, :cond_1
@@ -1001,33 +920,33 @@
     :cond_0
     move p2, v0
 
-    .line 543
+    .line 459
     :cond_1
     :goto_0
-    invoke-static {p1}, Lse;->a(I)Z
+    invoke-static {p1}, Lsg;->a(I)Z
 
     move-result v2
 
     if-eqz v2, :cond_3
 
-    .line 545
+    .line 461
     if-eq p2, v5, :cond_5
 
-    .line 546
-    sget-object v2, Lse;->h:[Z
+    .line 462
+    sget-object v2, Lsg;->h:[Z
 
     aget-boolean v2, v2, p1
 
     if-nez v2, :cond_2
 
-    .line 547
-    sget-object v0, Lse;->h:[Z
+    .line 463
+    sget-object v0, Lsg;->h:[Z
 
     aput-boolean v1, v0, p1
 
     move v0, v1
 
-    .line 556
+    .line 472
     :cond_2
     :goto_1
     const-string v1, "DualSimMessageUtils"
@@ -1052,17 +971,17 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 557
+    .line 473
     if-eqz v0, :cond_3
 
-    .line 558
-    invoke-static {}, Lse;->g()V
+    .line 474
+    invoke-static {}, Lsg;->c()V
 
-    .line 561
+    .line 477
     :cond_3
     return-void
 
-    .line 539
+    .line 455
     :cond_4
     const-string v2, "DualSimMessageUtils"
 
@@ -1072,25 +991,25 @@
 
     move p1, v0
 
-    .line 540
+    .line 456
     goto :goto_0
 
-    .line 551
+    .line 467
     :cond_5
-    sget-object v2, Lse;->h:[Z
+    sget-object v2, Lsg;->h:[Z
 
     aget-boolean v2, v2, p1
 
     if-eqz v2, :cond_2
 
-    .line 552
-    sget-object v2, Lse;->h:[Z
+    .line 468
+    sget-object v2, Lsg;->h:[Z
 
     aput-boolean v0, v2, p1
 
     move v0, v1
 
-    .line 553
+    .line 469
     goto :goto_1
 .end method
 
@@ -1098,10 +1017,10 @@
     .locals 3
 
     .prologue
-    .line 136
-    invoke-static {}, Lse;->n()V
+    .line 131
+    invoke-static {}, Lsg;->j()V
 
-    .line 137
+    .line 132
     const-string v0, "DualSimMessageUtils"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1134,20 +1053,20 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 138
+    .line 133
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    invoke-static {p1}, Lse;->a(I)Z
+    invoke-static {p1}, Lsg;->a(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 139
+    .line 134
     const-string v0, "READY"
 
     invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1172,17 +1091,17 @@
 
     if-eqz v0, :cond_3
 
-    .line 141
+    .line 136
     :cond_0
-    sget-object v0, Lse;->c:[Ljava/lang/String;
+    sget-object v0, Lsg;->c:[Ljava/lang/String;
 
-    invoke-static {p0, p1}, Lsk;->c(Landroid/content/Context;I)Ljava/lang/String;
+    invoke-static {p0, p1}, Lsn;->c(Landroid/content/Context;I)Ljava/lang/String;
 
     move-result-object v1
 
     aput-object v1, v0, p1
 
-    .line 142
+    .line 137
     const-string v0, "DualSimMessageUtils"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1205,7 +1124,7 @@
 
     move-result-object v1
 
-    sget-object v2, Lse;->c:[Ljava/lang/String;
+    sget-object v2, Lsg;->c:[Ljava/lang/String;
 
     aget-object v2, v2, p1
 
@@ -1219,19 +1138,19 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 148
+    .line 143
     :cond_1
     :goto_0
-    invoke-static {p0}, Lse;->e(Landroid/content/Context;)V
+    invoke-static {p0}, Lsg;->f(Landroid/content/Context;)V
 
-    .line 149
-    invoke-static {}, Lse;->b()V
+    .line 144
+    invoke-static {}, Lsg;->b()V
 
-    .line 151
+    .line 146
     :cond_2
     return-void
 
-    .line 143
+    .line 138
     :cond_3
     const-string v0, "ABSENT"
 
@@ -1241,22 +1160,22 @@
 
     if-eqz v0, :cond_1
 
-    .line 144
-    sget-object v0, Lse;->c:[Ljava/lang/String;
+    .line 139
+    sget-object v0, Lsg;->c:[Ljava/lang/String;
 
     const-string v1, ""
 
     aput-object v1, v0, p1
 
-    .line 145
-    sget-object v0, Lse;->h:[Z
+    .line 140
+    sget-object v0, Lsg;->h:[Z
 
     const/4 v1, 0x0
 
     aput-boolean v1, v0, p1
 
-    .line 146
-    invoke-static {}, Lse;->g()V
+    .line 141
+    invoke-static {}, Lsg;->c()V
 
     goto :goto_0
 .end method
@@ -1265,7 +1184,7 @@
     .locals 3
 
     .prologue
-    .line 601
+    .line 517
     const-string v0, "DualSimMessageUtils"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1298,16 +1217,16 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 602
-    sget-object v0, Lse;->h:[Z
+    .line 518
+    sget-object v0, Lsg;->h:[Z
 
-    invoke-static {p0, p1, p2}, Lse;->a(Landroid/content/Context;J)Z
+    invoke-static {p0, p1, p2}, Lsg;->a(Landroid/content/Context;J)Z
 
     move-result v1
 
     aput-boolean v1, v0, p3
 
-    .line 603
+    .line 519
     const-string v0, "DualSimMessageUtils"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1330,7 +1249,7 @@
 
     move-result-object v1
 
-    sget-object v2, Lse;->h:[Z
+    sget-object v2, Lsg;->h:[Z
 
     aget-boolean v2, v2, p3
 
@@ -1344,7 +1263,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 604
+    .line 520
     return-void
 .end method
 
@@ -1362,14 +1281,14 @@
 
     const/4 v2, 0x0
 
-    .line 218
+    .line 223
     if-ne p1, v6, :cond_3
 
     if-ne p2, v0, :cond_3
 
     move v4, v1
 
-    .line 219
+    .line 224
     :goto_0
     if-nez p1, :cond_4
 
@@ -1377,9 +1296,9 @@
 
     move v0, v1
 
-    .line 220
+    .line 225
     :goto_1
-    sget-boolean v3, Lse;->a:Z
+    sget-boolean v3, Lsg;->a:Z
 
     if-nez v3, :cond_0
 
@@ -1387,25 +1306,25 @@
 
     if-eqz v0, :cond_2
 
-    .line 221
+    .line 226
     :cond_0
     if-ltz p2, :cond_5
 
     move v3, v1
 
-    .line 222
+    .line 227
     :goto_2
     if-eqz v3, :cond_6
 
     if-nez p3, :cond_6
 
-    sget v3, Lse;->e:I
+    sget v3, Lsg;->e:I
 
     const/4 v5, 0x2
 
     if-ne v3, v5, :cond_6
 
-    sget v3, Lse;->i:I
+    sget v3, Lsg;->i:I
 
     const/4 v5, 0x2
 
@@ -1413,27 +1332,27 @@
 
     move v3, v1
 
-    .line 224
+    .line 229
     :goto_3
     packed-switch p1, :pswitch_data_0
 
-    .line 234
+    .line 239
     :pswitch_0
     if-nez v0, :cond_1
 
     if-eqz v3, :cond_7
 
-    .line 238
+    .line 243
     :cond_1
     :goto_4
     if-nez v1, :cond_8
 
-    .line 239
+    .line 244
     const/16 v0, 0x8
 
     invoke-virtual {p0, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 267
+    .line 272
     :cond_2
     :goto_5
     return-void
@@ -1441,34 +1360,34 @@
     :cond_3
     move v4, v2
 
-    .line 218
+    .line 223
     goto :goto_0
 
     :cond_4
     move v0, v2
 
-    .line 219
+    .line 224
     goto :goto_1
 
     :cond_5
     move v3, v2
 
-    .line 221
+    .line 226
     goto :goto_2
 
     :cond_6
     move v3, v2
 
-    .line 222
+    .line 227
     goto :goto_3
 
     :pswitch_1
     move v1, v2
 
-    .line 229
+    .line 234
     goto :goto_4
 
-    .line 231
+    .line 236
     :pswitch_2
     if-nez v4, :cond_1
 
@@ -1481,25 +1400,25 @@
     :cond_7
     move v1, v2
 
-    .line 234
+    .line 239
     goto :goto_4
 
-    .line 241
+    .line 246
     :cond_8
     invoke-virtual {p0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 242
+    .line 247
     sparse-switch p2, :sswitch_data_0
 
     goto :goto_5
 
-    .line 258
+    .line 263
     :sswitch_0
-    sget-boolean v0, Lcom/android/mms/MmsApp;->o:Z
+    sget-boolean v0, Lcom/android/mms/MmsApp;->n:Z
 
     if-nez v0, :cond_15
 
-    .line 259
+    .line 264
     if-ne p1, v6, :cond_13
 
     const v0, #com.android.mms:drawable@cma_list_sim_cloud#t
@@ -1509,13 +1428,13 @@
 
     goto :goto_5
 
-    .line 244
+    .line 249
     :sswitch_1
-    sget-boolean v0, Lcom/android/mms/MmsApp;->o:Z
+    sget-boolean v0, Lcom/android/mms/MmsApp;->n:Z
 
     if-nez v0, :cond_b
 
-    .line 245
+    .line 250
     if-ne p1, v6, :cond_9
 
     const v0, #com.android.mms:drawable@cma_list_sim1#t
@@ -1537,7 +1456,7 @@
 
     goto :goto_7
 
-    .line 247
+    .line 252
     :cond_b
     if-ne p1, v6, :cond_c
 
@@ -1560,13 +1479,13 @@
 
     goto :goto_8
 
-    .line 251
+    .line 256
     :sswitch_2
-    sget-boolean v0, Lcom/android/mms/MmsApp;->o:Z
+    sget-boolean v0, Lcom/android/mms/MmsApp;->n:Z
 
     if-nez v0, :cond_10
 
-    .line 252
+    .line 257
     if-ne p1, v6, :cond_e
 
     const v0, #com.android.mms:drawable@cma_list_sim2#t
@@ -1588,7 +1507,7 @@
 
     goto :goto_9
 
-    .line 254
+    .line 259
     :cond_10
     if-ne p1, v6, :cond_11
 
@@ -1611,7 +1530,7 @@
 
     goto :goto_a
 
-    .line 259
+    .line 264
     :cond_13
     if-ne p1, v7, :cond_14
 
@@ -1624,7 +1543,7 @@
 
     goto :goto_6
 
-    .line 261
+    .line 266
     :cond_15
     if-ne p1, v6, :cond_16
 
@@ -1647,7 +1566,7 @@
 
     goto :goto_b
 
-    .line 224
+    .line 229
     nop
 
     :pswitch_data_0
@@ -1659,7 +1578,7 @@
         :pswitch_1
     .end packed-switch
 
-    .line 242
+    .line 247
     :sswitch_data_0
     .sparse-switch
         -0xa -> :sswitch_0
@@ -1668,28 +1587,28 @@
     .end sparse-switch
 .end method
 
-.method public static a(Lse$a;)V
+.method public static a(Lsg$a;)V
     .locals 2
 
     .prologue
-    .line 436
-    sget-object v1, Lse;->m:Ljava/util/HashSet;
+    .line 352
+    sget-object v1, Lsg;->k:Ljava/util/HashSet;
 
     monitor-enter v1
 
-    .line 437
+    .line 353
     :try_start_0
-    sget-object v0, Lse;->m:Ljava/util/HashSet;
+    sget-object v0, Lsg;->k:Ljava/util/HashSet;
 
     invoke-virtual {v0, p0}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 438
+    .line 354
     monitor-exit v1
 
-    .line 439
+    .line 355
     return-void
 
-    .line 438
+    .line 354
     :catchall_0
     move-exception v0
 
@@ -1704,12 +1623,12 @@
     .locals 1
 
     .prologue
-    .line 192
+    .line 197
     const/4 v0, -0x1
 
     if-le p0, v0, :cond_0
 
-    sget v0, Lse;->b:I
+    sget v0, Lsg;->b:I
 
     if-ge p0, v0, :cond_0
 
@@ -1734,8 +1653,8 @@
 
     const/4 v10, 0x0
 
-    .line 607
-    .line 608
+    .line 523
+    .line 524
     const-string v0, "DualSimMessageUtils"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1758,21 +1677,21 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 609
-    invoke-static {p1, p2}, Lsk;->c(J)Z
+    .line 525
+    invoke-static {p1, p2}, Lsn;->c(J)Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 612
+    .line 528
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x16
 
     if-le v0, v1, :cond_0
 
-    .line 615
+    .line 531
     const-string v0, "android.os.ServiceManager"
 
     const-string v1, "getService"
@@ -1813,7 +1732,7 @@
 
     aput-object v10, v9, v12
 
-    invoke-static/range {v0 .. v9}, Lsr;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static/range {v0 .. v9}, Lsw;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1823,11 +1742,11 @@
 
     move-result v0
 
-    .line 632
+    .line 548
     :goto_0
     return v0
 
-    .line 618
+    .line 534
     :cond_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -1835,7 +1754,7 @@
 
     if-le v0, v1, :cond_1
 
-    .line 620
+    .line 536
     const-string v0, "android.os.ServiceManager"
 
     const-string v1, "getService"
@@ -1860,7 +1779,7 @@
 
     move-result-object v9
 
-    invoke-static/range {v0 .. v9}, Lsr;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static/range {v0 .. v9}, Lsw;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1877,7 +1796,7 @@
 
     goto :goto_0
 
-    .line 624
+    .line 540
     :cond_1
     const-string v0, "android.os.ServiceManager"
 
@@ -1901,7 +1820,7 @@
 
     move-result-object v9
 
-    invoke-static/range {v0 .. v9}, Lsr;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static/range {v0 .. v9}, Lsw;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1913,7 +1832,7 @@
 
     goto :goto_0
 
-    .line 629
+    .line 545
     :cond_2
     const-string v0, "DualSimMessageUtils"
 
@@ -1948,35 +1867,43 @@
     goto :goto_0
 .end method
 
-.method public static a(Ljava/lang/String;Ljava/lang/String;)Z
+.method public static b(I)Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 412
-    invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    .line 326
+    const/16 v0, -0xa
 
-    move-result v0
+    if-ne p0, v0, :cond_0
 
-    if-nez v0, :cond_0
+    .line 327
+    const-string v0, "-10"
 
-    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    .line 332
+    :goto_0
+    return-object v0
+
+    .line 328
+    :cond_0
+    invoke-static {p0}, Lsg;->a(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 413
-    :cond_0
-    const/4 v0, 0x0
+    .line 329
+    invoke-static {}, Lsg;->l()[Ljava/lang/String;
 
-    .line 415
-    :goto_0
-    return v0
+    move-result-object v0
 
+    .line 330
+    aget-object v0, v0, p0
+
+    goto :goto_0
+
+    .line 332
     :cond_1
-    invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
+    const-string v0, ""
 
     goto :goto_0
 .end method
@@ -1985,20 +1912,20 @@
     .locals 5
 
     .prologue
-    .line 301
+    .line 306
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    .line 302
-    invoke-static {p0, p1}, Lsk;->b(Landroid/content/Context;I)Ljava/lang/String;
+    .line 307
+    invoke-static {p0, p1}, Lsn;->b(Landroid/content/Context;I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 303
+    .line 308
     if-nez v0, :cond_0
 
-    .line 304
+    .line 309
     const-string v2, "DualSimMessageUtils"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -2021,15 +1948,15 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 305
+    .line 310
     packed-switch p1, :pswitch_data_0
 
-    .line 317
+    .line 322
     :cond_0
     :goto_0
     return-object v0
 
-    .line 307
+    .line 312
     :pswitch_0
     const v0, #com.android.mms:string@sim1#t
 
@@ -2039,7 +1966,7 @@
 
     goto :goto_0
 
-    .line 310
+    .line 315
     :pswitch_1
     const v0, #com.android.mms:string@sim2#t
 
@@ -2049,13 +1976,13 @@
 
     goto :goto_0
 
-    .line 313
+    .line 318
     :pswitch_2
     const-string v0, ""
 
     goto :goto_0
 
-    .line 305
+    .line 310
     nop
 
     :pswitch_data_0
@@ -2072,45 +1999,45 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 196
-    sget v1, Lse;->e:I
+    .line 201
+    sget v1, Lsg;->e:I
 
-    sput v1, Lse;->f:I
+    sput v1, Lsg;->f:I
 
-    .line 197
-    sput v0, Lse;->e:I
+    .line 202
+    sput v0, Lsg;->e:I
 
-    .line 198
+    .line 203
     :goto_0
-    sget-object v1, Lse;->d:[Lsk$a;
+    sget-object v1, Lsg;->d:[Lsn$a;
 
     array-length v1, v1
 
     if-ge v0, v1, :cond_1
 
-    .line 199
-    sget-object v1, Lse;->d:[Lsk$a;
+    .line 204
+    sget-object v1, Lsg;->d:[Lsn$a;
 
     aget-object v1, v1, v0
 
-    sget-object v2, Lsk$a;->d:Lsk$a;
+    sget-object v2, Lsn$a;->d:Lsn$a;
 
     if-ne v1, v2, :cond_0
 
-    .line 200
-    sget v1, Lse;->e:I
+    .line 205
+    sget v1, Lsg;->e:I
 
     add-int/lit8 v1, v1, 0x1
 
-    sput v1, Lse;->e:I
+    sput v1, Lsg;->e:I
 
-    .line 198
+    .line 203
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 203
+    .line 208
     :cond_1
     const-string v0, "DualSimMessageUtils"
 
@@ -2124,7 +2051,7 @@
 
     move-result-object v1
 
-    sget v2, Lse;->f:I
+    sget v2, Lsg;->f:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -2136,7 +2063,7 @@
 
     move-result-object v1
 
-    sget v2, Lse;->e:I
+    sget v2, Lsg;->e:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -2148,130 +2075,72 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 204
-    sget v0, Lse;->f:I
+    .line 209
+    sget v0, Lsg;->f:I
 
-    sget v1, Lse;->e:I
+    sget v1, Lsg;->e:I
 
     if-eq v0, v1, :cond_2
 
-    .line 205
-    invoke-static {}, Lse;->p()V
+    .line 210
+    invoke-static {}, Lsg;->m()V
 
-    .line 207
+    .line 212
     :cond_2
     return-void
-.end method
-
-.method public static b(I)V
-    .locals 3
-
-    .prologue
-    .line 323
-    const-string v0, "DualSimMessageUtils"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "saveNewConversationImsi slotId = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 324
-    sget-boolean v0, Lse;->a:Z
-
-    if-eqz v0, :cond_0
-
-    .line 325
-    invoke-static {p0}, Lse;->a(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 326
-    sget-object v0, Lse;->c:[Ljava/lang/String;
-
-    aget-object v0, v0, p0
-
-    sput-object v0, Lse;->k:Ljava/lang/String;
-
-    .line 331
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 328
-    :cond_1
-    invoke-static {}, Lse;->d()V
-
-    goto :goto_0
 .end method
 
 .method public static b(Landroid/content/Context;)V
     .locals 5
 
     .prologue
-    .line 116
-    invoke-static {}, Lse;->o()V
+    .line 111
+    invoke-static {}, Lsg;->k()V
 
-    .line 118
+    .line 113
     const/4 v0, 0x0
 
     :goto_0
-    sget v1, Lse;->b:I
+    sget v1, Lsg;->b:I
 
     if-ge v0, v1, :cond_1
 
-    .line 119
-    invoke-static {p0, v0}, Lsk;->a(Landroid/content/Context;I)Lsk$a;
+    .line 114
+    invoke-static {p0, v0}, Lsn;->a(Landroid/content/Context;I)Lsn$a;
 
     move-result-object v1
 
-    .line 120
-    sget-object v2, Lse;->d:[Lsk$a;
+    .line 115
+    sget-object v2, Lsg;->d:[Lsn$a;
 
     aput-object v1, v2, v0
 
-    .line 121
-    sget-object v2, Lse;->c:[Ljava/lang/String;
+    .line 116
+    sget-object v2, Lsg;->c:[Ljava/lang/String;
 
-    invoke-static {p0, v0}, Lsk;->c(Landroid/content/Context;I)Ljava/lang/String;
+    invoke-static {p0, v0}, Lsn;->c(Landroid/content/Context;I)Ljava/lang/String;
 
     move-result-object v3
 
     aput-object v3, v2, v0
 
-    .line 122
-    sget-object v2, Lse;->d:[Lsk$a;
+    .line 117
+    sget-object v2, Lsg;->d:[Lsn$a;
 
     aget-object v2, v2, v0
 
-    sget-object v3, Lsk$a;->b:Lsk$a;
+    sget-object v3, Lsn$a;->b:Lsn$a;
 
     if-eq v2, v3, :cond_0
 
-    .line 123
-    invoke-static {v0}, Lsk;->a(I)J
+    .line 118
+    invoke-static {v0}, Lsn;->a(I)J
 
     move-result-wide v2
 
-    invoke-static {p0, v2, v3, v0}, Lse;->a(Landroid/content/Context;JI)V
+    invoke-static {p0, v2, v3, v0}, Lsg;->a(Landroid/content/Context;JI)V
 
-    .line 125
+    .line 120
     :cond_0
     const-string v2, "DualSimMessageUtils"
 
@@ -2315,7 +2184,7 @@
 
     move-result-object v1
 
-    sget-object v3, Lse;->c:[Ljava/lang/String;
+    sget-object v3, Lsg;->c:[Ljava/lang/String;
 
     aget-object v3, v3, v0
 
@@ -2339,7 +2208,7 @@
 
     move-result-object v1
 
-    sget-object v3, Lse;->h:[Z
+    sget-object v3, Lsg;->h:[Z
 
     aget-boolean v3, v3, v0
 
@@ -2353,44 +2222,44 @@
 
     invoke-static {v2, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 118
+    .line 113
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 128
+    .line 123
     :cond_1
-    invoke-static {}, Lse;->b()V
+    invoke-static {}, Lsg;->b()V
 
-    .line 129
-    invoke-static {}, Lse;->g()V
+    .line 124
+    invoke-static {}, Lsg;->c()V
 
-    .line 130
+    .line 125
     return-void
 .end method
 
-.method public static b(Lse$a;)V
+.method public static b(Lsg$a;)V
     .locals 2
 
     .prologue
-    .line 442
-    sget-object v1, Lse;->m:Ljava/util/HashSet;
+    .line 358
+    sget-object v1, Lsg;->k:Ljava/util/HashSet;
 
     monitor-enter v1
 
-    .line 443
+    .line 359
     :try_start_0
-    sget-object v0, Lse;->m:Ljava/util/HashSet;
+    sget-object v0, Lsg;->k:Ljava/util/HashSet;
 
     invoke-virtual {v0, p0}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
-    .line 444
+    .line 360
     monitor-exit v1
 
-    .line 445
+    .line 361
     return-void
 
-    .line 444
+    .line 360
     :catchall_0
     move-exception v0
 
@@ -2401,274 +2270,480 @@
     throw v0
 .end method
 
-.method public static c()I
-    .locals 1
+.method public static c()V
+    .locals 3
 
     .prologue
-    .line 334
-    sget-object v0, Lse;->k:Ljava/lang/String;
-
-    invoke-static {v0}, Lse;->a(Ljava/lang/String;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static c(I)Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 343
-    const/16 v0, -0xa
-
-    if-ne p0, v0, :cond_0
-
-    .line 344
-    const-string v0, "-10"
-
-    .line 352
-    :goto_0
-    return-object v0
-
-    .line 345
-    :cond_0
-    invoke-static {p0}, Lse;->a(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    .line 346
-    sget-object v0, Lse;->c:[Ljava/lang/String;
-
-    if-nez v0, :cond_1
-
-    .line 347
     const/4 v0, 0x0
 
-    sput-boolean v0, Lse;->g:Z
+    .line 503
+    sget v1, Lsg;->i:I
 
-    .line 348
-    invoke-static {}, Lcom/android/mms/MmsApp;->c()Lcom/android/mms/MmsApp;
+    sput v1, Lsg;->j:I
 
-    move-result-object v0
+    .line 504
+    sput v0, Lsg;->i:I
 
-    invoke-virtual {v0}, Lcom/android/mms/MmsApp;->getApplicationContext()Landroid/content/Context;
+    .line 505
+    :goto_0
+    sget-object v1, Lsg;->h:[Z
 
-    move-result-object v0
+    array-length v1, v1
 
-    invoke-static {v0}, Lse;->a(Landroid/content/Context;)V
+    if-ge v0, v1, :cond_1
 
-    .line 350
+    .line 506
+    sget-object v1, Lsg;->h:[Z
+
+    aget-boolean v1, v1, v0
+
+    if-eqz v1, :cond_0
+
+    .line 507
+    sget v1, Lsg;->i:I
+
+    add-int/lit8 v1, v1, 0x1
+
+    sput v1, Lsg;->i:I
+
+    .line 505
+    :cond_0
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    .line 510
     :cond_1
-    sget-object v0, Lse;->c:[Ljava/lang/String;
+    const-string v0, "DualSimMessageUtils"
 
-    aget-object v0, v0, p0
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    goto :goto_0
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 352
-    :cond_2
-    const-string v0, ""
+    const-string v2, "updateCurrentNotRadioOffSimCount LAST_TITME_NOT_RADIO_OFF_SIM_COUNT = "
 
-    goto :goto_0
-.end method
-
-.method public static c(Landroid/content/Context;)Ljava/lang/String;
-    .locals 7
-
-    .prologue
-    const/4 v6, 0x0
-
-    .line 385
-    .line 387
-    :try_start_0
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    sget-object v1, Lsy;->a:Landroid/net/Uri;
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 388
-    if-eqz v1, :cond_1
+    sget v2, Lsg;->j:I
 
-    .line 389
-    :try_start_1
-    invoke-interface {v1}, Landroid/database/Cursor;->moveToFirst()Z
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 390
-    const-string v0, "DualSimMessageUtils"
+    move-result-object v1
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v2, ", CURRENT_NOT_RADIO_OFF_SIM_COUNT = "
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v3, "queryBindImsi cursor.getString(0) = "
+    move-result-object v1
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget v2, Lsg;->i:I
 
-    move-result-object v2
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const/4 v3, 0x0
+    move-result-object v1
 
-    invoke-interface {v1, v3}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result-object v2
+    .line 511
+    sget v0, Lsg;->j:I
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    sget v1, Lsg;->i:I
 
-    move-result-object v2
+    if-eq v0, v1, :cond_2
 
-    invoke-static {v0, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    .line 512
+    invoke-static {}, Lsg;->n()V
 
-    .line 391
-    const/4 v0, 0x0
-
-    invoke-interface {v1, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    move-result-object v0
-
-    .line 397
-    if-eqz v1, :cond_0
-
-    .line 398
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
-
-    .line 401
-    :cond_0
-    :goto_0
-    return-object v0
-
-    .line 397
-    :cond_1
-    if-eqz v1, :cond_2
-
-    .line 398
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
-
+    .line 514
     :cond_2
-    move-object v0, v6
+    return-void
+.end method
 
-    .line 401
-    goto :goto_0
+.method public static c(Lsg$a;)V
+    .locals 2
 
-    .line 393
-    :catch_0
+    .prologue
+    .line 491
+    sget-object v1, Lsg;->l:Ljava/util/HashSet;
+
+    monitor-enter v1
+
+    .line 492
+    :try_start_0
+    sget-object v0, Lsg;->l:Ljava/util/HashSet;
+
+    invoke-virtual {v0, p0}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+
+    .line 493
+    monitor-exit v1
+
+    .line 494
+    return-void
+
+    .line 493
+    :catchall_0
     move-exception v0
 
-    move-object v1, v6
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 394
-    :goto_1
-    :try_start_2
+    throw v0
+.end method
+
+.method public static c(I)Z
+    .locals 2
+
+    .prologue
+    .line 437
+    sget-object v0, Lsg;->d:[Lsn$a;
+
+    aget-object v0, v0, p0
+
+    sget-object v1, Lsn$a;->d:Lsn$a;
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public static c(Landroid/content/Context;)Z
+    .locals 2
+
+    .prologue
+    const/4 v0, 0x1
+
+    .line 393
+    sget v1, Lsg;->e:I
+
+    if-lt v1, v0, :cond_0
+
+    invoke-static {}, Lrn;->g()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-static {p0}, Lrn;->i(Landroid/content/Context;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    invoke-static {p0}, Llu;->c(Landroid/content/Context;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lrn;->c(Landroid/content/ContentResolver;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public static d()I
+    .locals 5
+
+    .prologue
+    const/4 v1, 0x1
+
+    const/4 v0, 0x0
+
+    .line 553
+    sget v2, Lsg;->b:I
+
+    const/4 v3, 0x2
+
+    if-ne v2, v3, :cond_0
+
+    .line 554
     const-string v2, "DualSimMessageUtils"
 
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "queryBindImsi e = "
+    const-string v4, "getNotRadioOffSlotId mServiceStates[0] = "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    sget-object v4, Lsg;->h:[Z
 
-    move-result-object v0
+    aget-boolean v4, v4, v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object v3
 
-    invoke-static {v2, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+    const-string v4, ", mSlotState[0] = "
 
-    .line 397
-    if-eqz v1, :cond_3
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 398
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
+    move-result-object v3
 
-    :cond_3
-    move-object v0, v6
+    sget-object v4, Lsg;->d:[Lsn$a;
 
+    aget-object v4, v4, v0
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", mServiceStates[1] = "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    sget-object v4, Lsg;->h:[Z
+
+    aget-boolean v4, v4, v1
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", mSlotState[1] = "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    sget-object v4, Lsg;->d:[Lsn$a;
+
+    aget-object v4, v4, v1
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 556
+    sget-object v2, Lsg;->h:[Z
+
+    aget-boolean v2, v2, v0
+
+    if-eqz v2, :cond_1
+
+    sget-object v2, Lsg;->d:[Lsn$a;
+
+    aget-object v2, v2, v0
+
+    sget-object v3, Lsn$a;->d:Lsn$a;
+
+    if-ne v2, v3, :cond_1
+
+    .line 563
+    :cond_0
+    :goto_0
+    return v0
+
+    .line 558
+    :cond_1
+    sget-object v0, Lsg;->h:[Z
+
+    aget-boolean v0, v0, v1
+
+    if-eqz v0, :cond_2
+
+    sget-object v0, Lsg;->d:[Lsn$a;
+
+    aget-object v0, v0, v1
+
+    sget-object v2, Lsn$a;->d:Lsn$a;
+
+    if-ne v0, v2, :cond_2
+
+    move v0, v1
+
+    .line 559
     goto :goto_0
 
-    .line 397
-    :catchall_0
-    move-exception v0
+    .line 561
+    :cond_2
+    const/4 v0, -0x1
 
-    move-object v1, v6
-
-    :goto_2
-    if-eqz v1, :cond_4
-
-    .line 398
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
-
-    :cond_4
-    throw v0
-
-    .line 397
-    :catchall_1
-    move-exception v0
-
-    goto :goto_2
-
-    .line 393
-    :catch_1
-    move-exception v0
-
-    goto :goto_1
+    goto :goto_0
 .end method
 
-.method public static c(Lse$a;)V
+.method public static d(Landroid/content/Context;)V
+    .locals 6
+
+    .prologue
+    const/4 v5, 0x0
+
+    .line 402
+    invoke-static {p0}, Lsg;->c(Landroid/content/Context;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 403
+    const v0, #com.android.mms:string@open_flyme_title#t
+
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 404
+    const v0, #com.android.mms:string@open_flyme_sub_title#t
+
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 406
+    const v0, #com.android.mms:layout@delete_thread_dialog_view#t
+
+    const/4 v3, 0x0
+
+    invoke-static {p0, v0, v3}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
+
+    move-result-object v3
+
+    .line 407
+    const v0, #com.android.mms:id@message#t
+
+    invoke-virtual {v3, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    const/16 v4, 0x8
+
+    invoke-virtual {v0, v4}, Landroid/widget/TextView;->setVisibility(I)V
+
+    .line 409
+    const v0, #com.android.mms:id@delete_locked#t
+
+    invoke-virtual {v3, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/CheckBox;
+
+    .line 411
+    invoke-virtual {v0, v5}, Landroid/widget/CheckBox;->setVisibility(I)V
+
+    .line 412
+    const v4, #com.android.mms:string@no_tip_next_time#t
+
+    invoke-virtual {v0, v4}, Landroid/widget/CheckBox;->setText(I)V
+
+    .line 413
+    invoke-virtual {v0, v5}, Landroid/widget/CheckBox;->setChecked(Z)V
+
+    .line 415
+    new-instance v4, Landroid/app/AlertDialog$Builder;
+
+    invoke-direct {v4, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+
+    invoke-virtual {v4, v1}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v1
+
+    const v2, #com.android.mms:string@yes#t
+
+    invoke-virtual {p0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    new-instance v4, Lsg$2;
+
+    invoke-direct {v4, p0, v0}, Lsg$2;-><init>(Landroid/content/Context;Landroid/widget/CheckBox;)V
+
+    invoke-virtual {v1, v2, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v1
+
+    const v2, #com.android.mms:string@no#t
+
+    invoke-virtual {p0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    new-instance v4, Lsg$1;
+
+    invoke-direct {v4, p0, v0}, Lsg$1;-><init>(Landroid/content/Context;Landroid/widget/CheckBox;)V
+
+    invoke-virtual {v1, v2, v4}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v3}, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
+
+    .line 433
+    :cond_0
+    return-void
+.end method
+
+.method public static d(Lsg$a;)V
     .locals 2
 
     .prologue
-    .line 575
-    sget-object v1, Lse;->n:Ljava/util/HashSet;
+    .line 497
+    sget-object v1, Lsg;->l:Ljava/util/HashSet;
 
     monitor-enter v1
 
-    .line 576
+    .line 498
     :try_start_0
-    sget-object v0, Lse;->n:Ljava/util/HashSet;
+    sget-object v0, Lsg;->l:Ljava/util/HashSet;
 
-    invoke-virtual {v0, p0}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p0}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
-    .line 577
+    .line 499
     monitor-exit v1
 
-    .line 578
+    .line 500
     return-void
 
-    .line 577
+    .line 499
     :catchall_0
     move-exception v0
 
@@ -2679,7 +2754,32 @@
     throw v0
 .end method
 
-.method public static d(Landroid/content/Context;)Ljava/lang/String;
+.method public static e()I
+    .locals 3
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 629
+    sget-object v1, Lsg;->d:[Lsn$a;
+
+    aget-object v1, v1, v0
+
+    sget-object v2, Lsn$a;->d:Lsn$a;
+
+    if-ne v1, v2, :cond_0
+
+    .line 632
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x1
+
+    goto :goto_0
+.end method
+
+.method public static e(Landroid/content/Context;)Ljava/lang/String;
     .locals 8
 
     .prologue
@@ -2691,37 +2791,37 @@
 
     const/4 v5, 0x0
 
-    .line 696
+    .line 612
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
-    .line 697
-    invoke-static {v5}, Lse;->e(I)Z
+    .line 613
+    invoke-static {v5}, Lsg;->c(I)Z
 
-    .line 698
-    invoke-static {v6}, Lse;->e(I)Z
+    .line 614
+    invoke-static {v6}, Lsg;->c(I)Z
 
-    .line 700
+    .line 616
     invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 701
+    .line 617
     const-string v1, "pref_key_sim1_auto_download_roaming_switch"
 
     invoke-interface {v0, v1, v5}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v1
 
-    .line 703
+    .line 619
     const-string v3, "pref_key_sim2_auto_download_roaming_switch"
 
     invoke-interface {v0, v3, v5}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v3
 
-    .line 706
+    .line 622
     if-eqz v1, :cond_0
 
     invoke-virtual {v2, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -2730,7 +2830,7 @@
 
     move-object v1, v0
 
-    .line 707
+    .line 623
     :goto_0
     if-eqz v3, :cond_1
 
@@ -2738,7 +2838,7 @@
 
     move-result-object v0
 
-    .line 709
+    .line 625
     :goto_1
     const v3, #com.android.mms:string@sim_status#t
 
@@ -2756,7 +2856,7 @@
 
     return-object v0
 
-    .line 706
+    .line 622
     :cond_0
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2766,7 +2866,7 @@
 
     goto :goto_0
 
-    .line 707
+    .line 623
     :cond_1
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2775,129 +2875,30 @@
     goto :goto_1
 .end method
 
-.method public static d()V
-    .locals 1
-
-    .prologue
-    .line 339
-    const-string v0, ""
-
-    sput-object v0, Lse;->k:Ljava/lang/String;
-
-    .line 340
-    return-void
-.end method
-
-.method public static d(I)V
-    .locals 3
-
-    .prologue
-    .line 357
-    sget-boolean v0, Lse;->a:Z
-
-    if-eqz v0, :cond_0
-
-    .line 358
-    const-string v0, "DualSimMessageUtils"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "setConversationDraftImsi slotId = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 359
-    invoke-static {p0}, Lse;->c(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lse;->l:Ljava/lang/String;
-
-    .line 361
-    :cond_0
-    return-void
-.end method
-
-.method public static d(Lse$a;)V
-    .locals 2
-
-    .prologue
-    .line 581
-    sget-object v1, Lse;->n:Ljava/util/HashSet;
-
-    monitor-enter v1
-
-    .line 582
-    :try_start_0
-    sget-object v0, Lse;->n:Ljava/util/HashSet;
-
-    invoke-virtual {v0, p0}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
-
-    .line 583
-    monitor-exit v1
-
-    .line 584
-    return-void
-
-    .line 583
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public static e()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 375
-    sget-object v0, Lse;->l:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public static e(Landroid/content/Context;)V
+.method public static f(Landroid/content/Context;)V
     .locals 5
 
     .prologue
-    .line 737
-    .line 738
+    .line 653
+    .line 654
     const/4 v0, 0x0
 
     :goto_0
-    sget v1, Lse;->b:I
+    sget v1, Lsg;->b:I
 
     if-ge v0, v1, :cond_0
 
-    .line 739
-    invoke-static {p0, v0}, Lsk;->a(Landroid/content/Context;I)Lsk$a;
+    .line 655
+    invoke-static {p0, v0}, Lsn;->a(Landroid/content/Context;I)Lsn$a;
 
     move-result-object v1
 
-    .line 740
-    sget-object v2, Lse;->d:[Lsk$a;
+    .line 656
+    sget-object v2, Lsg;->d:[Lsn$a;
 
     aput-object v1, v2, v0
 
-    .line 741
+    .line 657
     const-string v2, "DualSimMessageUtils"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -2930,26 +2931,28 @@
 
     invoke-static {v2, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 738
+    .line 654
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 743
+    .line 659
     :cond_0
     return-void
 .end method
 
-.method public static e(I)Z
+.method public static f()Z
     .locals 2
 
     .prologue
-    .line 521
-    sget-object v0, Lse;->d:[Lsk$a;
+    const/4 v1, 0x2
 
-    aget-object v0, v0, p0
+    .line 637
+    sget v0, Lsg;->i:I
 
-    sget-object v1, Lsk$a;->d:Lsk$a;
+    if-ne v0, v1, :cond_0
+
+    sget v0, Lsg;->e:I
 
     if-ne v0, v1, :cond_0
 
@@ -2964,33 +2967,48 @@
     goto :goto_0
 .end method
 
-.method public static f()V
+.method public static g()Z
     .locals 1
 
     .prologue
-    .line 379
-    const-string v0, ""
+    .line 641
+    invoke-static {}, Lsg;->i()Z
 
-    sput-object v0, Lse;->l:Ljava/lang/String;
+    move-result v0
 
-    .line 380
-    return-void
+    if-eqz v0, :cond_0
+
+    invoke-static {}, Lsg;->f()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
-.method public static f(Landroid/content/Context;)Z
+.method public static g(Landroid/content/Context;)Z
     .locals 4
 
     .prologue
     const/4 v0, 0x0
 
-    .line 756
+    .line 672
     if-nez p0, :cond_0
 
-    .line 763
+    .line 679
     :goto_0
     return v0
 
-    .line 759
+    .line 675
     :cond_0
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -3002,14 +3020,14 @@
 
     move-result v1
 
-    .line 761
+    .line 677
     const/4 v2, 0x2
 
     if-ne v1, v2, :cond_1
 
     const/4 v0, 0x1
 
-    .line 762
+    .line 678
     :cond_1
     const-string v1, "DualSimMessageUtils"
 
@@ -3036,322 +3054,16 @@
     goto :goto_0
 .end method
 
-.method public static g()V
-    .locals 3
+.method public static h()Z
+    .locals 1
 
     .prologue
-    const/4 v0, 0x0
-
-    .line 587
-    sget v1, Lse;->i:I
-
-    sput v1, Lse;->j:I
-
-    .line 588
-    sput v0, Lse;->i:I
-
-    .line 589
-    :goto_0
-    sget-object v1, Lse;->h:[Z
-
-    array-length v1, v1
-
-    if-ge v0, v1, :cond_1
-
-    .line 590
-    sget-object v1, Lse;->h:[Z
-
-    aget-boolean v1, v1, v0
-
-    if-eqz v1, :cond_0
-
-    .line 591
-    sget v1, Lse;->i:I
-
-    add-int/lit8 v1, v1, 0x1
-
-    sput v1, Lse;->i:I
-
-    .line 589
-    :cond_0
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    .line 594
-    :cond_1
-    const-string v0, "DualSimMessageUtils"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "updateCurrentNotRadioOffSimCount LAST_TITME_NOT_RADIO_OFF_SIM_COUNT = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    sget v2, Lse;->j:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ", CURRENT_NOT_RADIO_OFF_SIM_COUNT = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    sget v2, Lse;->i:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 595
-    sget v0, Lse;->j:I
-
-    sget v1, Lse;->i:I
-
-    if-eq v0, v1, :cond_2
-
-    .line 596
-    invoke-static {}, Lse;->q()V
-
-    .line 598
-    :cond_2
-    return-void
-.end method
-
-.method public static h()I
-    .locals 5
-
-    .prologue
-    const/4 v1, 0x1
-
-    const/4 v0, 0x0
-
-    .line 637
-    sget v2, Lse;->b:I
-
-    const/4 v3, 0x2
-
-    if-ne v2, v3, :cond_0
-
-    .line 638
-    const-string v2, "DualSimMessageUtils"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "getNotRadioOffSlotId mServiceStates[0] = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    sget-object v4, Lse;->h:[Z
-
-    aget-boolean v4, v4, v0
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ", mSlotState[0] = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    sget-object v4, Lse;->d:[Lsk$a;
-
-    aget-object v4, v4, v0
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ", mServiceStates[1] = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    sget-object v4, Lse;->h:[Z
-
-    aget-boolean v4, v4, v1
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ", mSlotState[1] = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    sget-object v4, Lse;->d:[Lsk$a;
-
-    aget-object v4, v4, v1
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 640
-    sget-object v2, Lse;->h:[Z
-
-    aget-boolean v2, v2, v0
-
-    if-eqz v2, :cond_1
-
-    sget-object v2, Lse;->d:[Lsk$a;
-
-    aget-object v2, v2, v0
-
-    sget-object v3, Lsk$a;->d:Lsk$a;
-
-    if-ne v2, v3, :cond_1
-
-    .line 647
-    :cond_0
-    :goto_0
-    return v0
-
-    .line 642
-    :cond_1
-    sget-object v0, Lse;->h:[Z
-
-    aget-boolean v0, v0, v1
-
-    if-eqz v0, :cond_2
-
-    sget-object v0, Lse;->d:[Lsk$a;
-
-    aget-object v0, v0, v1
-
-    sget-object v2, Lsk$a;->d:Lsk$a;
-
-    if-ne v0, v2, :cond_2
-
-    move v0, v1
-
-    .line 643
-    goto :goto_0
-
     .line 645
-    :cond_2
-    const/4 v0, -0x1
-
-    goto :goto_0
-.end method
-
-.method public static i()I
-    .locals 3
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 713
-    sget-object v1, Lse;->d:[Lsk$a;
-
-    aget-object v1, v1, v0
-
-    sget-object v2, Lsk$a;->d:Lsk$a;
-
-    if-ne v1, v2, :cond_0
-
-    .line 716
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x1
-
-    goto :goto_0
-.end method
-
-.method public static j()Z
-    .locals 2
-
-    .prologue
-    const/4 v1, 0x2
-
-    .line 721
-    sget v0, Lse;->i:I
-
-    if-ne v0, v1, :cond_0
-
-    sget v0, Lse;->e:I
-
-    if-ne v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public static k()Z
-    .locals 1
-
-    .prologue
-    .line 725
-    invoke-static {}, Lse;->m()Z
-
-    move-result v0
+    sget v0, Lsg;->i:I
 
     if-eqz v0, :cond_0
 
-    invoke-static {}, Lse;->j()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public static l()Z
-    .locals 1
-
-    .prologue
-    .line 729
-    sget v0, Lse;->i:I
-
-    if-eqz v0, :cond_0
-
-    sget v0, Lse;->e:I
+    sget v0, Lsg;->e:I
 
     if-nez v0, :cond_1
 
@@ -3367,16 +3079,16 @@
     goto :goto_0
 .end method
 
-.method public static m()Z
+.method public static i()Z
     .locals 1
 
     .prologue
-    .line 733
-    sget v0, Lse;->e:I
+    .line 649
+    sget v0, Lsg;->e:I
 
     if-lez v0, :cond_0
 
-    sget v0, Lse;->i:I
+    sget v0, Lsg;->i:I
 
     if-lez v0, :cond_0
 
@@ -3391,18 +3103,18 @@
     goto :goto_0
 .end method
 
-.method private static n()V
+.method private static j()V
     .locals 4
 
     .prologue
     const/4 v1, 0x1
 
-    .line 93
-    sget-boolean v0, Lse;->g:Z
+    .line 88
+    sget-boolean v0, Lsg;->g:Z
 
     if-nez v0, :cond_0
 
-    .line 94
+    .line 89
     invoke-static {}, Lcom/android/mms/MmsApp;->c()Lcom/android/mms/MmsApp;
 
     move-result-object v0
@@ -3413,7 +3125,7 @@
 
     const-string v2, "isMultiSimEnabled"
 
-    invoke-static {v0, v2}, Lsr;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0, v2}, Lsw;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -3423,9 +3135,9 @@
 
     move-result v0
 
-    sput-boolean v0, Lse;->a:Z
+    sput-boolean v0, Lsg;->a:Z
 
-    .line 96
+    .line 91
     const-string v0, "DualSimMessageUtils"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -3438,7 +3150,7 @@
 
     move-result-object v2
 
-    sget-boolean v3, Lse;->a:Z
+    sget-boolean v3, Lsg;->a:Z
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
@@ -3450,52 +3162,52 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 97
-    sget-boolean v0, Lse;->a:Z
+    .line 92
+    sget-boolean v0, Lsg;->a:Z
 
     if-eqz v0, :cond_1
 
     const/4 v0, 0x2
 
     :goto_0
-    sput v0, Lse;->b:I
+    sput v0, Lsg;->b:I
 
-    .line 98
-    sget v0, Lse;->b:I
+    .line 93
+    sget v0, Lsg;->b:I
 
     new-array v0, v0, [Ljava/lang/String;
 
-    sput-object v0, Lse;->c:[Ljava/lang/String;
+    sput-object v0, Lsg;->c:[Ljava/lang/String;
 
-    .line 99
-    sget v0, Lse;->b:I
+    .line 94
+    sget v0, Lsg;->b:I
 
-    new-array v0, v0, [Lsk$a;
+    new-array v0, v0, [Lsn$a;
 
-    sput-object v0, Lse;->d:[Lsk$a;
+    sput-object v0, Lsg;->d:[Lsn$a;
 
-    .line 100
-    sget v0, Lse;->b:I
+    .line 95
+    sget v0, Lsg;->b:I
 
     new-array v0, v0, [Z
 
-    sput-object v0, Lse;->h:[Z
+    sput-object v0, Lsg;->h:[Z
 
-    .line 101
-    sput-boolean v1, Lse;->g:Z
+    .line 96
+    sput-boolean v1, Lsg;->g:Z
 
-    .line 103
+    .line 98
     :cond_0
     return-void
 
     :cond_1
     move v0, v1
 
-    .line 97
+    .line 92
     goto :goto_0
 .end method
 
-.method private static o()V
+.method private static k()V
     .locals 4
 
     .prologue
@@ -3503,46 +3215,78 @@
 
     move v0, v1
 
-    .line 107
+    .line 102
     :goto_0
-    sget v2, Lse;->b:I
+    sget v2, Lsg;->b:I
 
     if-ge v0, v2, :cond_0
 
-    .line 108
-    sget-object v2, Lse;->d:[Lsk$a;
+    .line 103
+    sget-object v2, Lsg;->d:[Lsn$a;
 
-    sget-object v3, Lsk$a;->b:Lsk$a;
+    sget-object v3, Lsn$a;->b:Lsn$a;
 
     aput-object v3, v2, v0
 
-    .line 109
-    sget-object v2, Lse;->h:[Z
+    .line 104
+    sget-object v2, Lsg;->h:[Z
 
     aput-boolean v1, v2, v0
 
-    .line 107
+    .line 102
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 111
+    .line 106
     :cond_0
     return-void
 .end method
 
-.method private static p()V
+.method private static l()[Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 174
+    sget-object v0, Lsg;->c:[Ljava/lang/String;
+
+    if-nez v0, :cond_0
+
+    .line 175
+    const/4 v0, 0x0
+
+    sput-boolean v0, Lsg;->g:Z
+
+    .line 176
+    invoke-static {}, Lcom/android/mms/MmsApp;->c()Lcom/android/mms/MmsApp;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/mms/MmsApp;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lsg;->a(Landroid/content/Context;)V
+
+    .line 178
+    :cond_0
+    sget-object v0, Lsg;->c:[Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method private static m()V
     .locals 4
 
     .prologue
-    .line 426
-    sget-object v1, Lse;->m:Ljava/util/HashSet;
+    .line 342
+    sget-object v1, Lsg;->k:Ljava/util/HashSet;
 
     monitor-enter v1
 
-    .line 427
+    .line 343
     :try_start_0
-    sget-object v0, Lse;->m:Ljava/util/HashSet;
+    sget-object v0, Lsg;->k:Ljava/util/HashSet;
 
     invoke-virtual {v0}, Ljava/util/HashSet;->clone()Ljava/lang/Object;
 
@@ -3550,12 +3294,12 @@
 
     check-cast v0, Ljava/util/HashSet;
 
-    .line 428
+    .line 344
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 429
+    .line 345
     invoke-virtual {v0}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -3571,18 +3315,18 @@
 
     move-result-object v0
 
-    check-cast v0, Lse$a;
+    check-cast v0, Lsg$a;
 
-    .line 430
-    sget v2, Lse;->f:I
+    .line 346
+    sget v2, Lsg;->f:I
 
-    sget v3, Lse;->e:I
+    sget v3, Lsg;->e:I
 
-    invoke-interface {v0, v2, v3}, Lse$a;->a(II)V
+    invoke-interface {v0, v2, v3}, Lsg$a;->a(II)V
 
     goto :goto_0
 
-    .line 428
+    .line 344
     :catchall_0
     move-exception v0
 
@@ -3593,7 +3337,7 @@
 
     throw v0
 
-    .line 432
+    .line 348
     :cond_0
     invoke-static {}, Lcn/com/xy/sms/sdk/util/DuoquUtils;->getSdkDoAction()Lcn/com/xy/sms/sdk/action/AbsSdkDoAction;
 
@@ -3601,22 +3345,22 @@
 
     invoke-virtual {v0}, Lcn/com/xy/sms/sdk/action/AbsSdkDoAction;->simChange()V
 
-    .line 433
+    .line 349
     return-void
 .end method
 
-.method private static q()V
+.method private static n()V
     .locals 4
 
     .prologue
-    .line 565
-    sget-object v1, Lse;->n:Ljava/util/HashSet;
+    .line 481
+    sget-object v1, Lsg;->l:Ljava/util/HashSet;
 
     monitor-enter v1
 
-    .line 566
+    .line 482
     :try_start_0
-    sget-object v0, Lse;->n:Ljava/util/HashSet;
+    sget-object v0, Lsg;->l:Ljava/util/HashSet;
 
     invoke-virtual {v0}, Ljava/util/HashSet;->clone()Ljava/lang/Object;
 
@@ -3624,12 +3368,12 @@
 
     check-cast v0, Ljava/util/HashSet;
 
-    .line 567
+    .line 483
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 569
+    .line 485
     invoke-virtual {v0}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -3645,18 +3389,18 @@
 
     move-result-object v0
 
-    check-cast v0, Lse$a;
+    check-cast v0, Lsg$a;
 
-    .line 570
-    sget v2, Lse;->j:I
+    .line 486
+    sget v2, Lsg;->j:I
 
-    sget v3, Lse;->i:I
+    sget v3, Lsg;->i:I
 
-    invoke-interface {v0, v2, v3}, Lse$a;->a(II)V
+    invoke-interface {v0, v2, v3}, Lsg$a;->a(II)V
 
     goto :goto_0
 
-    .line 567
+    .line 483
     :catchall_0
     move-exception v0
 
@@ -3667,7 +3411,7 @@
 
     throw v0
 
-    .line 572
+    .line 488
     :cond_0
     return-void
 .end method

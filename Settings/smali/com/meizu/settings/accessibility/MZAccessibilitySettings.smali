@@ -573,7 +573,7 @@
 
     if-ne v0, v2, :cond_0
 
-    const v0, 0x7f0b05b7
+    const v0, #com.android.settings:string@accessibility_feature_state_on#t
 
     :goto_0
     invoke-virtual {v1, v0}, Landroid/preference/Preference;->setSummary(I)V
@@ -583,7 +583,7 @@
 
     .line 233
     :cond_0
-    const v0, 0x7f0b05b8
+    const v0, #com.android.settings:string@accessibility_feature_state_off#t
 
     goto :goto_0
 .end method
@@ -617,7 +617,7 @@
 
     if-ne v0, v2, :cond_0
 
-    const v0, 0x7f0b05b7
+    const v0, #com.android.settings:string@accessibility_feature_state_on#t
 
     :goto_0
     invoke-virtual {v1, v0}, Landroid/preference/Preference;->setSummary(I)V
@@ -627,7 +627,7 @@
 
     .line 217
     :cond_0
-    const v0, 0x7f0b05b8
+    const v0, #com.android.settings:string@accessibility_feature_state_off#t
 
     goto :goto_0
 .end method
@@ -663,7 +663,7 @@
 
     if-eqz v0, :cond_2
 
-    const v1, 0x7f0b05b7
+    const v1, #com.android.settings:string@accessibility_feature_state_on#t
 
     :goto_1
     invoke-virtual {v2, v1}, Landroid/preference/Preference;->setSummary(I)V
@@ -682,7 +682,7 @@
     .line 227
     .restart local v0    # "on":Z
     :cond_2
-    const v1, 0x7f0b05b8
+    const v1, #com.android.settings:string@accessibility_feature_state_off#t
 
     goto :goto_1
 .end method
@@ -708,7 +708,7 @@
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
     .line 104
-    const v0, 0x7f08003a
+    const v0, #com.android.settings:xml@mz_accessibility_settings#t
 
     invoke-virtual {p0, v0}, Lcom/meizu/settings/accessibility/MZAccessibilitySettings;->addPreferencesFromResource(I)V
 

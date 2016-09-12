@@ -1412,9 +1412,6 @@
 
     .line 241
     .restart local v0    # "intent":Landroid/content/Intent;
-    const/high16 v3, 0x10000000
-
-    invoke-virtual {v0, v3}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
     .line 242
     const-string v3, "android.intent.action.BLOCK_SERVICE_MAIN_ACTIVITY"
