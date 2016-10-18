@@ -16,9 +16,9 @@
 
 .field private mAppLock:Landroid/preference/Preference;
 
-.field private mCreateFpExtraValue:Ljava/lang/String;
-
 .field private mDocumentLockPreference:Landroid/preference/Preference;
+
+.field private mFPCategory:Landroid/preference/PreferenceCategory;
 
 .field private mFPPreference:Landroid/preference/Preference;
 
@@ -32,11 +32,9 @@
 
 .field private mIsPrimary:Z
 
-.field private mLockPasswordUtils:Lcom/android/internal/widget/LockPatternUtils;
+.field private mLockPasswordUtils:Lcom/meizu/settings/security/MzLockPasswordUtils;
 
 .field private mMZLockUtils:Lcom/meizu/settings/security/MzLockPasswordUtils;
-
-.field private mNeedShowPassword:Z
 
 .field private mNotificationAccess:Landroid/preference/Preference;
 
@@ -54,8 +52,6 @@
 
 .field private mUsageStatsProxy:Lcom/meizu/settings/datareport/UsageStatsProxy;
 
-.field private mUseFPUnlockPreference:Lcom/meizu/common/preference/SwitchPreference;
-
 .field private mWarnInstallApps:Landroid/content/DialogInterface;
 
 
@@ -64,7 +60,7 @@
     .locals 1
 
     .prologue
-    .line 632
+    .line 568
     new-instance v0, Lcom/meizu/settings/security/SecuritySettings$3;
 
     invoke-direct {v0}, Lcom/meizu/settings/security/SecuritySettings$3;-><init>()V
@@ -80,23 +76,18 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 67
+    .line 53
     invoke-direct {p0, v0}, Lcom/android/settings/RestrictedSettingsFragment;-><init>(Ljava/lang/String;)V
 
-    .line 114
-    iput-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mLockPasswordUtils:Lcom/android/internal/widget/LockPatternUtils;
+    .line 100
+    iput-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mLockPasswordUtils:Lcom/meizu/settings/security/MzLockPasswordUtils;
 
-    .line 116
+    .line 102
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mFPTotal:I
 
-    .line 118
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mNeedShowPassword:Z
-
-    .line 123
+    .line 107
     const-string v0, "enabled_notification_listeners"
 
     invoke-static {v0}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -105,14 +96,14 @@
 
     iput-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->ENABLED_NOTIFICATION_LISTENERS_URI:Landroid/net/Uri;
 
-    .line 619
+    .line 555
     new-instance v0, Lcom/meizu/settings/security/SecuritySettings$2;
 
     invoke-direct {v0, p0}, Lcom/meizu/settings/security/SecuritySettings$2;-><init>(Lcom/meizu/settings/security/SecuritySettings;)V
 
     iput-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mSimInfoChangeReceicer:Landroid/content/BroadcastReceiver;
 
-    .line 68
+    .line 54
     return-void
 .end method
 
@@ -121,7 +112,7 @@
     .param p0, "x0"    # Lcom/meizu/settings/security/SecuritySettings;
 
     .prologue
-    .line 63
+    .line 49
     iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mWarnInstallApps:Landroid/content/DialogInterface;
 
     return-object v0
@@ -132,7 +123,7 @@
     .param p0, "x0"    # Lcom/meizu/settings/security/SecuritySettings;
 
     .prologue
-    .line 63
+    .line 49
     iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mToggleAppInstallation:Lcom/meizu/common/preference/SwitchPreference;
 
     return-object v0
@@ -144,7 +135,7 @@
     .param p1, "x1"    # Landroid/preference/PreferenceScreen;
 
     .prologue
-    .line 63
+    .line 49
     invoke-direct {p0, p1}, Lcom/meizu/settings/security/SecuritySettings;->initSIMPreference(Landroid/preference/PreferenceScreen;)V
 
     return-void
@@ -154,7 +145,7 @@
     .locals 1
 
     .prologue
-    .line 242
+    .line 198
     new-instance v0, Lcom/meizu/settings/security/SecuritySettings$1;
 
     invoke-direct {v0, p0}, Lcom/meizu/settings/security/SecuritySettings$1;-><init>(Lcom/meizu/settings/security/SecuritySettings;)V
@@ -163,10 +154,17 @@
 .end method
 
 .method private handleRootPermissionPreferenceClick()V
-    .locals 6
+    .locals 7
 
     .prologue
-    .line 374
+    .line 350
+    invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->isRootPermissionOpened()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 351
     const-class v0, Lcom/meizu/settings/root/RootPermissionSettingsFragment;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -185,20 +183,55 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/meizu/settings/security/SecuritySettings;->startFragment(Landroid/app/Fragment;Ljava/lang/String;IILandroid/os/Bundle;)Z
 
-    .line 376
+    .line 359
+    :cond_0
+    :goto_0
     return-void
+
+    .line 354
+    :cond_1
+    invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->isFlymeAccountLogined()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 355
+    new-instance v6, Landroid/content/Intent;
+
+    const-string v0, "com.meizu.action.ROOT"
+
+    invoke-direct {v6, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    .line 356
+    .local v6, "it":Landroid/content/Intent;
+    invoke-virtual {p0, v6}, Lcom/meizu/settings/security/SecuritySettings;->startActivity(Landroid/content/Intent;)V
+
+    goto :goto_0
 .end method
 
 .method private handleStartFPManagement(Ljava/lang/String;)V
-    .locals 2
+    .locals 0
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 576
-    iput-object p1, p0, Lcom/meizu/settings/security/SecuritySettings;->mCreateFpExtraValue:Ljava/lang/String;
+    .line 541
+    invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->startFPManagementFragment()V
 
-    .line 578
+    .line 542
+    return-void
+.end method
+
+.method private init()V
+    .locals 1
+
+    .prologue
+    .line 118
     invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/Activity;->getApplication()Landroid/app/Application;
 
     move-result-object v0
 
@@ -206,61 +239,9 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/meizu/settings/security/MzLockPasswordUtils;->isScreenPasswordEnalbed()Z
+    iput-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mLockPasswordUtils:Lcom/meizu/settings/security/MzLockPasswordUtils;
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-boolean v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mNeedShowPassword:Z
-
-    if-eqz v0, :cond_0
-
-    .line 580
-    const/4 v0, 0x0
-
-    const/16 v1, 0x80
-
-    invoke-direct {p0, v0, v1}, Lcom/meizu/settings/security/SecuritySettings;->startConfirmPasswordFragment(II)V
-
-    .line 591
-    :goto_0
-    return-void
-
-    .line 584
-    :cond_0
-    iget v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mFPTotal:I
-
-    if-lez v0, :cond_1
-
-    .line 585
-    invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->startFPManagementFragment()V
-
-    goto :goto_0
-
-    .line 587
-    :cond_1
-    invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->startCreateFPActivity()V
-
-    goto :goto_0
-.end method
-
-.method private init()V
-    .locals 2
-
-    .prologue
-    .line 134
-    new-instance v0, Lcom/android/internal/widget/LockPatternUtils;
-
-    invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getActivity()Landroid/app/Activity;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lcom/android/internal/widget/LockPatternUtils;-><init>(Landroid/content/Context;)V
-
-    iput-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mLockPasswordUtils:Lcom/android/internal/widget/LockPatternUtils;
-
-    .line 135
+    .line 119
     invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -271,7 +252,7 @@
 
     iput-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mMZLockUtils:Lcom/meizu/settings/security/MzLockPasswordUtils;
 
-    .line 136
+    .line 120
     invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -282,232 +263,266 @@
 
     iput-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mUsageStatsProxy:Lcom/meizu/settings/datareport/UsageStatsProxy;
 
-    .line 138
+    .line 122
     invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->registerSimInfoChangeReceiver()V
 
-    .line 139
+    .line 123
     invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->initPreference()V
 
-    .line 140
+    .line 124
     return-void
 .end method
 
 .method private initPreference()V
-    .locals 3
+    .locals 4
 
     .prologue
-    const/4 v2, 0x1
+    .line 390
+    const v2, #com.android.settings:xml@keyguard_settings#t
 
-    .line 407
-    const v1, #com.android.settings:xml@keyguard_settings#t
+    invoke-virtual {p0, v2}, Lcom/meizu/settings/security/SecuritySettings;->addPreferencesFromResource(I)V
 
-    invoke-virtual {p0, v1}, Lcom/meizu/settings/security/SecuritySettings;->addPreferencesFromResource(I)V
-
-    .line 408
+    .line 391
     invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
-    move-result-object v0
+    move-result-object v1
 
-    .line 410
-    .local v0, "root":Landroid/preference/PreferenceScreen;
+    .line 393
+    .local v1, "root":Landroid/preference/PreferenceScreen;
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    move v1, v2
-
-    :goto_0
-    iput-boolean v1, p0, Lcom/meizu/settings/security/SecuritySettings;->mIsPrimary:Z
-
-    .line 411
-    iput-boolean v2, p0, Lcom/meizu/settings/security/SecuritySettings;->mNeedShowPassword:Z
-
-    .line 413
-    const-string v1, "fp_management"
-
-    invoke-virtual {v0, v1}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/meizu/settings/security/SecuritySettings;->mFPPreference:Landroid/preference/Preference;
-
-    .line 415
-    const-string v1, "fp_unlock"
-
-    invoke-virtual {v0, v1}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/meizu/common/preference/SwitchPreference;
-
-    iput-object v1, p0, Lcom/meizu/settings/security/SecuritySettings;->mUseFPUnlockPreference:Lcom/meizu/common/preference/SwitchPreference;
-
-    .line 416
-    const-string v1, "fp_payment"
-
-    invoke-virtual {v0, v1}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/meizu/common/preference/SwitchPreference;
-
-    iput-object v1, p0, Lcom/meizu/settings/security/SecuritySettings;->mPaymentPreference:Lcom/meizu/common/preference/SwitchPreference;
-
-    .line 429
-    const-string v1, "fp_category"
-
-    invoke-virtual {p0, v1}, Lcom/meizu/settings/security/SecuritySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
-
-    .line 433
-    const-string v1, "passcode_items"
-
-    invoke-virtual {v0, v1}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/preference/PreferenceCategory;
-
-    iput-object v1, p0, Lcom/meizu/settings/security/SecuritySettings;->mPasswordCategory:Landroid/preference/PreferenceCategory;
-
-    .line 435
-    const-string v1, "screen_lock"
-
-    invoke-virtual {v0, v1}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/meizu/settings/security/SecuritySettings;->mScreenLockPreference:Landroid/preference/Preference;
-
-    .line 436
-    const-string v1, "file_manager_lock"
-
-    invoke-virtual {v0, v1}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/meizu/settings/security/SecuritySettings;->mDocumentLockPreference:Landroid/preference/Preference;
-
-    .line 437
-    const-string v1, "add_password_control"
-
-    invoke-virtual {v0, v1}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/meizu/settings/security/SecuritySettings;->mAppLock:Landroid/preference/Preference;
-
-    .line 438
-    const-string v1, "toggle_install_applications"
-
-    invoke-virtual {p0, v1}, Lcom/meizu/settings/security/SecuritySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/meizu/common/preference/SwitchPreference;
-
-    iput-object v1, p0, Lcom/meizu/settings/security/SecuritySettings;->mToggleAppInstallation:Lcom/meizu/common/preference/SwitchPreference;
-
-    .line 440
-    iget-object v1, p0, Lcom/meizu/settings/security/SecuritySettings;->mToggleAppInstallation:Lcom/meizu/common/preference/SwitchPreference;
-
-    invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->isNonMarketAppsAllowed()Z
 
     move-result v2
 
-    invoke-virtual {v1, v2}, Lcom/meizu/common/preference/SwitchPreference;->setChecked(Z)V
+    if-nez v2, :cond_2
 
-    .line 441
-    iget-object v1, p0, Lcom/meizu/settings/security/SecuritySettings;->mToggleAppInstallation:Lcom/meizu/common/preference/SwitchPreference;
+    const/4 v2, 0x1
 
-    iget-boolean v2, p0, Lcom/meizu/settings/security/SecuritySettings;->mIsPrimary:Z
+    :goto_0
+    iput-boolean v2, p0, Lcom/meizu/settings/security/SecuritySettings;->mIsPrimary:Z
 
-    invoke-virtual {v1, v2}, Lcom/meizu/common/preference/SwitchPreference;->setEnabled(Z)V
+    .line 395
+    const-string v2, "fp_management"
 
-    .line 443
-    const-string v1, "guest_mode"
+    invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
-    invoke-virtual {p0, v1}, Lcom/meizu/settings/security/SecuritySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+    move-result-object v2
 
-    move-result-object v1
+    iput-object v2, p0, Lcom/meizu/settings/security/SecuritySettings;->mFPPreference:Landroid/preference/Preference;
 
-    iput-object v1, p0, Lcom/meizu/settings/security/SecuritySettings;->mGuestModePreference:Landroid/preference/Preference;
+    .line 396
+    const-string v2, "fp_payment"
 
-    .line 444
-    iget-object v1, p0, Lcom/meizu/settings/security/SecuritySettings;->mLockPasswordUtils:Lcom/android/internal/widget/LockPatternUtils;
+    invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
-    invoke-virtual {v1}, Lcom/android/internal/widget/LockPatternUtils;->isLockPasswordEnabled()Z
+    move-result-object v2
 
-    move-result v1
+    check-cast v2, Lcom/meizu/common/preference/SwitchPreference;
 
-    if-nez v1, :cond_0
+    iput-object v2, p0, Lcom/meizu/settings/security/SecuritySettings;->mPaymentPreference:Lcom/meizu/common/preference/SwitchPreference;
 
-    .line 445
-    invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
+    .line 397
+    const-string v2, "fp_summary"
 
-    move-result-object v1
+    invoke-virtual {p0, v2}, Lcom/meizu/settings/security/SecuritySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
-    iget-object v2, p0, Lcom/meizu/settings/security/SecuritySettings;->mGuestModePreference:Landroid/preference/Preference;
+    move-result-object v0
 
-    invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
+    .line 398
+    .local v0, "fpSummary":Landroid/preference/Preference;
+    const-string v2, "fp_category"
 
-    .line 448
-    :cond_0
-    const-string v1, "manage_notification_access"
+    invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
-    invoke-virtual {p0, v1}, Lcom/meizu/settings/security/SecuritySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+    move-result-object v2
 
-    move-result-object v1
+    check-cast v2, Landroid/preference/PreferenceCategory;
 
-    iput-object v1, p0, Lcom/meizu/settings/security/SecuritySettings;->mNotificationAccess:Landroid/preference/Preference;
+    iput-object v2, p0, Lcom/meizu/settings/security/SecuritySettings;->mFPCategory:Landroid/preference/PreferenceCategory;
 
-    .line 450
-    const-string v1, "root_permission"
+    .line 399
+    const-string v2, "screen_lock"
 
-    invoke-virtual {p0, v1}, Lcom/meizu/settings/security/SecuritySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+    invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
-    move-result-object v1
+    move-result-object v2
 
-    iput-object v1, p0, Lcom/meizu/settings/security/SecuritySettings;->mRootPermissionPreference:Landroid/preference/Preference;
+    iput-object v2, p0, Lcom/meizu/settings/security/SecuritySettings;->mScreenLockPreference:Landroid/preference/Preference;
 
-    .line 451
-    invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->isRootPermissionOpened()Z
+    .line 408
+    iget-object v2, p0, Lcom/meizu/settings/security/SecuritySettings;->mFPCategory:Landroid/preference/PreferenceCategory;
 
-    move-result v1
+    const v3, #com.android.settings:string@phone_pwd#t
 
-    if-nez v1, :cond_1
+    invoke-virtual {p0, v3}, Lcom/meizu/settings/security/SecuritySettings;->getString(I)Ljava/lang/String;
 
-    .line 452
-    const-string v1, "security_items"
+    move-result-object v3
 
-    invoke-virtual {p0, v1}, Lcom/meizu/settings/security/SecuritySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+    invoke-virtual {v2, v3}, Landroid/preference/PreferenceCategory;->setTitle(Ljava/lang/CharSequence;)V
 
-    move-result-object v1
+    .line 409
+    iget-object v2, p0, Lcom/meizu/settings/security/SecuritySettings;->mScreenLockPreference:Landroid/preference/Preference;
 
-    check-cast v1, Landroid/preference/PreferenceCategory;
+    const v3, #com.android.settings:string@phone_pwd_summary_no_fp#t
 
-    iget-object v2, p0, Lcom/meizu/settings/security/SecuritySettings;->mRootPermissionPreference:Landroid/preference/Preference;
+    invoke-virtual {p0, v3}, Lcom/meizu/settings/security/SecuritySettings;->getString(I)Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
+    move-result-object v3
 
-    .line 455
-    :cond_1
-    invoke-direct {p0, v0}, Lcom/meizu/settings/security/SecuritySettings;->initSIMPreference(Landroid/preference/PreferenceScreen;)V
-
-    .line 456
-    invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->removePreferenceInGuestMode()V
-
-    .line 457
-    return-void
+    invoke-virtual {v2, v3}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
     .line 410
+    iget-object v2, p0, Lcom/meizu/settings/security/SecuritySettings;->mFPCategory:Landroid/preference/PreferenceCategory;
+
+    iget-object v3, p0, Lcom/meizu/settings/security/SecuritySettings;->mFPPreference:Landroid/preference/Preference;
+
+    invoke-virtual {v2, v3}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
+
+    .line 411
+    iget-object v2, p0, Lcom/meizu/settings/security/SecuritySettings;->mFPCategory:Landroid/preference/PreferenceCategory;
+
+    iget-object v3, p0, Lcom/meizu/settings/security/SecuritySettings;->mPaymentPreference:Lcom/meizu/common/preference/SwitchPreference;
+
+    invoke-virtual {v2, v3}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
+
+    .line 412
+    iget-object v2, p0, Lcom/meizu/settings/security/SecuritySettings;->mFPCategory:Landroid/preference/PreferenceCategory;
+
+    invoke-virtual {v2, v0}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
+
+    .line 415
+    const-string v2, "passcode_items"
+
+    invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/preference/PreferenceCategory;
+
+    iput-object v2, p0, Lcom/meizu/settings/security/SecuritySettings;->mPasswordCategory:Landroid/preference/PreferenceCategory;
+
+    .line 417
+    const-string v2, "file_manager_lock"
+
+    invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v2
+
+    iput-object v2, p0, Lcom/meizu/settings/security/SecuritySettings;->mDocumentLockPreference:Landroid/preference/Preference;
+
+    .line 418
+    const-string v2, "add_password_control"
+
+    invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v2
+
+    iput-object v2, p0, Lcom/meizu/settings/security/SecuritySettings;->mAppLock:Landroid/preference/Preference;
+
+    .line 419
+    const-string v2, "toggle_install_applications"
+
+    invoke-virtual {p0, v2}, Lcom/meizu/settings/security/SecuritySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/meizu/common/preference/SwitchPreference;
+
+    iput-object v2, p0, Lcom/meizu/settings/security/SecuritySettings;->mToggleAppInstallation:Lcom/meizu/common/preference/SwitchPreference;
+
+    .line 421
+    iget-object v2, p0, Lcom/meizu/settings/security/SecuritySettings;->mToggleAppInstallation:Lcom/meizu/common/preference/SwitchPreference;
+
+    invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->isNonMarketAppsAllowed()Z
+
+    move-result v3
+
+    invoke-virtual {v2, v3}, Lcom/meizu/common/preference/SwitchPreference;->setChecked(Z)V
+
+    .line 422
+    iget-object v2, p0, Lcom/meizu/settings/security/SecuritySettings;->mToggleAppInstallation:Lcom/meizu/common/preference/SwitchPreference;
+
+    iget-boolean v3, p0, Lcom/meizu/settings/security/SecuritySettings;->mIsPrimary:Z
+
+    invoke-virtual {v2, v3}, Lcom/meizu/common/preference/SwitchPreference;->setEnabled(Z)V
+
+    .line 424
+    const-string v2, "guest_mode"
+
+    invoke-virtual {p0, v2}, Lcom/meizu/settings/security/SecuritySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v2
+
+    iput-object v2, p0, Lcom/meizu/settings/security/SecuritySettings;->mGuestModePreference:Landroid/preference/Preference;
+
+    .line 425
+    invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->needRemoveGuestModePreference()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    .line 426
+    invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/meizu/settings/security/SecuritySettings;->mGuestModePreference:Landroid/preference/Preference;
+
+    invoke-virtual {v2, v3}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
+
+    .line 429
+    :cond_0
+    const-string v2, "manage_notification_access"
+
+    invoke-virtual {p0, v2}, Lcom/meizu/settings/security/SecuritySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v2
+
+    iput-object v2, p0, Lcom/meizu/settings/security/SecuritySettings;->mNotificationAccess:Landroid/preference/Preference;
+
+    .line 431
+    const-string v2, "root_permission"
+
+    invoke-virtual {p0, v2}, Lcom/meizu/settings/security/SecuritySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v2
+
+    iput-object v2, p0, Lcom/meizu/settings/security/SecuritySettings;->mRootPermissionPreference:Landroid/preference/Preference;
+
+    .line 432
+    invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->needShowRootPreference()Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    .line 433
+    const-string v2, "security_items"
+
+    invoke-virtual {p0, v2}, Lcom/meizu/settings/security/SecuritySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/preference/PreferenceCategory;
+
+    iget-object v3, p0, Lcom/meizu/settings/security/SecuritySettings;->mRootPermissionPreference:Landroid/preference/Preference;
+
+    invoke-virtual {v2, v3}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
+
+    .line 436
+    :cond_1
+    invoke-direct {p0, v1}, Lcom/meizu/settings/security/SecuritySettings;->initSIMPreference(Landroid/preference/PreferenceScreen;)V
+
+    .line 437
+    invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->removePreferenceInGuestMode()V
+
+    .line 438
+    return-void
+
+    .line 393
+    .end local v0    # "fpSummary":Landroid/preference/Preference;
     :cond_2
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     goto/16 :goto_0
 .end method
@@ -517,12 +532,12 @@
     .param p1, "root"    # Landroid/preference/PreferenceScreen;
 
     .prologue
-    .line 484
+    .line 456
     iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mIcclockSettingsPref:Landroid/preference/Preference;
 
     if-nez v0, :cond_0
 
-    .line 485
+    .line 457
     const-string v0, "sim_lock_settings_category"
 
     invoke-virtual {p1, v0}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -531,13 +546,13 @@
 
     iput-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mIcclockSettingsPref:Landroid/preference/Preference;
 
-    .line 487
+    .line 459
     :cond_0
     iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mIcclockSettingsChooserPref:Landroid/preference/Preference;
 
     if-nez v0, :cond_1
 
-    .line 488
+    .line 460
     const-string v0, "sim_lock_chooser_category"
 
     invoke-virtual {p1, v0}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -546,7 +561,7 @@
 
     iput-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mIcclockSettingsChooserPref:Landroid/preference/Preference;
 
-    .line 490
+    .line 462
     :cond_1
     invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getActivity()Landroid/app/Activity;
 
@@ -564,8 +579,24 @@
 
     invoke-static/range {v0 .. v5}, Lcom/meizu/settings/icclock/IcclockSettingsChooser;->initIccLockSettings(Landroid/content/Context;Landroid/preference/PreferenceScreen;Landroid/preference/Preference;Landroid/preference/Preference;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 493
+    .line 465
     return-void
+.end method
+
+.method private isFlymeAccountLogined()Z
+    .locals 1
+
+    .prologue
+    .line 346
+    invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/meizu/settings/utils/FlymeAccountHelper;->isFlymeAccountLogined(Landroid/content/Context;)Z
+
+    move-result v0
+
+    return v0
 .end method
 
 .method private isNonMarketAppsAllowed()Z
@@ -574,7 +605,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 254
+    .line 210
     invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -597,7 +628,7 @@
     .locals 1
 
     .prologue
-    .line 370
+    .line 342
     invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -609,24 +640,127 @@
     return v0
 .end method
 
+.method private needRemoveGuestModePreference()Z
+    .locals 1
+
+    .prologue
+    .line 294
+    iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mLockPasswordUtils:Lcom/meizu/settings/security/MzLockPasswordUtils;
+
+    invoke-virtual {v0}, Lcom/meizu/settings/security/MzLockPasswordUtils;->isScreenPasswordEnalbed()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mLockPasswordUtils:Lcom/meizu/settings/security/MzLockPasswordUtils;
+
+    invoke-virtual {v0}, Lcom/meizu/settings/security/MzLockPasswordUtils;->isScreenPasswordEnalbed()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mLockPasswordUtils:Lcom/meizu/settings/security/MzLockPasswordUtils;
+
+    invoke-virtual {v0}, Lcom/meizu/settings/security/MzLockPasswordUtils;->isScreenLockEnabled()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_1
+# hxs modify begin
+    const/4 v0, 0x1
+# hxs modify end
+    goto :goto_0
+.end method
+
+.method private needShowRootPreference()Z
+    .locals 5
+
+    .prologue
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    .line 314
+    invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getActivity()Landroid/app/Activity;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/meizu/settings/utils/MzUtils;->isGuestUser(Landroid/content/Context;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    move v0, v1
+
+    .line 320
+    :cond_0
+    :goto_0
+    return v0
+
+    .line 317
+    :cond_1
+    invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->isRootPermissionOpened()Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    .line 320
+    invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->isFlymeAccountLogined()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getActivity()Landroid/app/Activity;
+
+    move-result-object v2
+
+    const-string v3, "com.meizu.account"
+
+    const-string v4, "com.meizu.action.ROOT"
+
+    invoke-static {v2, v3, v4}, Lcom/meizu/settings/utils/MzUtils;->isPackageExistAndHasAction(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    :cond_2
+    move v0, v1
+
+    goto :goto_0
+.end method
+
 .method private registerSimInfoChangeReceiver()V
     .locals 3
 
     .prologue
-    .line 299
+    .line 255
     new-instance v0, Landroid/content/IntentFilter;
 
     const-string v1, "android.intent.action.ACTION_SUBINFO_CONTENT_CHANGE"
 
     invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
-    .line 300
+    .line 256
     .local v0, "filter":Landroid/content/IntentFilter;
     const-string v1, "android.intent.action.SIM_STATE_CHANGED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 301
+    .line 257
     invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -635,7 +769,7 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/app/Activity;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 302
+    .line 258
     return-void
 .end method
 
@@ -643,7 +777,7 @@
     .locals 3
 
     .prologue
-    .line 461
+    .line 442
     :try_start_0
     invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getActivity()Landroid/app/Activity;
 
@@ -655,25 +789,25 @@
 
     if-eqz v1, :cond_1
 
-    .line 462
+    .line 443
     const-string v1, "fp_category"
 
     invoke-virtual {p0, v1}, Lcom/meizu/settings/security/SecuritySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
     move-result-object v0
 
-    .line 463
+    .line 444
     .local v0, "fpCategory":Landroid/preference/Preference;
     if-eqz v0, :cond_0
 
-    .line 464
+    .line 445
     invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v1
 
     invoke-virtual {v1, v0}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
-    .line 467
+    .line 448
     :cond_0
     invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
@@ -683,7 +817,7 @@
 
     invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
-    .line 468
+    .line 449
     invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v1
@@ -694,13 +828,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 472
+    .line 453
     .end local v0    # "fpCategory":Landroid/preference/Preference;
     :cond_1
     :goto_0
     return-void
 
-    .line 470
+    .line 451
     :catch_0
     move-exception v1
 
@@ -712,7 +846,7 @@
     .param p1, "opened"    # Z
 
     .prologue
-    .line 226
+    .line 182
     iget-object v1, p0, Lcom/meizu/settings/security/SecuritySettings;->mUsageStatsProxy:Lcom/meizu/settings/datareport/UsageStatsProxy;
 
     const-string v2, "SecuritySettings"
@@ -728,10 +862,10 @@
     :goto_0
     invoke-virtual {v1, v2, v3, v4, v0}, Lcom/meizu/settings/datareport/UsageStatsProxy;->reportData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 227
+    .line 183
     return-void
 
-    .line 226
+    .line 182
     :cond_0
     const-string v0, "0"
 
@@ -743,7 +877,7 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 259
+    .line 215
     invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -756,7 +890,7 @@
 
     check-cast v0, Landroid/os/UserManager;
 
-    .line 260
+    .line 216
     .local v0, "um":Landroid/os/UserManager;
     const-string v1, "no_install_unknown_sources"
 
@@ -766,11 +900,11 @@
 
     if-eqz v1, :cond_0
 
-    .line 266
+    .line 222
     :goto_0
     return-void
 
-    .line 264
+    .line 220
     :cond_0
     invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -797,7 +931,7 @@
     .locals 6
 
     .prologue
-    .line 554
+    .line 520
     const-class v0, Lcom/meizu/settings/security/AccessPasswordSettings;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -816,7 +950,7 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/meizu/settings/security/SecuritySettings;->startFragment(Landroid/app/Fragment;Ljava/lang/String;IILandroid/os/Bundle;)Z
 
-    .line 556
+    .line 522
     return-void
 .end method
 
@@ -826,21 +960,21 @@
     .param p2, "requestCode"    # I
 
     .prologue
-    .line 609
+    .line 545
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 610
+    .line 546
     .local v0, "bundle":Landroid/os/Bundle;
     const-string v1, "password_from"
 
     invoke-virtual {v0, v1, p1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 611
+    .line 547
     invoke-direct {p0, v0, p2}, Lcom/meizu/settings/security/SecuritySettings;->startConfirmPasswordFragment(Landroid/os/Bundle;I)V
 
-    .line 612
+    .line 548
     return-void
 .end method
 
@@ -850,7 +984,7 @@
     .param p2, "requestCode"    # I
 
     .prologue
-    .line 615
+    .line 551
     const-class v0, Lcom/meizu/settings/security/MzConfirmPasswordFragment;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -869,93 +1003,15 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/meizu/settings/security/SecuritySettings;->startFragment(Landroid/app/Fragment;Ljava/lang/String;IILandroid/os/Bundle;)Z
 
-    .line 617
-    return-void
-.end method
-
-.method private startCreateFPActivity()V
-    .locals 3
-
-    .prologue
-    .line 594
-    new-instance v0, Landroid/content/Intent;
-
-    invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getActivity()Landroid/app/Activity;
-
-    move-result-object v1
-
-    const-class v2, Lcom/meizu/settings/fingerprint/CreateFPActivity;
-
-    invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    .line 595
-    .local v0, "intent":Landroid/content/Intent;
-    const-string v1, "intent_boolean_extra"
-
-    iget-object v2, p0, Lcom/meizu/settings/security/SecuritySettings;->mCreateFpExtraValue:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 596
-    const-string v1, "password_confirmed"
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    .line 597
-    invoke-virtual {p0, v0}, Lcom/meizu/settings/security/SecuritySettings;->startActivity(Landroid/content/Intent;)V
-
-    .line 598
-    return-void
-.end method
-
-.method private startEnterPasswordFragment(I)V
-    .locals 6
-    .param p1, "requestCode"    # I
-
-    .prologue
-    .line 601
-    new-instance v5, Landroid/os/Bundle;
-
-    invoke-direct {v5}, Landroid/os/Bundle;-><init>()V
-
-    .line 602
-    .local v5, "bundle":Landroid/os/Bundle;
-    const-string v0, "password_from"
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v5, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
-
-    .line 604
-    const-class v0, Lcom/meizu/settings/security/EnterPasswordFragment;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v2
-
-    const v3, #com.android.settings:string@screen_lock#t
-
-    move-object v0, p0
-
-    move-object v1, p0
-
-    move v4, p1
-
-    invoke-virtual/range {v0 .. v5}, Lcom/meizu/settings/security/SecuritySettings;->startFragment(Landroid/app/Fragment;Ljava/lang/String;IILandroid/os/Bundle;)Z
-
-    .line 606
+    .line 553
     return-void
 .end method
 
 .method private startFPManagementFragment()V
-    .locals 4
+    .locals 3
 
     .prologue
-    const/4 v3, 0x1
-
-    .line 564
+    .line 529
     new-instance v0, Landroid/content/Intent;
 
     invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getActivity()Landroid/app/Activity;
@@ -966,21 +1022,25 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 565
+    .line 530
     .local v0, "it":Landroid/content/Intent;
     const-string v1, ":settings:show_fragment_as_subsetting"
 
-    invoke-virtual {v0, v1, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+    const/4 v2, 0x1
 
-    .line 566
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+
+    .line 531
     const-string v1, "password_confirmed"
 
-    invoke-virtual {v0, v1, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+    const/4 v2, 0x0
 
-    .line 567
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+
+    .line 532
     invoke-virtual {p0, v0}, Lcom/meizu/settings/security/SecuritySettings;->startActivity(Landroid/content/Intent;)V
 
-    .line 568
+    .line 533
     return-void
 .end method
 
@@ -988,14 +1048,14 @@
     .locals 6
 
     .prologue
-    .line 559
+    .line 525
     const-class v0, Lcom/meizu/settings/security/ScreenPasscodeSettings;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v2
 
-    const v3, #com.android.settings:string@screen_lock#t
+    const v3, #com.android.settings:string@phone_pwd#t
 
     const/4 v4, -0x1
 
@@ -1007,7 +1067,7 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/meizu/settings/security/SecuritySettings;->startFragment(Landroid/app/Fragment;Ljava/lang/String;IILandroid/os/Bundle;)Z
 
-    .line 561
+    .line 526
     return-void
 .end method
 
@@ -1015,7 +1075,7 @@
     .locals 2
 
     .prologue
-    .line 506
+    .line 478
     iget-object v1, p0, Lcom/meizu/settings/security/SecuritySettings;->mAppLock:Landroid/preference/Preference;
 
     iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mMZLockUtils:Lcom/meizu/settings/security/MzLockPasswordUtils;
@@ -1031,10 +1091,10 @@
     :goto_0
     invoke-virtual {v1, v0}, Landroid/preference/Preference;->setSummary(I)V
 
-    .line 508
+    .line 480
     return-void
 
-    .line 506
+    .line 478
     :cond_0
     const v0, #com.android.settings:string@closed#t
 
@@ -1045,7 +1105,7 @@
     .locals 2
 
     .prologue
-    .line 501
+    .line 473
     iget-object v1, p0, Lcom/meizu/settings/security/SecuritySettings;->mDocumentLockPreference:Landroid/preference/Preference;
 
     iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mMZLockUtils:Lcom/meizu/settings/security/MzLockPasswordUtils;
@@ -1061,10 +1121,10 @@
     :goto_0
     invoke-virtual {v1, v0}, Landroid/preference/Preference;->setSummary(I)V
 
-    .line 503
+    .line 475
     return-void
 
-    .line 501
+    .line 473
     :cond_0
     const v0, #com.android.settings:string@closed#t
 
@@ -1075,20 +1135,14 @@
     .locals 2
 
     .prologue
-    .line 341
-    iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mLockPasswordUtils:Lcom/android/internal/widget/LockPatternUtils;
-
-    invoke-virtual {v0}, Lcom/android/internal/widget/LockPatternUtils;->isLockPasswordEnabled()Z
+    .line 299
+    invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->needRemoveGuestModePreference()Z
 
     move-result v0
 
-# hxs modify begin
-    const/4 v0, 0x0
-# hxs modify end
+    if-nez v0, :cond_3
 
-    if-eqz v0, :cond_3
-
-    .line 342
+    .line 300
     const-string v0, "guest_mode"
 
     invoke-virtual {p0, v0}, Lcom/meizu/settings/security/SecuritySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -1097,14 +1151,14 @@
 
     if-nez v0, :cond_0
 
-    .line 343
+    .line 301
     iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mPasswordCategory:Landroid/preference/PreferenceCategory;
 
     iget-object v1, p0, Lcom/meizu/settings/security/SecuritySettings;->mGuestModePreference:Landroid/preference/Preference;
 
     invoke-virtual {v0, v1}, Landroid/preference/PreferenceCategory;->addPreference(Landroid/preference/Preference;)Z
 
-    .line 344
+    .line 302
     iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mGuestModePreference:Landroid/preference/Preference;
 
     iget-object v1, p0, Lcom/meizu/settings/security/SecuritySettings;->mAppLock:Landroid/preference/Preference;
@@ -1117,7 +1171,7 @@
 
     invoke-virtual {v0, v1}, Landroid/preference/Preference;->setOrder(I)V
 
-    .line 346
+    .line 304
     :cond_0
     iget-object v1, p0, Lcom/meizu/settings/security/SecuritySettings;->mGuestModePreference:Landroid/preference/Preference;
 
@@ -1140,18 +1194,18 @@
     :goto_0
     invoke-virtual {v1, v0}, Landroid/preference/Preference;->setSummary(I)V
 
-    .line 353
+    .line 311
     :cond_1
     :goto_1
     return-void
 
-    .line 346
+    .line 304
     :cond_2
     const v0, #com.android.settings:string@closed#t
 
     goto :goto_0
 
-    .line 349
+    .line 307
     :cond_3
     const-string v0, "guest_mode"
 
@@ -1161,7 +1215,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 350
+    .line 308
     iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mPasswordCategory:Landroid/preference/PreferenceCategory;
 
     iget-object v1, p0, Lcom/meizu/settings/security/SecuritySettings;->mGuestModePreference:Landroid/preference/Preference;
@@ -1175,28 +1229,28 @@
     .locals 0
 
     .prologue
-    .line 331
+    .line 284
     invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->updatePreferenceInGuestMode()V
 
-    .line 332
+    .line 285
     invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->updateScreenLockSummary()V
 
-    .line 333
+    .line 286
     invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->updateDocumentLockSummary()V
 
-    .line 334
+    .line 287
     invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->updateAppLockSummary()V
 
-    .line 335
+    .line 288
     invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->updateToggleAppInstallation()V
 
-    .line 336
+    .line 289
     invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->updateGuestModeSummary()V
 
-    .line 337
+    .line 290
     invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->updateRootPermissionSummary()V
 
-    .line 338
+    .line 291
     return-void
 .end method
 
@@ -1204,7 +1258,7 @@
     .locals 4
 
     .prologue
-    .line 380
+    .line 363
     :try_start_0
     invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getActivity()Landroid/app/Activity;
 
@@ -1216,25 +1270,25 @@
 
     if-eqz v2, :cond_2
 
-    .line 381
+    .line 364
     const-string v2, "fp_category"
 
     invoke-virtual {p0, v2}, Lcom/meizu/settings/security/SecuritySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
     move-result-object v0
 
-    .line 382
+    .line 365
     .local v0, "category":Landroid/preference/Preference;
     if-eqz v0, :cond_0
 
-    .line 383
+    .line 366
     invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v2
 
     invoke-virtual {v2, v0}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
-    .line 385
+    .line 368
     :cond_0
     const-string v2, "passcode_items"
 
@@ -1242,23 +1296,23 @@
 
     move-result-object v0
 
-    .line 386
+    .line 369
     if-eqz v0, :cond_1
 
-    .line 387
+    .line 370
     invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v2
 
     invoke-virtual {v2, v0}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
-    .line 404
+    .line 387
     .end local v0    # "category":Landroid/preference/Preference;
     :cond_1
     :goto_0
     return-void
 
-    .line 390
+    .line 373
     :cond_2
     const-string v2, "security_items"
 
@@ -1270,7 +1324,7 @@
 
     move-result v1
 
-    .line 391
+    .line 374
     .local v1, "securityOrder":I
     const-string v2, "fp_category"
 
@@ -1278,11 +1332,11 @@
 
     move-result-object v0
 
-    .line 392
+    .line 375
     .restart local v0    # "category":Landroid/preference/Preference;
     if-nez v0, :cond_3
 
-    .line 396
+    .line 379
     :cond_3
     const-string v2, "passcode_items"
 
@@ -1290,10 +1344,10 @@
 
     move-result-object v0
 
-    .line 397
+    .line 380
     if-nez v0, :cond_1
 
-    .line 398
+    .line 381
     invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v2
@@ -1302,7 +1356,7 @@
 
     invoke-virtual {v2, v3}, Landroid/preference/PreferenceScreen;->addPreference(Landroid/preference/Preference;)Z
 
-    .line 399
+    .line 382
     iget-object v2, p0, Lcom/meizu/settings/security/SecuritySettings;->mPasswordCategory:Landroid/preference/PreferenceCategory;
 
     add-int/lit8 v3, v1, -0x1
@@ -1313,7 +1367,7 @@
 
     goto :goto_0
 
-    .line 402
+    .line 385
     .end local v0    # "category":Landroid/preference/Preference;
     .end local v1    # "securityOrder":I
     :catch_0
@@ -1326,14 +1380,14 @@
     .locals 2
 
     .prologue
-    .line 356
-    invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->isRootPermissionOpened()Z
+    .line 328
+    invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->needShowRootPreference()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 357
+    .line 329
     const-string v0, "root_permission"
 
     invoke-virtual {p0, v0}, Lcom/meizu/settings/security/SecuritySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -1342,7 +1396,7 @@
 
     if-nez v0, :cond_0
 
-    .line 358
+    .line 330
     const-string v0, "security_items"
 
     invoke-virtual {p0, v0}, Lcom/meizu/settings/security/SecuritySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -1355,7 +1409,7 @@
 
     invoke-virtual {v0, v1}, Landroid/preference/PreferenceCategory;->addPreference(Landroid/preference/Preference;)Z
 
-    .line 360
+    .line 332
     iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mRootPermissionPreference:Landroid/preference/Preference;
 
     iget-object v1, p0, Lcom/meizu/settings/security/SecuritySettings;->mNotificationAccess:Landroid/preference/Preference;
@@ -1368,12 +1422,12 @@
 
     invoke-virtual {v0, v1}, Landroid/preference/Preference;->setOrder(I)V
 
-    .line 367
+    .line 339
     :cond_0
     :goto_0
     return-void
 
-    .line 363
+    .line 335
     :cond_1
     const-string v0, "root_permission"
 
@@ -1383,7 +1437,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 364
+    .line 336
     invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v0
@@ -1399,12 +1453,12 @@
     .locals 2
 
     .prologue
-    .line 496
+    .line 468
     iget-object v1, p0, Lcom/meizu/settings/security/SecuritySettings;->mScreenLockPreference:Landroid/preference/Preference;
 
-    iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mLockPasswordUtils:Lcom/android/internal/widget/LockPatternUtils;
+    iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mLockPasswordUtils:Lcom/meizu/settings/security/MzLockPasswordUtils;
 
-    invoke-virtual {v0}, Lcom/android/internal/widget/LockPatternUtils;->isLockPasswordEnabled()Z
+    invoke-virtual {v0}, Lcom/meizu/settings/security/MzLockPasswordUtils;->isScreenPasswordEnalbed()Z
 
     move-result v0
 
@@ -1415,10 +1469,10 @@
     :goto_0
     invoke-virtual {v1, v0}, Landroid/preference/Preference;->setSummary(I)V
 
-    .line 498
+    .line 470
     return-void
 
-    .line 496
+    .line 468
     :cond_0
     const v0, #com.android.settings:string@closed#t
 
@@ -1429,7 +1483,7 @@
     .locals 3
 
     .prologue
-    .line 511
+    .line 483
     iget-object v1, p0, Lcom/meizu/settings/security/SecuritySettings;->mToggleAppInstallation:Lcom/meizu/common/preference/SwitchPreference;
 
     invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->isNonMarketAppsAllowed()Z
@@ -1438,7 +1492,7 @@
 
     invoke-virtual {v1, v2}, Lcom/meizu/common/preference/SwitchPreference;->setChecked(Z)V
 
-    .line 513
+    .line 485
     invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -1451,7 +1505,7 @@
 
     check-cast v0, Landroid/os/UserManager;
 
-    .line 514
+    .line 486
     .local v0, "um":Landroid/os/UserManager;
     const-string v1, "no_install_unknown_sources"
 
@@ -1469,7 +1523,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 516
+    .line 488
     :cond_0
     iget-object v1, p0, Lcom/meizu/settings/security/SecuritySettings;->mToggleAppInstallation:Lcom/meizu/common/preference/SwitchPreference;
 
@@ -1477,11 +1531,11 @@
 
     invoke-virtual {v1, v2}, Lcom/meizu/common/preference/SwitchPreference;->setEnabled(Z)V
 
-    .line 520
+    .line 492
     :goto_0
     return-void
 
-    .line 518
+    .line 490
     :cond_1
     iget-object v1, p0, Lcom/meizu/settings/security/SecuritySettings;->mToggleAppInstallation:Lcom/meizu/common/preference/SwitchPreference;
 
@@ -1496,7 +1550,7 @@
     .locals 3
 
     .prologue
-    .line 231
+    .line 187
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getActivity()Landroid/app/Activity;
@@ -1565,7 +1619,7 @@
 
     iput-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mWarnInstallApps:Landroid/content/DialogInterface;
 
-    .line 239
+    .line 195
     return-void
 .end method
 
@@ -1578,80 +1632,36 @@
     .param p3, "data"    # Landroid/content/Intent;
 
     .prologue
-    const/4 v3, 0x1
+    const/4 v3, 0x0
+
+    const/4 v2, 0x1
 
     const/4 v1, -0x1
 
-    const/4 v2, 0x0
-
-    .line 524
+    .line 496
     const/16 v0, 0x80
 
-    if-eq p1, v0, :cond_0
+    if-ne p1, v0, :cond_1
 
-    const/16 v0, 0x81
+    if-ne p2, v1, :cond_1
 
-    if-ne p1, v0, :cond_3
-
-    :cond_0
-    if-ne p2, v1, :cond_3
-
-    .line 527
-    iput-boolean v2, p0, Lcom/meizu/settings/security/SecuritySettings;->mNeedShowPassword:Z
-
-    .line 528
-    iget v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mFPTotal:I
-
-    if-lez v0, :cond_2
-
-    .line 529
+    .line 498
     invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->startFPManagementFragment()V
 
-    .line 551
-    :cond_1
+    .line 517
+    :cond_0
     :goto_0
     return-void
 
-    .line 531
-    :cond_2
-    invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->startCreateFPActivity()V
-
-    goto :goto_0
-
-    .line 533
-    :cond_3
+    .line 499
+    :cond_1
     const/4 v0, 0x3
 
-    if-ne p1, v0, :cond_4
+    if-ne p1, v0, :cond_2
 
-    if-ne p2, v1, :cond_4
+    if-ne p2, v1, :cond_2
 
-    .line 535
-    invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    const-string v1, "mz_fingerprint_use_unlock"
-
-    invoke-static {v0, v1, v3}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
-
-    .line 537
-    invoke-direct {p0, v3}, Lcom/meizu/settings/security/SecuritySettings;->reportUseFingerprintUnlock(Z)V
-
-    .line 538
-    iput-boolean v2, p0, Lcom/meizu/settings/security/SecuritySettings;->mNeedShowPassword:Z
-
-    goto :goto_0
-
-    .line 539
-    :cond_4
-    const/4 v0, 0x4
-
-    if-ne p1, v0, :cond_5
-
-    if-ne p2, v1, :cond_5
-
-    .line 541
+    .line 501
     invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -1660,38 +1670,67 @@
 
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 543
+    .line 503
     invoke-direct {p0, v2}, Lcom/meizu/settings/security/SecuritySettings;->reportUseFingerprintUnlock(Z)V
-
-    .line 544
-    iput-boolean v2, p0, Lcom/meizu/settings/security/SecuritySettings;->mNeedShowPassword:Z
 
     goto :goto_0
 
-    .line 545
-    :cond_5
+    .line 504
+    :cond_2
+    const/4 v0, 0x4
+
+    if-ne p1, v0, :cond_3
+
+    if-ne p2, v1, :cond_3
+
+    .line 506
+    invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "mz_fingerprint_use_unlock"
+
+    invoke-static {v0, v1, v3}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+
+    .line 508
+    invoke-direct {p0, v3}, Lcom/meizu/settings/security/SecuritySettings;->reportUseFingerprintUnlock(Z)V
+
+    goto :goto_0
+
+    .line 509
+    :cond_3
     const/4 v0, 0x2
 
-    if-ne p1, v0, :cond_6
+    if-ne p1, v0, :cond_4
 
-    if-ne p2, v1, :cond_6
+    if-ne p2, v1, :cond_4
 
-    .line 546
+    .line 510
     invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->startApplockFragment()V
 
     goto :goto_0
 
-    .line 547
-    :cond_6
-    if-ne p1, v3, :cond_1
+    .line 511
+    :cond_4
+    if-ne p1, v2, :cond_5
 
-    if-ne p2, v1, :cond_1
+    if-ne p2, v1, :cond_5
 
-    .line 548
-    iput-boolean v2, p0, Lcom/meizu/settings/security/SecuritySettings;->mNeedShowPassword:Z
-
-    .line 549
+    .line 512
     invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->startScreenPasswordFragment()V
+
+    goto :goto_0
+
+    .line 513
+    :cond_5
+    const/4 v0, 0x5
+
+    if-ne p1, v0, :cond_0
+
+    if-ne p2, v1, :cond_0
+
+    .line 515
+    invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->startFPManagementFragment()V
 
     goto :goto_0
 .end method
@@ -1704,35 +1743,35 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 270
+    .line 226
     iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mWarnInstallApps:Landroid/content/DialogInterface;
 
     if-ne p1, v0, :cond_0
 
-    .line 271
+    .line 227
     const/4 v0, -0x1
 
     if-ne p2, v0, :cond_1
 
-    .line 272
+    .line 228
     invoke-direct {p0, v1}, Lcom/meizu/settings/security/SecuritySettings;->setNonMarketAppsAllowed(Z)V
 
-    .line 273
+    .line 229
     iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mToggleAppInstallation:Lcom/meizu/common/preference/SwitchPreference;
 
     if-eqz v0, :cond_0
 
-    .line 274
+    .line 230
     iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mToggleAppInstallation:Lcom/meizu/common/preference/SwitchPreference;
 
     invoke-virtual {v0, v1}, Lcom/meizu/common/preference/SwitchPreference;->setChecked(Z)V
 
-    .line 280
+    .line 236
     :cond_0
     :goto_0
     return-void
 
-    .line 277
+    .line 233
     :cond_1
     iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mToggleAppInstallation:Lcom/meizu/common/preference/SwitchPreference;
 
@@ -1748,13 +1787,13 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 129
+    .line 113
     invoke-super {p0, p1}, Lcom/android/settings/RestrictedSettingsFragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 130
+    .line 114
     invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->init()V
 
-    .line 131
+    .line 115
     return-void
 .end method
 
@@ -1762,20 +1801,20 @@
     .locals 2
 
     .prologue
-    .line 284
+    .line 240
     invoke-super {p0}, Lcom/android/settings/RestrictedSettingsFragment;->onDestroy()V
 
-    .line 285
+    .line 241
     iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mWarnInstallApps:Landroid/content/DialogInterface;
 
     if-eqz v0, :cond_0
 
-    .line 286
+    .line 242
     iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mWarnInstallApps:Landroid/content/DialogInterface;
 
     invoke-interface {v0}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 288
+    .line 244
     :cond_0
     invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getActivity()Landroid/app/Activity;
 
@@ -1785,25 +1824,21 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 289
+    .line 245
     return-void
 .end method
 
 .method public onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
-    .locals 7
+    .locals 5
     .param p1, "preferenceScreen"    # Landroid/preference/PreferenceScreen;
     .param p2, "preference"    # Landroid/preference/Preference;
 
     .prologue
-    const/4 v6, 0x3
-
-    const/4 v5, 0x2
-
-    const/4 v4, 0x1
+    const/4 v4, 0x2
 
     const/4 v3, 0x0
 
-    .line 157
+    .line 141
     iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mUsageStatsProxy:Lcom/meizu/settings/datareport/UsageStatsProxy;
 
     const-string v1, "SecuritySettings"
@@ -1814,7 +1849,7 @@
 
     invoke-virtual {v0, v1, v2, p2}, Lcom/meizu/settings/datareport/UsageStatsProxy;->reportData(Ljava/lang/String;Ljava/lang/String;Landroid/preference/Preference;)V
 
-    .line 158
+    .line 142
     const-string v0, "fp_management"
 
     invoke-virtual {p2}, Landroid/preference/Preference;->getKey()Ljava/lang/String;
@@ -1827,12 +1862,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 159
+    .line 143
     const-string v0, "fp_management"
 
     invoke-direct {p0, v0}, Lcom/meizu/settings/security/SecuritySettings;->handleStartFPManagement(Ljava/lang/String;)V
 
-    .line 222
+    .line 178
     :cond_0
     :goto_0
     invoke-super {p0, p1, p2}, Lcom/android/settings/RestrictedSettingsFragment;->onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
@@ -1841,139 +1876,43 @@
 
     return v0
 
-    .line 160
+    .line 144
     :cond_1
-    iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mUseFPUnlockPreference:Lcom/meizu/common/preference/SwitchPreference;
+    iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mPaymentPreference:Lcom/meizu/common/preference/SwitchPreference;
 
-    if-ne p2, v0, :cond_7
+    if-ne p2, v0, :cond_4
 
-    .line 161
-    iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mUseFPUnlockPreference:Lcom/meizu/common/preference/SwitchPreference;
-
-    invoke-virtual {v0}, Lcom/meizu/common/preference/SwitchPreference;->isChecked()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    .line 162
+    .line 145
     iget v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mFPTotal:I
 
     if-nez v0, :cond_2
 
-    .line 163
-    const-string v0, "mz_fingerprint_use_unlock"
-
-    invoke-direct {p0, v0}, Lcom/meizu/settings/security/SecuritySettings;->handleStartFPManagement(Ljava/lang/String;)V
-
-    goto :goto_0
-
-    .line 165
-    :cond_2
-    iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mLockPasswordUtils:Lcom/android/internal/widget/LockPatternUtils;
-
-    invoke-virtual {v0}, Lcom/android/internal/widget/LockPatternUtils;->isLockPasswordEnabled()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    .line 166
-    iget-boolean v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mNeedShowPassword:Z
-
-    if-eqz v0, :cond_3
-
-    .line 167
-    invoke-direct {p0, v3, v6}, Lcom/meizu/settings/security/SecuritySettings;->startConfirmPasswordFragment(II)V
-
-    goto :goto_0
-
-    .line 170
-    :cond_3
-    invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    const-string v1, "mz_fingerprint_use_unlock"
-
-    invoke-static {v0, v1, v4}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
-
-    .line 172
-    invoke-direct {p0, v4}, Lcom/meizu/settings/security/SecuritySettings;->reportUseFingerprintUnlock(Z)V
-
-    goto :goto_0
-
-    .line 175
-    :cond_4
-    invoke-direct {p0, v6}, Lcom/meizu/settings/security/SecuritySettings;->startEnterPasswordFragment(I)V
-
-    goto :goto_0
-
-    .line 179
-    :cond_5
-    iget-boolean v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mNeedShowPassword:Z
-
-    if-eqz v0, :cond_6
-
-    .line 180
-    const/4 v0, 0x4
-
-    invoke-direct {p0, v3, v0}, Lcom/meizu/settings/security/SecuritySettings;->startConfirmPasswordFragment(II)V
-
-    goto :goto_0
-
-    .line 183
-    :cond_6
-    invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    const-string v1, "mz_fingerprint_use_unlock"
-
-    invoke-static {v0, v1, v3}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
-
-    .line 185
-    invoke-direct {p0, v3}, Lcom/meizu/settings/security/SecuritySettings;->reportUseFingerprintUnlock(Z)V
-
-    goto :goto_0
-
-    .line 188
-    :cond_7
-    iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mPaymentPreference:Lcom/meizu/common/preference/SwitchPreference;
-
-    if-ne p2, v0, :cond_a
-
-    .line 189
-    iget v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mFPTotal:I
-
-    if-nez v0, :cond_8
-
     iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mPaymentPreference:Lcom/meizu/common/preference/SwitchPreference;
 
     invoke-virtual {v0}, Lcom/meizu/common/preference/SwitchPreference;->isChecked()Z
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_2
 
-    .line 190
+    .line 146
     const-string v0, "mz_fingerprint_use_payment"
 
     invoke-direct {p0, v0}, Lcom/meizu/settings/security/SecuritySettings;->handleStartFPManagement(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 192
-    :cond_8
+    .line 148
+    :cond_2
     iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mPaymentPreference:Lcom/meizu/common/preference/SwitchPreference;
 
     invoke-virtual {v0}, Lcom/meizu/common/preference/SwitchPreference;->isChecked()Z
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_3
 
-    .line 193
+    .line 149
     invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -1982,8 +1921,8 @@
 
     goto :goto_0
 
-    .line 195
-    :cond_9
+    .line 151
+    :cond_3
     invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -1992,109 +1931,111 @@
 
     invoke-static {v0, v1, v3}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    goto/16 :goto_0
+    goto :goto_0
 
-    .line 199
-    :cond_a
+    .line 155
+    :cond_4
     iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mToggleAppInstallation:Lcom/meizu/common/preference/SwitchPreference;
 
-    if-ne p2, v0, :cond_c
+    if-ne p2, v0, :cond_6
 
-    .line 200
+    .line 156
     iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mToggleAppInstallation:Lcom/meizu/common/preference/SwitchPreference;
 
     invoke-virtual {v0}, Lcom/meizu/common/preference/SwitchPreference;->isChecked()Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_5
 
-    .line 201
+    .line 157
     invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->warnAppInstallation()V
 
-    goto/16 :goto_0
+    goto :goto_0
 
-    .line 203
-    :cond_b
+    .line 159
+    :cond_5
     invoke-direct {p0, v3}, Lcom/meizu/settings/security/SecuritySettings;->setNonMarketAppsAllowed(Z)V
 
-    goto/16 :goto_0
+    goto :goto_0
 
-    .line 205
-    :cond_c
+    .line 161
+    :cond_6
     iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mAppLock:Landroid/preference/Preference;
 
-    if-ne p2, v0, :cond_e
+    if-ne p2, v0, :cond_8
 
-    .line 206
+    .line 162
     iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mMZLockUtils:Lcom/meizu/settings/security/MzLockPasswordUtils;
 
     invoke-virtual {v0}, Lcom/meizu/settings/security/MzLockPasswordUtils;->isAppLockEnable()Z
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_7
 
-    .line 207
-    invoke-direct {p0, v5, v5}, Lcom/meizu/settings/security/SecuritySettings;->startConfirmPasswordFragment(II)V
+    .line 163
+    invoke-direct {p0, v4, v4}, Lcom/meizu/settings/security/SecuritySettings;->startConfirmPasswordFragment(II)V
 
-    goto/16 :goto_0
+    goto :goto_0
 
-    .line 210
-    :cond_d
+    .line 166
+    :cond_7
     invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->startApplockFragment()V
 
-    goto/16 :goto_0
+    goto :goto_0
 
-    .line 212
-    :cond_e
+    .line 168
+    :cond_8
     iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mScreenLockPreference:Landroid/preference/Preference;
 
-    if-ne p2, v0, :cond_10
+    if-ne p2, v0, :cond_a
 
-    .line 213
-    iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mLockPasswordUtils:Lcom/android/internal/widget/LockPatternUtils;
+    .line 169
+    iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mLockPasswordUtils:Lcom/meizu/settings/security/MzLockPasswordUtils;
 
-    invoke-virtual {v0}, Lcom/android/internal/widget/LockPatternUtils;->isLockPasswordEnabled()Z
+    invoke-virtual {v0}, Lcom/meizu/settings/security/MzLockPasswordUtils;->isScreenPasswordEnalbed()Z
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_9
 
-    .line 214
-    invoke-direct {p0, v3, v4}, Lcom/meizu/settings/security/SecuritySettings;->startConfirmPasswordFragment(II)V
+    .line 170
+    const/4 v0, 0x1
 
-    goto/16 :goto_0
+    invoke-direct {p0, v3, v0}, Lcom/meizu/settings/security/SecuritySettings;->startConfirmPasswordFragment(II)V
 
-    .line 217
-    :cond_f
+    goto :goto_0
+
+    .line 173
+    :cond_9
     invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->startScreenPasswordFragment()V
 
-    goto/16 :goto_0
+    goto :goto_0
 
-    .line 219
-    :cond_10
+    .line 175
+    :cond_a
     iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mRootPermissionPreference:Landroid/preference/Preference;
 
     if-ne p2, v0, :cond_0
 
-    .line 220
+    .line 176
     invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->handleRootPermissionPreferenceClick()V
 
-    goto/16 :goto_0
+    goto :goto_0
 .end method
 
 .method public onResume()V
     .locals 0
 
     .prologue
-    .line 293
+    .line 249
     invoke-super {p0}, Lcom/android/settings/RestrictedSettingsFragment;->onResume()V
 
-    .line 295
+    .line 251
     invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->updatePreference()V
 
-    .line 296
+    .line 252
     return-void
 .end method
 
@@ -2102,17 +2043,17 @@
     .locals 2
 
     .prologue
-    .line 144
+    .line 128
     invoke-super {p0}, Lcom/android/settings/RestrictedSettingsFragment;->onStart()V
 
-    .line 145
+    .line 129
     iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mUsageStatsProxy:Lcom/meizu/settings/datareport/UsageStatsProxy;
 
     const-string v1, "SecuritySettings"
 
     invoke-virtual {v0, v1}, Lcom/meizu/settings/datareport/UsageStatsProxy;->onPageStart(Ljava/lang/String;)V
 
-    .line 146
+    .line 130
     return-void
 .end method
 
@@ -2120,16 +2061,16 @@
     .locals 2
 
     .prologue
-    .line 150
+    .line 134
     invoke-super {p0}, Lcom/android/settings/RestrictedSettingsFragment;->onStop()V
 
-    .line 151
+    .line 135
     iget-object v0, p0, Lcom/meizu/settings/security/SecuritySettings;->mUsageStatsProxy:Lcom/meizu/settings/datareport/UsageStatsProxy;
 
     const-string v1, "SecuritySettings"
 
     invoke-virtual {v0, v1}, Lcom/meizu/settings/datareport/UsageStatsProxy;->onPageStop(Ljava/lang/String;)V
 
-    .line 152
+    .line 136
     return-void
 .end method
