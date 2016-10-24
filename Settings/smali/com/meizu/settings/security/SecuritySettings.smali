@@ -683,25 +683,21 @@
 .end method
 
 .method private needShowRootPreference()Z
-    .locals 5
+    .locals 2
 
     .prologue
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 314
     invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getActivity()Landroid/app/Activity;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {v2}, Lcom/meizu/settings/utils/MzUtils;->isGuestUser(Landroid/content/Context;)Z
+    invoke-static {v1}, Lcom/meizu/settings/utils/MzUtils;->isGuestUser(Landroid/content/Context;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_1
-
-    move v0, v1
+    if-eqz v1, :cond_1
 
     .line 320
     :cond_0
@@ -712,33 +708,12 @@
     :cond_1
     invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->isRootPermissionOpened()Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_0
+    if-eqz v1, :cond_0
 
-    .line 320
-    invoke-direct {p0}, Lcom/meizu/settings/security/SecuritySettings;->isFlymeAccountLogined()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    invoke-virtual {p0}, Lcom/meizu/settings/security/SecuritySettings;->getActivity()Landroid/app/Activity;
-
-    move-result-object v2
-
-    const-string v3, "com.meizu.account"
-
-    const-string v4, "com.meizu.action.ROOT"
-
-    invoke-static {v2, v3, v4}, Lcom/meizu/settings/utils/MzUtils;->isPackageExistAndHasAction(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    :cond_2
-    move v0, v1
+    .line 318
+    const/4 v0, 0x1
 
     goto :goto_0
 .end method
