@@ -5838,12 +5838,10 @@
 .end method
 
 .method public onScreenTurnedOff(I)V
-    .locals 8
+    .locals 6
     .param p1, "why"    # I
 
     .prologue
-    const/16 v6, 0x15
-
     const/4 v3, 0x1
 
     const/4 v2, 0x0
@@ -5968,43 +5966,21 @@
     invoke-virtual {v4, v2}, Lcom/meizu/keyguard/MzGestureHelper;->setLaunchAppUnlocked(I)V
 
     .line 927
-    iget-object v2, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mHandler:Landroid/os/Handler;
-
-    invoke-virtual {v2, v6}, Landroid/os/Handler;->removeMessages(I)V
-
-    .line 928
-    iget-object v2, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mHandler:Landroid/os/Handler;
-
-    iget-object v4, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mHandler:Landroid/os/Handler;
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v6, v5}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v4
-
-    const-wide/16 v6, 0x64
-
-    invoke-virtual {v2, v4, v6, v7}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
-
-    .line 929
     iget-object v2, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     invoke-virtual {v2}, Lcom/android/keyguard/KeyguardUpdateMonitor;->resetSmartLockFlag()V
 
-    .line 930
+    .line 928
     iget-object v2, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mPhoneStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     if-eqz v2, :cond_3
 
-    .line 931
+    .line 929
     iget-object v2, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mPhoneStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     invoke-virtual {v2, v3}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->onBandHintFinish(Z)V
 
-    .line 933
+    .line 931
     :cond_3
     return-void
 
