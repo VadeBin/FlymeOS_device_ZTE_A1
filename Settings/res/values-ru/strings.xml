@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="string" name="keyexchange_title">Kнопка  Настройки</item>
+    <item type="string" name="gesture_title">Нажмите кнопку Настройка</item>
+    <item type="string" name="fp_title">Oтпечаток</item>
+    <item type="string" name="button_backlight_title">Kлавиши  лампа</item>
+    <item type="string" name="screen_effect_title">Показать силу</item>
+    <item type="string" name="scheduled_power_title">Сроки перехода  машина</item>
+    <item type="string" name="aosp_screenshot_title">AOSP Снимок экрана</item>
+</resources>
