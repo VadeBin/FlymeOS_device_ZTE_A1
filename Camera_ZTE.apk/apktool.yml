@@ -1,0 +1,24 @@
+!!brut.androlib.meta.MetaInfo
+apkFileName: Camera_ZTE.apk
+compressionType: false
+doNotCompress:
+- arsc
+- PNG
+isFrameworkApk: false
+packageInfo:
+  forcedPackageId: '127'
+  renameManifestPackage: null
+sdkInfo:
+  minSdkVersion: '21'
+  targetSdkVersion: '21'
+sharedLibrary: false
+unknownFiles:
+  VersionInfo: '8'
+usesFramework:
+  ids:
+  - 1
+  tag: null
+version: 2.1.0-285da3-SNAPSHOT
+versionInfo:
+  versionCode: '0'
+  versionName: '@string/version'

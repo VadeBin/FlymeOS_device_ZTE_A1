@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:oneshot="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="200" android:drawable="@drawable/c_panorama_all_portrait_1" />
+    <item android:duration="200" android:drawable="@drawable/c_panorama_all_portrait_2" />
+    <item android:duration="200" android:drawable="@drawable/c_panorama_all_portrait_3" />
+</animation-list>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.zte.camera" platformBuildVersionCode="21" platformBuildVersionName="5.0.1-1624448">
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.STOP_APP_SWITCHES"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="false"/>
+    <application android:debuggable="false" android:hardwareAccelerated="true" android:icon="@mipmap/c_launcher_camera" android:label="@string/app_name" android:largeHeap="true" android:logo="@mipmap/c_launcher_camera" android:name="com.zte.camera.app.CameraApp" android:restoreAnyVersion="true" android:theme="@style/Theme.Camera">
+        <meta-data android:name="isZteApp" android:value="true"/>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden|mcc|mnc|orientation|screenSize" android:icon="@mipmap/c_launcher_camera" android:label="@string/app_name" android:launchMode="singleTask" android:name="com.zte.camera.CameraActivity" android:taskAffinity="com.zte.camera.CameraActivity" android:theme="@style/Theme.Camera" android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.media.action.STILL_IMAGE_CAMERA_SECURE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name="com.zte.camera.bgcapture.SpecialKeyReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.VolumeDownKeyDoublePress"/>
+                <action android:name="com.zte.camera.bgcapture.suicide"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.zte.camera.bgcapture.CaptureService" android:process="com.zte.camera.bgcapture"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.zte.camera.ui.reprojection.ReprojectionCornerActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.zte.camera.ui.reprojection.ReprojectionViewerActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.zte.camera.ui.groupshot.GroupShotActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.zte.camera.ui.smartSelect.SmartSelectActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity-alias android:icon="@mipmap/c_launcher_camera" android:label="@string/app_name" android:name="com.zte.camera.Camera" android:targetActivity="com.zte.camera.CameraActivity">
+            <intent-filter>
+                <action android:name="android.media.action.IMAGE_CAPTURE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.media.action.STILL_IMAGE_CAMERA"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.media.action.IMAGE_CAPTURE_SECURE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity-alias>
+        <activity-alias android:icon="@mipmap/c_launcher_video_camera" android:label="@string/video_camera_label" android:name="com.zte.camera.VideoCamera" android:targetActivity="com.zte.camera.CameraActivity">
+            <intent-filter>
+                <action android:name="android.media.action.VIDEO_CAMERA"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.media.action.VIDEO_CAPTURE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity-alias>
+    </application>
+</manifest>
