@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Кнопки навигации</string>
+    <string name="hello_world">Привет мир!</string>
+    <string name="action_settings">Настройки</string>
+    <string name="tips1">Вы можете переназначить кнопки по своему усмотрению</string>
+    <string name="tips2">Если вы левша</string>
+    <string name="tips3">Если вы правша</string>
+    <string name="tips8">Нажмите и удерживайте кнопку Недавние, чтобы открыть меню.</string>
+    <string name="tips5">            Недавние        Домой            Назад</string>
+    <string name="tips4">            Назад           Домой           Недавние</string>
+    <string name="tips7">          Меню                                          Назад</string>
+    <string name="tips6">          Назад                                          Меню</string>
+</resources>
