@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Эффекты экрана</string>
+    <string name="hello_world">Привет мир!</string>
+    <string name="gray">Серый</string>
+    <string name="inverse">Инверсия</string>
+    <string name="vivid">Яркий</string>
+    <string name="colortemperature">Температура цвета</string>
+    <string name="sharpness">Резкость</string>
+    <string name="saturation">Насыщенность</string>
+    <string name="cold">Холод</string>
+    <string name="warm">Тепло</string>
+    <string name="mild">Мягкий</string>
+    <string name="sharp">Резкий</string>
+    <string name="nature">Меньше</string>
+    <string name="florid">Больше</string>
+    <string name="contrast">Контраст</string>
+    <string name="standard">Стандарт</string>
+    <string name="mode">Режим</string>
+    <string name="usermode">Режим пользователя</string>
+    <string name="fade">Меньше</string>
+    <string name="enhance">Больше</string>
+</resources>
